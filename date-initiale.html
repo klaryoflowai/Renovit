@@ -1,0 +1,717 @@
+<!doctype html>
+<html lang="ro">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RENOVIT — Date Inițiale</title>
+    <meta
+      name="description"
+      content="Tabel central pentru colectarea datelor inițiale RENOVIT: Volodeni, Ocnița, logistică, rețete, costuri și prețuri."
+    >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap"
+      rel="stylesheet"
+    >
+    <style>
+      :root {
+        --bg: #080806;
+        --panel: #12110d;
+        --panel-2: #1a1811;
+        --input: #211e15;
+        --border: #3a3020;
+        --border-soft: #241f16;
+        --text: #fff4dd;
+        --muted: #b9aa91;
+        --muted-2: #786b57;
+        --accent: #d4aa48;
+        --green: #6fb78a;
+        --blue: #7aa7c7;
+        --orange: #df9850;
+        --red: #df6b5b;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background:
+          radial-gradient(circle at 15% 5%, rgba(212, 170, 72, 0.2), transparent 25rem),
+          radial-gradient(circle at 85% 0%, rgba(122, 167, 199, 0.14), transparent 24rem),
+          linear-gradient(135deg, #080806 0%, #15120c 62%, #070706 100%);
+        color: var(--text);
+        font-family: "DM Mono", monospace;
+      }
+
+      main {
+        width: min(100%, 1240px);
+        margin: 0 auto;
+        padding: 34px 16px 48px;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
+        gap: 18px;
+        align-items: end;
+      }
+
+      .eyebrow {
+        color: var(--accent);
+        font-size: 10px;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 10px 0 12px;
+        font-family: "DM Serif Display", serif;
+        font-size: clamp(42px, 8vw, 84px);
+        font-weight: 400;
+        line-height: 0.9;
+      }
+
+      p {
+        color: var(--muted);
+        line-height: 1.7;
+        max-width: 82ch;
+      }
+
+      .hero-card,
+      .panel {
+        border: 1px solid var(--border);
+        background: rgba(18, 17, 13, 0.9);
+      }
+
+      .hero-card {
+        padding: 18px;
+      }
+
+      .hero-card strong {
+        display: block;
+        color: var(--accent);
+        font-family: "DM Serif Display", serif;
+        font-size: 32px;
+        font-weight: 400;
+        line-height: 1;
+      }
+
+      .hero-card span {
+        display: block;
+        margin-top: 10px;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.7;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 14px;
+        margin-top: 18px;
+      }
+
+      .panel {
+        grid-column: span 6;
+        border-left: 3px solid var(--section-accent, var(--accent));
+        padding: 18px;
+      }
+
+      .panel.full {
+        grid-column: 1 / -1;
+      }
+
+      .panel.third {
+        grid-column: span 4;
+      }
+
+      .panel-title {
+        margin: 0 0 14px;
+        color: var(--section-accent, var(--accent));
+        font-size: 10px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 11px;
+      }
+
+      th,
+      td {
+        border-bottom: 1px solid var(--border-soft);
+        padding: 8px;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      th {
+        color: var(--accent);
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      td {
+        color: var(--muted);
+      }
+
+      td:nth-child(4),
+      td:nth-child(5) {
+        text-align: right;
+      }
+
+      tr.section-row td {
+        background: rgba(212, 170, 72, 0.08);
+        color: var(--accent);
+        font-weight: 500;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      input,
+      select,
+      textarea {
+        width: 100%;
+        border: 1px solid #403624;
+        background: var(--input);
+        color: var(--text);
+        font: inherit;
+        padding: 7px 8px;
+        outline: none;
+      }
+
+      input[type="number"] {
+        text-align: right;
+      }
+
+      textarea {
+        min-height: 72px;
+        resize: vertical;
+      }
+
+      .metric-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 10px;
+      }
+
+      .metric {
+        border: 1px solid var(--border-soft);
+        background: rgba(26, 24, 17, 0.78);
+        padding: 14px;
+      }
+
+      .metric span {
+        display: block;
+        color: var(--muted-2);
+        font-size: 10px;
+        line-height: 1.45;
+      }
+
+      .metric strong {
+        display: block;
+        margin-top: 8px;
+        color: var(--text);
+        font-family: "DM Serif Display", serif;
+        font-size: 28px;
+        font-weight: 400;
+        line-height: 1;
+      }
+
+      .metric.good strong { color: var(--green); }
+      .metric.warn strong { color: var(--orange); }
+      .metric.bad strong { color: var(--red); }
+
+      .footer-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 16px;
+      }
+
+      .button {
+        border: 1px solid #403624;
+        background: transparent;
+        color: var(--text);
+        font: inherit;
+        padding: 10px 12px;
+        cursor: pointer;
+        text-decoration: none;
+      }
+
+      .button.primary {
+        background: var(--accent);
+        color: #15120c;
+        border-color: var(--accent);
+        font-weight: 700;
+      }
+
+      .button:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      .button.primary:hover {
+        color: #15120c;
+      }
+
+      .tag {
+        display: inline-block;
+        border: 1px solid var(--border);
+        color: var(--accent);
+        padding: 3px 7px;
+        font-size: 10px;
+      }
+
+      @media (max-width: 900px) {
+        .hero,
+        .grid {
+          display: block;
+        }
+
+        .hero-card,
+        .panel {
+          margin-top: 14px;
+        }
+
+        table {
+          display: block;
+          overflow-x: auto;
+          white-space: nowrap;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="hero">
+        <div>
+          <div class="eyebrow">RENOVIT — single source of assumptions</div>
+          <h1>Date Inițiale</h1>
+          <p>
+            Completează aici datele reale din vizita Volodeni + Ocnița. Tabelul salvează inputurile în browser și alimentează
+            automat Unit Economics, Simularea Economică și Dashboard-ul Financiar. Fără backend, fără magie: un singur loc de adevăr.
+          </p>
+        </div>
+        <div class="hero-card">
+          <strong id="statusLabel">Draft</strong>
+          <span id="statusText">Datele sunt salvate local în browser. Completează câmpurile validate după vizită.</span>
+        </div>
+      </section>
+
+      <section class="grid">
+        <div class="panel full" style="--section-accent: var(--accent);">
+          <h2 class="panel-title">01 — Tabel unic de colectare date</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Categorie</th>
+                <th>Dată de colectat</th>
+                <th>Input</th>
+                <th>Unitate</th>
+                <th>De ce contează</th>
+              </tr>
+            </thead>
+            <tbody id="inputRows"></tbody>
+          </table>
+          <div class="footer-actions">
+            <button class="button primary" id="saveData" type="button">Salvează datele</button>
+            <button class="button" id="resetData" type="button">Reset la ipoteze</button>
+            <button class="button" id="copyJson" type="button">Copiază JSON</button>
+            <a class="button" href="/simulare-economica.html">Deschide simularea</a>
+            <a class="button" href="/">Unit Economics</a>
+            <a class="button" href="/instrumente.html">Toate instrumentele</a>
+          </div>
+        </div>
+
+        <div class="panel full" style="--section-accent: var(--green);">
+          <h2 class="panel-title">02 — Rezultat calculat din datele inițiale</h2>
+          <div class="metric-grid">
+            <div class="metric"><span>Cost glet Volodeni</span><strong id="gletCost">MDL 0</strong></div>
+            <div class="metric"><span>Cost decorativă</span><strong id="decorCost">MDL 0</strong></div>
+            <div class="metric"><span>Cost adeziv</span><strong id="adhesiveCost">MDL 0</strong></div>
+            <div class="metric"><span>Preț mediu portofoliu</span><strong id="avgPrice">€0/t</strong></div>
+            <div class="metric"><span>Cost mediu portofoliu</span><strong id="avgCost">€0/t</strong></div>
+            <div class="metric"><span>Marjă brută medie</span><strong id="avgMargin">0%</strong></div>
+            <div class="metric"><span>Transport Volodeni inclus</span><strong id="volodeniTransport">€0/t</strong></div>
+            <div class="metric"><span>Venit anual estimat</span><strong id="annualRevenue">€0</strong></div>
+          </div>
+        </div>
+
+        <div class="panel full" style="--section-accent: var(--blue);">
+          <h2 class="panel-title">03 — Cost și rețetă pe produs</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Produs</th>
+                <th>Volodeni</th>
+                <th>Ocnița calcar</th>
+                <th>Ocnița bentonită</th>
+                <th>Aditivi</th>
+                <th>Cost EUR/t</th>
+                <th>Cost MDL/sac</th>
+                <th>Preț MDL/sac</th>
+                <th>Marjă</th>
+              </tr>
+            </thead>
+            <tbody id="productRows"></tbody>
+          </table>
+        </div>
+
+        <div class="panel" style="--section-accent: var(--orange);">
+          <h2 class="panel-title">04 — Regula proiectului</h2>
+          <p>
+            Produsul premium de top este tratat ca produs Volodeni: calcarul alb de la Volodeni este materia primă principală.
+            Ocnița susține proiectul prin volum, bentonită și infrastructură logistică / feroviară.
+          </p>
+        </div>
+
+        <div class="panel" style="--section-accent: var(--green);">
+          <h2 class="panel-title">05 — Ce se salvează</h2>
+          <p>
+            Se salvează un obiect `RENOVIT_SHARED_INPUTS` în `localStorage`: costuri, rețete, prețuri, volume, CAPEX, cash și
+            rezumatul calculat. Dacă deschizi celelalte instrumente în același browser, ele folosesc automat aceste date.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const STORAGE_KEY = "RENOVIT_SHARED_INPUTS";
+
+      const fields = [
+        { section: "General", id: "exchangeRate", label: "Curs MDL / EUR", unit: "MDL/EUR", type: "number", value: 20, note: "Conversie pentru calcule per sac si portofoliu." },
+        { section: "General", id: "plantLocation", label: "Amplasament fabrică", unit: "", type: "select", value: "Ocnita", options: ["Ocnita", "Volodeni", "Cupcini", "TBD"], note: "Ipoteza curentă: Ocnița datorită nodului feroviar." },
+        { section: "General", id: "capacityTYear", label: "Capacitate țintă", unit: "t/an", type: "number", value: 10000, note: "Baseline RFQ actual." },
+        { section: "General", id: "utilizationPct", label: "Utilizare an 1", unit: "%", type: "number", value: 75, note: "Vânzări reale vs capacitate instalată." },
+        { section: "General", id: "capexTotalEur", label: "CAPEX total", unit: "EUR", type: "number", value: 617000, note: "Hibrid 10kt cu auxiliar + rezerve orientative." },
+        { section: "General", id: "fixedOpexEurMonth", label: "Costuri fixe lunare", unit: "EUR/lună", type: "number", value: 8000, note: "Admin, vânzări, warehouse, bază operațională." },
+        { section: "Materie primă Volodeni", id: "volodeniCaco3Pct", label: "CaCO3 Volodeni", unit: "%", type: "number", value: 94.5, note: "De confirmat prin buletin de analiză." },
+        { section: "Materie primă Volodeni", id: "volodeniWhiteness", label: "Grad alb Volodeni", unit: "L* / %", type: "text", value: "TBD", note: "Critic pentru gletul premium." },
+        { section: "Materie primă Volodeni", id: "volodeniExtractionCostEurT", label: "Cost extracție Volodeni", unit: "EUR/t", type: "number", value: 5, note: "Materie primă principală pentru glet." },
+        { section: "Materie primă Volodeni", id: "volodeniToOcnitaTransportEurT", label: "Transport Volodeni -> Ocnița", unit: "EUR/t", type: "number", value: 8, note: "Cost nou critic dacă fabrica este la Ocnița." },
+        { section: "Materie primă Volodeni", id: "volodeniAvailableTMonth", label: "Volodeni strat alb disponibil", unit: "t/lună", type: "number", value: 500, note: "Trebuie să acopere produsul premium." },
+        { section: "Materie primă Ocnița", id: "ocnitaLimestoneCaco3Pct", label: "CaCO3 Ocnița calcar", unit: "%", type: "number", value: 94.2, note: "Bază de volum pentru produse." },
+        { section: "Materie primă Ocnița", id: "ocnitaLimestoneCostEurT", label: "Cost calcar Ocnița", unit: "EUR/t", type: "number", value: 4, note: "Volum industrial, aproape de fabrică." },
+        { section: "Materie primă Ocnița", id: "ocnitaInternalTransportEurT", label: "Transport intern Ocnița", unit: "EUR/t", type: "number", value: 2, note: "Extracție / stoc -> fabrică." },
+        { section: "Materie primă Ocnița", id: "limestoneFlourResidueTMonth", label: "Făină calcar reziduu", unit: "t/lună", type: "number", value: 0, note: "Dacă e din strat bun, poate reduce costul adezivilor." },
+        { section: "Bentonită Ocnița", id: "bentoniteCostEurT", label: "Cost bentonită Ocnița", unit: "EUR/t", type: "number", value: 8, note: "Plasticitate / retenție apă." },
+        { section: "Bentonită Ocnița", id: "bentoniteActivationCostEurT", label: "Activare / pregătire bentonită", unit: "EUR/t", type: "number", value: 12, note: "Include măcinare / uscare / activare dacă e necesar." },
+        { section: "Bentonită Ocnița", id: "bentoniteActive", label: "Bentonită activă?", unit: "", type: "select", value: "TBD", options: ["TBD", "Da", "Nu", "Parțial"], note: "Test umflare / tixotropie." },
+        { section: "Procesare", id: "processYieldPct", label: "Randament procesare", unit: "%", type: "number", value: 95, note: "Brut -> produs finit ambalat." },
+        { section: "Procesare", id: "micronizationCostEurT", label: "Micronizare", unit: "EUR/t", type: "number", value: 25, note: "Finete pentru glet si filler." },
+        { section: "Procesare", id: "sortingCostEurT", label: "Sortare granulometrică", unit: "EUR/t", type: "number", value: 8, note: "Fracții pentru tencuială decorativă." },
+        { section: "Procesare", id: "dryingCostEurT", label: "Uscare", unit: "EUR/t", type: "number", value: 12, note: "Depinde de umiditate și gaz / energie." },
+        { section: "Procesare", id: "dryMixingCostEurT", label: "Mixare uscată", unit: "EUR/t", type: "number", value: 10, note: "Mixer + dozare." },
+        { section: "Procesare", id: "directLaborCostEurT", label: "Manoperă directă", unit: "EUR/t", type: "number", value: 7, note: "Operatori / schimburi." },
+        { section: "Procesare", id: "bagCostEur", label: "Cost sac + etichetă", unit: "EUR/sac", type: "number", value: 0.18, note: "20kg / 25kg." },
+        { section: "Procesare", id: "distributionCostEurT", label: "Distribuție produs finit", unit: "EUR/t", type: "number", value: 6, note: "Fabrică -> client / distribuitor." },
+        { section: "Procesare", id: "otherVariableCostEurT", label: "Alte variabile", unit: "EUR/t", type: "number", value: 3, note: "Pierderi, spares, manipulare." },
+        { section: "Produs 1 - Glet Volodeni", id: "gletKg", label: "Sac glet", unit: "kg", type: "number", value: 20, note: "Produs premium." },
+        { section: "Produs 1 - Glet Volodeni", id: "gletAnnualBags", label: "Volum glet", unit: "saci/an", type: "number", value: 75000, note: "Volum comercial an 1." },
+        { section: "Produs 1 - Glet Volodeni", id: "gletWholesaleMdlBag", label: "Preț angro glet", unit: "MDL/sac", type: "number", value: 200, note: "De validat cu distribuitori." },
+        { section: "Produs 1 - Glet Volodeni", id: "gletRetailMdlBag", label: "Retail benchmark glet", unit: "MDL/sac", type: "number", value: 260, note: "Doar benchmark." },
+        { section: "Produs 1 - Glet Volodeni", id: "gletVolodeniPct", label: "Rețetă Volodeni", unit: "%", type: "number", value: 90, note: "Materia primă principală pentru produsul de top." },
+        { section: "Produs 1 - Glet Volodeni", id: "gletOcnitaLimestonePct", label: "Rețetă Ocnița calcar", unit: "%", type: "number", value: 0, note: "Implicit zero pentru produsul premium." },
+        { section: "Produs 1 - Glet Volodeni", id: "gletBentonitePct", label: "Rețetă bentonită", unit: "%", type: "number", value: 5, note: "Plasticitate, de testat." },
+        { section: "Produs 1 - Glet Volodeni", id: "gletAdditivesPct", label: "Rețetă aditivi", unit: "%", type: "number", value: 5, note: "Retenție apă / lucrabilitate." },
+        { section: "Produs 1 - Glet Volodeni", id: "gletAdditivesCostEurT", label: "Cost aditivi glet", unit: "EUR/t produs", type: "number", value: 55, note: "Cost pe tonă de produs finit." },
+        { section: "Produs 2 - Decorativă", id: "decorKg", label: "Sac decorativă", unit: "kg", type: "number", value: 25, note: "Tencuială decorativă minerală." },
+        { section: "Produs 2 - Decorativă", id: "decorAnnualBags", label: "Volum decorativă", unit: "saci/an", type: "number", value: 50000, note: "Volum comercial an 1." },
+        { section: "Produs 2 - Decorativă", id: "decorWholesaleMdlBag", label: "Preț angro decorativă", unit: "MDL/sac", type: "number", value: 240, note: "De validat cu distribuitori." },
+        { section: "Produs 2 - Decorativă", id: "decorRetailMdlBag", label: "Retail benchmark decorativă", unit: "MDL/sac", type: "number", value: 259, note: "Doar benchmark." },
+        { section: "Produs 2 - Decorativă", id: "decorVolodeniPct", label: "Rețetă Volodeni", unit: "%", type: "number", value: 30, note: "Alb / aspect." },
+        { section: "Produs 2 - Decorativă", id: "decorOcnitaLimestonePct", label: "Rețetă Ocnița calcar", unit: "%", type: "number", value: 60, note: "Volum / structură." },
+        { section: "Produs 2 - Decorativă", id: "decorBentonitePct", label: "Rețetă bentonită", unit: "%", type: "number", value: 5, note: "Aderență pe verticală." },
+        { section: "Produs 2 - Decorativă", id: "decorAdditivesPct", label: "Rețetă aditivi", unit: "%", type: "number", value: 5, note: "Hidrofobizanți / stabilizare." },
+        { section: "Produs 2 - Decorativă", id: "decorAdditivesCostEurT", label: "Cost aditivi decorativă", unit: "EUR/t produs", type: "number", value: 65, note: "Cost pe tonă de produs finit." },
+        { section: "Produs 3 - Adeziv", id: "adhesiveKg", label: "Sac adeziv", unit: "kg", type: "number", value: 25, note: "Produs de volum." },
+        { section: "Produs 3 - Adeziv", id: "adhesiveAnnualBags", label: "Volum adeziv", unit: "saci/an", type: "number", value: 35000, note: "Volum comercial an 1." },
+        { section: "Produs 3 - Adeziv", id: "adhesiveWholesaleMdlBag", label: "Preț angro adeziv", unit: "MDL/sac", type: "number", value: 220, note: "De validat cu distribuitori." },
+        { section: "Produs 3 - Adeziv", id: "adhesiveRetailMdlBag", label: "Retail benchmark adeziv", unit: "MDL/sac", type: "number", value: 275, note: "Doar benchmark." },
+        { section: "Produs 3 - Adeziv", id: "adhesiveVolodeniPct", label: "Rețetă Volodeni", unit: "%", type: "number", value: 0, note: "Doar opțional pentru culoare." },
+        { section: "Produs 3 - Adeziv", id: "adhesiveOcnitaLimestonePct", label: "Rețetă Ocnița calcar", unit: "%", type: "number", value: 85, note: "Volum / cost mic." },
+        { section: "Produs 3 - Adeziv", id: "adhesiveBentonitePct", label: "Rețetă bentonită", unit: "%", type: "number", value: 12, note: "Retenție apă și aderență." },
+        { section: "Produs 3 - Adeziv", id: "adhesiveAdditivesPct", label: "Rețetă aditivi", unit: "%", type: "number", value: 3, note: "Priză / performanță." },
+        { section: "Produs 3 - Adeziv", id: "adhesiveAdditivesCostEurT", label: "Cost aditivi adeziv", unit: "EUR/t produs", type: "number", value: 45, note: "Cost pe tonă de produs finit." },
+        { section: "Financiar", id: "openingCashEur", label: "Cash inițial", unit: "EUR", type: "number", value: 25000, note: "Pentru dashboard cash-flow." },
+        { section: "Financiar", id: "financedSharePct", label: "Procent finanțat", unit: "%", type: "number", value: 40, note: "Pentru debt service." },
+        { section: "Financiar", id: "interestRatePct", label: "Dobândă anuală", unit: "%", type: "number", value: 9, note: "Finanțare opțională." },
+        { section: "Financiar", id: "loanTermYears", label: "Termen credit", unit: "ani", type: "number", value: 5, note: "Finanțare opțională." },
+        { section: "Financiar", id: "workingCapitalMonths", label: "Capital de lucru", unit: "luni", type: "number", value: 1.5, note: "Buffer costuri variabile + fixe." },
+      ];
+
+      const productDefs = [
+        { key: "glet", name: "Glet de finisaj alb", premium: true },
+        { key: "decor", name: "Tencuială decorativă minerală" },
+        { key: "adhesive", name: "Adeziv / mortar var-calcar" },
+      ];
+
+      const inputs = {};
+
+      function defaultValues() {
+        return Object.fromEntries(fields.map(field => [field.id, field.value]));
+      }
+
+      let values = defaultValues();
+
+      function readSaved() {
+        try {
+          const parsed = JSON.parse(localStorage.getItem(STORAGE_KEY) || "null");
+          if (parsed?.fields) {
+            values = { ...values, ...parsed.fields };
+          }
+        } catch {
+          values = defaultValues();
+        }
+      }
+
+      function fieldInput(field) {
+        if (field.type === "select") {
+          return `<select id="${field.id}">${field.options.map(option => `<option value="${option}">${option}</option>`).join("")}</select>`;
+        }
+        return `<input id="${field.id}" type="${field.type}" value="${field.value}" ${field.type === "number" ? 'step="0.01"' : ""}>`;
+      }
+
+      function renderInputRows() {
+        let currentSection = "";
+        const rows = [];
+        fields.forEach(field => {
+          if (field.section !== currentSection) {
+            currentSection = field.section;
+            rows.push(`<tr class="section-row"><td colspan="5">${currentSection}</td></tr>`);
+          }
+          rows.push(`
+            <tr>
+              <td>${field.section}</td>
+              <td>${field.label}</td>
+              <td>${fieldInput(field)}</td>
+              <td>${field.unit}</td>
+              <td>${field.note}</td>
+            </tr>
+          `);
+        });
+        document.getElementById("inputRows").innerHTML = rows.join("");
+        fields.forEach(field => {
+          inputs[field.id] = document.getElementById(field.id);
+          inputs[field.id].value = values[field.id];
+          inputs[field.id].addEventListener("input", () => {
+            values[field.id] = inputs[field.id].value;
+            render();
+            save(false);
+          });
+          inputs[field.id].addEventListener("change", () => {
+            values[field.id] = inputs[field.id].value;
+            render();
+            save(false);
+          });
+        });
+      }
+
+      function n(id) {
+        const value = Number.parseFloat(values[id]);
+        return Number.isFinite(value) ? value : 0;
+      }
+
+      function money(value, currency = "EUR", digits = 0) {
+        if (!Number.isFinite(value)) return "N/A";
+        const prefix = currency === "MDL" ? "MDL " : "€";
+        return `${prefix}${value.toLocaleString("ro-RO", { minimumFractionDigits: digits, maximumFractionDigits: digits })}`;
+      }
+
+      function number(value, digits = 0) {
+        if (!Number.isFinite(value)) return "N/A";
+        return value.toLocaleString("ro-RO", { minimumFractionDigits: digits, maximumFractionDigits: digits });
+      }
+
+      function pct(value, digits = 1) {
+        if (!Number.isFinite(value)) return "N/A";
+        return `${(value * 100).toLocaleString("ro-RO", { minimumFractionDigits: digits, maximumFractionDigits: digits })}%`;
+      }
+
+      function sourceCosts() {
+        return {
+          volodeniMaterial: n("volodeniExtractionCostEurT"),
+          volodeniTransport: n("volodeniToOcnitaTransportEurT"),
+          volodeniLanded: n("volodeniExtractionCostEurT") + n("volodeniToOcnitaTransportEurT"),
+          ocnitaLimestoneMaterial: n("ocnitaLimestoneCostEurT"),
+          ocnitaLimestoneTransport: n("ocnitaInternalTransportEurT"),
+          ocnitaLimestoneLanded: n("ocnitaLimestoneCostEurT") + n("ocnitaInternalTransportEurT"),
+          bentoniteMaterial: n("bentoniteCostEurT") + n("bentoniteActivationCostEurT"),
+          bentoniteTransport: n("ocnitaInternalTransportEurT"),
+          bentoniteLanded: n("bentoniteCostEurT") + n("bentoniteActivationCostEurT") + n("ocnitaInternalTransportEurT"),
+        };
+      }
+
+      function productCalc(product) {
+        const costs = sourceCosts();
+        const kg = n(`${product.key}Kg`);
+        const volodeniPct = n(`${product.key}VolodeniPct`) / 100;
+        const ocnitaPct = n(`${product.key}OcnitaLimestonePct`) / 100;
+        const bentonitePct = n(`${product.key}BentonitePct`) / 100;
+        const additivesPct = n(`${product.key}AdditivesPct`) / 100;
+        const additiveCost = n(`${product.key}AdditivesCostEurT`);
+        const rawMaterialCost =
+          volodeniPct * costs.volodeniMaterial +
+          ocnitaPct * costs.ocnitaLimestoneMaterial +
+          bentonitePct * costs.bentoniteMaterial;
+        const rawTransportCost =
+          volodeniPct * costs.volodeniTransport +
+          ocnitaPct * costs.ocnitaLimestoneTransport +
+          bentonitePct * costs.bentoniteTransport;
+        const processCost =
+          n("micronizationCostEurT") +
+          n("sortingCostEurT") +
+          n("dryingCostEurT") +
+          n("dryMixingCostEurT") +
+          n("directLaborCostEurT") +
+          n("distributionCostEurT") +
+          n("otherVariableCostEurT");
+        const bagsPerTon = kg > 0 ? 1000 / kg : 0;
+        const packagingCost = bagsPerTon * n("bagCostEur");
+        const totalCostEurT = (rawMaterialCost + rawTransportCost) / Math.max(n("processYieldPct") / 100, 0.01) + additiveCost + processCost + packagingCost;
+        const costMdlBag = totalCostEurT / Math.max(bagsPerTon, 1) * n("exchangeRate");
+        const priceMdlBag = n(`${product.key}WholesaleMdlBag`);
+        const priceEurT = priceMdlBag / Math.max(n("exchangeRate"), 0.01) * bagsPerTon;
+        const annualBags = n(`${product.key}AnnualBags`);
+        const annualTons = annualBags * kg / 1000;
+        const annualRevenueEur = annualBags * priceMdlBag / Math.max(n("exchangeRate"), 0.01);
+        const margin = priceEurT > 0 ? (priceEurT - totalCostEurT) / priceEurT : 0;
+        return {
+          key: product.key,
+          name: product.name,
+          premium: product.premium,
+          kg,
+          volodeniPct,
+          ocnitaPct,
+          bentonitePct,
+          additivesPct,
+          additiveCost,
+          rawMaterialCost,
+          rawTransportCost,
+          packagingCost,
+          totalCostEurT,
+          costMdlBag,
+          priceMdlBag,
+          retailMdlBag: n(`${product.key}RetailMdlBag`),
+          priceEurT,
+          annualBags,
+          annualTons,
+          annualRevenueEur,
+          margin,
+        };
+      }
+
+      function compute() {
+        const products = productDefs.map(productCalc);
+        const totalTons = products.reduce((sum, product) => sum + product.annualTons, 0);
+        const totalBags = products.reduce((sum, product) => sum + product.annualBags, 0);
+        const totalRevenue = products.reduce((sum, product) => sum + product.annualRevenueEur, 0);
+        const weighted = key => totalTons > 0
+          ? products.reduce((sum, product) => sum + product[key] * product.annualTons, 0) / totalTons
+          : 0;
+        const avgCostEurT = weighted("totalCostEurT");
+        const avgPriceEurT = totalTons > 0 ? totalRevenue / totalTons : 0;
+        const avgMargin = avgPriceEurT > 0 ? (avgPriceEurT - avgCostEurT) / avgPriceEurT : 0;
+        return {
+          products,
+          totalTons,
+          totalBags,
+          avgBagKg: totalBags > 0 ? totalTons * 1000 / totalBags : 0,
+          totalRevenue,
+          avgCostEurT,
+          avgPriceEurT,
+          avgMargin,
+          weightedRawMaterialEurT: weighted("rawMaterialCost"),
+          weightedRawTransportEurT: weighted("rawTransportCost"),
+          avgAdditivesCostEurT: weighted("additiveCost"),
+          avgPackagingCostEurT: weighted("packagingCost"),
+        };
+      }
+
+      function sharedPayload() {
+        const summary = compute();
+        return {
+          version: 1,
+          updatedAt: new Date().toISOString(),
+          fields: { ...values },
+          products: Object.fromEntries(summary.products.map(product => [product.key, product])),
+          summary: {
+            totalTons: summary.totalTons,
+            totalBags: summary.totalBags,
+            avgBagKg: summary.avgBagKg,
+            annualRevenueEur: summary.totalRevenue,
+            avgCostEurT: summary.avgCostEurT,
+            avgSellingPriceEurT: summary.avgPriceEurT,
+            avgMargin: summary.avgMargin,
+            weightedRawMaterialEurT: summary.weightedRawMaterialEurT,
+            weightedRawTransportEurT: summary.weightedRawTransportEurT,
+            avgAdditivesCostEurT: summary.avgAdditivesCostEurT,
+            avgPackagingCostEurT: summary.avgPackagingCostEurT,
+          },
+        };
+      }
+
+      function save(showMessage = true) {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(sharedPayload()));
+        if (showMessage) {
+          document.getElementById("statusLabel").textContent = "Salvat";
+          document.getElementById("statusText").textContent = "Datele centrale au fost salvate și vor fi citite de celelalte instrumente.";
+        }
+      }
+
+      function render() {
+        const calc = compute();
+        const productByKey = Object.fromEntries(calc.products.map(product => [product.key, product]));
+        document.getElementById("gletCost").textContent = money(productByKey.glet.costMdlBag, "MDL", 1);
+        document.getElementById("decorCost").textContent = money(productByKey.decor.costMdlBag, "MDL", 1);
+        document.getElementById("adhesiveCost").textContent = money(productByKey.adhesive.costMdlBag, "MDL", 1);
+        document.getElementById("avgPrice").textContent = `${money(calc.avgPriceEurT, "EUR", 0)}/t`;
+        document.getElementById("avgCost").textContent = `${money(calc.avgCostEurT, "EUR", 0)}/t`;
+        document.getElementById("avgMargin").textContent = pct(calc.avgMargin, 1);
+        document.getElementById("volodeniTransport").textContent = `${money(calc.weightedRawTransportEurT, "EUR", 1)}/t`;
+        document.getElementById("annualRevenue").textContent = money(calc.totalRevenue, "EUR", 0);
+        document.getElementById("productRows").innerHTML = calc.products.map(product => `
+          <tr>
+            <td>${product.name}${product.premium ? ' <span class="tag">top</span>' : ""}</td>
+            <td>${pct(product.volodeniPct, 0)}</td>
+            <td>${pct(product.ocnitaPct, 0)}</td>
+            <td>${pct(product.bentonitePct, 0)}</td>
+            <td>${pct(product.additivesPct, 0)}</td>
+            <td>${money(product.totalCostEurT, "EUR", 1)}</td>
+            <td>${money(product.costMdlBag, "MDL", 1)}</td>
+            <td>${money(product.priceMdlBag, "MDL", 0)}</td>
+            <td>${pct(product.margin, 1)}</td>
+          </tr>
+        `).join("");
+      }
+
+      document.getElementById("saveData").addEventListener("click", () => save(true));
+      document.getElementById("resetData").addEventListener("click", () => {
+        values = defaultValues();
+        fields.forEach(field => {
+          if (inputs[field.id]) inputs[field.id].value = values[field.id];
+        });
+        render();
+        save(true);
+      });
+      document.getElementById("copyJson").addEventListener("click", async () => {
+        await navigator.clipboard.writeText(JSON.stringify(sharedPayload(), null, 2));
+        document.getElementById("statusLabel").textContent = "Copiat";
+        document.getElementById("statusText").textContent = "JSON-ul cu datele centrale este în clipboard.";
+      });
+
+      readSaved();
+      renderInputRows();
+      render();
+      save(false);
+    </script>
+  </body>
+</html>

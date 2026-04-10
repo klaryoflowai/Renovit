@@ -24,15 +24,17 @@ next_action: Cerem oferte pentru micronizare, sortare, mixer, dozare aditivi si 
 
 ## Flux tehnologic tinta
 
-1. Selectie calcar alb / calcar-travertin.
-2. Concasare / pre-macinare, daca nu exista deja faina de calcar potrivita.
-3. Micronizare pentru glet extra-alb.
-4. Sortare granulometrica pentru tencuieli decorative.
-5. Dozare aditivi: polimeri, celuloza, retentori apa, eventual pigmenti / stabilizatori.
-6. Mixare uscata.
-7. Control calitate lot.
-8. Ambalare 20kg / 25kg.
-9. Paletizare si distributie.
+1. Selectie calcar alb Volodeni pentru gletul premium.
+2. Selectie calcar / faina / bentonita Ocnița pentru volum si functionalitate.
+3. Transport Volodeni -> Ocnița, daca fabrica ramane la Ocnița.
+4. Concasare / pre-macinare, daca nu exista deja faina de calcar potrivita.
+5. Micronizare pentru glet extra-alb.
+6. Sortare granulometrica pentru tencuieli decorative.
+7. Dozare aditivi: polimeri, celuloza, retentori apa, eventual pigmenti / stabilizatori.
+8. Mixare uscata.
+9. Control calitate lot.
+10. Ambalare 20kg / 25kg.
+11. Paletizare si distributie prin rutier / feroviar.
 
 ## Diferenta fata de gips
 

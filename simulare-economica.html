@@ -485,8 +485,8 @@
             <div class="metric" id="metricFunding"><span>Total funding need</span><strong id="fundingNeed">€0</strong></div>
             <div class="metric"><span>CAPEX scalat</span><strong id="scaledCapex">€0</strong></div>
             <div class="metric"><span>Cost / tonă</span><strong id="costPerTon">€0</strong></div>
-            <div class="metric"><span>Cost / sac 25kg</span><strong id="costPerBag">€0.00</strong></div>
-            <div class="metric"><span>Preț / sac 25kg</span><strong id="pricePerBag">€0.00</strong></div>
+            <div class="metric"><span>Cost / sac mediu</span><strong id="costPerBag">€0.00</strong></div>
+            <div class="metric"><span>Preț / sac mediu</span><strong id="pricePerBag">€0.00</strong></div>
             <div class="metric"><span>EBITDA / lună</span><strong id="ebitdaMonth">€0</strong></div>
             <div class="metric"><span>Break-even</span><strong id="breakEvenTons">0 t</strong></div>
             <div class="metric"><span>Break-even saci</span><strong id="breakEvenBags">0</strong></div>
@@ -541,6 +541,7 @@
             un prag de negociere pentru hibrid, nu buget final confirmat. Pentru lucru profund, folosește workbook-ul Excel și actualizează CSV-urile din GitHub.
           </p>
           <div class="footer-actions">
+            <a class="button" href="/date-initiale.html">Date inițiale</a>
             <a class="button" href="/data/finance/RENOVIT_Economic_Simulation_Model.xlsx">Descarcă Excel</a>
             <a class="button" href="/instrumente.html">Toate instrumentele</a>
             <a class="button" href="/unit-economics-sac-25kg.html">Per sac 25kg</a>
@@ -628,6 +629,77 @@
       ];
 
       const els = Object.fromEntries(fields.map(id => [id, document.getElementById(id)]));
+      const SHARED_INPUTS_KEY = "RENOVIT_SHARED_INPUTS";
+      let modelBagKg = 25;
+
+      function readSharedInputs() {
+        try {
+          return JSON.parse(localStorage.getItem(SHARED_INPUTS_KEY) || "null");
+        } catch {
+          return null;
+        }
+      }
+
+      function setInput(id, value, digits = 2) {
+        if (els[id] && value !== undefined && value !== null && Number.isFinite(Number(value))) {
+          const numeric = Number(value);
+          els[id].value = Number.isInteger(numeric) ? String(numeric) : numeric.toFixed(digits);
+        }
+      }
+
+      function nearestCapacityId(targetCapacity) {
+        if (!Number.isFinite(Number(targetCapacity))) return null;
+        return capacities
+          .slice()
+          .sort((a, b) => Math.abs(a.capacity - Number(targetCapacity)) - Math.abs(b.capacity - Number(targetCapacity)))[0]?.id;
+      }
+
+      function baseCapexFor(strategy, capacityId) {
+        const capacity = capacities.find(item => item.id === capacityId);
+        const rates = strategyRates[strategy];
+        if (!capacity || !rates) return 0;
+        const baseEquipment = equipmentBase(strategy);
+        const repairReserve = baseEquipment * rates.repair;
+        const contingency = (baseEquipment + repairReserve) * rates.contingency;
+        const capex10k = baseEquipment + repairReserve + contingency;
+        return capex10k * Math.pow(capacity.capacity / 10000, rates.exponent);
+      }
+
+      function applySharedInputs() {
+        const shared = readSharedInputs();
+        if (!shared?.fields) return;
+        const fields = shared.fields;
+        const summary = shared.summary || {};
+        if (Number(summary.avgBagKg) > 0) {
+          modelBagKg = Number(summary.avgBagKg);
+        }
+        const capacityId = nearestCapacityId(fields.capacityTYear);
+        if (capacityId) els.capacityScenario.value = capacityId;
+        if (fields.equipmentStrategy && strategyRates[fields.equipmentStrategy]) {
+          els.equipmentStrategy.value = fields.equipmentStrategy;
+        }
+        setInput("utilization", fields.utilizationPct, 0);
+        setInput("sellingPrice", summary.avgSellingPriceEurT, 1);
+        setInput("extractionCost", summary.weightedRawMaterialEurT, 2);
+        setInput("rawTransportCost", summary.weightedRawTransportEurT, 2);
+        setInput("processYield", fields.processYieldPct, 0);
+        setInput("calcinationCost", Number(fields.micronizationCostEurT || 0) + Number(fields.sortingCostEurT || 0) + Number(fields.dryingCostEurT || 0), 2);
+        setInput("grindingCost", fields.dryMixingCostEurT, 2);
+        setInput("additivesCost", summary.avgAdditivesCostEurT, 2);
+        setInput("laborCost", fields.directLaborCostEurT, 2);
+        setInput("bagCost", fields.bagCostEur, 2);
+        setInput("distributionCost", fields.distributionCostEurT, 2);
+        setInput("otherVariableCost", fields.otherVariableCostEurT, 2);
+        setInput("fixedOpex", fields.fixedOpexEurMonth, 0);
+        setInput("financedShare", fields.financedSharePct, 0);
+        setInput("interestRate", fields.interestRatePct, 2);
+        setInput("loanTerm", fields.loanTermYears, 0);
+        setInput("workingCapitalMonths", fields.workingCapitalMonths, 2);
+        const baseCapex = baseCapexFor(els.equipmentStrategy.value, els.capacityScenario.value);
+        if (baseCapex > 0 && Number(fields.capexTotalEur) > 0) {
+          setInput("capexMultiplier", Number(fields.capexTotalEur) / baseCapex, 2);
+        }
+      }
 
       function init() {
         capacities.forEach(capacity => {
@@ -645,6 +717,7 @@
         els.capacityScenario.value = "Recommended 10kt";
         els.equipmentStrategy.value = "hybrid";
         syncUtilization();
+        applySharedInputs();
         fields.forEach(id => {
           els[id].addEventListener("input", render);
           els[id].addEventListener("change", id === "capacityScenario" ? () => {
@@ -689,7 +762,7 @@
       function compute(capacityId, strategy, utilizationRatio) {
         const capacity = capacities.find(item => item.id === capacityId);
         const rates = strategyRates[strategy];
-        const bagKg = 25;
+        const bagKg = modelBagKg;
         const bagsPerTon = 1000 / bagKg;
         const baseEquipment = equipmentBase(strategy);
         const repairReserve = baseEquipment * rates.repair;

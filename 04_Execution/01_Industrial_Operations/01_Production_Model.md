@@ -2,13 +2,14 @@
 
 ## Phase 1 industrial flow
 
-1. selectie calcar alb / faina calcaroasa Volodeni
-2. transport intern / extern la punctul de procesare
-3. micronizare / sortare granulometrica
-4. dozare aditivi + mixare uscata
-5. ambalare 20/25kg
-6. depozitare uscata
-7. distributie
+1. selectie calcar alb Volodeni pentru produsul premium
+2. selectie calcar / faina / bentonita Ocnița pentru volum si functionalitate
+3. transport Volodeni -> Ocnița, daca fabrica este amplasata la Ocnița
+4. micronizare / sortare granulometrica
+5. dozare aditivi + mixare uscata
+6. ambalare 20/25kg
+7. depozitare uscata
+8. distributie rutiera / feroviara
 
 ## Main question
 

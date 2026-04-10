@@ -3,8 +3,12 @@ Product,target_bag_kg,Target bag size,25,kg,Average modeling bag; glet may be 20
 Product,bags_per_pallet,Bags per pallet,48,bags,Working logistics assumption
 Revenue,selling_price_eur_per_ton,Wholesale selling price,420,EUR/t,Portfolio average; replace with validated product mix
 Production,process_yield,Raw to finished yield,0.95,ratio,Limestone filler to finished packaged dry mix
-Raw material,extraction_cost_eur_per_raw_t,Limestone / filler cost,5,EUR/raw t,Partner data needed
-Raw material,quarry_to_plant_transport_eur_per_raw_t,Internal transport / supply,2,EUR/raw t,Depends on plant location
+Raw material,volodeni_limestone_cost_eur_per_raw_t,Volodeni white limestone extraction,5,EUR/raw t,Top product main raw material
+Raw material,volodeni_to_ocnita_transport_eur_per_raw_t,Volodeni to Ocnita transport,8,EUR/raw t,Critical if factory is located at Ocnita
+Raw material,ocnita_limestone_cost_eur_per_raw_t,Ocnita limestone extraction,4,EUR/raw t,Volume base for decorative render and adhesive
+Raw material,ocnita_bentonite_cost_eur_per_raw_t,Ocnita bentonite extraction / preparation,20,EUR/raw t,Includes working activation / preparation assumption
+Raw material,weighted_raw_material_cost_eur_per_raw_t,Weighted raw material cost,5,EUR/raw t,Calculated in date-initiale.html and pushed into simulation
+Raw material,weighted_raw_transport_eur_per_raw_t,Weighted quarry to plant transport,2,EUR/raw t,Calculated in date-initiale.html based on product recipe mix
 Processing,calcination_eur_per_finished_t,Micronization / sorting cost,25,EUR/t,Former calcination field retained only for model compatibility
 Processing,grinding_eur_per_finished_t,Dry mixing cost,10,EUR/t,Mixing and dosing to target recipe
 Processing,additives_eur_per_finished_t,Additives cost,55,EUR/t,Polymers cellulose lime/cement and performance additives

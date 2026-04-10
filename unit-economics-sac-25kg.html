@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>RENOVIT — Unit Economics / Sac 25kg</title>
+    <title>RENOVIT — Unit Economics / Sac 20/25kg</title>
     <meta
       name="description"
-      content="Calculator legacy / auxiliar de unit economics per sac 25kg RENOVIT."
+      content="Calculator legacy / auxiliar de unit economics per sac 20/25kg RENOVIT."
     >
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -287,8 +287,8 @@
   <body>
     <main class="app">
       <div class="eyebrow">RENOVIT — instrument analiză</div>
-      <h1>Unit Economics / Sac 25kg</h1>
-      <div class="subtitle">Legacy / auxiliar după pivotul spre calcar Cupcini. Pentru modelul principal folosește homepage-ul cu portofoliul de finisaje.</div>
+      <h1>Unit Economics / Sac 20/25kg</h1>
+      <div class="subtitle">Legacy / auxiliar după pivotul spre calcar Cupcini. Dacă ai salvat Date Inițiale, acest calculator pornește automat de la gletul Volodeni.</div>
 
       <section class="section">
         <div class="section-title">01 — Conversie produs</div>
@@ -329,7 +329,7 @@
         <div class="row">
           <div class="row-main">
             <div class="label">Cost producție / tonă</div>
-            <div class="sublabel">materie primă + calcinare + măcinare + aditivi + manoperă, fără sac final</div>
+            <div class="sublabel">materie primă + micronizare + sortare + mixare + aditivi + manoperă, fără sac final</div>
           </div>
           <div class="row-input">
             <input id="costProductieTona" type="number" min="0" step="0.1" value="65">
@@ -490,12 +490,14 @@
 
       <div class="notes">
         * Pentru 25kg, o tonă are 40 saci. Ajustează greutatea sacului dacă modelezi glet 20kg.<br>
+        * Dacă există date salvate în Date Inițiale, acest calculator preia implicit produsul de top: glet Volodeni.<br>
         * Calculatorul per sac este util pentru pricing, negociere cu distribuitori și estimarea logisticii.<br>
         * Pentru decizia de investiție folosește calculatorul principal pentru portofoliul de finisaje și modelul CAPEX.
       </div>
 
       <div class="footer-actions">
         <button class="button" id="resetButton" type="button">Reset valori</button>
+        <a class="button" href="/date-initiale.html">Date inițiale</a>
         <a class="button" href="/">Calculator pe tonă</a>
         <a class="button" href="/instrumente.html">Toate instrumentele</a>
         <a class="button" href="/simulare-economica.html">Simulare CAPEX</a>
@@ -518,6 +520,7 @@
 
       const inputIds = Object.keys(defaults);
       const inputs = Object.fromEntries(inputIds.map(id => [id, document.getElementById(id)]));
+      const SHARED_INPUTS_KEY = "RENOVIT_SHARED_INPUTS";
 
       const outputs = {
         saciPerTona: document.getElementById("saciPerTona"),
@@ -545,6 +548,44 @@
       function getNumber(id) {
         const raw = Number.parseFloat(inputs[id].value);
         return Number.isFinite(raw) ? raw : defaults[id];
+      }
+
+      function readSharedInputs() {
+        try {
+          return JSON.parse(localStorage.getItem(SHARED_INPUTS_KEY) || "null");
+        } catch {
+          return null;
+        }
+      }
+
+      function setInput(id, value, digits = 2) {
+        if (inputs[id] && value !== undefined && value !== null && Number.isFinite(Number(value))) {
+          const numeric = Number(value);
+          inputs[id].value = Number.isInteger(numeric) ? String(numeric) : numeric.toFixed(digits);
+        }
+      }
+
+      function applySharedInputs() {
+        const shared = readSharedInputs();
+        const fields = shared?.fields;
+        const product = shared?.products?.glet;
+        if (!fields || !product) return;
+        const bagsPerTon = product.kg > 0 ? 1000 / product.kg : 40;
+        const logisticsT = Number(product.rawTransportCost || 0) + Number(fields.distributionCostEurT || 0);
+        const packagingT = Number(product.packagingCost || 0);
+        const productionT = Math.max(Number(product.totalCostEurT || 0) - logisticsT - packagingT, 0);
+        const capexPerTon = Number(fields.capacityTYear || 0) > 0
+          ? Number(fields.capexTotalEur || 0) / Number(fields.capacityTYear) / 3
+          : defaults.amortizareTona;
+        const monthlyTons = Number(product.annualTons || 0) * (Number(fields.utilizationPct || 100) / 100) / 12;
+        setInput("greutateSacKg", product.kg, 1);
+        setInput("costProductieTona", productionT, 2);
+        setInput("amortizareTona", capexPerTon, 2);
+        setInput("logisticaTona", logisticsT, 2);
+        setInput("costAmbalajSac", bagsPerTon > 0 ? packagingT / bagsPerTon : fields.bagCostEur, 2);
+        setInput("pretSacEngros", Number(product.priceMdlBag || 0) / Math.max(Number(fields.exchangeRate || 1), 0.01), 2);
+        setInput("volumTonaLuna", monthlyTons, 2);
+        setInput("costuriFixeLuna", fields.fixedOpexEurMonth, 0);
       }
 
       function formatFixed(value, digits = 2) {
@@ -695,6 +736,7 @@
         render();
       });
 
+      applySharedInputs();
       render();
     </script>
   </body>

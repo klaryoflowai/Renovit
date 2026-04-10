@@ -2,27 +2,27 @@ import { useState } from "react";
 
 const SECTIONS = [
   {
-    id: "meta", label: "00 — Informații Vizită Volodeni", color: "#d0a74e",
+    id: "meta", label: "00 — Informații Vizită Volodeni + Ocnița", color: "#d0a74e",
     fields: [
       { id: "data", label: "Data vizitei", type: "text", placeholder: "ex: 15 aprilie 2026" },
       { id: "participanti", label: "Participanți prezenți", type: "textarea", placeholder: "Nume, rol, companie, telefon / email" },
       { id: "durata", label: "Durata vizitei", type: "text", placeholder: "ex: 3 ore" },
-      { id: "locatie", label: "Locație exactă / GPS", type: "text", placeholder: "Volodeni, raion, coordonate GPS, puncte vizitate" },
-      { id: "scop", label: "Scopul vizitei", type: "textarea", placeholder: "Confirmare resursă calcar alb, făină calcaroasă, proces, mostre, retete materiale de finisaj" },
+      { id: "locatie", label: "Locație exactă / GPS", type: "text", placeholder: "Volodeni + Ocnița, coordonate GPS, puncte vizitate, rampa feroviară" },
+      { id: "scop", label: "Scopul vizitei", type: "textarea", placeholder: "Confirmare calcar alb Volodeni, calcar/bentonită Ocnița, fabrică la Ocnița, transport Volodeni -> Ocnița" },
     ],
   },
   {
-    id: "deposit", label: "01 — Zăcământ & Rezerve", color: "#9dbb68",
+    id: "deposit", label: "01 — Zăcăminte & Rezerve", color: "#9dbb68",
     fields: [
-      { id: "sector", label: "Sector vizitat", type: "text", placeholder: "Volodeni — calcar pentru blocuri / făină calcaroasă" },
-      { id: "rezerve", label: "Rezerve confirmate", type: "textarea", placeholder: "m3 / tone, categorie A/B/C1, sursa documentului, durata de viață la volume faza 1" },
+      { id: "sector", label: "Sectoare vizitate", type: "text", placeholder: "Volodeni — calcar alb | Ocnița — calcar + bentonită | nod feroviar / rampă" },
+      { id: "rezerve", label: "Rezerve confirmate", type: "textarea", placeholder: "Volodeni m3/tone; Ocnița calcar m3/tone; Ocnița bentonită m3/tone; categorie A/B/C1" },
       { id: "status", label: "Status exploatare", type: "select", options: ["Activ", "Parțial activ", "Conservat", "Neclar"] },
       { id: "zone_calitate", label: "Zone cu calitate diferită?", type: "textarea", placeholder: "Unde este calcarul cel mai alb? Există variații pe fronturi / adâncime?" },
-      { id: "mostre_zone", label: "Mostre necesare pe zone", type: "textarea", placeholder: "Mostra A: zona __ | Mostra B: zona __ | Mostra C: făină existentă" },
+      { id: "mostre_zone", label: "Mostre necesare pe zone", type: "textarea", placeholder: "V1-Volodeni alb | V2-Volodeni alt strat | O1-Ocnița calcar | O2-bentonită | O3-făină/reziduu" },
     ],
   },
   {
-    id: "quality", label: "02 — Calitate Calcar", color: "#7eb8c9",
+    id: "quality", label: "02 — Calitate Calcar & Bentonită", color: "#7eb8c9",
     fields: [
       { id: "caco3", label: "CaCO3 exact (%)", type: "text", placeholder: "ex: 94.2-94.7% — cere analiză laborator" },
       { id: "alb", label: "Grad de alb / culoare", type: "textarea", placeholder: "Valoare L*a*b* dacă există; observații vizuale; comparație cu produse premium" },
@@ -30,12 +30,14 @@ const SECTIONS = [
       { id: "granulometrie", label: "Granulometrie existentă", type: "textarea", placeholder: "0-3mm, 0-5mm, micronizare, % sub 100 microni, % sub 63 microni" },
       { id: "umiditate", label: "Umiditate / uscare", type: "text", placeholder: "Umiditate naturală, necesar uscare, stabilitate la depozitare" },
       { id: "analize", label: "Analize laborator văzute?", type: "select", options: ["Da — copie obținută", "Da — văzut dar fără copie", "Nu", "Există dar trebuie cerute"] },
+      { id: "bentonita", label: "Bentonită Ocnița", type: "textarea", placeholder: "Este activă? Test umflare / tixotropie? Cost extracție + activare? Rol în glet/adeziv?" },
     ],
   },
   {
     id: "current_ops", label: "03 — Operațiuni Curente", color: "#a87ec9",
     fields: [
       { id: "produse_curente", label: "Produse curente din Volodeni", type: "textarea", placeholder: "Blocuri, făină calcaroasă, piatră, deșeuri calcaroase, alte produse" },
+      { id: "produse_ocnita", label: "Produse curente din Ocnița", type: "textarea", placeholder: "Calcar, făină/reziduu, argilă bentonitică, blocuri, agregate, alte produse" },
       { id: "capacitate", label: "Capacitate actuală", type: "textarea", placeholder: "m3/lună, tone/lună, făină calcaroasă/lună, sezonalitate" },
       { id: "costuri", label: "Costuri reale actuale", type: "textarea", placeholder: "Cost extracție, măcinare, energie, manoperă, întreținere, cost total MDL/t sau EUR/t" },
       { id: "echipamente", label: "Echipamente existente", type: "textarea", placeholder: "Concasor, moară, site, încărcător, cântar, silozuri, ambalare — stare și capacitate" },
@@ -45,7 +47,7 @@ const SECTIONS = [
   {
     id: "product", label: "04 — Materiale de Finisaj", color: "#68b88a",
     fields: [
-      { id: "glet", label: "Glet extra-alb 20kg", type: "textarea", placeholder: "Retetă existentă? Filler necesar? Aditivi? Probe? Standard țintă?" },
+      { id: "glet", label: "Glet extra-alb 20kg", type: "textarea", placeholder: "Produs top: materie primă principală Volodeni. Confirmă alb, volum, finete, cost, mostre." },
       { id: "decor", label: "Tencuială decorativă minerală 25kg", type: "textarea", placeholder: "Granule necesare, texturi, alb, liant, produs comparabil, standard țintă" },
       { id: "adeziv", label: "Adeziv / mortar var-calcar 25kg", type: "textarea", placeholder: "Retetă, ciment/var, aditivi, performanță, standard EN 12004 dacă e adeziv plăci" },
       { id: "retete", label: "Cine poate formula / testa rețetele?", type: "textarea", placeholder: "Laborator, tehnolog, consultant, furnizor aditivi" },
@@ -55,10 +57,10 @@ const SECTIONS = [
   {
     id: "infrastructure", label: "05 — Infrastructură & Logistică", color: "#d0a74e",
     fields: [
-      { id: "electric", label: "Curent electric disponibil", type: "textarea", placeholder: "kW / kVA, trifazat, stabilitate, posibilitate extindere" },
-      { id: "spatiu", label: "Spațiu pentru linie finisaje", type: "textarea", placeholder: "Hală, teren, depozit materie primă, depozit saci, paletizare" },
-      { id: "feroviar", label: "Acces feroviar / Brătușeni", type: "textarea", placeholder: "Distanță, cost încărcare, utilizare curentă, utilitate pentru distribuție / aditivi" },
-      { id: "drumuri", label: "Drumuri și camioane", type: "textarea", placeholder: "Acces tot anul, cost transport Chișinău/Bălți, flotă proprie" },
+      { id: "electric", label: "Curent electric Ocnița", type: "textarea", placeholder: "kW / kVA, trifazat, stabilitate, posibilitate extindere pentru fabrică" },
+      { id: "spatiu", label: "Spațiu fabrică Ocnița", type: "textarea", placeholder: "Hală, teren, depozit materie primă, depozit saci, paletizare, acces camioane" },
+      { id: "feroviar", label: "Nod feroviar / rampă Ocnița", type: "textarea", placeholder: "Distanță, stare cale ferată, ultima utilizare, vagoane simultane, cost încărcare" },
+      { id: "drumuri", label: "Drumuri și camioane", type: "textarea", placeholder: "Acces tot anul, cost transport Volodeni -> Ocnița, cost Chișinău/Bălți, flotă proprie" },
       { id: "praf", label: "Praf / filtre / mediu", type: "textarea", placeholder: "Filtre existente, autorizații, risc praf la micronizare și mixare" },
     ],
   },
@@ -76,6 +78,7 @@ const SECTIONS = [
     id: "commercial", label: "07 — Comercial & Prețuri", color: "#7eb8c9",
     fields: [
       { id: "pret_faina", label: "Preț actual făină calcaroasă / vrac", type: "textarea", placeholder: "MDL/t sau EUR/t, clienți, volume, termene plată" },
+      { id: "transport_volodeni_ocnita", label: "Cost transport Volodeni -> Ocnița", type: "textarea", placeholder: "EUR/t sau MDL/t, distanță, camion, cost cursă, tone/zi, pierderi, sezonalitate" },
       { id: "pret_glet", label: "Preț angro validat glet", type: "textarea", placeholder: "Distribuitor, preț, volum, condiții, produs comparabil" },
       { id: "pret_decor", label: "Preț angro validat tencuială decorativă", type: "textarea", placeholder: "Distribuitor, preț, volum, condiții, produs comparabil" },
       { id: "pret_adeziv", label: "Preț angro validat adeziv / mortar", type: "textarea", placeholder: "Distribuitor, preț, volum, condiții, produs comparabil" },
@@ -85,7 +88,7 @@ const SECTIONS = [
   {
     id: "legal", label: "08 — Documente & Legal", color: "#df6b5b",
     fields: [
-      { id: "licente", label: "Licențe / contracte subsol", type: "textarea", placeholder: "Număr, titular, valabilitate, sector Volodeni" },
+      { id: "licente", label: "Licențe / contracte subsol", type: "textarea", placeholder: "Număr, titular, valabilitate pentru Volodeni și Ocnița" },
       { id: "teren", label: "Teren / drepturi acces", type: "textarea", placeholder: "Proprietate, arendă, servituți, drumuri" },
       { id: "mediu", label: "Avize mediu / tehnice", type: "textarea", placeholder: "Expertiză ecologică, tehnică, plan dezvoltare, termene expirare" },
       { id: "certificari", label: "Certificate produs existente", type: "textarea", placeholder: "Făină calcaroasă, piatră, plăci, alte certificate / rapoarte test" },
@@ -150,7 +153,7 @@ function ExportModal({ data, onClose }) {
   const [copied, setCopied] = useState(false);
   const lines = [
     "═══════════════════════════════════════════════════",
-    "   RAPORT VIZITĂ VOLODENI — CALCAR / FINISAJE",
+    "   RAPORT VIZITĂ VOLODENI + OCNIȚA — FINISAJE",
     "═══════════════════════════════════════════════════",
     "   RENOVIT — Instrument Analiză Fezabilitate",
     "═══════════════════════════════════════════════════\n",
@@ -211,7 +214,7 @@ export default function App() {
       <div style={{ padding: "20px 16px 0", maxWidth: "620px", margin: "0 auto" }}>
         <div style={{ fontSize: "9px", letterSpacing: "4px", color: "#333", marginBottom: "4px" }}>RENOVIT — STUDIU FEZABILITATE</div>
         <div style={{ fontSize: "21px", fontFamily: "'DM Serif Display', serif" }}>Raport Vizită Teren</div>
-        <div style={{ fontSize: "11px", color: C.accent, marginTop: "3px", marginBottom: "18px" }}>Volodeni · Calcar alb · Materiale de finisaj</div>
+        <div style={{ fontSize: "11px", color: C.accent, marginTop: "3px", marginBottom: "18px" }}>Volodeni · Ocnița · Fabrică · Finisaje minerale</div>
 
         <div style={{ marginBottom: "20px" }}>
           <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "5px" }}>

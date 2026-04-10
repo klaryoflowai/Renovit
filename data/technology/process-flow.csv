@@ -1,7 +1,7 @@
 stage_id,stage_name,equipment_key,capacity_10kt_year,input,output,owner_question,status,notes
-1,Limestone selection,Existing Volodeni operation,TBD,White limestone / limestone flour,Selected feedstock,Which Volodeni zones provide the whitest and most consistent material?,critical,Take coded samples by zone
-2,Internal transport,Trucks / loader / rail access,TBD,Selected limestone,Limestone at processing point,What is true EUR/t internal logistics cost?,open,Include Bratuseni rail option if relevant
-3,Pre-crushing / feed preparation,Crusher or existing preparation line,TBD,Limestone rock / coarse material,Prepared feed for milling,Is existing flour sufficient or do we need pre-crushing?,working_assumption,Depends on current product state
+1,Limestone and bentonite selection,Existing Volodeni and Ocnita operations,TBD,Volodeni white limestone + Ocnita limestone + Ocnita bentonite,Selected feedstock,Which zones provide the best whiteness / volume / bentonite activity?,critical,Take coded samples by source and zone
+2,Volodeni to Ocnita logistics,Trucks / loader / possible rail access,TBD,Volodeni white limestone,Limestone at Ocnita plant,What is true EUR/t Volodeni -> Ocnita logistics cost?,critical,Factory location working assumption is Ocnita
+3,Pre-crushing / feed preparation,Crusher or existing preparation line,TBD,Limestone rock / coarse material / limestone flour residue,Prepared feed for milling,Can Ocnita flour residue be used directly for adhesive?,working_assumption,Depends on purity and contamination of residue
 4,Micronization,Micronizer / fine mill,TBD,Prepared limestone,Extra-fine calcium carbonate filler,What fineness is required for glet extra-white?,critical,Replaces gypsum calcination as main quality bottleneck
 5,Granulometric sorting,Sieves / classifier,TBD,Ground limestone,Controlled fractions,What fractions are needed for decorative render?,critical,Controls texture and repeatability
 6,Additive dosing,Dosing units,2-8 percent of mix,Limestone filler + additives,Dosed blend,Which additives are needed for each recipe?,critical,Polymers cellulose lime/cement may drive cost

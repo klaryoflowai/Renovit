@@ -342,6 +342,7 @@
             mai ales la tencuiala decorativa minerala. Introdu aici preturile angro reale dupa discutii cu distribuitorii.
           </div>
           <div class="footer-actions">
+            <a class="button" href="/date-initiale.html">Date inițiale</a>
             <a class="button" href="/instrumente.html">Toate instrumentele</a>
             <a class="button" href="/dashboard-financiar.html">Dashboard financiar</a>
             <a class="button" href="/simulare-economica.html">Simulare CAPEX</a>
@@ -471,6 +472,46 @@
       ];
 
       const els = Object.fromEntries(inputIds.map(id => [id, document.getElementById(id)]));
+      const SHARED_INPUTS_KEY = "RENOVIT_SHARED_INPUTS";
+
+      function readSharedInputs() {
+        try {
+          return JSON.parse(localStorage.getItem(SHARED_INPUTS_KEY) || "null");
+        } catch {
+          return null;
+        }
+      }
+
+      function setInput(id, value) {
+        if (els[id] && value !== undefined && value !== null && Number.isFinite(Number(value))) {
+          els[id].value = Number(value).toFixed(String(value).includes(".") ? 2 : 0).replace(/\.00$/, "");
+        }
+      }
+
+      function applySharedInputs() {
+        const shared = readSharedInputs();
+        if (!shared?.fields) return;
+        const fields = shared.fields;
+        const products = shared.products || {};
+        setInput("exchangeRate", fields.exchangeRate);
+        setInput("capex", fields.capexTotalEur);
+        setInput("fixedOpex", fields.fixedOpexEurMonth);
+        setInput("utilization", fields.utilizationPct);
+        [
+          ["glet", "glet"],
+          ["decor", "decor"],
+          ["adhesive", "adhesive"],
+        ].forEach(([sharedKey, localKey]) => {
+          const product = products[sharedKey];
+          setInput(`${localKey}Kg`, fields[`${sharedKey}Kg`]);
+          setInput(`${localKey}Bags`, fields[`${sharedKey}AnnualBags`]);
+          setInput(`${localKey}Price`, fields[`${sharedKey}WholesaleMdlBag`]);
+          setInput(`${localKey}Retail`, fields[`${sharedKey}RetailMdlBag`]);
+          if (product?.costMdlBag !== undefined) {
+            setInput(`${localKey}Cost`, product.costMdlBag);
+          }
+        });
+      }
 
       function num(id) {
         const value = Number.parseFloat(els[id].value);
@@ -580,6 +621,8 @@
         setText("heroSummary", summary);
         renderProducts(calc.products);
       }
+
+      applySharedInputs();
 
       inputIds.forEach(id => {
         els[id].addEventListener("input", render);

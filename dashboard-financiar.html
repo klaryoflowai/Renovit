@@ -466,6 +466,7 @@
           </div>
           <div class="footer-actions">
             <button class="button" id="resetDefaults" type="button">Reset valori</button>
+            <a class="button" href="/date-initiale.html">Date inițiale</a>
             <a class="button" href="/simulare-economica.html">Simulare economică</a>
             <a class="button" href="/instrumente.html">Toate instrumentele</a>
           </div>
@@ -478,11 +479,11 @@
             <input id="rawFundPct" type="number" min="0" max="100" step="0.5" value="13.5">
           </div>
           <div class="field">
-            <label>Procesare directă <small>calcinare + măcinare</small></label>
+            <label>Procesare directă <small>micronizare + sortare + mixare</small></label>
             <input id="processFundPct" type="number" min="0" max="100" step="0.5" value="19.2">
           </div>
           <div class="field">
-            <label>Aditivi + ambalaj 25kg <small>% din venit</small></label>
+            <label>Aditivi + ambalaj 20/25kg <small>% din venit</small></label>
             <input id="packagingFundPct" type="number" min="0" max="100" step="0.5" value="11.7">
           </div>
           <div class="field">
@@ -715,11 +716,56 @@
         "periodMode",
       ];
       const inputs = Object.fromEntries(ids.map(id => [id, document.getElementById(id)]));
+      const SHARED_INPUTS_KEY = "RENOVIT_SHARED_INPUTS";
+
+      function readSharedInputs() {
+        try {
+          return JSON.parse(localStorage.getItem(SHARED_INPUTS_KEY) || "null");
+        } catch {
+          return null;
+        }
+      }
+
+      function setInput(id, value, digits = 2) {
+        if (inputs[id] && value !== undefined && value !== null && Number.isFinite(Number(value))) {
+          const numeric = Number(value);
+          inputs[id].value = Number.isInteger(numeric) ? String(numeric) : numeric.toFixed(digits);
+        }
+      }
+
+      function applySharedInputs() {
+        const shared = readSharedInputs();
+        if (!shared?.fields || !shared?.summary) return;
+        const fields = shared.fields;
+        const summary = shared.summary;
+        const annualRevenue = Number(summary.annualRevenueEur || 0);
+        const avgPrice = Math.max(Number(summary.avgSellingPriceEurT || 0), 0.01);
+        const processingCost =
+          Number(fields.micronizationCostEurT || 0) +
+          Number(fields.sortingCostEurT || 0) +
+          Number(fields.dryingCostEurT || 0) +
+          Number(fields.dryMixingCostEurT || 0);
+        const logisticsCost =
+          Number(summary.weightedRawTransportEurT || 0) +
+          Number(fields.distributionCostEurT || 0);
+        setInput("openingCash", fields.openingCashEur, 0);
+        setInput("weeklyRevenue", annualRevenue / 52, 0);
+        inputs.periodMode.value = "monthly";
+        setInput("fixedNeeds", fields.fixedOpexEurMonth, 0);
+        setInput("debtServiceNeed", Number(fields.capexTotalEur || 0) * (Number(fields.financedSharePct || 0) / 100) * (Number(fields.interestRatePct || 0) / 100) / 12, 0);
+        setInput("rawFundPct", Number(summary.weightedRawMaterialEurT || 0) / avgPrice * 100, 1);
+        setInput("processFundPct", processingCost / avgPrice * 100, 1);
+        setInput("packagingFundPct", (Number(summary.avgAdditivesCostEurT || 0) + Number(summary.avgPackagingCostEurT || 0)) / avgPrice * 100, 1);
+        setInput("laborFundPct", Number(fields.directLaborCostEurT || 0) / avgPrice * 100, 1);
+        setInput("logisticsFundPct", logisticsCost / avgPrice * 100, 1);
+        setInput("fixedAssets", fields.capexTotalEur, 0);
+        setInput("financialDebt", Number(fields.capexTotalEur || 0) * (Number(fields.financedSharePct || 0) / 100), 0);
+      }
 
       const directFunds = [
         ["Materie primă / extracție", "rawFundPct", "Venit", "Cont plăți operaționale", "Nu se folosește pentru altceva."],
         ["Procesare directă", "processFundPct", "Venit", "Cont plăți operaționale", "Energie și costuri de fabrică."],
-        ["Aditivi + ambalaj 25kg", "packagingFundPct", "Venit", "Cont plăți operaționale", "Protejează producția vandabilă."],
+        ["Aditivi + ambalaj 20/25kg", "packagingFundPct", "Venit", "Cont plăți operaționale", "Protejează producția vandabilă."],
         ["Manoperă directă", "laborFundPct", "Venit", "Cont plăți operaționale", "Separat de salariile fixe."],
         ["Logistică directă", "logisticsFundPct", "Venit", "Cont plăți operaționale", "Transport și manipulare variabilă."],
       ];
@@ -968,6 +1014,7 @@
         render();
       });
 
+      applySharedInputs();
       render();
     </script>
   </body>

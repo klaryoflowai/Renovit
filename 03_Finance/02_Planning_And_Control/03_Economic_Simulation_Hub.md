@@ -20,6 +20,7 @@ linked_decisions:
   - D-001
 open_questions:
   - Care sunt costurile reale de extractie si transport cariera-fabrica?
+  - Cat costa transportul Volodeni -> Ocnița daca fabrica este amplasata la Ocnița?
   - Care sunt primele oferte reale pentru echipament uzat, hibrid si nou?
   - Ce procent de utilizare a capacitatii este realist in primele 12 luni?
 next_action: Inlocuieste ipotezele default cu date reale dupa discutii cu partenerul si furnizorii.
@@ -36,7 +37,7 @@ Modelul acopera:
 - produs initial: portofoliu materiale de finisaj pe baza de calcar Cupcini
 - capacitati canonice: `3k`, `5k`, `10k`, `20k tone/an`, cu `10k` ca baseline actual pentru RFQ
 - strategii echipament: `used`, `hybrid`, `new`
-- cost materie prima: calcar / filler, transport intern, randament
+- cost materie prima: Volodeni pentru produsul premium, Ocnița pentru volum / bentonita, transport Volodeni -> Ocnița, randament
 - costuri procesare: micronizare, sortare, mixare, aditivi, manopera, ambalaj, distributie
 - CAPEX: echipament, instalare, repair reserve, contingency si scalare capacitate
 - capital de lucru
@@ -45,10 +46,12 @@ Modelul acopera:
 
 ## Browser cockpit
 
+- https://renovit.klaryoflowai.workers.dev/date-initiale.html
 - https://renovit.klaryoflowai.workers.dev/simulare-economica.html
 
 Foloseste-l pentru:
 
+- introducerea datelor initiale intr-un singur tabel, apoi propagarea lor in calculatoare
 - comparatii rapide cu partenerii
 - discutii de Go / No-Go
 - sensibilitate pe pret, capacitate, randament si CAPEX
