@@ -1,4 +1,5 @@
 .DS_Store
+.obsidian/
 .env
 .env.*
 .wrangler
@@ -6,4 +7,3 @@ dist/
 build/
 node_modules/
 *.log
-

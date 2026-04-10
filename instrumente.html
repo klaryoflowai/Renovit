@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="ro">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RENOVIT — Instrumente</title>
+    <meta name="description" content="Instrumente publice RENOVIT pentru analiza proiectului de gips Edinet.">
+    <style>
+      :root {
+        --bg: #0a0a0a;
+        --panel: #121212;
+        --ink: #f2ead8;
+        --muted: #8e8170;
+        --line: #2b241c;
+        --accent: #c8a84b;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background:
+          radial-gradient(circle at top left, rgba(200, 168, 75, 0.2), transparent 24rem),
+          linear-gradient(135deg, #0a0a0a 0%, #14110c 100%);
+        color: var(--ink);
+        font-family: "Courier New", monospace;
+      }
+
+      main {
+        width: min(100%, 860px);
+        margin: 0 auto;
+        padding: 48px 18px;
+      }
+
+      .eyebrow {
+        color: var(--accent);
+        letter-spacing: 0.26em;
+        text-transform: uppercase;
+        font-size: 11px;
+      }
+
+      h1 {
+        margin: 12px 0 12px;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(42px, 10vw, 92px);
+        line-height: 0.9;
+        font-weight: 500;
+      }
+
+      p {
+        color: var(--muted);
+        line-height: 1.7;
+        max-width: 64ch;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: 14px;
+        margin-top: 30px;
+      }
+
+      a.card {
+        min-height: 190px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border: 1px solid var(--line);
+        background: rgba(18, 18, 18, 0.74);
+        color: var(--ink);
+        padding: 20px;
+        text-decoration: none;
+        transition: transform 160ms ease, border-color 160ms ease;
+      }
+
+      a.card:hover {
+        transform: translateY(-3px);
+        border-color: var(--accent);
+      }
+
+      .card strong {
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 26px;
+        font-weight: 500;
+        line-height: 1;
+      }
+
+      .card span {
+        margin-top: 18px;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.6;
+      }
+
+      .card em {
+        color: var(--accent);
+        font-style: normal;
+        font-size: 10px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="eyebrow">RENOVIT public tools</div>
+      <h1>Instrumente proiect</h1>
+      <p>Pagini utile pentru analiza fezabilității, fluxul tehnologic și vizita la cariera de gips Edineț.</p>
+      <div class="grid">
+        <a class="card" href="/">
+          <div>
+            <strong>Unit Economics</strong>
+            <span>Calculator pentru costuri, marjă, break-even și scenarii de fezabilitate.</span>
+          </div>
+          <em>Deschide</em>
+        </a>
+        <a class="card" href="/proces-tehnologic-gips.html">
+          <div>
+            <strong>Proces Tehnologic</strong>
+            <span>Hartă interactivă a fluxului carieră gips → tencuială sac 30kg.</span>
+          </div>
+          <em>Deschide</em>
+        </a>
+        <a class="card" href="/raport-vizita-cariera.html">
+          <div>
+            <strong>Raport Vizită</strong>
+            <span>Formular de teren pentru prima vizită la carieră și export rapid text.</span>
+          </div>
+          <em>Deschide</em>
+        </a>
+        <a class="card" href="/assets/proces_tehnologic_gips_renovit.svg">
+          <div>
+            <strong>SVG Proces</strong>
+            <span>Versiunea statică, detaliată, a diagramei procesului tehnologic.</span>
+          </div>
+          <em>Deschide</em>
+        </a>
+      </div>
+    </main>
+  </body>
+</html>

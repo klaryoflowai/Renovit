@@ -1,0 +1,5 @@
+scenario,finished_capacity_t_year,finished_capacity_t_month,capex_low_eur,capex_high_eur,breakeven_t_year,breakeven_t_month,roi_3y_range,verdict,status,notes
+Small pilot,3000,250,120000,200000,1200,100,Risk,Too small,working_assumption,May be useful only if market validation is weak or capital constrained
+Start optimal,5000,417,200000,350000,2000,167,25-40 percent,START OPTIMAL,working_assumption,Good first industrial step if quality and demand validate
+Scale-up,10000,833,400000,700000,3500,292,40-60 percent,Scalable,working_assumption,Needs stronger distribution and technical team
+Industrial,20000,1667,1000000,,6000,500,60 percent plus,Industrial,working_assumption,Requires serious market access and new-equipment logic

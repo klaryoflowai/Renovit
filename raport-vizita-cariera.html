@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ro">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RENOVIT — Raport Vizită Carieră</title>
+    <meta name="description" content="Formular interactiv pentru raportul de vizita la cariera de gips Edinet.">
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #0a0a0a;
+        --panel: #111;
+        --ink: #e0e0e0;
+        --muted: #777;
+        --accent: #c8a84b;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background:
+          radial-gradient(circle at 80% -10%, rgba(200, 168, 75, 0.16), transparent 26rem),
+          linear-gradient(180deg, #111 0%, var(--bg) 55%);
+        color: var(--ink);
+      }
+
+      .topbar {
+        width: min(100%, 660px);
+        margin: 0 auto;
+        padding: 18px 16px 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: space-between;
+        align-items: center;
+        font-family: "DM Mono", "Courier New", monospace;
+      }
+
+      .brand {
+        color: var(--accent);
+        font-size: 10px;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+      }
+
+      .links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .links a {
+        color: var(--muted);
+        text-decoration: none;
+        border: 1px solid #242424;
+        padding: 8px 10px;
+        font-size: 10px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .links a:hover {
+        color: var(--accent);
+        border-color: var(--accent);
+      }
+
+      #status {
+        width: min(100%, 620px);
+        margin: 36px auto;
+        padding: 24px 16px;
+        font-family: "DM Mono", "Courier New", monospace;
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="topbar">
+      <div class="brand">RENOVIT field tool</div>
+      <div class="links">
+        <a href="/">Calculator</a>
+        <a href="/proces-tehnologic-gips.html">Proces tehnologic</a>
+        <a href="/assets/proces_tehnologic_gips_renovit.svg">SVG proces</a>
+      </div>
+    </div>
+    <div id="status">Se încarcă raportul...</div>
+    <div id="root"></div>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="/apps/run-jsx.js" data-src="/apps/src/raport-vizita-cariera.jsx"></script>
+  </body>
+</html>

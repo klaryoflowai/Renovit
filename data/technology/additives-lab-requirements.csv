@@ -1,0 +1,8 @@
+item,type,working_range_or_need,role,price_working_range_eur_t,status,notes
+Retardant,additive,0.5-1 percent,Controls setting time 20-30 min,2000-4000,working_assumption,Must be validated by formulation tests
+Whitening / brightening additive,additive,around 0.3 percent,Improves whiteness / visual sellability,3000-5000,working_assumption,Only if raw gypsum color requires it
+Anti-moisture agent,additive,around 0.2 percent,Improves storage stability,1000-2000,working_assumption,Check need based on packaging and warehouse humidity
+Analytical balance,lab,required,Lab baseline,,open,Define spec with lab/technologist
+Vicat apparatus,lab,required,Setting-time testing,,open,Relevant for EN13279 route validation
+Hydraulic press,lab,required or outsourced,Compression strength testing,,open,Can outsource initially if CAPEX needs to stay low
+Sieves / fineness tools,lab,required,Fineness control,,open,Needed for process control
