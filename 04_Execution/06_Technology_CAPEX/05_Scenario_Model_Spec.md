@@ -83,12 +83,14 @@ Modelul trebuie sa calculeze:
 ## Local workbook
 
 - `data/technology/RENOVIT_Technology_CAPEX_Model.xlsx`
+- `data/finance/RENOVIT_Economic_Simulation_Model.xlsx`
 
 Workbook-ul este generat din CSV-uri si trebuie tratat ca instrument de lucru, nu ca sursa canonica.
 
 ## Link to browser calculator
 
 - https://renovit.klaryoflowai.workers.dev/
+- https://renovit.klaryoflowai.workers.dev/simulare-economica.html
 - https://renovit.klaryoflowai.workers.dev/unit-economics-sac-25kg.html
 
 ## Rule

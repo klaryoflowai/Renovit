@@ -1,0 +1,34 @@
+strategy,item,cost_eur_5k_base,phase,notes
+used,Calcination caldron or drum,90000,Phase 1,Used or refurbished core kiln
+used,Grinding and mixer package,40000,Phase 1,Used package or separate machines
+used,25kg bagging line,30000,Phase 1,Used bag filling sealing and printing
+used,Silo and internal logistics,22500,Phase 1,Used or local fabrication
+used,Jaw crusher,25000,Phase 1,Only if feed size requires crushing
+used,Dust collection and filters,25000,Phase 1,Do not ignore environment and worker safety
+used,Electrical works,30000,Phase 1,Power connection and panels
+used,Gas or fuel system,20000,Phase 1,Burner connection or fuel system
+used,Forklift and warehouse handling,12000,Phase 1,Used forklift and simple handling
+used,Minimum quality lab,10000,Phase 1,Vicat balance sieves press baseline
+used,Installation and commissioning,25000,Phase 1,Assembly commissioning and technician work
+hybrid,Calcination caldron or drum,120000,Phase 1,Refurbished core with stronger inspection
+hybrid,Grinding and mixer package,60000,Phase 1,Mixed used and new components
+hybrid,25kg bagging line,40000,Phase 1,Refurbished or new-critical parts
+hybrid,Silo and internal logistics,35000,Phase 1,New local fabrication where cheap
+hybrid,Jaw crusher,35000,Phase 1,Used inspected or local supplier
+hybrid,Dust collection and filters,40000,Phase 1,Prefer new filters where possible
+hybrid,Electrical works,45000,Phase 1,New electrical backbone
+hybrid,Gas or fuel system,35000,Phase 1,New safety-critical fuel system
+hybrid,Forklift and warehouse handling,15000,Phase 1,Used handling equipment
+hybrid,Minimum quality lab,15000,Phase 1,Improved minimal lab
+hybrid,Installation and commissioning,40000,Phase 1,More robust commissioning
+new,Calcination caldron or drum,200000,Phase 1,New core kiln package
+new,Grinding and mixer package,100000,Phase 1,New grinding and mixing package
+new,25kg bagging line,65000,Phase 1,New bag filling sealing and printing
+new,Silo and internal logistics,50000,Phase 1,New silo and conveying
+new,Jaw crusher,50000,Phase 1,New crusher if required
+new,Dust collection and filters,60000,Phase 1,New dust collection
+new,Electrical works,70000,Phase 1,New electrical backbone
+new,Gas or fuel system,50000,Phase 1,New burner or fuel system
+new,Forklift and warehouse handling,25000,Phase 1,New or near-new handling
+new,Minimum quality lab,20000,Phase 1,More complete lab baseline
+new,Installation and commissioning,60000,Phase 1,Supplier commissioning

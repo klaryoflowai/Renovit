@@ -25,6 +25,7 @@ Sistemul adoptat este:
 
 - `index.html` - calculator browser-ready pentru unit economics
 - `unit-economics-sac-25kg.html` - calculator browser-ready pentru unit economics per sac 25kg
+- `simulare-economica.html` - hub browser-ready pentru simulare economica completa
 - `gips-unit-economics.jsx` - sursa React a calculatorului
 - `instrumente.html` - hub public pentru instrumentele online
 - `proces-tehnologic-gips.html` - pagina browser pentru procesul tehnologic
@@ -32,11 +33,13 @@ Sistemul adoptat este:
 - `assets/proces_tehnologic_gips_renovit.svg` - diagrama SVG statica
 - `apps/src/` - sursele JSX pentru instrumentele publicate
 - `data/` - layer de date brute si CSV-uri, inclusiv modelul tehnologic / CAPEX
+- `data/finance/RENOVIT_Economic_Simulation_Model.xlsx` - workbook Excel pentru simulare economica completa
 - `deployment/` - note pentru GitHub + Cloudflare Pages
 
 ## Instrumente publice
 
 - https://renovit.klaryoflowai.workers.dev/ - calculator unit economics
+- https://renovit.klaryoflowai.workers.dev/simulare-economica.html - hub simulare economica
 - https://renovit.klaryoflowai.workers.dev/unit-economics-sac-25kg.html - calculator unit economics per sac 25kg
 - https://renovit.klaryoflowai.workers.dev/instrumente.html - hub instrumente
 - https://renovit.klaryoflowai.workers.dev/proces-tehnologic-gips.html - proces tehnologic interactiv
@@ -52,6 +55,7 @@ Sistemul adoptat este:
    - `00_HQ/01_Project_Charter.md`
    - `03_Finance/01_Economic_Engine/01_Assumption_Register.md`
    - `03_Finance/01_Economic_Engine/02_Unit_Economics.md`
+   - `03_Finance/02_Planning_And_Control/03_Economic_Simulation_Hub.md`
    - `04_Execution/06_Technology_CAPEX/00_Technology_CAPEX_Lab.md`
    - `05_Quality/01_Raw_Gypsum_Working_Thresholds.md`
    - `05_Quality/02_EU_Standards_And_CE_Path.md`
@@ -70,9 +74,16 @@ Sistemul adoptat este:
 3. Foloseste `data/technology/RENOVIT_Technology_CAPEX_Model.xlsx` sau importa CSV-urile in Excel / Google Sheets pentru scenarii.
 4. Pastreaza deciziile si rationale-ul in Obsidian / Notion, nu doar in spreadsheet.
 
+## Cum folosesti modelul Economic Simulation
+
+1. Porneste din `03_Finance/02_Planning_And_Control/03_Economic_Simulation_Hub.md`.
+2. Pentru simulare rapida, deschide `simulare-economica.html`.
+3. Pentru lucru profund, deschide `data/finance/RENOVIT_Economic_Simulation_Model.xlsx`.
+4. Actualizeaza sursa versionabila in `data/finance/simulation/`.
+
 ## Cum folosesti calculatorul local
 
-Deschide `index.html` sau `unit-economics-sac-25kg.html` in browser sau ruleaza:
+Deschide `index.html`, `unit-economics-sac-25kg.html` sau `simulare-economica.html` in browser sau ruleaza:
 
 ```bash
 python3 -m http.server 8000

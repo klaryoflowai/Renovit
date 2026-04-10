@@ -67,6 +67,7 @@ De aceea, zona aceasta functioneaza ca punte:
 ## Public tools
 
 - https://renovit.klaryoflowai.workers.dev/ - calculator unit economics pe tona
+- https://renovit.klaryoflowai.workers.dev/simulare-economica.html - hub simulare economica pentru CAPEX si capacitate
 - https://renovit.klaryoflowai.workers.dev/unit-economics-sac-25kg.html - calculator unit economics per sac 25kg
 - https://renovit.klaryoflowai.workers.dev/proces-tehnologic-gips.html
 - https://renovit.klaryoflowai.workers.dev/assets/proces_tehnologic_gips_renovit.svg

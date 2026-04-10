@@ -1,0 +1,20 @@
+category,key,label,default_value,unit,notes
+Product,target_bag_kg,Target bag size,25,kg,Canonical RENOVIT packaging decision
+Product,bags_per_pallet,Bags per pallet,48,bags,Working logistics assumption
+Revenue,selling_price_eur_per_ton,Wholesale selling price,120,EUR/t,Equivalent to 3 EUR per 25kg bag
+Production,process_yield,Raw to finished yield,0.75,ratio,Raw gypsum to finished packaged product
+Raw material,extraction_cost_eur_per_raw_t,Extraction cost,8,EUR/raw t,Partner data needed
+Raw material,quarry_to_plant_transport_eur_per_raw_t,Quarry to plant transport,4,EUR/raw t,Depends on plant location
+Processing,calcination_eur_per_finished_t,Calcination cost,15,EUR/t,Energy and kiln operation
+Processing,grinding_eur_per_finished_t,Grinding cost,8,EUR/t,Fine grinding to target fineness
+Processing,additives_eur_per_finished_t,Additives cost,8,EUR/t,Retarder and product performance additives
+Processing,direct_labor_eur_per_finished_t,Direct labor,7,EUR/t,Production labor
+Packaging,bag_packaging_eur_per_bag,Bag and label cost,0.15,EUR/bag,25kg bag and labeling
+Logistics,distribution_eur_per_finished_t,Distribution cost,6,EUR/t,Finished goods local logistics
+Other,other_variable_eur_per_finished_t,Other variable cost,3,EUR/t,Spares losses and handling
+Fixed,fixed_opex_eur_per_month,Fixed operating cost,8000,EUR/month,Admin sales warehouse and base overhead
+Working capital,working_capital_months,Working capital buffer,1.5,months,Months of variable plus fixed cost to fund
+Financing,financing_enabled,Financing enabled,1,0/1,1 means model debt service
+Financing,financed_share,Financed share of funding need,0.4,ratio,Optional debt share
+Financing,interest_rate_annual,Annual interest rate,0.09,ratio,Working loan assumption
+Financing,loan_term_years,Loan term,5,years,Optional debt term

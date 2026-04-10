@@ -1,0 +1,7 @@
+driver,downside,base,upside,unit,notes
+selling_price_eur_per_ton,105,120,135,EUR/t,Commercial pricing sensitivity
+process_yield,0.68,0.75,0.82,ratio,Technical yield sensitivity
+utilization_pct,0.55,0.70,0.85,ratio,Market demand and capacity absorption
+capex_multiplier,1.20,1.00,0.90,ratio,Quote and installation uncertainty
+raw_material_cost_eur_per_finished_t,18,16,12,EUR/t,Extraction plus quarry-to-plant transport after yield
+fixed_opex_eur_per_month,12000,8000,6000,EUR/month,Overhead discipline sensitivity

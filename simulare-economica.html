@@ -1,0 +1,873 @@
+<!doctype html>
+<html lang="ro">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RENOVIT — Economic Simulation Hub</title>
+    <meta
+      name="description"
+      content="Hub de simulare economica RENOVIT pentru capacitate, CAPEX, echipament uzat vs nou, costuri, break-even si finantare."
+    >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap"
+      rel="stylesheet"
+    >
+    <style>
+      :root {
+        --bg: #090806;
+        --panel: #12100c;
+        --panel-2: #19150f;
+        --input: #1d1811;
+        --border: #32281b;
+        --border-soft: #211b14;
+        --text: #fff6e4;
+        --muted: #b6a58d;
+        --muted-2: #766753;
+        --accent: #c8a84b;
+        --good: #4caf7d;
+        --warn: #e0a24a;
+        --bad: #e0604a;
+        --blue: #77a7c7;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background:
+          radial-gradient(circle at 12% 0%, rgba(200, 168, 75, 0.18), transparent 26rem),
+          radial-gradient(circle at 84% 10%, rgba(119, 167, 199, 0.12), transparent 26rem),
+          linear-gradient(135deg, #090806 0%, #15100a 58%, #0b0a08 100%);
+        color: var(--text);
+        font-family: "DM Mono", monospace;
+      }
+
+      main {
+        width: min(100%, 1180px);
+        margin: 0 auto;
+        padding: 34px 16px 46px;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(260px, 360px);
+        gap: 20px;
+        align-items: end;
+      }
+
+      .eyebrow {
+        color: var(--accent);
+        font-size: 10px;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 10px 0 12px;
+        font-family: "DM Serif Display", serif;
+        font-size: clamp(42px, 9vw, 88px);
+        font-weight: 400;
+        line-height: 0.88;
+      }
+
+      p {
+        color: var(--muted);
+        line-height: 1.7;
+        max-width: 74ch;
+      }
+
+      .hero-card {
+        border: 1px solid var(--border);
+        background: rgba(18, 16, 12, 0.82);
+        padding: 18px;
+      }
+
+      .hero-card strong {
+        display: block;
+        font-family: "DM Serif Display", serif;
+        color: var(--accent);
+        font-size: 30px;
+        font-weight: 400;
+        line-height: 1;
+      }
+
+      .hero-card span {
+        display: block;
+        margin-top: 10px;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.7;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 14px;
+        margin-top: 18px;
+      }
+
+      .panel {
+        grid-column: span 6;
+        border: 1px solid var(--border);
+        border-left: 3px solid var(--section-accent, var(--accent));
+        background: rgba(18, 16, 12, 0.9);
+        padding: 18px;
+      }
+
+      .panel.full {
+        grid-column: 1 / -1;
+      }
+
+      .panel.third {
+        grid-column: span 4;
+      }
+
+      .panel-title {
+        margin: 0 0 14px;
+        color: var(--section-accent, var(--accent));
+        font-size: 10px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+      }
+
+      .field {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        padding: 9px 0;
+        border-bottom: 1px solid var(--border-soft);
+      }
+
+      .field:last-child {
+        border-bottom: 0;
+      }
+
+      .field label {
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.45;
+      }
+
+      .field small {
+        display: block;
+        margin-top: 2px;
+        color: var(--muted-2);
+      }
+
+      input,
+      select {
+        width: 145px;
+        border: 1px solid #403324;
+        background: var(--input);
+        color: var(--text);
+        font: inherit;
+        padding: 8px 10px;
+        text-align: right;
+        outline: none;
+      }
+
+      select {
+        text-align: left;
+      }
+
+      .result-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 10px;
+      }
+
+      .metric {
+        border: 1px solid var(--border-soft);
+        background: rgba(25, 21, 15, 0.78);
+        padding: 14px;
+      }
+
+      .metric span {
+        display: block;
+        color: var(--muted-2);
+        font-size: 10px;
+        line-height: 1.45;
+      }
+
+      .metric strong {
+        display: block;
+        margin-top: 8px;
+        font-family: "DM Serif Display", serif;
+        font-size: 28px;
+        font-weight: 400;
+        color: var(--text);
+        line-height: 1;
+      }
+
+      .metric.positive strong {
+        color: var(--good);
+      }
+
+      .metric.warning strong {
+        color: var(--warn);
+      }
+
+      .metric.negative strong {
+        color: var(--bad);
+      }
+
+      .verdict {
+        margin-top: 12px;
+        border: 2px solid var(--verdict-color);
+        background: var(--verdict-bg);
+        color: var(--verdict-color);
+        padding: 18px;
+      }
+
+      .verdict strong {
+        display: block;
+        font-family: "DM Serif Display", serif;
+        font-size: 36px;
+        font-weight: 400;
+        line-height: 1;
+      }
+
+      .verdict span {
+        display: block;
+        margin-top: 8px;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.6;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 11px;
+      }
+
+      th,
+      td {
+        border-bottom: 1px solid var(--border-soft);
+        padding: 9px 8px;
+        text-align: right;
+        vertical-align: top;
+      }
+
+      th:first-child,
+      td:first-child,
+      th:nth-child(2),
+      td:nth-child(2) {
+        text-align: left;
+      }
+
+      th {
+        color: var(--accent);
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      td {
+        color: var(--muted);
+      }
+
+      tr.active-row td {
+        background: rgba(200, 168, 75, 0.08);
+        color: var(--text);
+      }
+
+      .tag {
+        display: inline-block;
+        border: 1px solid var(--border);
+        color: var(--accent);
+        padding: 4px 7px;
+        font-size: 10px;
+      }
+
+      .bars {
+        display: grid;
+        gap: 10px;
+      }
+
+      .bar-row {
+        display: grid;
+        grid-template-columns: 92px 1fr 78px;
+        gap: 10px;
+        align-items: center;
+        color: var(--muted);
+        font-size: 11px;
+      }
+
+      .bar {
+        height: 10px;
+        background: #241d14;
+        overflow: hidden;
+      }
+
+      .bar i {
+        display: block;
+        height: 100%;
+        width: var(--w);
+        background: var(--bar-color, var(--accent));
+      }
+
+      .footer-actions {
+        margin-top: 16px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .button {
+        border: 1px solid #403324;
+        background: transparent;
+        color: var(--text);
+        font: inherit;
+        padding: 10px 12px;
+        cursor: pointer;
+        text-decoration: none;
+      }
+
+      .button:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      @media (max-width: 880px) {
+        .hero,
+        .grid {
+          display: block;
+        }
+
+        .hero-card,
+        .panel {
+          margin-top: 14px;
+        }
+
+        .field {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        input,
+        select {
+          width: 100%;
+        }
+
+        table {
+          display: block;
+          overflow-x: auto;
+          white-space: nowrap;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="hero">
+        <div>
+          <div class="eyebrow">RENOVIT — simulation cockpit</div>
+          <h1>Economic Simulation Hub</h1>
+          <p>
+            Simulare completă pentru tencuială gipsată la sac 25kg: capacitate 3k/5k/10k/20k t/an,
+            echipament uzat vs hibrid vs nou, cost materie primă, procesare, logistică, CAPEX,
+            finanțare opțională, break-even și ROI.
+          </p>
+        </div>
+        <div class="hero-card">
+          <strong id="heroVerdict">GO conditional</strong>
+          <span id="heroSummary">Alege scenariul și ajustează ipotezele. Verdictul se actualizează live.</span>
+        </div>
+      </section>
+
+      <section class="grid">
+        <div class="panel" style="--section-accent: var(--accent);">
+          <h2 class="panel-title">01 — Scenariu</h2>
+          <div class="field">
+            <label>Capacitate canonică <small>tone produs finit pe an</small></label>
+            <select id="capacityScenario"></select>
+          </div>
+          <div class="field">
+            <label>Strategie echipament <small>used / hybrid / new</small></label>
+            <select id="equipmentStrategy"></select>
+          </div>
+          <div class="field">
+            <label>Utilizare capacitate <small>vânzări reale vs capacitate instalată</small></label>
+            <input id="utilization" type="number" min="0" max="100" step="1" value="70">
+          </div>
+          <div class="field">
+            <label>Preț vânzare <small>EUR / tonă produs finit</small></label>
+            <input id="sellingPrice" type="number" min="0" step="1" value="120">
+          </div>
+          <div class="field">
+            <label>Multiplicator CAPEX <small>folosit pentru sensibilitate oferte</small></label>
+            <input id="capexMultiplier" type="number" min="0.1" step="0.05" value="1">
+          </div>
+        </div>
+
+        <div class="panel" style="--section-accent: var(--blue);">
+          <h2 class="panel-title">02 — Costuri operaționale</h2>
+          <div class="field">
+            <label>Cost extracție <small>EUR / tonă brută</small></label>
+            <input id="extractionCost" type="number" min="0" step="0.1" value="8">
+          </div>
+          <div class="field">
+            <label>Transport carieră → fabrică <small>EUR / tonă brută</small></label>
+            <input id="rawTransportCost" type="number" min="0" step="0.1" value="4">
+          </div>
+          <div class="field">
+            <label>Randament procesare <small>brut → produs finit</small></label>
+            <input id="processYield" type="number" min="1" max="100" step="1" value="75">
+          </div>
+          <div class="field">
+            <label>Calcinare <small>EUR / tonă produs finit</small></label>
+            <input id="calcinationCost" type="number" min="0" step="0.1" value="15">
+          </div>
+          <div class="field">
+            <label>Măcinare <small>EUR / tonă produs finit</small></label>
+            <input id="grindingCost" type="number" min="0" step="0.1" value="8">
+          </div>
+          <div class="field">
+            <label>Aditivi <small>EUR / tonă produs finit</small></label>
+            <input id="additivesCost" type="number" min="0" step="0.1" value="8">
+          </div>
+          <div class="field">
+            <label>Manoperă directă <small>EUR / tonă produs finit</small></label>
+            <input id="laborCost" type="number" min="0" step="0.1" value="7">
+          </div>
+          <div class="field">
+            <label>Ambalaj sac 25kg <small>EUR / sac</small></label>
+            <input id="bagCost" type="number" min="0" step="0.01" value="0.15">
+          </div>
+          <div class="field">
+            <label>Distribuție <small>EUR / tonă produs finit</small></label>
+            <input id="distributionCost" type="number" min="0" step="0.1" value="6">
+          </div>
+          <div class="field">
+            <label>Alte costuri variabile <small>pierderi, spares, handling</small></label>
+            <input id="otherVariableCost" type="number" min="0" step="0.1" value="3">
+          </div>
+          <div class="field">
+            <label>Costuri fixe <small>EUR / lună</small></label>
+            <input id="fixedOpex" type="number" min="0" step="100" value="8000">
+          </div>
+        </div>
+
+        <div class="panel" style="--section-accent: var(--warn);">
+          <h2 class="panel-title">03 — Finanțare opțională</h2>
+          <div class="field">
+            <label>Include finanțare <small>1 = da, 0 = nu</small></label>
+            <input id="financingEnabled" type="number" min="0" max="1" step="1" value="1">
+          </div>
+          <div class="field">
+            <label>Procent finanțat <small>din funding need</small></label>
+            <input id="financedShare" type="number" min="0" max="100" step="5" value="40">
+          </div>
+          <div class="field">
+            <label>Dobândă anuală <small>%</small></label>
+            <input id="interestRate" type="number" min="0" step="0.5" value="9">
+          </div>
+          <div class="field">
+            <label>Termen credit <small>ani</small></label>
+            <input id="loanTerm" type="number" min="1" step="1" value="5">
+          </div>
+          <div class="field">
+            <label>Capital de lucru <small>luni de costuri</small></label>
+            <input id="workingCapitalMonths" type="number" min="0" step="0.25" value="1.5">
+          </div>
+        </div>
+
+        <div class="panel" style="--section-accent: var(--good);">
+          <h2 class="panel-title">04 — Rezultat scenariu selectat</h2>
+          <div class="result-grid">
+            <div class="metric" id="metricFunding"><span>Total funding need</span><strong id="fundingNeed">€0</strong></div>
+            <div class="metric"><span>CAPEX scalat</span><strong id="scaledCapex">€0</strong></div>
+            <div class="metric"><span>Cost / tonă</span><strong id="costPerTon">€0</strong></div>
+            <div class="metric"><span>Cost / sac 25kg</span><strong id="costPerBag">€0.00</strong></div>
+            <div class="metric"><span>Preț / sac 25kg</span><strong id="pricePerBag">€0.00</strong></div>
+            <div class="metric"><span>EBITDA / lună</span><strong id="ebitdaMonth">€0</strong></div>
+            <div class="metric"><span>Break-even</span><strong id="breakEvenTons">0 t</strong></div>
+            <div class="metric"><span>Break-even saci</span><strong id="breakEvenBags">0</strong></div>
+            <div class="metric"><span>Payback</span><strong id="paybackYears">0 ani</strong></div>
+            <div class="metric"><span>ROI 3 ani</span><strong id="roi3y">0%</strong></div>
+            <div class="metric"><span>Debt service / lună</span><strong id="debtMonth">€0</strong></div>
+            <div class="metric"><span>Cash după debt</span><strong id="cashAfterDebt">€0</strong></div>
+          </div>
+          <div id="verdict" class="verdict" style="--verdict-color: var(--warn); --verdict-bg: rgba(224, 162, 74, 0.08);">
+            <strong id="verdictLabel">GO conditional</strong>
+            <span id="verdictText">Scenariul are potențial, dar cere validări.</span>
+          </div>
+        </div>
+
+        <div class="panel full" style="--section-accent: var(--blue);">
+          <h2 class="panel-title">05 — Matrice scenarii: capacitate x echipament</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Scenariu</th>
+                <th>Strategie</th>
+                <th>Capacitate</th>
+                <th>CAPEX</th>
+                <th>Funding</th>
+                <th>Cost/t</th>
+                <th>Marjă</th>
+                <th>EBITDA/lună</th>
+                <th>BE t/lună</th>
+                <th>Payback</th>
+                <th>ROI 3y</th>
+                <th>Verdict</th>
+              </tr>
+            </thead>
+            <tbody id="scenarioTable"></tbody>
+          </table>
+        </div>
+
+        <div class="panel third" style="--section-accent: var(--accent);">
+          <h2 class="panel-title">06 — Breakdown CAPEX selectat</h2>
+          <div id="capexBars" class="bars"></div>
+        </div>
+
+        <div class="panel third" style="--section-accent: var(--good);">
+          <h2 class="panel-title">07 — Cost stack / tonă</h2>
+          <div id="costBars" class="bars"></div>
+        </div>
+
+        <div class="panel third" style="--section-accent: var(--warn);">
+          <h2 class="panel-title">08 — Cum folosești</h2>
+          <p>
+            Browser hub-ul este pentru decizie rapidă. Pentru lucru profund, folosește workbook-ul Excel și actualizează CSV-urile din GitHub.
+          </p>
+          <div class="footer-actions">
+            <a class="button" href="/data/finance/RENOVIT_Economic_Simulation_Model.xlsx">Descarcă Excel</a>
+            <a class="button" href="/instrumente.html">Toate instrumentele</a>
+            <a class="button" href="/unit-economics-sac-25kg.html">Per sac 25kg</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const capacities = [
+        { id: "Pilot", label: "3k t/an — Pilot", capacity: 3000, utilization: 0.60 },
+        { id: "Start optimal", label: "5k t/an — Start optimal", capacity: 5000, utilization: 0.70 },
+        { id: "Scale-up", label: "10k t/an — Scale-up", capacity: 10000, utilization: 0.75 },
+        { id: "Industrial", label: "20k t/an — Industrial", capacity: 20000, utilization: 0.80 },
+      ];
+
+      const strategyRates = {
+        used: { label: "Uzat / refurbished", repair: 0.20, contingency: 0.12, exponent: 0.85, maintenance: 0.06, leadTime: 1.5 },
+        hybrid: { label: "Hibrid", repair: 0.10, contingency: 0.12, exponent: 0.78, maintenance: 0.04, leadTime: 3.0 },
+        new: { label: "Nou", repair: 0, contingency: 0.10, exponent: 0.72, maintenance: 0.03, leadTime: 4.0 },
+      };
+
+      const equipmentCosts = {
+        used: [
+          ["Calcinare", 90000],
+          ["Măcinare + mixer", 40000],
+          ["Linie saci 25kg", 30000],
+          ["Silo + logistică internă", 22500],
+          ["Jaw crusher", 25000],
+          ["Filtre praf", 25000],
+          ["Electric", 30000],
+          ["Gaz / combustibil", 20000],
+          ["Forklift + manipulare", 12000],
+          ["Laborator minim", 10000],
+          ["Instalare + commissioning", 25000],
+        ],
+        hybrid: [
+          ["Calcinare", 120000],
+          ["Măcinare + mixer", 60000],
+          ["Linie saci 25kg", 40000],
+          ["Silo + logistică internă", 35000],
+          ["Jaw crusher", 35000],
+          ["Filtre praf", 40000],
+          ["Electric", 45000],
+          ["Gaz / combustibil", 35000],
+          ["Forklift + manipulare", 15000],
+          ["Laborator minim", 15000],
+          ["Instalare + commissioning", 40000],
+        ],
+        new: [
+          ["Calcinare", 200000],
+          ["Măcinare + mixer", 100000],
+          ["Linie saci 25kg", 65000],
+          ["Silo + logistică internă", 50000],
+          ["Jaw crusher", 50000],
+          ["Filtre praf", 60000],
+          ["Electric", 70000],
+          ["Gaz / combustibil", 50000],
+          ["Forklift + manipulare", 25000],
+          ["Laborator minim", 20000],
+          ["Instalare + commissioning", 60000],
+        ],
+      };
+
+      const fields = [
+        "capacityScenario", "equipmentStrategy", "utilization", "sellingPrice", "capexMultiplier",
+        "extractionCost", "rawTransportCost", "processYield", "calcinationCost", "grindingCost",
+        "additivesCost", "laborCost", "bagCost", "distributionCost", "otherVariableCost", "fixedOpex",
+        "financingEnabled", "financedShare", "interestRate", "loanTerm", "workingCapitalMonths",
+      ];
+
+      const els = Object.fromEntries(fields.map(id => [id, document.getElementById(id)]));
+
+      function init() {
+        capacities.forEach(capacity => {
+          const option = document.createElement("option");
+          option.value = capacity.id;
+          option.textContent = capacity.label;
+          els.capacityScenario.appendChild(option);
+        });
+        Object.entries(strategyRates).forEach(([key, strategy]) => {
+          const option = document.createElement("option");
+          option.value = key;
+          option.textContent = strategy.label;
+          els.equipmentStrategy.appendChild(option);
+        });
+        els.capacityScenario.value = "Start optimal";
+        els.equipmentStrategy.value = "hybrid";
+        syncUtilization();
+        fields.forEach(id => {
+          els[id].addEventListener("input", render);
+          els[id].addEventListener("change", id === "capacityScenario" ? () => {
+            syncUtilization();
+            render();
+          } : render);
+        });
+        render();
+      }
+
+      function syncUtilization() {
+        const capacity = capacities.find(item => item.id === els.capacityScenario.value);
+        if (capacity) {
+          els.utilization.value = Math.round(capacity.utilization * 100);
+        }
+      }
+
+      function num(id) {
+        const value = Number.parseFloat(els[id].value);
+        return Number.isFinite(value) ? value : 0;
+      }
+
+      function fmtCurrency(value, digits = 0) {
+        if (!Number.isFinite(value)) return "N/A";
+        return `€${value.toLocaleString("ro-RO", { minimumFractionDigits: digits, maximumFractionDigits: digits })}`;
+      }
+
+      function fmtNumber(value, digits = 0) {
+        if (!Number.isFinite(value)) return "N/A";
+        return value.toLocaleString("ro-RO", { minimumFractionDigits: digits, maximumFractionDigits: digits });
+      }
+
+      function fmtPct(value, digits = 0) {
+        if (!Number.isFinite(value)) return "N/A";
+        return `${(value * 100).toLocaleString("ro-RO", { minimumFractionDigits: digits, maximumFractionDigits: digits })}%`;
+      }
+
+      function equipmentBase(strategy) {
+        return equipmentCosts[strategy].reduce((sum, [, cost]) => sum + cost, 0);
+      }
+
+      function compute(capacityId, strategy, utilizationRatio) {
+        const capacity = capacities.find(item => item.id === capacityId);
+        const rates = strategyRates[strategy];
+        const bagKg = 25;
+        const bagsPerTon = 1000 / bagKg;
+        const baseEquipment = equipmentBase(strategy);
+        const repairReserve = baseEquipment * rates.repair;
+        const contingency = (baseEquipment + repairReserve) * rates.contingency;
+        const capex5k = baseEquipment + repairReserve + contingency;
+        const scaleFactor = Math.pow(capacity.capacity / 5000, rates.exponent);
+        const scaledCapex = capex5k * scaleFactor * num("capexMultiplier");
+        const finishedTYear = capacity.capacity * utilizationRatio;
+        const finishedTMonth = finishedTYear / 12;
+        const yieldRatio = Math.max(num("processYield") / 100, 0.01);
+        const rawCostPerTon = (num("extractionCost") + num("rawTransportCost")) / yieldRatio;
+        const packagingPerTon = num("bagCost") * bagsPerTon;
+        const variableCostPerTon =
+          rawCostPerTon +
+          num("calcinationCost") +
+          num("grindingCost") +
+          num("additivesCost") +
+          num("laborCost") +
+          packagingPerTon +
+          num("distributionCost") +
+          num("otherVariableCost");
+        const maintenanceMonth = (scaledCapex * rates.maintenance) / 12;
+        const fixedMonth = num("fixedOpex") + maintenanceMonth;
+        const priceTon = num("sellingPrice");
+        const priceBag = priceTon / bagsPerTon;
+        const costBag = variableCostPerTon / bagsPerTon;
+        const revenueMonth = priceTon * finishedTMonth;
+        const grossProfitMonth = (priceTon - variableCostPerTon) * finishedTMonth;
+        const ebitdaMonth = revenueMonth - variableCostPerTon * finishedTMonth - fixedMonth;
+        const workingCapital = num("workingCapitalMonths") * (variableCostPerTon * finishedTMonth + fixedMonth);
+        const fundingNeed = scaledCapex + workingCapital;
+        const grossMarginPct = priceTon > 0 ? (priceTon - variableCostPerTon) / priceTon : 0;
+        const breakEvenTMonth = priceTon > variableCostPerTon ? fixedMonth / (priceTon - variableCostPerTon) : Infinity;
+        const breakEvenBags = breakEvenTMonth * bagsPerTon;
+        const paybackYears = ebitdaMonth > 0 ? fundingNeed / (ebitdaMonth * 12) : Infinity;
+        const roi3y = fundingNeed > 0 ? (ebitdaMonth * 36 - fundingNeed) / fundingNeed : 0;
+        const loanAmount = fundingNeed * (num("financedShare") / 100);
+        const annualRate = num("interestRate") / 100;
+        const loanTerm = Math.max(num("loanTerm"), 1);
+        let debtMonth = 0;
+        if (num("financingEnabled") >= 1 && loanAmount > 0) {
+          const annualDebt = annualRate > 0
+            ? (loanAmount * annualRate) / (1 - Math.pow(1 + annualRate, -loanTerm))
+            : loanAmount / loanTerm;
+          debtMonth = annualDebt / 12;
+        }
+        const cashAfterDebt = ebitdaMonth - debtMonth;
+        const dscr = debtMonth > 0 ? ebitdaMonth / debtMonth : Infinity;
+
+        let verdict = "NO-GO";
+        let verdictText = "Scenariul nu acoperă costurile sau blochează capital prea mult.";
+        let verdictTone = "negative";
+        if (grossMarginPct >= 0.35 && paybackYears <= 3.5 && ebitdaMonth > 0) {
+          verdict = "GO";
+          verdictText = "Scenariul are marjă sănătoasă, payback rezonabil și EBITDA pozitiv.";
+          verdictTone = "positive";
+        } else if (grossMarginPct >= 0.25 && ebitdaMonth > 0) {
+          verdict = "GO conditional";
+          verdictText = "Scenariul poate funcționa, dar cere validare pe preț, CAPEX și utilizare.";
+          verdictTone = "warning";
+        } else if (ebitdaMonth > 0) {
+          verdict = "Risk";
+          verdictText = "Scenariul este pozitiv operațional, dar marja sau payback-ul sunt fragile.";
+          verdictTone = "warning";
+        }
+
+        return {
+          capacity,
+          strategy,
+          rates,
+          bagsPerTon,
+          baseEquipment,
+          repairReserve,
+          contingency,
+          capex5k,
+          scaleFactor,
+          scaledCapex,
+          finishedTYear,
+          finishedTMonth,
+          rawCostPerTon,
+          packagingPerTon,
+          variableCostPerTon,
+          maintenanceMonth,
+          fixedMonth,
+          priceTon,
+          priceBag,
+          costBag,
+          revenueMonth,
+          grossProfitMonth,
+          ebitdaMonth,
+          workingCapital,
+          fundingNeed,
+          grossMarginPct,
+          breakEvenTMonth,
+          breakEvenBags,
+          paybackYears,
+          roi3y,
+          debtMonth,
+          cashAfterDebt,
+          dscr,
+          verdict,
+          verdictText,
+          verdictTone,
+        };
+      }
+
+      function setMetricTone(id, value) {
+        const el = document.getElementById(id);
+        el.classList.remove("positive", "warning", "negative");
+        el.classList.add(value >= 0 ? "positive" : "negative");
+      }
+
+      function renderBars(targetId, rows, color) {
+        const max = Math.max(...rows.map(([, value]) => value), 1);
+        document.getElementById(targetId).innerHTML = rows.map(([label, value]) => `
+          <div class="bar-row">
+            <span>${label}</span>
+            <div class="bar"><i style="--w:${Math.max(2, (value / max) * 100)}%; --bar-color:${color};"></i></div>
+            <span>${fmtCurrency(value)}</span>
+          </div>
+        `).join("");
+      }
+
+      function renderScenarioTable() {
+        const rows = [];
+        capacities.forEach(capacity => {
+          Object.keys(strategyRates).forEach(strategy => {
+            const calc = compute(capacity.id, strategy, capacity.utilization);
+            const active = capacity.id === els.capacityScenario.value && strategy === els.equipmentStrategy.value;
+            rows.push(`
+              <tr class="${active ? "active-row" : ""}">
+                <td>${capacity.label}</td>
+                <td><span class="tag">${strategy}</span></td>
+                <td>${fmtNumber(capacity.capacity)} t/an</td>
+                <td>${fmtCurrency(calc.scaledCapex)}</td>
+                <td>${fmtCurrency(calc.fundingNeed)}</td>
+                <td>${fmtCurrency(calc.variableCostPerTon, 1)}</td>
+                <td>${fmtPct(calc.grossMarginPct, 1)}</td>
+                <td>${fmtCurrency(calc.ebitdaMonth)}</td>
+                <td>${fmtNumber(calc.breakEvenTMonth, 0)}</td>
+                <td>${Number.isFinite(calc.paybackYears) ? `${fmtNumber(calc.paybackYears, 1)} ani` : "N/A"}</td>
+                <td>${fmtPct(calc.roi3y, 0)}</td>
+                <td>${calc.verdict}</td>
+              </tr>
+            `);
+          });
+        });
+        document.getElementById("scenarioTable").innerHTML = rows.join("");
+      }
+
+      function render() {
+        const calc = compute(els.capacityScenario.value, els.equipmentStrategy.value, num("utilization") / 100);
+
+        document.getElementById("fundingNeed").textContent = fmtCurrency(calc.fundingNeed);
+        document.getElementById("scaledCapex").textContent = fmtCurrency(calc.scaledCapex);
+        document.getElementById("costPerTon").textContent = fmtCurrency(calc.variableCostPerTon, 1);
+        document.getElementById("costPerBag").textContent = fmtCurrency(calc.costBag, 2);
+        document.getElementById("pricePerBag").textContent = fmtCurrency(calc.priceBag, 2);
+        document.getElementById("ebitdaMonth").textContent = fmtCurrency(calc.ebitdaMonth);
+        document.getElementById("breakEvenTons").textContent = Number.isFinite(calc.breakEvenTMonth) ? `${fmtNumber(calc.breakEvenTMonth, 0)} t/lună` : "N/A";
+        document.getElementById("breakEvenBags").textContent = Number.isFinite(calc.breakEvenBags) ? `${fmtNumber(calc.breakEvenBags, 0)} saci` : "N/A";
+        document.getElementById("paybackYears").textContent = Number.isFinite(calc.paybackYears) ? `${fmtNumber(calc.paybackYears, 1)} ani` : "N/A";
+        document.getElementById("roi3y").textContent = fmtPct(calc.roi3y, 0);
+        document.getElementById("debtMonth").textContent = fmtCurrency(calc.debtMonth);
+        document.getElementById("cashAfterDebt").textContent = fmtCurrency(calc.cashAfterDebt);
+
+        ["metricFunding"].forEach(id => setMetricTone(id, calc.fundingNeed));
+        setMetricTone("ebitdaMonth", calc.ebitdaMonth);
+        setMetricTone("cashAfterDebt", calc.cashAfterDebt);
+
+        const verdict = document.getElementById("verdict");
+        const verdictColor = calc.verdictTone === "positive" ? "var(--good)" : calc.verdictTone === "warning" ? "var(--warn)" : "var(--bad)";
+        verdict.style.setProperty("--verdict-color", verdictColor);
+        verdict.style.setProperty("--verdict-bg", calc.verdictTone === "positive" ? "rgba(76, 175, 125, 0.08)" : calc.verdictTone === "warning" ? "rgba(224, 162, 74, 0.08)" : "rgba(224, 96, 74, 0.08)");
+        document.getElementById("verdictLabel").textContent = calc.verdict;
+        document.getElementById("verdictText").textContent = calc.verdictText;
+        document.getElementById("heroVerdict").textContent = calc.verdict;
+        document.getElementById("heroSummary").textContent = `${calc.capacity.label}, ${strategyRates[calc.strategy].label}: EBITDA ${fmtCurrency(calc.ebitdaMonth)}/lună, payback ${Number.isFinite(calc.paybackYears) ? fmtNumber(calc.paybackYears, 1) : "N/A"} ani.`;
+
+        renderScenarioTable();
+        renderBars("capexBars", equipmentCosts[calc.strategy], "var(--accent)");
+        renderBars("costBars", [
+          ["Materie primă", calc.rawCostPerTon],
+          ["Calcinare", num("calcinationCost")],
+          ["Măcinare", num("grindingCost")],
+          ["Aditivi", num("additivesCost")],
+          ["Manoperă", num("laborCost")],
+          ["Ambalaj", calc.packagingPerTon],
+          ["Distribuție", num("distributionCost")],
+          ["Altele", num("otherVariableCost")],
+        ], "var(--good)");
+      }
+
+      init();
+    </script>
+  </body>
+</html>
