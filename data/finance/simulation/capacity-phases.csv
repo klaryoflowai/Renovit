@@ -1,5 +1,5 @@
 scenario,phase,finished_capacity_t_year,finished_capacity_t_month,default_utilization_pct,canonical_verdict,key_gate,notes
-Pilot,Phase 0/1,3000,250,0.60,Risk,Market validation only,Small pilot can reduce risk but may underuse fixed costs
-Start optimal,Phase 1,5000,417,0.70,START OPTIMAL,Quality plus buyer validation,Default industrial starting point
-Scale-up,Phase 2,10000,833,0.75,Scalable,Demand above phase 1 capacity,Add modules after stable production
-Industrial,Phase 3,20000,1667,0.80,Industrial,Financing plus distribution capacity,Requires stronger team and market access
+Pilot,Phase 0/1,3000,250,0.60,Risk,Recipe and buyer validation only,Small pilot can reduce risk but may underuse fixed costs
+Small industrial,Phase 1 optional,5000,417,0.70,Conditional,Capital-constrained launch,Use only if 10kt CAPEX is not acceptable
+Recommended 10kt,Phase 1 baseline,10000,833,0.75,OPTIMAL RFQ BASELINE,Quality plus buyer plus supplier RFQ validation,Default scenario for glet / mineral render limestone line
+Industrial 20kt,Phase 2/3,20000,1667,0.80,Industrial,Financing plus distribution capacity,Requires stronger team market access and likely more new equipment

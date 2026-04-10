@@ -1,34 +1,49 @@
-strategy,item,cost_eur_5k_base,phase,notes
-used,Micronization / sorting package,90000,Phase 1,Used or refurbished core fine mill / classifier
-used,Dry mixer and additive dosing package,40000,Phase 1,Used package or separate machines
-used,20/25kg bagging line,30000,Phase 1,Used bag filling sealing and printing
-used,Silo and internal logistics,22500,Phase 1,Used or local fabrication
-used,Jaw crusher,25000,Phase 1,Only if feed size requires crushing
-used,Dust collection and filters,25000,Phase 1,Do not ignore environment and worker safety
-used,Electrical works,30000,Phase 1,Power connection and panels
-used,Compressed air / utilities,20000,Phase 1,Utilities for dry mix line and bagging
-used,Forklift and warehouse handling,12000,Phase 1,Used forklift and simple handling
-used,Minimum quality lab,10000,Phase 1,Vicat balance sieves press baseline
-used,Installation and commissioning,25000,Phase 1,Assembly commissioning and technician work
-hybrid,Micronization / sorting package,120000,Phase 1,Refurbished core with stronger inspection
-hybrid,Dry mixer and additive dosing package,60000,Phase 1,Mixed used and new components
-hybrid,20/25kg bagging line,40000,Phase 1,Refurbished or new-critical parts
-hybrid,Silo and internal logistics,35000,Phase 1,New local fabrication where cheap
-hybrid,Jaw crusher,35000,Phase 1,Used inspected or local supplier
-hybrid,Dust collection and filters,40000,Phase 1,Prefer new filters where possible
-hybrid,Electrical works,45000,Phase 1,New electrical backbone
-hybrid,Compressed air / utilities,35000,Phase 1,New utilities where safety-critical
-hybrid,Forklift and warehouse handling,15000,Phase 1,Used handling equipment
-hybrid,Minimum quality lab,15000,Phase 1,Improved minimal lab
-hybrid,Installation and commissioning,40000,Phase 1,More robust commissioning
-new,Micronization / sorting package,200000,Phase 1,New core fine mill / classifier package
-new,Dry mixer and additive dosing package,100000,Phase 1,New mixing and dosing package
-new,20/25kg bagging line,65000,Phase 1,New bag filling sealing and printing
-new,Silo and internal logistics,50000,Phase 1,New silo and conveying
-new,Jaw crusher,50000,Phase 1,New crusher if required
-new,Dust collection and filters,60000,Phase 1,New dust collection
-new,Electrical works,70000,Phase 1,New electrical backbone
-new,Compressed air / utilities,50000,Phase 1,New utilities backbone
-new,Forklift and warehouse handling,25000,Phase 1,New or near-new handling
-new,Minimum quality lab,20000,Phase 1,More complete lab baseline
-new,Installation and commissioning,60000,Phase 1,Supplier commissioning
+strategy,item,cost_eur_10k_base,phase,notes
+used,Micronization mill,75000,Phase 1 - Micronization and sorting,Used / refurbished mill; technical inspection required
+used,Vibrating sieve / classifier,20000,Phase 1 - Micronization and sorting,Used EU / regional listing baseline
+used,Screw conveyor,10000,Phase 1 - Micronization and sorting,Local fabrication possible
+used,Industrial dry mixer,32500,Phase 2 - Mixing and dosing,Used mixer; inspect wear and homogeneity
+used,Additive dosing units,12500,Phase 2 - Mixing and dosing,Used dosing is risky if precision is poor
+used,Dosing scale,6500,Phase 2 - Mixing and dosing,Used scale only with calibration
+used,Adjustable bag filling line 20/25kg,50000,Phase 3 - Packing,Used line; verify 15-30kg adjustability and dosing accuracy
+used,Bag stitcher / sealer,6500,Phase 3 - Packing,Used acceptable if compatible with bag format
+used,Labeler / printer,4000,Phase 3 - Packing,Traceability baseline
+used,Semi-automatic palletizer,20000,Phase 3 - Packing,Semi-auto used OK for start
+used,Raw limestone silo 200t,25000,Auxiliary infrastructure,Second-hand or local fabrication
+used,Finished product silo 100t,20000,Auxiliary infrastructure,Second-hand or local fabrication
+used,Electrical connection 315kW,12500,Auxiliary infrastructure,Local estimate before power audit
+used,Water connection,6500,Auxiliary infrastructure,Local estimate
+used,Quality laboratory,30000,Auxiliary infrastructure,EN 998-1 / finishing materials baseline
+used,Office and changing room,12500,Auxiliary infrastructure,Only if existing facilities cannot be reused
+hybrid,Micronization mill,120000,Phase 1 - Micronization and sorting,Recommended new / strong refurbished core item
+hybrid,Vibrating sieve / classifier,35000,Phase 1 - Micronization and sorting,Used or refurbished accepted
+hybrid,Screw conveyor,17500,Phase 1 - Micronization and sorting,Local or regional
+hybrid,Industrial dry mixer,60000,Phase 2 - Mixing and dosing,Recommended hybrid / reliable supplier
+hybrid,Additive dosing units,25000,Phase 2 - Mixing and dosing,Precision around +/-0.5 percent
+hybrid,Dosing scale,12500,Phase 2 - Mixing and dosing,Calibrated system
+hybrid,Adjustable bag filling line 20/25kg,100000,Phase 3 - Packing,Recommended new / critical components new
+hybrid,Bag stitcher / sealer,15000,Phase 3 - Packing,Hybrid or new critical components
+hybrid,Labeler / printer,10000,Phase 3 - Packing,Traceability baseline
+hybrid,Semi-automatic palletizer,42500,Phase 3 - Packing,Used / refurbished accepted
+hybrid,Raw limestone silo 200t,25000,Auxiliary infrastructure,Second-hand or local fabrication
+hybrid,Finished product silo 100t,20000,Auxiliary infrastructure,Second-hand or local fabrication
+hybrid,Electrical connection 315kW,12500,Auxiliary infrastructure,Local estimate before power audit
+hybrid,Water connection,6500,Auxiliary infrastructure,Local estimate
+hybrid,Quality laboratory,30000,Auxiliary infrastructure,EN 998-1 / finishing materials baseline
+hybrid,Office and changing room,12500,Auxiliary infrastructure,Only if existing facilities cannot be reused
+new,Micronization mill,215000,Phase 1 - Micronization and sorting,New China / Turkey line item
+new,Vibrating sieve / classifier,60000,Phase 1 - Micronization and sorting,New system
+new,Screw conveyor,30000,Phase 1 - Micronization and sorting,New system
+new,Industrial dry mixer,110000,Phase 2 - Mixing and dosing,New mixer package
+new,Additive dosing units,50000,Phase 2 - Mixing and dosing,New dosing package
+new,Dosing scale,22500,Phase 2 - Mixing and dosing,New calibrated system
+new,Adjustable bag filling line 20/25kg,185000,Phase 3 - Packing,New adjustable 15-30kg line
+new,Bag stitcher / sealer,30000,Phase 3 - Packing,New system
+new,Labeler / printer,20000,Phase 3 - Packing,New traceability / printer
+new,Semi-automatic palletizer,85000,Phase 3 - Packing,New semi-auto / auto option
+new,Raw limestone silo 200t,25000,Auxiliary infrastructure,New or local fabrication
+new,Finished product silo 100t,20000,Auxiliary infrastructure,New or local fabrication
+new,Electrical connection 315kW,12500,Auxiliary infrastructure,Local estimate before power audit
+new,Water connection,6500,Auxiliary infrastructure,Local estimate
+new,Quality laboratory,30000,Auxiliary infrastructure,EN 998-1 / finishing materials baseline
+new,Office and changing room,12500,Auxiliary infrastructure,Only if existing facilities cannot be reused

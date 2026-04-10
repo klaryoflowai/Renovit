@@ -34,7 +34,7 @@ Acesta este hub-ul central pentru simularea economica RENOVIT.
 Modelul acopera:
 
 - produs initial: portofoliu materiale de finisaj pe baza de calcar Cupcini
-- capacitati canonice: `3k`, `5k`, `10k`, `20k tone/an`
+- capacitati canonice: `3k`, `5k`, `10k`, `20k tone/an`, cu `10k` ca baseline actual pentru RFQ
 - strategii echipament: `used`, `hybrid`, `new`
 - cost materie prima: calcar / filler, transport intern, randament
 - costuri procesare: micronizare, sortare, mixare, aditivi, manopera, ambalaj, distributie

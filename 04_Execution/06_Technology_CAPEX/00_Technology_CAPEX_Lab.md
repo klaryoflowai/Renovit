@@ -79,11 +79,19 @@ De aceea, zona aceasta functioneaza ca punte:
 
 Pentru faza 1, ipoteza de lucru este:
 
-- start cu linie uzata / refurbished sau hibrida pentru micronizare / sortare / mixare / ambalare
-- investitie controlata
+- start cu linie hibrida de `10kt/an` pentru micronizare / sortare / mixare / ambalare
+- investitie controlata, dar suficienta pentru calitate stabila
 - validare retete + calitate + cerere + unit economics
-- upgrade modular spre `10-15kt/an`
+- upgrade modular spre `20kt/an`
 - echipament nou doar dupa ce riscul comercial, calitativ si operational scade
+
+Working range curent:
+
+- UZAT: `271-416k EUR` cu auxiliar inclus, inainte de rezerve
+- HIBRID: `445-643k EUR` cu auxiliar inclus, inainte de rezerve
+- NOU: `750-1,078k EUR` cu auxiliar inclus, inainte de rezerve
+
+Tinta `~450k EUR` este un baseline agresiv de negociere pentru scenariul hibrid, nu buget final confirmat.
 
 ## Decision gate
 

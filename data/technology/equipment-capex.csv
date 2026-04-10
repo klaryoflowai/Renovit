@@ -1,17 +1,17 @@
-equipment_item,phase,criticality,second_hand_low_eur,second_hand_high_eur,new_low_eur,new_high_eur,source_hint,status,notes
-Micronization / fine mill,Phase 1,critical,60000,120000,150000,250000,MachineSeeker / regional suppliers,working_assumption,Core process bottleneck and quality risk for glet
-Granulometric sorting / classifier,Phase 1,critical,25000,60000,70000,140000,Regional dry mix suppliers,working_assumption,Needed for decorative mineral render fractions
-Dry mixer + additive dosing package,Phase 1,critical,30000,50000,80000,120000,Agrotehnica / used industrial listings,working_assumption,May be separate machines in real offers
-20/25kg bagging line,Phase 1,critical,20000,40000,50000,80000,Machineryline / regional suppliers,working_assumption,Check bag size and dosing accuracy
-Silo + internal logistics,Phase 1,important,15000,30000,40000,60000,Regional suppliers,working_assumption,Needs moisture protection
-Jaw crusher,Phase 1,important,,,,,,open,Add after feed-size validation
-Dust collection / filters,Phase 1,critical,,,,,,open,Must not be ignored for environment and worker safety
-Electrical works / transformer,Phase 1,critical,,,,,,open,Needs power audit and scale reserve
-Compressed air / utilities,Phase 1,critical,,,,,,open,Needed for dry mix line and bagging
-Forklift and warehouse handling,Phase 1,important,,,,,,open,Can start with used forklift if warehouse is simple
-Minimum quality lab,Phase 1,important,,,,,,open,Vicat / balance / press / sieves depending lab strategy
-Installation / commissioning,Phase 1,critical,,,,,,open,Often missing from equipment-only quotes
-Repairs and refurbishment reserve,Phase 1,critical,,,,,,open,For used line model 20-30 percent reserve as scenario
-Contingency,Phase 1,critical,,,,,,open,Use 10-20 percent until quotes are validated
-Additional micronization / sorting capacity,Phase 2,critical,,,,,,open,Add when demand and quality are validated
-New industrial line,Phase 3,strategic,,,,,,open,Consider after 10kt/year route is de-risked
+equipment_item,phase,criticality,capacity,used_low_eur,used_high_eur,hybrid_low_eur,hybrid_high_eur,new_low_eur,new_high_eur,source_hint,status,notes
+Micronization mill,Phase 1 - Micronization and sorting,critical,5 t/h under 100 micron,60000,90000,100000,140000,180000,250000,China / Alibaba for new; Machineryline for used,rfq_baseline,Core quality bottleneck for glet extra-white and calcium carbonate filler
+Vibrating sieve / classifier,Phase 1 - Micronization and sorting,critical,5 t/h 0.1-2 mm,15000,25000,30000,40000,50000,70000,OLX RO / used EU / Turkey,rfq_baseline,Needed for decorative mineral render fractions and repeatability
+Screw conveyor,Phase 1 - Micronization and sorting,important,10 t/h,8000,12000,15000,20000,25000,35000,Local MD / RO fabrication,rfq_baseline,Check dust sealing and compatibility with fine calcium carbonate
+Industrial dry mixer,Phase 2 - Mixing and dosing,critical,2 t batch / around 10 t/h,25000,40000,50000,70000,90000,130000,Poland / Turkey / China,rfq_baseline,Hybrid recommended; homogeneity is product-quality critical
+Additive dosing units,Phase 2 - Mixing and dosing,critical,4 components,10000,15000,20000,30000,40000,60000,Poland / Turkey / China,rfq_baseline,Precision around +/-0.5 percent is critical for polymer / cellulose additives
+Dosing scale,Phase 2 - Mixing and dosing,critical,2 t,5000,8000,10000,15000,20000,25000,Regional industrial suppliers,rfq_baseline,Must integrate with mixer and recipe control
+Adjustable bag filling line,Phase 3 - Hybrid 20/25kg packing,critical,600 bags/h 15-30 kg,40000,60000,80000,120000,150000,220000,China / Turkey / dry mortar suppliers,rfq_baseline,Essential: must handle both 20kg and 25kg bags with dosing accuracy
+Bag stitcher / sealer,Phase 3 - Hybrid 20/25kg packing,important,600 bags/h,5000,8000,12000,18000,25000,35000,Regional suppliers,rfq_baseline,Check bag type: open mouth vs valve bags
+Labeler / printer,Phase 3 - Hybrid 20/25kg packing,important,600 bags/h,3000,5000,8000,12000,15000,25000,Regional suppliers,rfq_baseline,Traceability and compliance labels
+Semi-automatic palletizer,Phase 3 - Hybrid 20/25kg packing,important,1 pallet / 5 min,15000,25000,35000,50000,70000,100000,Used EU / Turkey / China,rfq_baseline,Semi-auto used is acceptable at start if warehouse flow is simple
+Raw limestone silo,Auxiliary infrastructure,important,200 t,20000,30000,20000,30000,20000,30000,Local fabrication / second-hand silos,rfq_baseline,Moisture protection and dust control required
+Finished product silo,Auxiliary infrastructure,important,100 t,15000,25000,15000,25000,15000,25000,Local fabrication / second-hand silos,rfq_baseline,Protect finished dry mix from humidity
+Electrical connection,Auxiliary infrastructure,critical,315 kW three-phase,10000,15000,10000,15000,10000,15000,Local MD,rfq_baseline,Needs power audit; update if 10kt line requires more connected load
+Water connection,Auxiliary infrastructure,important,10 m3/day,5000,8000,5000,8000,5000,8000,Local MD,rfq_baseline,Mainly facility / lab use; dry process should not consume much water
+Quality laboratory,Auxiliary infrastructure,critical,EN 998-1 / product tests baseline,25000,35000,25000,35000,25000,35000,Local lab equipment / outsource hybrid,rfq_baseline,Can outsource some tests but in-house baseline is recommended
+Office and changing room,Auxiliary infrastructure,important,6 employees,10000,15000,10000,15000,10000,15000,Local MD,rfq_baseline,Include only if existing facilities cannot be reused

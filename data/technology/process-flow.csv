@@ -1,4 +1,4 @@
-stage_id,stage_name,equipment_key,capacity_5kt_year,input,output,owner_question,status,notes
+stage_id,stage_name,equipment_key,capacity_10kt_year,input,output,owner_question,status,notes
 1,Limestone selection,Existing Volodeni operation,TBD,White limestone / limestone flour,Selected feedstock,Which Volodeni zones provide the whitest and most consistent material?,critical,Take coded samples by zone
 2,Internal transport,Trucks / loader / rail access,TBD,Selected limestone,Limestone at processing point,What is true EUR/t internal logistics cost?,open,Include Bratuseni rail option if relevant
 3,Pre-crushing / feed preparation,Crusher or existing preparation line,TBD,Limestone rock / coarse material,Prepared feed for milling,Is existing flour sufficient or do we need pre-crushing?,working_assumption,Depends on current product state
@@ -8,7 +8,7 @@ stage_id,stage_name,equipment_key,capacity_5kt_year,input,output,owner_question,
 7,Dry mixing,Industrial dry mixer,around 10 t/hour,Dosed blend,Homogeneous dry mix,Can mixer keep recipe consistency?,critical,Homogeneity affects claims and returns
 8,Quality control,Lab equipment,TBD,Lot samples,Approved / rejected lot,Which tests are done per batch?,critical,Whiteness granulometry adhesion setting time
 9,Bulk / product storage,Silo / big bags,TBD,Approved dry mix,Stored product,How much buffer stock is needed?,working_assumption,Moisture control is key
-10,Bag filling,20/25kg bagging machine,300-600 bags/hour,Bulk product,Filled bags,Can line handle both 20kg and 25kg formats?,critical,Commercial bottleneck for retail-ready product
+10,Bag filling,Adjustable 20/25kg bagging machine,600 bags/hour,Bulk product,Filled bags,Can line handle both 20kg and 25kg formats?,critical,Commercial bottleneck for retail-ready product
 11,Stitching and printing,Bag stitcher + printer,TBD,Filled bags,Sealed labelled bags,What label / compliance information is required?,open,Connects quality and product readiness
 12,Palletizing,Manual or forklift-assisted palletizing,TBD,Sealed bags,Palletized finished goods,Manual now or robot later?,working_assumption,Robot likely not needed in phase 1
 13,Finished goods storage and loading,Forklift + warehouse,TBD,Pallets,Ready-to-ship product,How many days of finished goods stock are needed?,open,Needs dry warehouse and moisture control

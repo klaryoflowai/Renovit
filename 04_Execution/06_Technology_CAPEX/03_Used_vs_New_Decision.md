@@ -23,11 +23,14 @@ next_action: Foloseste framework-ul pe primele oferte reale.
 
 Pentru RENOVIT, strategia logica este:
 
-- `Phase 1`: echipament uzat / refurbished, daca auditul tehnic este acceptabil
-- `Phase 2`: upgrade modular acolo unde apar bottleneck-uri
+- `Phase 1`: scenariu hibrid pentru linie de `10kt/an`, daca preturile si calitatea se valideaza
+- `Phase 1 optional`: linie `5kt/an` doar daca apetitul de CAPEX nu permite 10kt
+- `Phase 2`: upgrade modular spre `20kt/an` acolo unde apar bottleneck-uri
 - `Phase 3`: echipament nou pentru linia industriala, dupa validarea pietei si a procesului
 
-## Why used equipment makes sense in phase 1
+Recomandarea actuala este `hibrid`, nu `uzat pur`.
+
+## Why used equipment still makes sense pe auxiliar
 
 - capital la risc mai mic
 - timp mai scurt pana la test comercial
@@ -40,8 +43,19 @@ Pentru RENOVIT, strategia logica este:
 - consum energetic mai mare
 - lipsa documentatie tehnica
 - piese greu de gasit
-- calitate instabila la calcinare / macinare
+- calitate instabila la micronizare / mixare
 - downtime exact cand trebuie validata piata
+
+## De ce hibridul castiga acum
+
+Pentru materiale de finisaj, cele mai riscante zone sunt:
+
+- micronizare / finete
+- dozare aditivi
+- mixare omogena
+- ambalare exacta 20/25kg
+
+Aici echipamentul ieftin poate crea retururi, reclamatii si produs instabil. De aceea hibridul este mai bun: protejam punctele critice si folosim uzat/local pentru auxiliar.
 
 ## Decision rule
 
@@ -53,6 +67,12 @@ Echipamentul uzat este acceptabil doar daca:
 4. stim costul de demontare, transport, instalare si pornire
 5. includem rezerva de reparatii in scenarii
 6. capacitatea se potriveste cu fluxul complet, nu doar cu un singur utilaj
+
+## Nuante de decizie
+
+- `UZAT`: acceptabil pentru paletizare, silozuri, transportoare si unele site, daca starea tehnica e buna.
+- `HIBRID`: baseline recomandat pentru linia de 10kt/an.
+- `NOU`: justificat mai ales cand mergem spre 20kt/an sau cand furnizorul ofera garantie, instalare si service solide.
 
 ## Data source
 

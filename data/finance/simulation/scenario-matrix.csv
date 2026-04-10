@@ -1,13 +1,13 @@
 scenario_id,capacity_scenario,capacity_t_year,strategy,utilization_pct,notes
-pilot_used,Pilot,3000,used,0.60,Capital-light validation
+pilot_used,Pilot,3000,used,0.60,Capital-light validation only
 pilot_hybrid,Pilot,3000,hybrid,0.60,Safer pilot but may overcapitalize
 pilot_new,Pilot,3000,new,0.60,Usually not recommended at pilot scale
-start_used,Start optimal,5000,used,0.70,Default phase 1 validation scenario
-start_hybrid,Start optimal,5000,hybrid,0.70,More robust phase 1 scenario
-start_new,Start optimal,5000,new,0.70,High capex phase 1 scenario
-scale_used,Scale-up,10000,used,0.75,Risk of bottlenecks and downtime
-scale_hybrid,Scale-up,10000,hybrid,0.75,Practical scale-up bridge
-scale_new,Scale-up,10000,new,0.75,New equipment starts to make more sense
-industrial_used,Industrial,20000,used,0.80,Low capex but operational risk high
-industrial_hybrid,Industrial,20000,hybrid,0.80,Selective new bottleneck equipment
-industrial_new,Industrial,20000,new,0.80,Strategic industrial build-out
+small_used,Small industrial,5000,used,0.70,Capital-constrained launch
+small_hybrid,Small industrial,5000,hybrid,0.70,More robust small launch
+small_new,Small industrial,5000,new,0.70,High capex for small line
+recommended_used,Recommended 10kt,10000,used,0.75,Fast but risky at 10kt because uptime and quality matter
+recommended_hybrid,Recommended 10kt,10000,hybrid,0.75,Recommended RFQ baseline
+recommended_new,Recommended 10kt,10000,new,0.75,Technically safer but may overcapitalize before market proof
+industrial_used,Industrial 20kt,20000,used,0.80,Operational risk high
+industrial_hybrid,Industrial 20kt,20000,hybrid,0.80,Bridge option if core bottlenecks are new
+industrial_new,Industrial 20kt,20000,new,0.80,Strategic industrial build-out

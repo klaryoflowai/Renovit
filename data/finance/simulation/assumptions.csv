@@ -1,11 +1,11 @@
 category,key,label,default_value,unit,notes
-Product,target_bag_kg,Target bag size,25,kg,Average packaging for 20kg/25kg finishing materials
+Product,target_bag_kg,Target bag size,25,kg,Average modeling bag; glet may be 20kg and tencuiala / mortar 25kg
 Product,bags_per_pallet,Bags per pallet,48,bags,Working logistics assumption
 Revenue,selling_price_eur_per_ton,Wholesale selling price,420,EUR/t,Portfolio average; replace with validated product mix
 Production,process_yield,Raw to finished yield,0.95,ratio,Limestone filler to finished packaged dry mix
 Raw material,extraction_cost_eur_per_raw_t,Limestone / filler cost,5,EUR/raw t,Partner data needed
 Raw material,quarry_to_plant_transport_eur_per_raw_t,Internal transport / supply,2,EUR/raw t,Depends on plant location
-Processing,calcination_eur_per_finished_t,Micronization / sorting cost,25,EUR/t,Former calcination field retained for model compatibility
+Processing,calcination_eur_per_finished_t,Micronization / sorting cost,25,EUR/t,Former calcination field retained only for model compatibility
 Processing,grinding_eur_per_finished_t,Dry mixing cost,10,EUR/t,Mixing and dosing to target recipe
 Processing,additives_eur_per_finished_t,Additives cost,55,EUR/t,Polymers cellulose lime/cement and performance additives
 Processing,direct_labor_eur_per_finished_t,Direct labor,7,EUR/t,Production labor

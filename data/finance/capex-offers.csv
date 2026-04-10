@@ -1,3 +1,15 @@
-date,supplier,country,equipment_line,capacity_tons_per_year,condition,total_capex_eur,lead_time,source,notes
-,,,,,,,,,
-
+date,supplier,country,equipment_item,capacity,condition,offer_eur,lead_time_weeks,warranty,includes_installation,includes_transport,source_link,status,notes
+,,,Micronization mill,5 t/h under 100 micron,,,,,,,,,
+,,,Vibrating sieve / classifier,5 t/h 0.1-2 mm,,,,,,,,,
+,,,Screw conveyor,10 t/h,,,,,,,,,
+,,,Industrial dry mixer,2 t batch / around 10 t/h,,,,,,,,,
+,,,Additive dosing units,4 components,,,,,,,,,
+,,,Dosing scale,2 t,,,,,,,,,
+,,,Adjustable bag filling line 20/25kg,600 bags/h 15-30 kg,,,,,,,,,
+,,,Bag stitcher / sealer,600 bags/h,,,,,,,,,
+,,,Labeler / printer,600 bags/h,,,,,,,,,
+,,,Semi-automatic palletizer,1 pallet / 5 min,,,,,,,,,
+,,,Raw limestone silo,200 t,,,,,,,,,
+,,,Finished product silo,100 t,,,,,,,,,
+,,,Electrical connection,315 kW three-phase,,,,,,,,,
+,,,Quality laboratory,EN 998-1 / product tests baseline,,,,,,,,,

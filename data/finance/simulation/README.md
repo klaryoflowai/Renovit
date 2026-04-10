@@ -11,7 +11,7 @@ Acest folder tine sursele versionabile pentru modelul economic complet.
 ## Files
 
 - `assumptions.csv` - ipoteze globale de pret, cost, randament, capital de lucru si finantare.
-- `capacity-phases.csv` - scenarii canonice de capacitate `3k`, `5k`, `10k`, `20k tone/an`.
+- `capacity-phases.csv` - scenarii canonice de capacitate `3k`, `5k`, `10k`, `20k tone/an`, cu `10k` ca baseline actual.
 - `equipment-strategy-costs.csv` - costuri echipament pentru variantele `used`, `hybrid`, `new`.
 - `equipment-strategy-rates.csv` - rezerve, contingency, scalare si mentenanta pe strategie.
 - `scenario-matrix.csv` - combinatii capacitate x strategie.

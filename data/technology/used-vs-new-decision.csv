@@ -1,9 +1,10 @@
-criterion,used_equipment,new_equipment,phase_1_weight,decision_note
-CAPEX,150-300k EUR working range,400-700k EUR working range,high,Used is preferred if quality and refurbishment risk are manageable
-Delivery speed,1-4 weeks working assumption,2-4 months working assumption,medium,Used can accelerate market validation
-Reliability,20-30 percent repair reserve should be modeled,Warranty and lower early downtime,high,Use repair reserve and technical inspection before purchase
-Spare parts,Potentially local/regional,May depend on imported supplier,medium,Check parts availability before signing
-ROI speed,Faster if equipment works,Slower but more stable,high,Used fits phase 1 validation logic
-Scalability,May become bottleneck,Better for 10kt+ and 20kt+,high,New line makes more sense after demand validation
-Technical risk,Higher commissioning risk,Lower commissioning risk,high,Need mechanical/electrical audit for any used offer
-Financing risk,Lower capital at risk,Higher capital at risk,high,Avoid overcapitalizing before product-market fit
+criterion,used_equipment,hybrid_equipment,new_equipment,phase_1_weight,decision_note
+CAPEX core 10kt,186-288k EUR before auxiliary,360-515k EUR before auxiliary,665-950k EUR before auxiliary,high,Auxiliary infrastructure of 85-128k EUR must be added unless already available on site
+Delivery speed,4-8 weeks working assumption,6-12 weeks working assumption,10-16 weeks working assumption,medium,Hybrid still supports launch speed while protecting core process risk
+Reliability,Highest repair and downtime risk,Core items protected by new / refurbished choices,Warranty and lower early downtime,high,Use hybrid as baseline if CAPEX appetite allows
+Quality risk,Risky for micronization and dosing unless inspected,Better control on mill mixer dosing and bagging,Best control and documentation,high,Quality matters more than purchase price for extra-white finishing products
+Spare parts,Potentially local/regional,Mixed: local auxiliary plus imported core,May depend on imported supplier,medium,Check spare parts and service before signing
+ROI speed,Faster if equipment works,Potentially best balance of CAPEX and uptime,Slower unless volume and price are validated,high,Do not call ROI confirmed before RFQ and buyer validation
+Scalability,May become bottleneck around 10kt,Practical 10kt launch bridge,Best for 20kt+ industrial route,high,New equipment makes more sense after demand validation
+Technical risk,Higher commissioning risk,Moderate commissioning risk,Lower commissioning risk,high,Need mechanical/electrical audit and acceptance test
+Financing risk,Lower capital at risk,Balanced capital at risk,Higher capital at risk,high,Avoid overcapitalizing before product-market fit

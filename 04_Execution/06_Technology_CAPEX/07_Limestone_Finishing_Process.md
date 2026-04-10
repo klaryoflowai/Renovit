@@ -51,6 +51,7 @@ Pentru calcar, focusul este:
 
 - moara de micronizare
 - statie sortare granulometrica
+- transportor surub / transfer inchis pentru pulberi
 - dozatoare aditivi
 - mixer industrial pentru amestecuri uscate
 - linie ambalare 20/25kg
@@ -58,8 +59,18 @@ Pentru calcar, focusul este:
 - filtru praf
 - laborator minim
 
+## Configuratie tinta 10kt/an
+
+- moara micronizare: `5 t/h` sub `100 microni`
+- sortare / classifier: `5 t/h`, fractii `0.1-2 mm`
+- mixer: `2 t/ciclu`, aprox. `10 t/h`
+- ambalare: `600 saci/h`, reglabil `15-30kg`, folosit pentru `20kg` si `25kg`
+- laborator: control granulometrie, umiditate, alb, aderenta / rezistenta dupa standardul produsului
+
 ## Decizie used vs new
 
-Echipamentul uzat poate ramane relevant pentru mixer, ambalare, manipulare si unele componente de sortare.
+Echipamentul uzat poate ramane relevant pentru manipulare, silozuri, paletizare si unele componente de sortare.
 
 Pentru micronizare si control granulometric, riscul calitatii poate justifica echipament nou sau refurbished verificat de specialist.
+
+Pentru linia 10kt/an, recomandarea actuala este hibrid: core process nou / verificat, auxiliar uzat sau local unde riscul este mic.

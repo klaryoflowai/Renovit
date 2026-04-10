@@ -12,7 +12,7 @@ Principiu:
 
 - `process-flow.csv` - proces tehnologic de la cariera la sac finit
 - `equipment-capex.csv` - registru echipamente si CAPEX nou vs uzat
-- `capacity-scenarios.csv` - scenarii 3kt / 5kt / 10kt / 20kt
+- `capacity-scenarios.csv` - scenarii 3kt / 5kt / 10kt / 20kt, cu 10kt ca baseline actual pentru RFQ
 - `implementation-phases.csv` - fazare de implementare si scalare
 - `used-vs-new-decision.csv` - criterii pentru decizia echipament uzat vs nou
 - `additives-lab-requirements.csv` - aditivi si laborator minim

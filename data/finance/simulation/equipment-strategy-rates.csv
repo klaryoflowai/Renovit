@@ -1,4 +1,4 @@
 strategy,repair_reserve_pct,contingency_pct,scale_exponent,maintenance_pct_annual,lead_time_months,notes
-used,0.20,0.12,0.85,0.06,1.5,Lowest CAPEX but highest commissioning and downtime risk
-hybrid,0.10,0.12,0.78,0.04,3.0,Balanced option for safety-critical new components
-new,0.00,0.10,0.72,0.03,4.0,Higher CAPEX but better uptime and scale logic
+used,0.15,0.10,0.85,0.06,1.5,Lowest purchase CAPEX but highest commissioning downtime and repair risk; 4-8 weeks working lead time
+hybrid,0.05,0.08,0.78,0.04,2.5,Recommended baseline: new or reliable core items plus used auxiliary; 6-12 weeks working lead time
+new,0.00,0.08,0.72,0.03,3.5,Higher CAPEX with warranty and uptime advantages; 10-16 weeks working lead time

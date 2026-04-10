@@ -371,7 +371,7 @@
           <div class="eyebrow">RENOVIT — simulation cockpit</div>
           <h1>Economic Simulation Hub</h1>
           <p>
-            Simulare completă pentru materiale de finisaj pe bază de calcar: capacitate 3k/5k/10k/20k t/an,
+            Simulare completă pentru materiale de finisaj pe bază de calcar: baseline RFQ 10k t/an, cu sensibilitate 3k/5k/20k,
             echipament uzat vs hibrid vs nou, cost materie primă, micronizare, sortare, mixare, logistică, CAPEX,
             finanțare opțională, break-even și ROI.
           </p>
@@ -537,7 +537,8 @@
         <div class="panel third" style="--section-accent: var(--warn);">
           <h2 class="panel-title">08 — Cum folosești</h2>
           <p>
-            Browser hub-ul este pentru decizie rapidă. Pentru lucru profund, folosește workbook-ul Excel și actualizează CSV-urile din GitHub.
+            Browser hub-ul este pentru decizie rapidă. CAPEX-ul selectat include auxiliar + rezerve de risc; ținta 450k EUR rămâne
+            un prag de negociere pentru hibrid, nu buget final confirmat. Pentru lucru profund, folosește workbook-ul Excel și actualizează CSV-urile din GitHub.
           </p>
           <div class="footer-actions">
             <a class="button" href="/data/finance/RENOVIT_Economic_Simulation_Model.xlsx">Descarcă Excel</a>
@@ -551,56 +552,71 @@
     <script>
       const capacities = [
         { id: "Pilot", label: "3k t/an — Pilot", capacity: 3000, utilization: 0.60 },
-        { id: "Start optimal", label: "5k t/an — Start optimal", capacity: 5000, utilization: 0.70 },
-        { id: "Scale-up", label: "10k t/an — Scale-up", capacity: 10000, utilization: 0.75 },
-        { id: "Industrial", label: "20k t/an — Industrial", capacity: 20000, utilization: 0.80 },
+        { id: "Small industrial", label: "5k t/an — Small industrial", capacity: 5000, utilization: 0.70 },
+        { id: "Recommended 10kt", label: "10k t/an — Recomandat RFQ", capacity: 10000, utilization: 0.75 },
+        { id: "Industrial 20kt", label: "20k t/an — Industrial", capacity: 20000, utilization: 0.80 },
       ];
 
       const strategyRates = {
-        used: { label: "Uzat / refurbished", repair: 0.20, contingency: 0.12, exponent: 0.85, maintenance: 0.06, leadTime: 1.5 },
-        hybrid: { label: "Hibrid", repair: 0.10, contingency: 0.12, exponent: 0.78, maintenance: 0.04, leadTime: 3.0 },
-        new: { label: "Nou", repair: 0, contingency: 0.10, exponent: 0.72, maintenance: 0.03, leadTime: 4.0 },
+        used: { label: "Uzat / refurbished", repair: 0.15, contingency: 0.10, exponent: 0.85, maintenance: 0.06, leadTime: 1.5 },
+        hybrid: { label: "Hibrid recomandat", repair: 0.05, contingency: 0.08, exponent: 0.78, maintenance: 0.04, leadTime: 2.5 },
+        new: { label: "Nou", repair: 0, contingency: 0.08, exponent: 0.72, maintenance: 0.03, leadTime: 3.5 },
       };
 
       const equipmentCosts = {
         used: [
-          ["Micronizare / sortare", 90000],
-          ["Mixer + dozare aditivi", 40000],
-          ["Linie saci 20/25kg", 30000],
-          ["Silo + logistică internă", 22500],
-          ["Jaw crusher", 25000],
-          ["Filtre praf", 25000],
-          ["Electric", 30000],
-          ["Aer comprimat / utilitati", 20000],
-          ["Forklift + manipulare", 12000],
-          ["Laborator minim", 10000],
-          ["Instalare + commissioning", 25000],
+          ["Moară micronizare", 75000],
+          ["Sită / classifier", 20000],
+          ["Transportor șurub", 10000],
+          ["Mixer industrial", 32500],
+          ["Dozatoare aditivi", 12500],
+          ["Balanță dozare", 6500],
+          ["Linie reglabilă 20/25kg", 50000],
+          ["Cusător / sealer", 6500],
+          ["Etichetator / printer", 4000],
+          ["Paletizator semi-auto", 20000],
+          ["Silo calcar brut 200t", 25000],
+          ["Silo produs finit 100t", 20000],
+          ["Electric 315kW", 12500],
+          ["Apă / utilități", 6500],
+          ["Laborator calitate", 30000],
+          ["Birou + vestiar", 12500],
         ],
         hybrid: [
-          ["Micronizare / sortare", 120000],
-          ["Mixer + dozare aditivi", 60000],
-          ["Linie saci 20/25kg", 40000],
-          ["Silo + logistică internă", 35000],
-          ["Jaw crusher", 35000],
-          ["Filtre praf", 40000],
-          ["Electric", 45000],
-          ["Aer comprimat / utilitati", 35000],
-          ["Forklift + manipulare", 15000],
-          ["Laborator minim", 15000],
-          ["Instalare + commissioning", 40000],
+          ["Moară micronizare", 120000],
+          ["Sită / classifier", 35000],
+          ["Transportor șurub", 17500],
+          ["Mixer industrial", 60000],
+          ["Dozatoare aditivi", 25000],
+          ["Balanță dozare", 12500],
+          ["Linie reglabilă 20/25kg", 100000],
+          ["Cusător / sealer", 15000],
+          ["Etichetator / printer", 10000],
+          ["Paletizator semi-auto", 42500],
+          ["Silo calcar brut 200t", 25000],
+          ["Silo produs finit 100t", 20000],
+          ["Electric 315kW", 12500],
+          ["Apă / utilități", 6500],
+          ["Laborator calitate", 30000],
+          ["Birou + vestiar", 12500],
         ],
         new: [
-          ["Micronizare / sortare", 200000],
-          ["Mixer + dozare aditivi", 100000],
-          ["Linie saci 20/25kg", 65000],
-          ["Silo + logistică internă", 50000],
-          ["Jaw crusher", 50000],
-          ["Filtre praf", 60000],
-          ["Electric", 70000],
-          ["Aer comprimat / utilitati", 50000],
-          ["Forklift + manipulare", 25000],
-          ["Laborator minim", 20000],
-          ["Instalare + commissioning", 60000],
+          ["Moară micronizare", 215000],
+          ["Sită / classifier", 60000],
+          ["Transportor șurub", 30000],
+          ["Mixer industrial", 110000],
+          ["Dozatoare aditivi", 50000],
+          ["Balanță dozare", 22500],
+          ["Linie reglabilă 20/25kg", 185000],
+          ["Cusător / sealer", 30000],
+          ["Etichetator / printer", 20000],
+          ["Paletizator semi-auto", 85000],
+          ["Silo calcar brut 200t", 25000],
+          ["Silo produs finit 100t", 20000],
+          ["Electric 315kW", 12500],
+          ["Apă / utilități", 6500],
+          ["Laborator calitate", 30000],
+          ["Birou + vestiar", 12500],
         ],
       };
 
@@ -626,7 +642,7 @@
           option.textContent = strategy.label;
           els.equipmentStrategy.appendChild(option);
         });
-        els.capacityScenario.value = "Start optimal";
+        els.capacityScenario.value = "Recommended 10kt";
         els.equipmentStrategy.value = "hybrid";
         syncUtilization();
         fields.forEach(id => {
@@ -678,9 +694,9 @@
         const baseEquipment = equipmentBase(strategy);
         const repairReserve = baseEquipment * rates.repair;
         const contingency = (baseEquipment + repairReserve) * rates.contingency;
-        const capex5k = baseEquipment + repairReserve + contingency;
-        const scaleFactor = Math.pow(capacity.capacity / 5000, rates.exponent);
-        const scaledCapex = capex5k * scaleFactor * num("capexMultiplier");
+        const capex10k = baseEquipment + repairReserve + contingency;
+        const scaleFactor = Math.pow(capacity.capacity / 10000, rates.exponent);
+        const scaledCapex = capex10k * scaleFactor * num("capexMultiplier");
         const finishedTYear = capacity.capacity * utilizationRatio;
         const finishedTMonth = finishedTYear / 12;
         const yieldRatio = Math.max(num("processYield") / 100, 0.01);
@@ -748,7 +764,7 @@
           baseEquipment,
           repairReserve,
           contingency,
-          capex5k,
+          capex10k,
           scaleFactor,
           scaledCapex,
           finishedTYear,

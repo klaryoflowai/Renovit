@@ -34,15 +34,16 @@ Validam:
 - oferte echipamente
 - parteneriat
 
-### Phase 1 - Used 5kt/year starter line
+### Phase 1 - Recommended 10kt/year hybrid launch line
 
 Ipoteza de lucru:
 
-- linie uzata / refurbished
-- capacitate tinta: `5kt/an`
-- output lunar: aproximativ `400 t/luna`
-- break-even de lucru: aproximativ `170 t/luna`
-- CAPEX working range: `200-350k EUR`
+- linie hibrida
+- capacitate tinta: `10kt/an`
+- output lunar nominal: aproximativ `833 t/luna`
+- utilizare an 1 de lucru: `70-75%`
+- break-even de lucru initial: aproximativ `150-180 t/luna`, de validat in calculator
+- CAPEX working range: `445-643k EUR` inainte de rezerve de reparatii / contingency, daca auxiliarul trebuie inclus
 
 Scop:
 
@@ -51,7 +52,13 @@ Scop:
 - validare operare
 - validare marja
 
-### Phase 2 - 10-15kt/year modular scale
+### Phase 1 optional - 5kt/year starter line
+
+Folosim `5kt/an` doar daca partenerii nu accepta CAPEX-ul liniei 10kt sau daca piata nu confirma suficient volum.
+
+Riscul la 5kt este ca fixed opex-ul si echipa minima pot apasa prea mult unit economics.
+
+### Phase 2 - 20kt/year modular scale
 
 Adaugam capacitate doar dupa ce Phase 1 arata:
 
