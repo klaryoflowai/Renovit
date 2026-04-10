@@ -26,6 +26,7 @@ Sistemul adoptat este:
 - `index.html` - calculator browser-ready pentru unit economics
 - `unit-economics-sac-25kg.html` - calculator browser-ready pentru unit economics per sac 25kg
 - `simulare-economica.html` - hub browser-ready pentru simulare economica completa
+- `dashboard-financiar.html` - dashboard browser-ready pentru cash-flow, fonduri, P&L operativ si balance sheet
 - `gips-unit-economics.jsx` - sursa React a calculatorului
 - `instrumente.html` - hub public pentru instrumentele online
 - `proces-tehnologic-gips.html` - pagina browser pentru procesul tehnologic
@@ -40,6 +41,7 @@ Sistemul adoptat este:
 
 - https://renovit.klaryoflowai.workers.dev/ - calculator unit economics
 - https://renovit.klaryoflowai.workers.dev/simulare-economica.html - hub simulare economica
+- https://renovit.klaryoflowai.workers.dev/dashboard-financiar.html - dashboard financiar operational
 - https://renovit.klaryoflowai.workers.dev/unit-economics-sac-25kg.html - calculator unit economics per sac 25kg
 - https://renovit.klaryoflowai.workers.dev/instrumente.html - hub instrumente
 - https://renovit.klaryoflowai.workers.dev/proces-tehnologic-gips.html - proces tehnologic interactiv
@@ -56,6 +58,7 @@ Sistemul adoptat este:
    - `03_Finance/01_Economic_Engine/01_Assumption_Register.md`
    - `03_Finance/01_Economic_Engine/02_Unit_Economics.md`
    - `03_Finance/02_Planning_And_Control/03_Economic_Simulation_Hub.md`
+   - `03_Finance/02_Planning_And_Control/04_Financial_Control_Dashboard.md`
    - `04_Execution/06_Technology_CAPEX/00_Technology_CAPEX_Lab.md`
    - `05_Quality/01_Raw_Gypsum_Working_Thresholds.md`
    - `05_Quality/02_EU_Standards_And_CE_Path.md`
@@ -83,7 +86,7 @@ Sistemul adoptat este:
 
 ## Cum folosesti calculatorul local
 
-Deschide `index.html`, `unit-economics-sac-25kg.html` sau `simulare-economica.html` in browser sau ruleaza:
+Deschide `index.html`, `unit-economics-sac-25kg.html`, `simulare-economica.html` sau `dashboard-financiar.html` in browser sau ruleaza:
 
 ```bash
 python3 -m http.server 8000
