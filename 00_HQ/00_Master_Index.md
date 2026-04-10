@@ -20,9 +20,9 @@ next_action: Foloseste acest index ca prima pagina pentru orice lucru nou pe pro
 
 ## North Star
 
-- Obiectiv faza 1: validarea rapida a modelului "cariera de gips + procesare + tencuiala ambalata" ca punct de intrare in business.
-- Obiectiv faza 2: crestere controlata pe volume, distributie, disciplina operationala si claritate de parteneriat.
-- Obiectiv long-term: construire a unei platforme integrate pe materiale pe baza de gips, cu pozitie puternica in Moldova si extensie regionala.
+- Obiectiv faza 1: validarea rapida a modelului "calcar Cupcini + materiale de finisaj premium" ca punct de intrare in business.
+- Obiectiv faza 2: crestere controlata pe retete validate, distributie, disciplina operationala si claritate de parteneriat.
+- Obiectiv long-term: construire a unei platforme integrate de materiale de finisaj pe baza de resurse minerale locale, cu pozitie puternica in Moldova si extensie regionala.
 
 ## Canonical Documents
 
@@ -35,13 +35,14 @@ next_action: Foloseste acest index ca prima pagina pentru orice lucru nou pe pro
 - [[00_HQ/07_Scaling_Up_Business_OS]]
 - [[00_HQ/08_Frameworks_Library]]
 - [[00_HQ/09_Scaling_Up_x_Traction_Stage_1]]
+- [[00_HQ/10_Strategic_Pivot_Cupcini_Limestone]]
 - [[01_People/00_People_System_Scaling_Up]]
 - [[03_Finance/00_Cash_System_Scaling_Up]]
 - [[03_Finance/01_Economic_Engine/01_Assumption_Register]]
 - [[03_Finance/01_Economic_Engine/02_Unit_Economics]]
+- [[03_Finance/01_Economic_Engine/05_Limestone_Finishing_Materials_Unit_Economics]]
 - [[05_Quality/00_Quality_System]]
-- [[05_Quality/01_Raw_Gypsum_Working_Thresholds]]
-- [[05_Quality/02_EU_Standards_And_CE_Path]]
+- [[05_Quality/06_Limestone_Finishing_Materials_Standards]]
 - [[04_Execution/00_Execution_System_Scaling_Up]]
 - [[01_People/02_Partner_Relationship]]
 - [[01_People/03_Roles_And_Responsibilities]]
@@ -66,6 +67,7 @@ next_action: Foloseste acest index ca prima pagina pentru orice lucru nou pe pro
 - [[02_Strategy/07_Core_Values_Purpose_And_Brand_Promises]]
 - [[02_Strategy/08_7_Strata_Of_Strategy]]
 - [[02_Strategy/09_One_Page_Strategic_Plan]]
+- [[02_Strategy/10_Finishing_Materials_Thesis_Cupcini]]
 - [[02_Strategy/Research/00_Research_Index]]
 
 ## Cash / Finance
@@ -75,6 +77,8 @@ next_action: Foloseste acest index ca prima pagina pentru orice lucru nou pe pro
 - [[03_Finance/01_Economic_Engine/02_Unit_Economics]]
 - [[03_Finance/01_Economic_Engine/03_Pricing_Model]]
 - [[03_Finance/01_Economic_Engine/04_Staged_Unit_Economics]]
+- [[03_Finance/01_Economic_Engine/05_Limestone_Finishing_Materials_Unit_Economics]]
+- [[03_Finance/01_Economic_Engine/06_Price_Benchmark_Check_Limestone_Finishes]]
 - [[03_Finance/02_Planning_And_Control/01_12M_Financial_Model]]
 - [[03_Finance/02_Planning_And_Control/02_Scenario_Planning]]
 - [[03_Finance/02_Planning_And_Control/03_Economic_Simulation_Hub]]
@@ -107,13 +111,15 @@ next_action: Foloseste acest index ca prima pagina pentru orice lucru nou pe pro
 - [[04_Execution/06_Technology_CAPEX/03_Used_vs_New_Decision]]
 - [[04_Execution/06_Technology_CAPEX/04_Phased_Implementation_Scaling]]
 - [[04_Execution/06_Technology_CAPEX/05_Scenario_Model_Spec]]
+- [[04_Execution/06_Technology_CAPEX/07_Limestone_Finishing_Process]]
 
 ## Quality
 
 - [[05_Quality/00_Quality_System]]
-- [[05_Quality/05_EN13279_Master_Framework]]
-- [[05_Quality/01_Raw_Gypsum_Working_Thresholds]]
-- [[05_Quality/02_EU_Standards_And_CE_Path]]
+- [[05_Quality/06_Limestone_Finishing_Materials_Standards]]
+- [[05_Quality/05_EN13279_Master_Framework]] - legacy gips
+- [[05_Quality/01_Raw_Gypsum_Working_Thresholds]] - legacy gips
+- [[05_Quality/02_EU_Standards_And_CE_Path]] - legacy gips
 - [[05_Quality/03_Lab_Tests_And_Document_Checklist]]
 - [[05_Quality/04_Product_Quality_Targets]]
 
@@ -141,6 +147,7 @@ next_action: Foloseste acest index ca prima pagina pentru orice lucru nou pe pro
 - [[07_Meetings/2026-04-09_First_Quarry_Meeting/00_Preread]]
 - [[07_Meetings/2026-04-09_First_Quarry_Meeting/01_Agenda]]
 - [[07_Meetings/2026-04-09_First_Quarry_Meeting/02_Question_Pack]]
+- [[07_Meetings/2026-04-10_Volodeni_First_Visit/02_Question_Pack_Volodeni]]
 - [[07_Meetings/Templates/Meeting_Template]]
 
 ## Weekly Operating Rhythm

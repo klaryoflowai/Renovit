@@ -21,7 +21,9 @@ next_action: Valideaza procesul cu un tehnolog / furnizor de echipamente.
 
 ## Working process
 
-Procesul tinta pentru tencuiala gipsata ambalata 25kg este:
+Nota 2026-04-10: acest document descria procesul vechi pe gips. Pentru ruta actuala Volodeni / calcar / materiale de finisaj foloseste [[04_Execution/06_Technology_CAPEX/07_Limestone_Finishing_Process]].
+
+Procesul tinta legacy pentru tencuiala gipsata ambalata 25kg era:
 
 1. extractie
 2. transport cariera -> fabrica

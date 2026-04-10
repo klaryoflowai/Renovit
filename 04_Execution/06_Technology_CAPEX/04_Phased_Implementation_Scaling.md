@@ -27,7 +27,7 @@ Nu cumparam echipament.
 
 Validam:
 
-- calitate gips
+- calitate calcar Volodeni pentru finisaje
 - cost extractie
 - energie / gaz / utilitati
 - pret piata

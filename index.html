@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>RENOVIT — Gips Unit Economics</title>
+    <title>RENOVIT — Calcar Finishing Materials Unit Economics</title>
     <meta
       name="description"
-      content="Calculator de unit economics pentru evaluarea unei cariere de gips și a unei linii de procesare în produs finit."
+      content="Calculator RENOVIT pentru materiale de finisaj pe baza de calcar: glet, tencuiala decorativa minerala, adeziv / mortar var-calcar."
     >
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,18 +16,20 @@
     >
     <style>
       :root {
-        --bg: #0a0a0a;
-        --panel: #111111;
-        --input: #1a1a1a;
-        --border: #2a2a2a;
-        --border-soft: #1e1e1e;
-        --text: #ffffff;
-        --muted: #aaaaaa;
-        --muted-2: #666666;
-        --accent: #c8a84b;
-        --good: #4caf7d;
-        --warn: #e07b4a;
-        --bad: #e04a4a;
+        --bg: #0a0b09;
+        --panel: #11140f;
+        --panel-2: #171c15;
+        --input: #1e241b;
+        --border: #303827;
+        --border-soft: #202719;
+        --text: #f7f0df;
+        --muted: #a8a08e;
+        --muted-2: #706b5f;
+        --accent: #d0a74e;
+        --lime: #9dbb68;
+        --green: #68b88a;
+        --orange: #df9850;
+        --red: #df6b5b;
       }
 
       * {
@@ -38,58 +40,105 @@
         margin: 0;
         min-height: 100vh;
         background:
-          radial-gradient(circle at top, rgba(200, 168, 75, 0.08), transparent 25%),
-          linear-gradient(180deg, #0d0d0d 0%, var(--bg) 35%);
+          radial-gradient(circle at 15% 0%, rgba(208, 167, 78, 0.18), transparent 28rem),
+          radial-gradient(circle at 85% 10%, rgba(157, 187, 104, 0.14), transparent 24rem),
+          linear-gradient(145deg, #090a08 0%, #11150f 54%, #080907 100%);
         color: var(--text);
         font-family: "DM Mono", monospace;
       }
 
-      .app {
-        width: min(100%, 640px);
+      main {
+        width: min(100%, 1180px);
         margin: 0 auto;
-        padding: 28px 16px 40px;
+        padding: 34px 16px 48px;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(280px, 410px);
+        gap: 18px;
+        align-items: end;
       }
 
       .eyebrow {
-        font-size: 9px;
-        letter-spacing: 4px;
-        color: var(--muted-2);
-        margin-bottom: 6px;
+        color: var(--accent);
+        font-size: 10px;
+        letter-spacing: 0.28em;
         text-transform: uppercase;
       }
 
       h1 {
-        margin: 0;
-        font-size: 28px;
-        line-height: 1.1;
+        margin: 10px 0 12px;
         font-family: "DM Serif Display", serif;
+        font-size: clamp(42px, 8vw, 86px);
         font-weight: 400;
+        line-height: 0.9;
       }
 
-      .subtitle {
-        margin-top: 6px;
-        color: var(--accent);
-        font-size: 12px;
+      p {
+        max-width: 80ch;
+        color: var(--muted);
+        line-height: 1.7;
       }
 
-      .section {
-        margin-top: 18px;
-        background: rgba(17, 17, 17, 0.92);
+      .hero-card,
+      .panel {
         border: 1px solid var(--border);
-        border-left: 3px solid var(--section-accent, var(--accent));
-        padding: 20px;
+        background: rgba(17, 20, 15, 0.92);
         backdrop-filter: blur(10px);
       }
 
-      .section-title {
-        margin: 0 0 16px;
-        font-size: 10px;
-        letter-spacing: 3px;
-        text-transform: uppercase;
-        color: var(--section-accent, var(--accent));
+      .hero-card {
+        padding: 18px;
       }
 
-      .row {
+      .hero-card strong {
+        display: block;
+        color: var(--accent);
+        font-family: "DM Serif Display", serif;
+        font-size: 34px;
+        font-weight: 400;
+        line-height: 1;
+      }
+
+      .hero-card span {
+        display: block;
+        margin-top: 10px;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.65;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 14px;
+        margin-top: 18px;
+      }
+
+      .panel {
+        grid-column: span 6;
+        border-left: 3px solid var(--section-accent, var(--accent));
+        padding: 18px;
+      }
+
+      .panel.full {
+        grid-column: 1 / -1;
+      }
+
+      .panel.third {
+        grid-column: span 4;
+      }
+
+      .panel-title {
+        margin: 0 0 14px;
+        color: var(--section-accent, var(--accent));
+        font-size: 10px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+      }
+
+      .field {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -98,126 +147,114 @@
         border-bottom: 1px solid var(--border-soft);
       }
 
-      .row:last-child {
+      .field:last-child {
         border-bottom: 0;
       }
 
-      .row-main {
-        flex: 1;
-        min-width: 0;
-      }
-
-      .label {
-        font-size: 13px;
+      .field label {
         color: var(--muted);
+        font-size: 12px;
+        line-height: 1.45;
       }
 
-      .label.highlight {
-        color: var(--text);
-      }
-
-      .sublabel {
+      .field small {
+        display: block;
         margin-top: 2px;
-        font-size: 10px;
-        color: #555555;
+        color: var(--muted-2);
       }
 
-      .row-input {
-        display: flex;
-        align-items: center;
-        gap: 6px;
-      }
-
-      input[type="number"] {
-        width: 92px;
-        padding: 7px 10px;
-        border: 1px solid #333333;
+      input {
+        width: 132px;
+        border: 1px solid #3b4631;
         background: var(--input);
         color: var(--text);
         font: inherit;
+        padding: 8px 10px;
         text-align: right;
         outline: none;
       }
 
-      .readonly {
-        min-width: 90px;
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 11px;
+      }
+
+      th,
+      td {
+        border-bottom: 1px solid var(--border-soft);
+        padding: 9px 8px;
         text-align: right;
-        font-size: 14px;
-        color: var(--text);
+        vertical-align: top;
       }
 
-      .readonly.highlight {
+      th:first-child,
+      td:first-child {
+        text-align: left;
+      }
+
+      th {
         color: var(--accent);
-        font-weight: 700;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
       }
 
-      .unit {
-        width: 48px;
-        font-size: 11px;
-        color: #555555;
-      }
-
-      .warnings {
-        margin-top: 20px;
-        padding: 14px;
-        border-left: 3px solid var(--warn);
-        background: #1a120b;
-        color: #f2c7a8;
-        font-size: 11px;
-        line-height: 1.7;
-      }
-
-      .warnings div + div {
-        margin-top: 4px;
-      }
-
-      .verdict {
-        margin-top: 20px;
-        padding: 20px;
-        text-align: center;
-        border: 2px solid var(--verdict-color);
-        background: var(--verdict-bg);
-      }
-
-      .verdict-title {
-        font-size: 11px;
-        letter-spacing: 3px;
-        color: var(--verdict-color);
-        margin-bottom: 8px;
-      }
-
-      .verdict-label {
-        margin: 0 0 6px;
-        font-size: 28px;
-        line-height: 1.1;
-        font-family: "DM Serif Display", serif;
-        color: var(--verdict-color);
-      }
-
-      .verdict-desc {
-        font-size: 12px;
+      td {
         color: var(--muted);
       }
 
-      .notes {
-        margin-top: 20px;
-        padding: 12px;
-        border-left: 2px solid #333333;
-        background: var(--panel);
-        color: #666666;
-        font-size: 10px;
-        line-height: 1.8;
-      }
-
-      .footer-actions {
-        margin-top: 14px;
-        display: flex;
-        flex-wrap: wrap;
+      .metric-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
         gap: 10px;
       }
 
+      .metric {
+        border: 1px solid var(--border-soft);
+        background: rgba(23, 28, 21, 0.82);
+        padding: 14px;
+      }
+
+      .metric span {
+        display: block;
+        color: var(--muted-2);
+        font-size: 10px;
+        line-height: 1.45;
+      }
+
+      .metric strong {
+        display: block;
+        margin-top: 8px;
+        font-family: "DM Serif Display", serif;
+        font-size: 29px;
+        font-weight: 400;
+        color: var(--text);
+        line-height: 1;
+      }
+
+      .metric.good strong { color: var(--green); }
+      .metric.warn strong { color: var(--orange); }
+      .metric.bad strong { color: var(--red); }
+
+      .notice {
+        border: 1px solid rgba(223, 152, 80, 0.48);
+        background: rgba(223, 152, 80, 0.08);
+        color: var(--muted);
+        padding: 14px;
+        font-size: 12px;
+        line-height: 1.65;
+      }
+
+      .footer-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 16px;
+      }
+
       .button {
-        border: 1px solid #333333;
+        border: 1px solid #3b4631;
         background: transparent;
         color: var(--text);
         font: inherit;
@@ -231,468 +268,322 @@
         color: var(--accent);
       }
 
-      @media (max-width: 640px) {
-        .row {
+      @media (max-width: 900px) {
+        .hero,
+        .grid {
+          display: block;
+        }
+
+        .hero-card,
+        .panel {
+          margin-top: 14px;
+        }
+
+        .field {
           align-items: flex-start;
           flex-direction: column;
         }
 
-        .row-input {
+        input {
           width: 100%;
-          justify-content: flex-end;
         }
 
-        input[type="number"] {
-          width: 110px;
-        }
-
-        .readonly {
-          min-width: 110px;
+        table {
+          display: block;
+          overflow-x: auto;
+          white-space: nowrap;
         }
       }
     </style>
   </head>
   <body>
-    <main class="app">
-      <div class="eyebrow">RENOVIT — instrument analiză</div>
-      <h1>Unit Economics</h1>
-      <div class="subtitle">Carieră Gips — Edineț, Moldova</div>
-
-      <section class="section">
-        <div class="section-title">01 — Extracție & Capacitate</div>
-        <div class="row">
-          <div class="row-main">
-            <div class="label">Cost extracție / tonă brută</div>
-          </div>
-          <div class="row-input">
-            <input id="costExtractie" type="number" min="0" value="8">
-            <span class="unit">€/t</span>
-          </div>
+    <main>
+      <section class="hero">
+        <div>
+          <div class="eyebrow">RENOVIT — Cupcini limestone economics</div>
+          <h1>Finishing Materials Unit Economics</h1>
+          <p>
+            Calculator pentru noua directie RENOVIT: calcar alb / calcar-travertin din ecosistemul Mina din Cupcini
+            transformat in materiale de finisaj ambalate. Preturile sunt inputuri manuale: benchmarkurile online sunt
+            orientative si trebuie inlocuite cu preturi angro confirmate de distribuitori.
+          </p>
         </div>
-        <div class="row">
-          <div class="row-main">
-            <div class="label">Capacitate extracție</div>
-            <div class="sublabel">tone brute pe lună</div>
-          </div>
-          <div class="row-input">
-            <input id="tonePerLuna" type="number" min="0" value="500">
-            <span class="unit">t/lună</span>
-          </div>
-        </div>
-        <div class="row">
-          <div class="row-main">
-            <div class="label">Randament procesare</div>
-            <div class="sublabel">% gips brut → produs finit</div>
-          </div>
-          <div class="row-input">
-            <input id="randament" type="number" min="1" max="100" step="0.1" value="75">
-            <span class="unit">%</span>
-          </div>
-        </div>
-        <div class="row">
-          <div class="row-main">
-            <div class="label">Tone produs finit / lună</div>
-          </div>
-          <div class="row-input">
-            <div id="toneProdusLuna" class="readonly">0</div>
-            <span class="unit">t/lună</span>
-          </div>
+        <div class="hero-card">
+          <strong id="heroVerdict">GO conditional</strong>
+          <span id="heroSummary">Completeaza preturile validate si costurile reale pe sac. Modelul recalculeaza live.</span>
         </div>
       </section>
 
-      <section class="section">
-        <div class="section-title">02 — Costuri de Procesare / Tonă Produs Finit</div>
-        <div class="row">
-          <div class="row-main">
-            <div class="label">Calcinare (furnale)</div>
+      <section class="grid">
+        <div class="panel" style="--section-accent: var(--accent);">
+          <h2 class="panel-title">01 — Setari generale</h2>
+          <div class="field">
+            <label>Curs MDL / EUR <small>folosit pentru conversie</small></label>
+            <input id="exchangeRate" type="number" min="1" step="0.1" value="20">
           </div>
-          <div class="row-input">
-            <input id="costCalcinare" type="number" min="0" value="15">
-            <span class="unit">€/t</span>
+          <div class="field">
+            <label>CAPEX total <small>EUR, linie micronizare / mixare / ambalare</small></label>
+            <input id="capex" type="number" min="0" step="1000" value="300000">
           </div>
-        </div>
-        <div class="row">
-          <div class="row-main">
-            <div class="label">Măcinare</div>
+          <div class="field">
+            <label>Costuri fixe lunare <small>EUR / luna</small></label>
+            <input id="fixedOpex" type="number" min="0" step="100" value="8000">
           </div>
-          <div class="row-input">
-            <input id="costMacinare" type="number" min="0" value="8">
-            <span class="unit">€/t</span>
-          </div>
-        </div>
-        <div class="row">
-          <div class="row-main">
-            <div class="label">Ambalare (saci 25kg)</div>
-          </div>
-          <div class="row-input">
-            <input id="costAmbalare" type="number" min="0" value="5">
-            <span class="unit">€/t</span>
+          <div class="field">
+            <label>Utilizare an 1 <small>% din volumele introduse</small></label>
+            <input id="utilization" type="number" min="0" max="100" step="1" value="70">
           </div>
         </div>
-        <div class="row">
-          <div class="row-main">
-            <div class="label">Manoperă directă</div>
+
+        <div class="panel" style="--section-accent: var(--orange);">
+          <h2 class="panel-title">02 — Atentie preturi</h2>
+          <div class="notice">
+            Preturile din documentele initiale sunt tratate ca ipoteze. Am vazut benchmarkuri online care sugereaza ca unele valori pot fi prea sus,
+            mai ales la tencuiala decorativa minerala. Introdu aici preturile angro reale dupa discutii cu distribuitorii.
           </div>
-          <div class="row-input">
-            <input id="costManopera" type="number" min="0" value="7">
-            <span class="unit">€/t</span>
-          </div>
-        </div>
-        <div class="row">
-          <div class="row-main">
-            <div class="label">Logistică / distribuție</div>
-          </div>
-          <div class="row-input">
-            <input id="costLogistica" type="number" min="0" value="6">
-            <span class="unit">€/t</span>
+          <div class="footer-actions">
+            <a class="button" href="/instrumente.html">Toate instrumentele</a>
+            <a class="button" href="/dashboard-financiar.html">Dashboard financiar</a>
+            <a class="button" href="/simulare-economica.html">Simulare CAPEX</a>
           </div>
         </div>
-        <div class="row">
-          <div class="row-main">
-            <div class="label highlight">COST TOTAL fără CAPEX</div>
+
+        <div class="panel full" style="--section-accent: var(--lime);">
+          <h2 class="panel-title">03 — Produse faza 1</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Produs</th>
+                <th>Sac kg</th>
+                <th>Saci / an</th>
+                <th>Pret angro MDL/sac</th>
+                <th>Cost complet MDL/sac</th>
+                <th>Retail benchmark MDL/sac</th>
+                <th>Sursa / status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Glet extra-alb</td>
+                <td><input id="gletKg" type="number" min="1" step="1" value="20"></td>
+                <td><input id="gletBags" type="number" min="0" step="1000" value="75000"></td>
+                <td><input id="gletPrice" type="number" min="0" step="1" value="200"></td>
+                <td><input id="gletCost" type="number" min="0" step="1" value="121"></td>
+                <td><input id="gletRetail" type="number" min="0" step="1" value="260"></td>
+                <td>Draft doc / de verificat angro</td>
+              </tr>
+              <tr>
+                <td>Tencuiala decorativa minerala</td>
+                <td><input id="decorKg" type="number" min="1" step="1" value="25"></td>
+                <td><input id="decorBags" type="number" min="0" step="1000" value="50000"></td>
+                <td><input id="decorPrice" type="number" min="0" step="1" value="240"></td>
+                <td><input id="decorCost" type="number" min="0" step="1" value="156"></td>
+                <td><input id="decorRetail" type="number" min="0" step="1" value="259"></td>
+                <td>Retail verificat orientativ / angro de verificat</td>
+              </tr>
+              <tr>
+                <td>Adeziv / mortar var-calcar</td>
+                <td><input id="adhesiveKg" type="number" min="1" step="1" value="25"></td>
+                <td><input id="adhesiveBags" type="number" min="0" step="1000" value="35000"></td>
+                <td><input id="adhesivePrice" type="number" min="0" step="1" value="220"></td>
+                <td><input id="adhesiveCost" type="number" min="0" step="1" value="156"></td>
+                <td><input id="adhesiveRetail" type="number" min="0" step="1" value="275"></td>
+                <td>Draft benchmark / de verificat direct</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="panel full" style="--section-accent: var(--green);">
+          <h2 class="panel-title">04 — Rezultat economic</h2>
+          <div class="metric-grid">
+            <div class="metric"><span>Cifra afaceri</span><strong id="revenue">€0</strong></div>
+            <div class="metric"><span>Profit brut</span><strong id="grossProfit">€0</strong></div>
+            <div class="metric"><span>Marja bruta</span><strong id="grossMargin">0%</strong></div>
+            <div class="metric"><span>EBITDA an 1</span><strong id="ebitda">€0</strong></div>
+            <div class="metric"><span>Payback CAPEX</span><strong id="payback">0 ani</strong></div>
+            <div class="metric"><span>ROI an 1</span><strong id="roi">0%</strong></div>
+            <div class="metric"><span>Break-even</span><strong id="breakEvenTons">0 t</strong></div>
+            <div class="metric"><span>Volum vandut</span><strong id="tonsSold">0 t</strong></div>
           </div>
-          <div class="row-input">
-            <div id="costOperational" class="readonly highlight">€0.00</div>
-            <span class="unit">/t</span>
-          </div>
+        </div>
+
+        <div class="panel full" style="--section-accent: var(--accent);">
+          <h2 class="panel-title">05 — Detaliu pe produs</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Produs</th>
+                <th>Saci vanduti</th>
+                <th>Tone</th>
+                <th>Venit MDL</th>
+                <th>Profit brut MDL</th>
+                <th>Marja</th>
+                <th>Discount vs retail</th>
+              </tr>
+            </thead>
+            <tbody id="productRows"></tbody>
+          </table>
+        </div>
+
+        <div class="panel third" style="--section-accent: var(--lime);">
+          <h2 class="panel-title">06 — Resursa</h2>
+          <p>
+            Documentele Cupcini indica faina de calcar cu `CaCO3` aproximativ 94.20-94.70% si rezerve active relevante la Ocnita,
+            Volodeni si Hancauti. Acest lucru este promitator, dar decizia se ia pe reteta finala si teste de produs.
+          </p>
+        </div>
+
+        <div class="panel third" style="--section-accent: var(--orange);">
+          <h2 class="panel-title">07 — Urmatorul gate</h2>
+          <p>
+            Nu comandam echipament doar pe baza acestor cifre. Gate-ul urmator este pret angro validat + reteta testata + oferta CAPEX
+            pentru micronizare, sortare, mixare si ambalare.
+          </p>
+        </div>
+
+        <div class="panel third" style="--section-accent: var(--green);">
+          <h2 class="panel-title">08 — Interpretare</h2>
+          <p>
+            `GO` daca marja bruta ramane peste 40% dupa preturi verificate. `GO conditionat` intre 25-39%. Sub 25%, brandul nou
+            are risc mare fara contracte ferme.
+          </p>
         </div>
       </section>
-
-      <section class="section">
-        <div class="section-title">03 — Investiție (CAPEX)</div>
-        <div class="row">
-          <div class="row-main">
-            <div class="label">Investiție totală linie procesare</div>
-          </div>
-          <div class="row-input">
-            <input id="capex" type="number" min="0" value="200000">
-            <span class="unit">€</span>
-          </div>
-        </div>
-        <div class="row">
-          <div class="row-main">
-            <div class="label">Ani amortizare</div>
-          </div>
-          <div class="row-input">
-            <input id="aniAmortizare" type="number" min="1" step="1" value="5">
-            <span class="unit">ani</span>
-          </div>
-        </div>
-        <div class="row">
-          <div class="row-main">
-            <div class="label">Amortizare / tonă</div>
-          </div>
-          <div class="row-input">
-            <div id="amortizareTona" class="readonly">€0.00</div>
-            <span class="unit">/t</span>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="section-title">04 — Vânzări</div>
-        <div class="row">
-          <div class="row-main">
-            <div class="label">Preț vânzare en-gros</div>
-            <div class="sublabel">tencuială gipsovă ambalată</div>
-          </div>
-          <div class="row-input">
-            <input id="pretVanzare" type="number" min="0" value="120">
-            <span class="unit">€/t</span>
-          </div>
-        </div>
-        <div class="row">
-          <div class="row-main">
-            <div class="label">Volum vânzări lunar estimat</div>
-          </div>
-          <div class="row-input">
-            <input id="volum" type="number" min="0" value="400">
-            <span class="unit">t/lună</span>
-          </div>
-        </div>
-        <div class="row">
-          <div class="row-main">
-            <div class="label">Volum utilizat în calcule</div>
-            <div class="sublabel">limitat la capacitatea lunară disponibilă</div>
-          </div>
-          <div class="row-input">
-            <div id="volumUtilizat" class="readonly">0</div>
-            <span class="unit">t/lună</span>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" style="--section-accent: var(--good);">
-        <div class="section-title">05 — Rezultate</div>
-        <div class="row">
-          <div class="row-main">
-            <div class="label highlight">Cost total / tonă (cu CAPEX)</div>
-          </div>
-          <div class="row-input">
-            <div id="costTotalCuCapex" class="readonly highlight">€0.00</div>
-            <span class="unit">/t</span>
-          </div>
-        </div>
-        <div class="row">
-          <div class="row-main">
-            <div class="label highlight">Marjă brută</div>
-          </div>
-          <div class="row-input">
-            <div id="marja" class="readonly highlight">0%</div>
-            <span class="unit"></span>
-          </div>
-        </div>
-        <div class="row">
-          <div class="row-main">
-            <div class="label highlight">Profit operațional lunar</div>
-            <div class="sublabel">după amortizare contabilă</div>
-          </div>
-          <div class="row-input">
-            <div id="profitLunar" class="readonly highlight">€0</div>
-            <span class="unit">/lună</span>
-          </div>
-        </div>
-        <div class="row">
-          <div class="row-main">
-            <div class="label">Cash flow operațional lunar</div>
-            <div class="sublabel">folosit pentru payback și ROI</div>
-          </div>
-          <div class="row-input">
-            <div id="cashFlowLunar" class="readonly">€0</div>
-            <span class="unit">/lună</span>
-          </div>
-        </div>
-        <div class="row">
-          <div class="row-main">
-            <div class="label">Break-even CAPEX</div>
-          </div>
-          <div class="row-input">
-            <div id="breakEven" class="readonly">N/A</div>
-            <span class="unit"></span>
-          </div>
-        </div>
-        <div class="row">
-          <div class="row-main">
-            <div class="label">ROI la 3 ani</div>
-            <div class="sublabel">bazat pe cash flow operațional</div>
-          </div>
-          <div class="row-input">
-            <div id="roi3ani" class="readonly">0%</div>
-            <span class="unit"></span>
-          </div>
-        </div>
-      </section>
-
-      <div id="warnings" class="warnings" hidden></div>
-
-      <div id="verdict" class="verdict" style="--verdict-color: var(--good); --verdict-bg: rgba(76, 175, 125, 0.07);">
-        <div class="verdict-title">VERDICT</div>
-        <h2 id="verdictLabel" class="verdict-label">GO ✓</h2>
-        <div id="verdictDesc" class="verdict-desc">Marjă excelentă. Merită implicarea.</div>
-      </div>
-
-      <div class="notes">
-        * Valorile implicite sunt estimări orientative pentru piața MD/RO.<br>
-        * Înlocuiește cu datele reale pe măsură ce le obții.<br>
-        * Validează benchmarkul de preț cu 3–5 distribuitori locali înainte de orice decizie.
-      </div>
-
-      <div class="footer-actions">
-        <button class="button" id="resetButton" type="button">Reset valori</button>
-        <a class="button" href="/instrumente.html">Toate instrumentele</a>
-        <a class="button" href="/unit-economics-sac-25kg.html">Per sac 25kg</a>
-        <a class="button" href="/proces-tehnologic-gips.html">Proces tehnologic</a>
-        <a class="button" href="/raport-vizita-cariera.html">Raport vizită</a>
-      </div>
     </main>
 
     <script>
-      const defaults = {
-        costExtractie: 8,
-        tonePerLuna: 500,
-        costCalcinare: 15,
-        costMacinare: 8,
-        costAmbalare: 5,
-        costManopera: 7,
-        costLogistica: 6,
-        capex: 200000,
-        aniAmortizare: 5,
-        pretVanzare: 120,
-        volum: 400,
-        randament: 75,
-      };
+      const productDefs = [
+        { key: "glet", name: "Glet extra-alb" },
+        { key: "decor", name: "Tencuiala decorativa minerala" },
+        { key: "adhesive", name: "Adeziv / mortar var-calcar" },
+      ];
 
-      const inputIds = Object.keys(defaults);
-      const inputs = Object.fromEntries(inputIds.map(id => [id, document.getElementById(id)]));
+      const inputIds = [
+        "exchangeRate", "capex", "fixedOpex", "utilization",
+        ...productDefs.flatMap(product => [
+          `${product.key}Kg`,
+          `${product.key}Bags`,
+          `${product.key}Price`,
+          `${product.key}Cost`,
+          `${product.key}Retail`,
+        ]),
+      ];
 
-      const outputs = {
-        toneProdusLuna: document.getElementById("toneProdusLuna"),
-        costOperational: document.getElementById("costOperational"),
-        amortizareTona: document.getElementById("amortizareTona"),
-        volumUtilizat: document.getElementById("volumUtilizat"),
-        costTotalCuCapex: document.getElementById("costTotalCuCapex"),
-        marja: document.getElementById("marja"),
-        profitLunar: document.getElementById("profitLunar"),
-        cashFlowLunar: document.getElementById("cashFlowLunar"),
-        breakEven: document.getElementById("breakEven"),
-        roi3ani: document.getElementById("roi3ani"),
-        warnings: document.getElementById("warnings"),
-        verdict: document.getElementById("verdict"),
-        verdictLabel: document.getElementById("verdictLabel"),
-        verdictDesc: document.getElementById("verdictDesc"),
-      };
+      const els = Object.fromEntries(inputIds.map(id => [id, document.getElementById(id)]));
 
-      function clamp(value, min = 0, max = Number.POSITIVE_INFINITY) {
-        return Math.min(max, Math.max(min, value));
+      function num(id) {
+        const value = Number.parseFloat(els[id].value);
+        return Number.isFinite(value) ? value : 0;
       }
 
-      function getNumber(id) {
-        const raw = Number.parseFloat(inputs[id].value);
-        if (!Number.isFinite(raw)) {
-          return defaults[id];
-        }
-        return raw;
+      function fmtCurrency(value, currency = "EUR", digits = 0) {
+        if (!Number.isFinite(value)) return "N/A";
+        const prefix = currency === "MDL" ? "MDL " : "€";
+        return `${prefix}${value.toLocaleString("ro-RO", { minimumFractionDigits: digits, maximumFractionDigits: digits })}`;
       }
 
-      function formatFixed(value, digits = 2) {
-        return Number.isFinite(value) ? value.toFixed(digits) : "N/A";
+      function fmtNumber(value, digits = 0) {
+        if (!Number.isFinite(value)) return "N/A";
+        return value.toLocaleString("ro-RO", { minimumFractionDigits: digits, maximumFractionDigits: digits });
       }
 
-      function formatInteger(value) {
-        return Number.isFinite(value) ? value.toFixed(0) : "N/A";
+      function fmtPercent(value, digits = 0) {
+        if (!Number.isFinite(value)) return "N/A";
+        return `${(value * 100).toLocaleString("ro-RO", { minimumFractionDigits: digits, maximumFractionDigits: digits })}%`;
       }
 
-      function formatCurrency(value) {
-        if (!Number.isFinite(value)) {
-          return "N/A";
-        }
-        return `€${Math.round(value).toLocaleString("ro-RO")}`;
+      function setText(id, value) {
+        document.getElementById(id).textContent = value;
+      }
+
+      function setTone(id, value, good, warn) {
+        const metric = document.getElementById(id).closest(".metric");
+        metric.classList.remove("good", "warn", "bad");
+        metric.classList.add(value >= good ? "good" : value >= warn ? "warn" : "bad");
+      }
+
+      function productCalc(product) {
+        const utilization = num("utilization") / 100;
+        const bags = num(`${product.key}Bags`) * utilization;
+        const kg = num(`${product.key}Kg`);
+        const price = num(`${product.key}Price`);
+        const cost = num(`${product.key}Cost`);
+        const retail = num(`${product.key}Retail`);
+        const revenue = bags * price;
+        const directCost = bags * cost;
+        const grossProfit = revenue - directCost;
+        const margin = revenue > 0 ? grossProfit / revenue : 0;
+        const tons = bags * kg / 1000;
+        const discountToRetail = retail > 0 ? 1 - price / retail : 0;
+        return { ...product, bags, kg, price, cost, retail, revenue, directCost, grossProfit, margin, tons, discountToRetail };
       }
 
       function compute() {
-        const state = {
-          costExtractie: clamp(getNumber("costExtractie")),
-          tonePerLuna: clamp(getNumber("tonePerLuna")),
-          costCalcinare: clamp(getNumber("costCalcinare")),
-          costMacinare: clamp(getNumber("costMacinare")),
-          costAmbalare: clamp(getNumber("costAmbalare")),
-          costManopera: clamp(getNumber("costManopera")),
-          costLogistica: clamp(getNumber("costLogistica")),
-          capex: clamp(getNumber("capex")),
-          aniAmortizare: clamp(getNumber("aniAmortizare"), 1),
-          pretVanzare: clamp(getNumber("pretVanzare")),
-          volum: clamp(getNumber("volum")),
-          randament: clamp(getNumber("randament"), 1, 100),
-        };
-
-        const randamentRatio = state.randament / 100;
-        const toneProdusLuna = state.tonePerLuna * randamentRatio;
-        const volumUtilizat = Math.min(state.volum, toneProdusLuna);
-        const costExtractieAloc = randamentRatio > 0 ? state.costExtractie / randamentRatio : 0;
-        const costOperational =
-          costExtractieAloc +
-          state.costCalcinare +
-          state.costMacinare +
-          state.costAmbalare +
-          state.costManopera +
-          state.costLogistica;
-        const amortizareLuna = state.capex > 0 ? state.capex / (state.aniAmortizare * 12) : 0;
-        const amortizareTona = toneProdusLuna > 0 ? amortizareLuna / toneProdusLuna : 0;
-        const costTotalCuCapex = costOperational + amortizareTona;
-        const marja = state.pretVanzare > 0 ? ((state.pretVanzare - costTotalCuCapex) / state.pretVanzare) * 100 : null;
-        const profitLunar = (state.pretVanzare - costTotalCuCapex) * volumUtilizat;
-        const cashFlowLunar = (state.pretVanzare - costOperational) * volumUtilizat;
-        const breakEven = cashFlowLunar > 0 ? state.capex / (cashFlowLunar * 12) : null;
-        const roi3ani = state.capex > 0 ? ((cashFlowLunar * 36 - state.capex) / state.capex) * 100 : 0;
-
-        const warnings = [];
-        if (state.volum > toneProdusLuna) {
-          warnings.push(`Volumul de vânzări introdus depășește capacitatea. Calculele folosesc maximum ${formatInteger(toneProdusLuna)} t/lună.`);
-        }
-
-        return {
-          toneProdusLuna,
-          volumUtilizat,
-          costOperational,
-          amortizareTona,
-          costTotalCuCapex,
-          marja,
-          profitLunar,
-          cashFlowLunar,
-          breakEven,
-          roi3ani,
-          warnings,
-        };
+        const products = productDefs.map(productCalc);
+        const revenueMdl = products.reduce((sum, product) => sum + product.revenue, 0);
+        const grossProfitMdl = products.reduce((sum, product) => sum + product.grossProfit, 0);
+        const tons = products.reduce((sum, product) => sum + product.tons, 0);
+        const exchangeRate = Math.max(num("exchangeRate"), 0.01);
+        const fixedAnnualEur = num("fixedOpex") * 12;
+        const revenueEur = revenueMdl / exchangeRate;
+        const grossProfitEur = grossProfitMdl / exchangeRate;
+        const ebitda = grossProfitEur - fixedAnnualEur;
+        const margin = revenueEur > 0 ? grossProfitEur / revenueEur : 0;
+        const capex = num("capex");
+        const payback = ebitda > 0 ? capex / ebitda : Infinity;
+        const roi = capex > 0 ? ebitda / capex : 0;
+        const avgGrossProfitPerTonEur = tons > 0 ? grossProfitEur / tons : 0;
+        const breakEvenTons = avgGrossProfitPerTonEur > 0 ? fixedAnnualEur / avgGrossProfitPerTonEur : Infinity;
+        return { products, revenueEur, grossProfitEur, ebitda, margin, payback, roi, tons, breakEvenTons };
       }
 
-      function renderWarnings(items) {
-        if (!items.length) {
-          outputs.warnings.hidden = true;
-          outputs.warnings.innerHTML = "";
-          return;
-        }
-
-        outputs.warnings.hidden = false;
-        outputs.warnings.innerHTML = items.map(item => `<div>• ${item}</div>`).join("");
-      }
-
-      function renderVerdict(marja) {
-        let color = "var(--bad)";
-        let background = "rgba(224, 74, 74, 0.07)";
-        let label = "NO-GO ✗";
-        let desc = "Afacerea nu e viabilă la acești parametri.";
-
-        if (marja >= 40) {
-          color = "var(--good)";
-          background = "rgba(76, 175, 125, 0.07)";
-          label = "GO ✓";
-          desc = "Marjă excelentă. Merită implicarea.";
-        } else if (marja >= 25) {
-          color = "var(--accent)";
-          background = "rgba(200, 168, 75, 0.07)";
-          label = "GO CONDIȚIONAT";
-          desc = "Marjă acceptabilă. Optimizează costurile.";
-        } else if (marja >= 10) {
-          color = "var(--warn)";
-          background = "rgba(224, 123, 74, 0.07)";
-          label = "RISC RIDICAT";
-          desc = "Marjă slabă. Revizuiește prețul sau costurile.";
-        }
-
-        outputs.verdict.style.setProperty("--verdict-color", color);
-        outputs.verdict.style.setProperty("--verdict-bg", background);
-        outputs.verdictLabel.textContent = label;
-        outputs.verdictDesc.textContent = desc;
+      function renderProducts(products) {
+        document.getElementById("productRows").innerHTML = products.map(product => `
+          <tr>
+            <td>${product.name}</td>
+            <td>${fmtNumber(product.bags)}</td>
+            <td>${fmtNumber(product.tons, 1)}</td>
+            <td>${fmtCurrency(product.revenue, "MDL")}</td>
+            <td>${fmtCurrency(product.grossProfit, "MDL")}</td>
+            <td>${fmtPercent(product.margin, 1)}</td>
+            <td>${fmtPercent(product.discountToRetail, 1)}</td>
+          </tr>
+        `).join("");
       }
 
       function render() {
         const calc = compute();
+        setText("revenue", fmtCurrency(calc.revenueEur));
+        setText("grossProfit", fmtCurrency(calc.grossProfitEur));
+        setText("grossMargin", fmtPercent(calc.margin, 1));
+        setText("ebitda", fmtCurrency(calc.ebitda));
+        setText("payback", Number.isFinite(calc.payback) ? `${fmtNumber(calc.payback, 1)} ani` : "N/A");
+        setText("roi", fmtPercent(calc.roi, 1));
+        setText("breakEvenTons", Number.isFinite(calc.breakEvenTons) ? `${fmtNumber(calc.breakEvenTons, 0)} t` : "N/A");
+        setText("tonsSold", `${fmtNumber(calc.tons, 0)} t`);
+        setTone("grossMargin", calc.margin, 0.4, 0.25);
+        setTone("ebitda", calc.ebitda, 1, 0);
+        setTone("payback", Number.isFinite(calc.payback) ? 1 / calc.payback : 0, 0.5, 0.25);
+        setTone("roi", calc.roi, 0.4, 0.2);
 
-        outputs.toneProdusLuna.textContent = formatInteger(calc.toneProdusLuna);
-        outputs.costOperational.textContent = `€${formatFixed(calc.costOperational)}`;
-        outputs.amortizareTona.textContent = `€${formatFixed(calc.amortizareTona)}`;
-        outputs.volumUtilizat.textContent = formatInteger(calc.volumUtilizat);
-        outputs.costTotalCuCapex.textContent = `€${formatFixed(calc.costTotalCuCapex)}`;
-        outputs.marja.textContent = calc.marja === null ? "N/A" : `${formatFixed(calc.marja, 1)}%`;
-        outputs.profitLunar.textContent = formatCurrency(calc.profitLunar);
-        outputs.cashFlowLunar.textContent = formatCurrency(calc.cashFlowLunar);
-        outputs.breakEven.textContent = calc.breakEven === null ? "N/A" : `${formatFixed(calc.breakEven, 1)} ani`;
-        outputs.roi3ani.textContent = `${formatInteger(calc.roi3ani)}%`;
-
-        renderWarnings(calc.warnings);
-        renderVerdict(calc.marja ?? -999);
+        let verdict = "GO conditional";
+        let summary = "Preturile si retetele inca trebuie validate.";
+        if (calc.margin >= 0.4 && calc.ebitda > 0 && calc.payback <= 2.5) {
+          verdict = "GO, cu validare";
+          summary = `Marja ${fmtPercent(calc.margin, 1)}, EBITDA ${fmtCurrency(calc.ebitda)} si payback ${fmtNumber(calc.payback, 1)} ani.`;
+        } else if (calc.margin < 0.25 || calc.ebitda <= 0) {
+          verdict = "Risc / rework";
+          summary = "Pretul sau costul nu sustine inca o lansare fara contracte ferme.";
+        }
+        setText("heroVerdict", verdict);
+        setText("heroSummary", summary);
+        renderProducts(calc.products);
       }
 
       inputIds.forEach(id => {
-        inputs[id].addEventListener("input", render);
-        inputs[id].addEventListener("change", render);
-      });
-
-      document.getElementById("resetButton").addEventListener("click", () => {
-        inputIds.forEach(id => {
-          inputs[id].value = defaults[id];
-        });
-        render();
+        els[id].addEventListener("input", render);
+        els[id].addEventListener("change", render);
       });
 
       render();

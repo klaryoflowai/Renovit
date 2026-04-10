@@ -371,8 +371,8 @@
           <div class="eyebrow">RENOVIT — simulation cockpit</div>
           <h1>Economic Simulation Hub</h1>
           <p>
-            Simulare completă pentru tencuială gipsată la sac 25kg: capacitate 3k/5k/10k/20k t/an,
-            echipament uzat vs hibrid vs nou, cost materie primă, procesare, logistică, CAPEX,
+            Simulare completă pentru materiale de finisaj pe bază de calcar: capacitate 3k/5k/10k/20k t/an,
+            echipament uzat vs hibrid vs nou, cost materie primă, micronizare, sortare, mixare, logistică, CAPEX,
             finanțare opțională, break-even și ROI.
           </p>
         </div>
@@ -398,8 +398,8 @@
             <input id="utilization" type="number" min="0" max="100" step="1" value="70">
           </div>
           <div class="field">
-            <label>Preț vânzare <small>EUR / tonă produs finit</small></label>
-            <input id="sellingPrice" type="number" min="0" step="1" value="120">
+            <label>Preț vânzare mediu <small>EUR / tonă produs finit</small></label>
+            <input id="sellingPrice" type="number" min="0" step="1" value="420">
           </div>
           <div class="field">
             <label>Multiplicator CAPEX <small>folosit pentru sensibilitate oferte</small></label>
@@ -410,36 +410,36 @@
         <div class="panel" style="--section-accent: var(--blue);">
           <h2 class="panel-title">02 — Costuri operaționale</h2>
           <div class="field">
-            <label>Cost extracție <small>EUR / tonă brută</small></label>
-            <input id="extractionCost" type="number" min="0" step="0.1" value="8">
+            <label>Cost calcar / filler <small>EUR / tonă brută</small></label>
+            <input id="extractionCost" type="number" min="0" step="0.1" value="5">
           </div>
           <div class="field">
-            <label>Transport carieră → fabrică <small>EUR / tonă brută</small></label>
-            <input id="rawTransportCost" type="number" min="0" step="0.1" value="4">
+            <label>Transport intern / aprovizionare <small>EUR / tonă brută</small></label>
+            <input id="rawTransportCost" type="number" min="0" step="0.1" value="2">
           </div>
           <div class="field">
             <label>Randament procesare <small>brut → produs finit</small></label>
-            <input id="processYield" type="number" min="1" max="100" step="1" value="75">
+            <input id="processYield" type="number" min="1" max="100" step="1" value="95">
           </div>
           <div class="field">
-            <label>Calcinare <small>EUR / tonă produs finit</small></label>
-            <input id="calcinationCost" type="number" min="0" step="0.1" value="15">
+            <label>Micronizare / sortare <small>EUR / tonă produs finit</small></label>
+            <input id="calcinationCost" type="number" min="0" step="0.1" value="25">
           </div>
           <div class="field">
-            <label>Măcinare <small>EUR / tonă produs finit</small></label>
-            <input id="grindingCost" type="number" min="0" step="0.1" value="8">
+            <label>Mixare uscata <small>EUR / tonă produs finit</small></label>
+            <input id="grindingCost" type="number" min="0" step="0.1" value="10">
           </div>
           <div class="field">
             <label>Aditivi <small>EUR / tonă produs finit</small></label>
-            <input id="additivesCost" type="number" min="0" step="0.1" value="8">
+            <input id="additivesCost" type="number" min="0" step="0.1" value="55">
           </div>
           <div class="field">
             <label>Manoperă directă <small>EUR / tonă produs finit</small></label>
             <input id="laborCost" type="number" min="0" step="0.1" value="7">
           </div>
           <div class="field">
-            <label>Ambalaj sac 25kg <small>EUR / sac</small></label>
-            <input id="bagCost" type="number" min="0" step="0.01" value="0.15">
+            <label>Ambalaj sac 20/25kg mediu <small>EUR / sac</small></label>
+            <input id="bagCost" type="number" min="0" step="0.01" value="0.18">
           </div>
           <div class="field">
             <label>Distribuție <small>EUR / tonă produs finit</small></label>
@@ -564,40 +564,40 @@
 
       const equipmentCosts = {
         used: [
-          ["Calcinare", 90000],
-          ["Măcinare + mixer", 40000],
-          ["Linie saci 25kg", 30000],
+          ["Micronizare / sortare", 90000],
+          ["Mixer + dozare aditivi", 40000],
+          ["Linie saci 20/25kg", 30000],
           ["Silo + logistică internă", 22500],
           ["Jaw crusher", 25000],
           ["Filtre praf", 25000],
           ["Electric", 30000],
-          ["Gaz / combustibil", 20000],
+          ["Aer comprimat / utilitati", 20000],
           ["Forklift + manipulare", 12000],
           ["Laborator minim", 10000],
           ["Instalare + commissioning", 25000],
         ],
         hybrid: [
-          ["Calcinare", 120000],
-          ["Măcinare + mixer", 60000],
-          ["Linie saci 25kg", 40000],
+          ["Micronizare / sortare", 120000],
+          ["Mixer + dozare aditivi", 60000],
+          ["Linie saci 20/25kg", 40000],
           ["Silo + logistică internă", 35000],
           ["Jaw crusher", 35000],
           ["Filtre praf", 40000],
           ["Electric", 45000],
-          ["Gaz / combustibil", 35000],
+          ["Aer comprimat / utilitati", 35000],
           ["Forklift + manipulare", 15000],
           ["Laborator minim", 15000],
           ["Instalare + commissioning", 40000],
         ],
         new: [
-          ["Calcinare", 200000],
-          ["Măcinare + mixer", 100000],
-          ["Linie saci 25kg", 65000],
+          ["Micronizare / sortare", 200000],
+          ["Mixer + dozare aditivi", 100000],
+          ["Linie saci 20/25kg", 65000],
           ["Silo + logistică internă", 50000],
           ["Jaw crusher", 50000],
           ["Filtre praf", 60000],
           ["Electric", 70000],
-          ["Gaz / combustibil", 50000],
+          ["Aer comprimat / utilitati", 50000],
           ["Forklift + manipulare", 25000],
           ["Laborator minim", 20000],
           ["Instalare + commissioning", 60000],
@@ -857,8 +857,8 @@
         renderBars("capexBars", equipmentCosts[calc.strategy], "var(--accent)");
         renderBars("costBars", [
           ["Materie primă", calc.rawCostPerTon],
-          ["Calcinare", num("calcinationCost")],
-          ["Măcinare", num("grindingCost")],
+          ["Micronizare / sortare", num("calcinationCost")],
+          ["Mixare uscata", num("grindingCost")],
           ["Aditivi", num("additivesCost")],
           ["Manoperă", num("laborCost")],
           ["Ambalaj", calc.packagingPerTon],

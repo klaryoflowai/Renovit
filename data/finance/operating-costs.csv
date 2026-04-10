@@ -1,8 +1,7 @@
 date,cost_category,unit,value_eur,source,notes
-,extractie_per_tona_bruta,eur_per_ton,,,
-,calcinare_per_tona_produs,eur_per_ton,,,
-,macinare_per_tona_produs,eur_per_ton,,,
-,ambalare_per_tona_produs,eur_per_ton,,,
+,calcar_filler_per_tona_bruta,eur_per_ton,,,
+,micronizare_sortare_per_tona_produs,eur_per_ton,,,
+,mixare_uscata_per_tona_produs,eur_per_ton,,,
+,ambalare_20_25kg_per_tona_produs,eur_per_ton,,,
 ,manopera_per_tona_produs,eur_per_ton,,,
 ,logistica_per_tona_produs,eur_per_ton,,,
-

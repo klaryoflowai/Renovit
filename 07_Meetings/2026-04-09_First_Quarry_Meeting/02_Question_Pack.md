@@ -1,5 +1,7 @@
 # 2026-04-09 First Quarry Meeting - Question Pack
 
+> Deprecated dupa pivotul din 2026-04-10. Pentru prima vizita Volodeni / calcar / materiale de finisaj foloseste [[../2026-04-10_Volodeni_First_Visit/02_Question_Pack_Volodeni]].
+
 Aceasta nota include si extinde lista din `/Users/yuritimofte/Downloads/Lista_intrebari_cariera_gips_Edinet.md`.
 
 ## Quality gate before anything else

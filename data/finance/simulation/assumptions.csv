@@ -1,15 +1,15 @@
 category,key,label,default_value,unit,notes
-Product,target_bag_kg,Target bag size,25,kg,Canonical RENOVIT packaging decision
+Product,target_bag_kg,Target bag size,25,kg,Average packaging for 20kg/25kg finishing materials
 Product,bags_per_pallet,Bags per pallet,48,bags,Working logistics assumption
-Revenue,selling_price_eur_per_ton,Wholesale selling price,120,EUR/t,Equivalent to 3 EUR per 25kg bag
-Production,process_yield,Raw to finished yield,0.75,ratio,Raw gypsum to finished packaged product
-Raw material,extraction_cost_eur_per_raw_t,Extraction cost,8,EUR/raw t,Partner data needed
-Raw material,quarry_to_plant_transport_eur_per_raw_t,Quarry to plant transport,4,EUR/raw t,Depends on plant location
-Processing,calcination_eur_per_finished_t,Calcination cost,15,EUR/t,Energy and kiln operation
-Processing,grinding_eur_per_finished_t,Grinding cost,8,EUR/t,Fine grinding to target fineness
-Processing,additives_eur_per_finished_t,Additives cost,8,EUR/t,Retarder and product performance additives
+Revenue,selling_price_eur_per_ton,Wholesale selling price,420,EUR/t,Portfolio average; replace with validated product mix
+Production,process_yield,Raw to finished yield,0.95,ratio,Limestone filler to finished packaged dry mix
+Raw material,extraction_cost_eur_per_raw_t,Limestone / filler cost,5,EUR/raw t,Partner data needed
+Raw material,quarry_to_plant_transport_eur_per_raw_t,Internal transport / supply,2,EUR/raw t,Depends on plant location
+Processing,calcination_eur_per_finished_t,Micronization / sorting cost,25,EUR/t,Former calcination field retained for model compatibility
+Processing,grinding_eur_per_finished_t,Dry mixing cost,10,EUR/t,Mixing and dosing to target recipe
+Processing,additives_eur_per_finished_t,Additives cost,55,EUR/t,Polymers cellulose lime/cement and performance additives
 Processing,direct_labor_eur_per_finished_t,Direct labor,7,EUR/t,Production labor
-Packaging,bag_packaging_eur_per_bag,Bag and label cost,0.15,EUR/bag,25kg bag and labeling
+Packaging,bag_packaging_eur_per_bag,Bag and label cost,0.18,EUR/bag,20/25kg bag and labeling
 Logistics,distribution_eur_per_finished_t,Distribution cost,6,EUR/t,Finished goods local logistics
 Other,other_variable_eur_per_finished_t,Other variable cost,3,EUR/t,Spares losses and handling
 Fixed,fixed_opex_eur_per_month,Fixed operating cost,8000,EUR/month,Admin sales warehouse and base overhead

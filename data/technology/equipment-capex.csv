@@ -1,16 +1,17 @@
 equipment_item,phase,criticality,second_hand_low_eur,second_hand_high_eur,new_low_eur,new_high_eur,source_hint,status,notes
-Calcination caldron / drum,Phase 1,critical,60000,120000,150000,250000,MachineSeeker / OLX RO / Machineryline,working_assumption,Core process bottleneck and quality risk
-Grinding + mixer package,Phase 1,critical,30000,50000,80000,120000,Agrotehnica / used industrial listings,working_assumption,May be separate machines in real offers
-25kg bagging line,Phase 1,critical,20000,40000,50000,80000,Machineryline / regional suppliers,working_assumption,Check bag size and accuracy
+Micronization / fine mill,Phase 1,critical,60000,120000,150000,250000,MachineSeeker / regional suppliers,working_assumption,Core process bottleneck and quality risk for glet
+Granulometric sorting / classifier,Phase 1,critical,25000,60000,70000,140000,Regional dry mix suppliers,working_assumption,Needed for decorative mineral render fractions
+Dry mixer + additive dosing package,Phase 1,critical,30000,50000,80000,120000,Agrotehnica / used industrial listings,working_assumption,May be separate machines in real offers
+20/25kg bagging line,Phase 1,critical,20000,40000,50000,80000,Machineryline / regional suppliers,working_assumption,Check bag size and dosing accuracy
 Silo + internal logistics,Phase 1,important,15000,30000,40000,60000,Regional suppliers,working_assumption,Needs moisture protection
 Jaw crusher,Phase 1,important,,,,,,open,Add after feed-size validation
 Dust collection / filters,Phase 1,critical,,,,,,open,Must not be ignored for environment and worker safety
 Electrical works / transformer,Phase 1,critical,,,,,,open,Needs power audit and scale reserve
-Gas / fuel connection or burner system,Phase 1,critical,,,,,,open,Calcination energy cost must be modeled
+Compressed air / utilities,Phase 1,critical,,,,,,open,Needed for dry mix line and bagging
 Forklift and warehouse handling,Phase 1,important,,,,,,open,Can start with used forklift if warehouse is simple
 Minimum quality lab,Phase 1,important,,,,,,open,Vicat / balance / press / sieves depending lab strategy
 Installation / commissioning,Phase 1,critical,,,,,,open,Often missing from equipment-only quotes
 Repairs and refurbishment reserve,Phase 1,critical,,,,,,open,For used line model 20-30 percent reserve as scenario
 Contingency,Phase 1,critical,,,,,,open,Use 10-20 percent until quotes are validated
-Additional calcination capacity,Phase 2,critical,,,,,,open,Add when demand and quality are validated
+Additional micronization / sorting capacity,Phase 2,critical,,,,,,open,Add when demand and quality are validated
 New industrial line,Phase 3,strategic,,,,,,open,Consider after 10kt/year route is de-risked

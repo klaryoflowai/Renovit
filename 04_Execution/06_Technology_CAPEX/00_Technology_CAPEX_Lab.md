@@ -11,6 +11,7 @@ tags:
   - equipment
 source_documents:
   - user-provided technology notes
+  - /Users/yuritimofte/Downloads/NOTĂ DE FUNDAMENTARE_ LANSAREA DIVIZIEI DE MATERIALE DE FINISAJ PREMIUM.docx
 linked_decisions: []
 open_questions:
   - Care este configuratia minima viabila pentru faza 1?
@@ -49,6 +50,7 @@ De aceea, zona aceasta functioneaza ca punte:
 - [[04_Execution/06_Technology_CAPEX/04_Phased_Implementation_Scaling]]
 - [[04_Execution/06_Technology_CAPEX/05_Scenario_Model_Spec]]
 - [[04_Execution/06_Technology_CAPEX/06_Supplier_Questions]]
+- [[04_Execution/06_Technology_CAPEX/07_Limestone_Finishing_Process]]
 
 ## Data model
 
@@ -66,22 +68,22 @@ De aceea, zona aceasta functioneaza ca punte:
 
 ## Public tools
 
-- https://renovit.klaryoflowai.workers.dev/ - calculator unit economics pe tona
+- https://renovit.klaryoflowai.workers.dev/ - calculator portofoliu materiale de finisaj pe baza de calcar
 - https://renovit.klaryoflowai.workers.dev/simulare-economica.html - hub simulare economica pentru CAPEX si capacitate
 - https://renovit.klaryoflowai.workers.dev/dashboard-financiar.html - dashboard financiar pentru cash-flow si fonduri
-- https://renovit.klaryoflowai.workers.dev/unit-economics-sac-25kg.html - calculator unit economics per sac 25kg
-- https://renovit.klaryoflowai.workers.dev/proces-tehnologic-gips.html
-- https://renovit.klaryoflowai.workers.dev/assets/proces_tehnologic_gips_renovit.svg
+- https://renovit.klaryoflowai.workers.dev/unit-economics-sac-25kg.html - legacy / auxiliar per sac 25kg
+- https://renovit.klaryoflowai.workers.dev/proces-tehnologic-gips.html - legacy gips
+- https://renovit.klaryoflowai.workers.dev/assets/proces_tehnologic_gips_renovit.svg - legacy gips
 
 ## Working thesis
 
 Pentru faza 1, ipoteza de lucru este:
 
-- start cu linie uzata / refurbished la `5kt/an`
+- start cu linie uzata / refurbished sau hibrida pentru micronizare / sortare / mixare / ambalare
 - investitie controlata
-- validare calitate + cerere + unit economics
+- validare retete + calitate + cerere + unit economics
 - upgrade modular spre `10-15kt/an`
-- echipament nou doar dupa ce riscul comercial si operational scade
+- echipament nou doar dupa ce riscul comercial, calitativ si operational scade
 
 ## Decision gate
 

@@ -2,109 +2,125 @@ import { useState } from "react";
 
 const SECTIONS = [
   {
-    id: "meta", label: "00 — Informații Vizită", color: "#c8a84b",
+    id: "meta", label: "00 — Informații Vizită Volodeni", color: "#d0a74e",
     fields: [
-      { id: "data", label: "Data vizitei", type: "text", placeholder: "ex: 15 aprilie 2025" },
-      { id: "participanti", label: "Participanți prezenți", type: "text", placeholder: "Numele proprietarilor / persoanelor întâlnite" },
+      { id: "data", label: "Data vizitei", type: "text", placeholder: "ex: 15 aprilie 2026" },
+      { id: "participanti", label: "Participanți prezenți", type: "textarea", placeholder: "Nume, rol, companie, telefon / email" },
       { id: "durata", label: "Durata vizitei", type: "text", placeholder: "ex: 3 ore" },
-      { id: "locatie", label: "Locație exactă / GPS", type: "text", placeholder: "Sat, raion, coordonate GPS dacă ai" },
-    ]
+      { id: "locatie", label: "Locație exactă / GPS", type: "text", placeholder: "Volodeni, raion, coordonate GPS, puncte vizitate" },
+      { id: "scop", label: "Scopul vizitei", type: "textarea", placeholder: "Confirmare resursă calcar alb, făină calcaroasă, proces, mostre, retete materiale de finisaj" },
+    ],
   },
   {
-    id: "resursa", label: "01 — Resursa & Calitate", color: "#7eb8c9",
+    id: "deposit", label: "01 — Zăcământ & Rezerve", color: "#9dbb68",
     fields: [
-      { id: "rezerve", label: "Rezerve estimate (tone)", type: "text", placeholder: "ex: 50.000 tone confirmate geologic" },
-      { id: "puritate", label: "Puritate gips (%)", type: "text", placeholder: "ex: 85% CaSO₄·2H₂O — există analiză?" },
-      { id: "strat", label: "Grosime strat exploatabil", type: "text", placeholder: "ex: 4–6 metri uniformi" },
-      { id: "tip_gips", label: "Tip gips (selenitic / masiv)", type: "text", placeholder: "Observații vizuale la fața locului" },
-      { id: "impuritati", label: "Impurități observate", type: "textarea", placeholder: "Argilă, calcar, nisip — vizual sau din analize" },
-      { id: "raport_geologic", label: "Raport geologic există?", type: "select", options: ["Da — am văzut / copie obținută", "Da — există dar nu l-am văzut", "Nu există", "Neclar"] },
-    ]
+      { id: "sector", label: "Sector vizitat", type: "text", placeholder: "Volodeni — calcar pentru blocuri / făină calcaroasă" },
+      { id: "rezerve", label: "Rezerve confirmate", type: "textarea", placeholder: "m3 / tone, categorie A/B/C1, sursa documentului, durata de viață la volume faza 1" },
+      { id: "status", label: "Status exploatare", type: "select", options: ["Activ", "Parțial activ", "Conservat", "Neclar"] },
+      { id: "zone_calitate", label: "Zone cu calitate diferită?", type: "textarea", placeholder: "Unde este calcarul cel mai alb? Există variații pe fronturi / adâncime?" },
+      { id: "mostre_zone", label: "Mostre necesare pe zone", type: "textarea", placeholder: "Mostra A: zona __ | Mostra B: zona __ | Mostra C: făină existentă" },
+    ],
   },
   {
-    id: "extractie", label: "02 — Extracție & Operațiuni", color: "#a87ec9",
+    id: "quality", label: "02 — Calitate Calcar", color: "#7eb8c9",
     fields: [
-      { id: "activa", label: "Cariera e activă acum?", type: "select", options: ["Da — extracție activă", "Parțial activ / sezonier", "Inactivă momentan", "Niciodată exploatată comercial"] },
-      { id: "tone_luna", label: "Tone extrase / lună (actual)", type: "text", placeholder: "ex: 300 tone/lună sau 0 dacă inactivă" },
-      { id: "cost_extractie", label: "Cost extracție / tonă (€)", type: "text", placeholder: "ex: €8/tonă — combustibil + manoperă" },
-      { id: "utilaje", label: "Utilaje existente", type: "textarea", placeholder: "Excavator, buldozer, încărcător — marcă, an, stare tehnică" },
-      { id: "angajati", label: "Nr. angajați actuali", type: "text", placeholder: "ex: 3 oameni" },
-      { id: "program", label: "Program lucru", type: "select", options: ["Tot anul", "Sezonier (primăvară–toamnă)", "La cerere / neregulat", "Inactiv"] },
-    ]
+      { id: "caco3", label: "CaCO3 exact (%)", type: "text", placeholder: "ex: 94.2-94.7% — cere analiză laborator" },
+      { id: "alb", label: "Grad de alb / culoare", type: "textarea", placeholder: "Valoare L*a*b* dacă există; observații vizuale; comparație cu produse premium" },
+      { id: "impuritati", label: "Impurități principale", type: "textarea", placeholder: "SiO2, MgCO3, MgO, Al2O3, Fe2O3, argilă, materie organică" },
+      { id: "granulometrie", label: "Granulometrie existentă", type: "textarea", placeholder: "0-3mm, 0-5mm, micronizare, % sub 100 microni, % sub 63 microni" },
+      { id: "umiditate", label: "Umiditate / uscare", type: "text", placeholder: "Umiditate naturală, necesar uscare, stabilitate la depozitare" },
+      { id: "analize", label: "Analize laborator văzute?", type: "select", options: ["Da — copie obținută", "Da — văzut dar fără copie", "Nu", "Există dar trebuie cerute"] },
+    ],
   },
   {
-    id: "juridic", label: "03 — Juridic & Autorizații", color: "#c97e7e",
+    id: "current_ops", label: "03 — Operațiuni Curente", color: "#a87ec9",
     fields: [
-      { id: "titular", label: "Titular licență exploatare", type: "text", placeholder: "Persoană fizică sau juridică (SRL, SA)" },
-      { id: "valabilitate", label: "Valabilitate licență", type: "text", placeholder: "ex: valabilă până în 2031" },
-      { id: "transferabila", label: "Licența e transferabilă?", type: "select", options: ["Da — confirmat", "Da — probabil dar neverificat", "Nu", "Neclar"] },
-      { id: "litigii", label: "Litigii / pretenții terțe?", type: "select", options: ["Nu există", "Există — detalii mai jos", "Neclar / nu au răspuns clar"] },
-      { id: "taxa_stat", label: "Taxa extracție plătită statului (€/t)", type: "text", placeholder: "ex: €1.5/tonă" },
-      { id: "note_juridic", label: "Note juridice importante", type: "textarea", placeholder: "Proprietate, servituți, obligații de mediu, avize ecologice" },
-    ]
+      { id: "produse_curente", label: "Produse curente din Volodeni", type: "textarea", placeholder: "Blocuri, făină calcaroasă, piatră, deșeuri calcaroase, alte produse" },
+      { id: "capacitate", label: "Capacitate actuală", type: "textarea", placeholder: "m3/lună, tone/lună, făină calcaroasă/lună, sezonalitate" },
+      { id: "costuri", label: "Costuri reale actuale", type: "textarea", placeholder: "Cost extracție, măcinare, energie, manoperă, întreținere, cost total MDL/t sau EUR/t" },
+      { id: "echipamente", label: "Echipamente existente", type: "textarea", placeholder: "Concasor, moară, site, încărcător, cântar, silozuri, ambalare — stare și capacitate" },
+      { id: "bottleneck", label: "Blocaje operaționale", type: "textarea", placeholder: "Ce limitează azi volumul / calitatea / costul?" },
+    ],
   },
   {
-    id: "infrastructura", label: "04 — Infrastructură & Acces", color: "#7ec98a",
+    id: "product", label: "04 — Materiale de Finisaj", color: "#68b88a",
     fields: [
-      { id: "curent", label: "Curent electric trifazic (380V)?", type: "select", options: ["Da — putere notată mai jos", "Doar monofazic (220V)", "Nu există", "Necesită extindere"] },
-      { id: "putere_kw", label: "Putere instalată (kW)", type: "text", placeholder: "ex: 50 kW disponibili" },
-      { id: "cladiri", label: "Clădiri existente", type: "textarea", placeholder: "Tipul, dimensiunea, starea tehnică" },
-      { id: "suprafata_platf", label: "Suprafață disponibilă pentru fabrică (m²)", type: "text", placeholder: "ex: ~500 m² lângă carieră" },
-      { id: "drum_acces", label: "Calitatea drumului de acces", type: "select", options: ["Drum asfaltat până la carieră", "Drum pietruit — practicabil tot anul", "Drum de pământ — probleme iarna", "Acces dificil"] },
-      { id: "distante", label: "Distanțe (km)", type: "textarea", placeholder: "Edineț: __ km | Bălți: __ km | Chișinău: __ km | DN: __ km" },
-      { id: "gaz", label: "Gaz natural disponibil?", type: "select", options: ["Da — rețea publică în zonă", "Nu — doar motorină / peleți", "Neclar"] },
-      { id: "cantar", label: "Există cântar camioane?", type: "select", options: ["Da", "Nu", "În plan"] },
-    ]
+      { id: "glet", label: "Glet extra-alb 20kg", type: "textarea", placeholder: "Retetă existentă? Filler necesar? Aditivi? Probe? Standard țintă?" },
+      { id: "decor", label: "Tencuială decorativă minerală 25kg", type: "textarea", placeholder: "Granule necesare, texturi, alb, liant, produs comparabil, standard țintă" },
+      { id: "adeziv", label: "Adeziv / mortar var-calcar 25kg", type: "textarea", placeholder: "Retetă, ciment/var, aditivi, performanță, standard EN 12004 dacă e adeziv plăci" },
+      { id: "retete", label: "Cine poate formula / testa rețetele?", type: "textarea", placeholder: "Laborator, tehnolog, consultant, furnizor aditivi" },
+      { id: "mostre_produs", label: "Mostre produs finit existente?", type: "select", options: ["Da — testate", "Da — netestate", "Nu", "În lucru"] },
+    ],
   },
   {
-    id: "financiar", label: "05 — Financiar & Parteneriat", color: "#c8a84b",
+    id: "infrastructure", label: "05 — Infrastructură & Logistică", color: "#d0a74e",
     fields: [
-      { id: "asociati", label: "Structura de ownership", type: "textarea", placeholder: "Câți asociați, ce procente, cine ia decizii" },
-      { id: "capital_cash", label: "Capital cash disponibil pentru investiție (€)", type: "text", placeholder: "ex: €80.000 disponibili pentru linie procesare" },
-      { id: "datorii", label: "Există datorii ale entității?", type: "select", options: ["Nu", "Da — detalii mai jos", "Nu au răspuns"] },
-      { id: "model_parteneriat", label: "Model parteneriat propus de ei", type: "textarea", placeholder: "Ce au spus concret — equity %, salariu, SRL nou etc." },
-      { id: "alte_oferte", label: "Au alte oferte / parteneri în discuție?", type: "select", options: ["Nu", "Da", "Nu au spus"] },
-      { id: "motivatie", label: "Motivul real pentru care caută partener acum", type: "textarea", placeholder: "Presiune financiară, lipsă know-how, oportunitate etc." },
-    ]
+      { id: "electric", label: "Curent electric disponibil", type: "textarea", placeholder: "kW / kVA, trifazat, stabilitate, posibilitate extindere" },
+      { id: "spatiu", label: "Spațiu pentru linie finisaje", type: "textarea", placeholder: "Hală, teren, depozit materie primă, depozit saci, paletizare" },
+      { id: "feroviar", label: "Acces feroviar / Brătușeni", type: "textarea", placeholder: "Distanță, cost încărcare, utilizare curentă, utilitate pentru distribuție / aditivi" },
+      { id: "drumuri", label: "Drumuri și camioane", type: "textarea", placeholder: "Acces tot anul, cost transport Chișinău/Bălți, flotă proprie" },
+      { id: "praf", label: "Praf / filtre / mediu", type: "textarea", placeholder: "Filtre existente, autorizații, risc praf la micronizare și mixare" },
+    ],
   },
   {
-    id: "piata", label: "06 — Piață & Vânzări", color: "#7eb8c9",
+    id: "capex", label: "06 — Echipamente & CAPEX", color: "#df9850",
     fields: [
-      { id: "vandut_deja", label: "Au vândut gips brut deja?", type: "select", options: ["Da — cui și la ce preț", "Nu", "Ocazional"] },
-      { id: "pret_brut", label: "Preț vânzare gips brut (€/t)", type: "text", placeholder: "ex: €15/tonă gips brut neprocesat" },
-      { id: "clienti_existenti", label: "Clienți sau contacte existente", type: "textarea", placeholder: "Firme de construcții, distribuitori cu care au vorbit" },
-      { id: "cerere_locala", label: "Cerere locală observată", type: "textarea", placeholder: "Construcții în zonă, proiecte mari, cerere sezonieră" },
-    ]
+      { id: "micronizare", label: "Micronizare / moară fină", type: "textarea", placeholder: "Există? Capacitate? Finete? Necesită achiziție nouă/refurbished?" },
+      { id: "sortare", label: "Sortare granulometrică", type: "textarea", placeholder: "Site, separatoare, fracții pentru decorativă" },
+      { id: "mixer", label: "Mixer + dozare aditivi", type: "textarea", placeholder: "Mixer existent? Dozatoare mici pentru polimeri/celuloză?" },
+      { id: "ambalare", label: "Linie ambalare 20/25kg", type: "textarea", placeholder: "Există? Viteză saci/oră? Cusător/valvă/paletizare?" },
+      { id: "oferte", label: "Oferte echipamente existente", type: "textarea", placeholder: "Furnizor, preț, termen, garanție, instalare, training" },
+    ],
   },
   {
-    id: "oameni", label: "07 — Oamenii & Dinamica", color: "#a87ec9",
+    id: "commercial", label: "07 — Comercial & Prețuri", color: "#7eb8c9",
     fields: [
-      { id: "cine_conduce", label: "Cine ar conduce operațional zi de zi?", type: "text", placeholder: "Nume, experiență, disponibilitate" },
-      { id: "experienta", label: "Experiența echipei în producție / business", type: "textarea", placeholder: "Ce au mai construit / condus — sincer" },
-      { id: "nivel_structurare", label: "Nivelul de structurare al echipei", type: "select", options: ["Foarte structurați — au plan, cifre, strategie", "Parțial structurați — idei dar fără plan", "Nestructurați — au resursa dar zero business plan", "Neclar"] },
-      { id: "chimie", label: "Impresia generală despre parteneri", type: "textarea", placeholder: "Onești? Deschiși? Ascund ceva? Primul instinct — notează sincer" },
-    ]
+      { id: "pret_faina", label: "Preț actual făină calcaroasă / vrac", type: "textarea", placeholder: "MDL/t sau EUR/t, clienți, volume, termene plată" },
+      { id: "pret_glet", label: "Preț angro validat glet", type: "textarea", placeholder: "Distribuitor, preț, volum, condiții, produs comparabil" },
+      { id: "pret_decor", label: "Preț angro validat tencuială decorativă", type: "textarea", placeholder: "Distribuitor, preț, volum, condiții, produs comparabil" },
+      { id: "pret_adeziv", label: "Preț angro validat adeziv / mortar", type: "textarea", placeholder: "Distribuitor, preț, volum, condiții, produs comparabil" },
+      { id: "canale", label: "Canale potențiale", type: "textarea", placeholder: "DIY, depozite materiale, echipe finisaje, proiecte B2B, export" },
+    ],
   },
   {
-    id: "documente", label: "08 — Documente Obținute", color: "#7ec98a",
+    id: "legal", label: "08 — Documente & Legal", color: "#df6b5b",
     fields: [
-      { id: "docs_obtinute", label: "Documente obținute / fotografiate", type: "textarea", placeholder: "Licență exploatare, studiu geologic, acte proprietate teren" },
-      { id: "docs_lipsa", label: "Documente lipsă / de cerut ulterior", type: "textarea", placeholder: "Ce nu au putut sau nu au vrut să arate" },
-      { id: "mostra_gips", label: "Mostră gips brut luată?", type: "select", options: ["Da — trimisă la laborator", "Da — de analizat", "Nu — de luat data viitoare"] },
-    ]
+      { id: "licente", label: "Licențe / contracte subsol", type: "textarea", placeholder: "Număr, titular, valabilitate, sector Volodeni" },
+      { id: "teren", label: "Teren / drepturi acces", type: "textarea", placeholder: "Proprietate, arendă, servituți, drumuri" },
+      { id: "mediu", label: "Avize mediu / tehnice", type: "textarea", placeholder: "Expertiză ecologică, tehnică, plan dezvoltare, termene expirare" },
+      { id: "certificari", label: "Certificate produs existente", type: "textarea", placeholder: "Făină calcaroasă, piatră, plăci, alte certificate / rapoarte test" },
+    ],
   },
   {
-    id: "concluzii", label: "09 — Concluzii & Next Steps", color: "#c8a84b",
+    id: "people", label: "09 — Oameni & Control", color: "#a87ec9",
     fields: [
-      { id: "verdict_initial", label: "Verdict inițial după vizită", type: "select", options: ["GO — continuă due diligence aprofundat", "GO CONDIȚIONAT — necesită clarificări cheie", "INCERT — prea multe necunoscute", "NO-GO — riscuri majore identificate"] },
-      { id: "top3_pozitiv", label: "Top 3 lucruri pozitive observate", type: "textarea", placeholder: "Ce te-a convins sau impresionat" },
-      { id: "top3_risc", label: "Top 3 riscuri sau semne de întrebare", type: "textarea", placeholder: "Ce te îngrijorează sau necesită verificare" },
-      { id: "next_steps", label: "Next steps concrete (cu deadline)", type: "textarea", placeholder: "1. Trimite mostră la lab până vineri\n2. Solicită copie licență până luni\n3. Calculează Unit Economics cu cifrele reale" },
-    ]
-  }
+      { id: "decision", label: "Cine ia decizia finală?", type: "textarea", placeholder: "Acționari, director, board, comitet investiții" },
+      { id: "operator", label: "Cine conduce operațional linia?", type: "textarea", placeholder: "Nume, experiență, disponibilitate" },
+      { id: "technolog", label: "Există tehnolog / laborator intern?", type: "textarea", placeholder: "Cine răspunde de rețete și calitate?" },
+      { id: "partner", label: "Așteptări parteneriat", type: "textarea", placeholder: "Rol, equity, management fee, KPI, decizii" },
+    ],
+  },
+  {
+    id: "evidence", label: "10 — Dovezi, Mostre, Fotografii", color: "#68b88a",
+    fields: [
+      { id: "docs", label: "Documente obținute", type: "textarea", placeholder: "Analize, rezerve, certificate, costuri, oferte, acte" },
+      { id: "missing", label: "Documente lipsă", type: "textarea", placeholder: "Ce trebuie cerut în 48h" },
+      { id: "samples", label: "Mostre luate", type: "textarea", placeholder: "Cod mostră, zona, kg, persoana responsabilă, laborator țintă" },
+      { id: "photos", label: "Fotografii / video", type: "textarea", placeholder: "Ce ai fotografiat: front, făină, utilaje, hale, drumuri, documente" },
+    ],
+  },
+  {
+    id: "conclusion", label: "11 — Concluzii & Next Steps", color: "#d0a74e",
+    fields: [
+      { id: "verdict", label: "Verdict după vizită", type: "select", options: ["GO — continuă fezabilitatea", "GO CONDIȚIONAT — clarificări critice", "INCERT — date insuficiente", "NO-GO — red flags majore"] },
+      { id: "positive", label: "Top 3 lucruri pozitive", type: "textarea", placeholder: "Resursă, calitate, infrastructură, echipă, piață" },
+      { id: "risks", label: "Top 3 riscuri", type: "textarea", placeholder: "Preț, calitate, CAPEX, standarde, parteneriat, distribuție" },
+      { id: "actions", label: "Next steps cu deadline", type: "textarea", placeholder: "1. Analize laborator\n2. Prețuri angro\n3. Oferte echipamente\n4. Actualizare calculator" },
+    ],
+  },
 ];
 
-const C = { bg: "#0a0a0a", surface: "#111", border: "#222", text: "#e0e0e0", muted: "#555", accent: "#c8a84b" };
+const C = { bg: "#0a0a0a", surface: "#111", border: "#222", text: "#e0e0e0", muted: "#555", accent: "#d0a74e" };
 
 function Field({ field, value, onChange }) {
   const base = {
@@ -132,7 +148,13 @@ function Field({ field, value, onChange }) {
 
 function ExportModal({ data, onClose }) {
   const [copied, setCopied] = useState(false);
-  const lines = ["═══════════════════════════════════════════════════", "   RAPORT VIZITĂ CARIERĂ GIPS — EDINEȚ, MOLDOVA", "═══════════════════════════════════════════════════", "   KlaryoFlow AI — Instrument Analiză Fezabilitate", "═══════════════════════════════════════════════════\n"];
+  const lines = [
+    "═══════════════════════════════════════════════════",
+    "   RAPORT VIZITĂ VOLODENI — CALCAR / FINISAJE",
+    "═══════════════════════════════════════════════════",
+    "   RENOVIT — Instrument Analiză Fezabilitate",
+    "═══════════════════════════════════════════════════\n",
+  ];
   SECTIONS.forEach(s => {
     lines.push(`\n▌ ${s.label.toUpperCase()}`);
     lines.push("─".repeat(48));
@@ -152,7 +174,7 @@ function ExportModal({ data, onClose }) {
         </div>
         <textarea readOnly value={text} style={{ flex: 1, background: "#0a0a0a", border: "none", color: "#bbb", fontFamily: "'DM Mono', monospace", fontSize: "11px", padding: "14px", resize: "none", outline: "none", lineHeight: 1.7 }} />
         <div style={{ padding: "12px 18px", borderTop: `1px solid ${C.border}`, display: "flex", gap: "8px" }}>
-          <button onClick={copy} style={{ flex: 1, padding: "10px", background: copied ? "#4caf7d" : C.accent, border: "none", color: "#000", fontFamily: "'DM Mono', monospace", fontSize: "10px", letterSpacing: "2px", cursor: "pointer", fontWeight: "700", transition: "background 0.2s" }}>
+          <button onClick={copy} style={{ flex: 1, padding: "10px", background: copied ? "#68b88a" : C.accent, border: "none", color: "#000", fontFamily: "'DM Mono', monospace", fontSize: "10px", letterSpacing: "2px", cursor: "pointer", fontWeight: "700", transition: "background 0.2s" }}>
             {copied ? "COPIAT ✓" : "COPIAZĂ TEXT"}
           </button>
           <button onClick={onClose} style={{ padding: "10px 14px", background: "none", border: `1px solid ${C.border}`, color: C.muted, fontFamily: "'DM Mono', monospace", fontSize: "10px", cursor: "pointer" }}>ÎNCHIDE</button>
@@ -187,11 +209,10 @@ export default function App() {
       `}</style>
 
       <div style={{ padding: "20px 16px 0", maxWidth: "620px", margin: "0 auto" }}>
-        <div style={{ fontSize: "9px", letterSpacing: "4px", color: "#333", marginBottom: "4px" }}>KLARYOFLOW AI — STUDIU DE FEZABILITATE</div>
+        <div style={{ fontSize: "9px", letterSpacing: "4px", color: "#333", marginBottom: "4px" }}>RENOVIT — STUDIU FEZABILITATE</div>
         <div style={{ fontSize: "21px", fontFamily: "'DM Serif Display', serif" }}>Raport Vizită Teren</div>
-        <div style={{ fontSize: "11px", color: C.accent, marginTop: "3px", marginBottom: "18px" }}>Carieră Gips · Edineț, Moldova</div>
+        <div style={{ fontSize: "11px", color: C.accent, marginTop: "3px", marginBottom: "18px" }}>Volodeni · Calcar alb · Materiale de finisaj</div>
 
-        {/* Progress */}
         <div style={{ marginBottom: "20px" }}>
           <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "5px" }}>
             <span style={{ fontSize: "9px", letterSpacing: "2px", color: C.muted }}>COMPLETARE</span>
@@ -203,7 +224,6 @@ export default function App() {
         </div>
       </div>
 
-      {/* Tab nav */}
       <div style={{ overflowX: "auto", display: "flex", gap: "0", padding: "0 16px", maxWidth: "620px", margin: "0 auto 20px", borderBottom: `1px solid ${C.border}` }}>
         {SECTIONS.map(s => {
           const f = s.fields.filter(f => data[s.id]?.[f.id]).length;
@@ -221,7 +241,6 @@ export default function App() {
         })}
       </div>
 
-      {/* Fields */}
       <div style={{ padding: "0 16px 120px", maxWidth: "620px", margin: "0 auto" }}>
         <div style={{ fontSize: "10px", letterSpacing: "2px", color: activeSection.color, marginBottom: "18px", textTransform: "uppercase" }}>{activeSection.label}</div>
         {activeSection.fields.map(f => (
@@ -240,8 +259,7 @@ export default function App() {
         </div>
       </div>
 
-      {/* FAB */}
-      <button onClick={() => setShowExport(true)} style={{ position: "fixed", bottom: "20px", right: "20px", background: C.accent, border: "none", color: "#000", padding: "11px 16px", fontFamily: "'DM Mono', monospace", fontSize: "10px", letterSpacing: "2px", cursor: "pointer", fontWeight: "700", boxShadow: "0 4px 24px #c8a84b33" }}>
+      <button onClick={() => setShowExport(true)} style={{ position: "fixed", bottom: "20px", right: "20px", background: C.accent, border: "none", color: "#000", padding: "11px 16px", fontFamily: "'DM Mono', monospace", fontSize: "10px", letterSpacing: "2px", cursor: "pointer", fontWeight: "700", boxShadow: "0 4px 24px #d0a74e33" }}>
         EXPORTĂ ↗
       </button>
 

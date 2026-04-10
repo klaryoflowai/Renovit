@@ -4,13 +4,15 @@
 
 Documentul oficial care raspunde daca modelul fazei 1 are sens economic sau nu.
 
+Nota 2026-04-10: modelul fazei 1 a fost pivotat de la gips / tencuiala gipsata la calcar Cupcini / materiale de finisaj. Pentru noul model foloseste [[03_Finance/01_Economic_Engine/05_Limestone_Finishing_Materials_Unit_Economics]].
+
 ## KPI-uri centrale
 
 - cost operational / tona produs finit
 - amortizare / tona
 - cost total / tona cu CAPEX
-- cost total / sac 25kg
-- marja bruta / sac 25kg
+- cost total / sac 20kg / 25kg, dupa produs
+- marja bruta / sac, dupa produs
 - saci vanduti / luna si paleti / luna
 - marja bruta
 - cash flow operational lunar
@@ -26,13 +28,13 @@ Documentul oficial care raspunde daca modelul fazei 1 are sens economic sau nu.
 
 ## Local tools
 
-- browser calculator pe tona: `../../index.html`
-- browser calculator per sac 25kg: `../../unit-economics-sac-25kg.html`
-- React source: `../../gips-unit-economics.jsx`
+- browser calculator portofoliu materiale de finisaj: `../../index.html`
+- browser calculator per sac 25kg: `../../unit-economics-sac-25kg.html` - legacy / auxiliar
+- React source vechi: `../../gips-unit-economics.jsx` - legacy
 - raw tables: `../../data/finance/`
 
 ## Cum se folosesc impreuna
 
-Calculatorul pe tona ramane baza deciziei de fezabilitate si CAPEX.
+Calculatorul principal `index.html` devine baza deciziei pentru portofoliul de materiale de finisaj pe baza de calcar.
 
-Calculatorul per sac 25kg este view-ul comercial: traduce costul pe tona in cost / sac, pret / sac, marja / sac, saci / luna, paleti / luna si break-even comercial.
+Calculatorul per sac 25kg ramane auxiliar doar pentru scenarii de produs singular; nu este sursa principala dupa pivot.

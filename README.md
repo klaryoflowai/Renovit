@@ -2,6 +2,8 @@
 
 Acest repository este organizat ca un vault de business in stilul `BioStream`, direct la radacina folderului.
 
+Nota 2026-04-10: proiectul a pivotat de la `gips / ipsos Edinet` la `S.A. Mina din Cupcini / calcar / materiale de finisaj`.
+
 Sistemul adoptat este:
 
 - `Scaling Up` pentru arhitectura business-ului
@@ -23,15 +25,15 @@ Sistemul adoptat este:
 
 ## Fisiere tehnice
 
-- `index.html` - calculator browser-ready pentru unit economics
-- `unit-economics-sac-25kg.html` - calculator browser-ready pentru unit economics per sac 25kg
+- `index.html` - calculator browser-ready pentru portofoliu materiale de finisaj pe baza de calcar
+- `unit-economics-sac-25kg.html` - calculator legacy / auxiliar pentru unit economics per sac 25kg
 - `simulare-economica.html` - hub browser-ready pentru simulare economica completa
 - `dashboard-financiar.html` - dashboard browser-ready pentru cash-flow, fonduri, P&L operativ si balance sheet
-- `gips-unit-economics.jsx` - sursa React a calculatorului
+- `gips-unit-economics.jsx` - sursa React legacy a calculatorului vechi
 - `instrumente.html` - hub public pentru instrumentele online
-- `proces-tehnologic-gips.html` - pagina browser pentru procesul tehnologic
-- `raport-vizita-cariera.html` - formular browser pentru raportul de vizita la cariera
-- `assets/proces_tehnologic_gips_renovit.svg` - diagrama SVG statica
+- `proces-tehnologic-gips.html` - pagina legacy pentru procesul tehnologic pe gips
+- `raport-vizita-cariera.html` - formular browser pentru raportul primei vizite Volodeni
+- `assets/proces_tehnologic_gips_renovit.svg` - diagrama SVG statica legacy pentru ruta veche pe gips
 - `apps/src/` - sursele JSX pentru instrumentele publicate
 - `data/` - layer de date brute si CSV-uri, inclusiv modelul tehnologic / CAPEX
 - `data/finance/RENOVIT_Economic_Simulation_Model.xlsx` - workbook Excel pentru simulare economica completa
@@ -39,14 +41,14 @@ Sistemul adoptat este:
 
 ## Instrumente publice
 
-- https://renovit.klaryoflowai.workers.dev/ - calculator unit economics
+- https://renovit.klaryoflowai.workers.dev/ - calculator materiale de finisaj pe baza de calcar
 - https://renovit.klaryoflowai.workers.dev/simulare-economica.html - hub simulare economica
 - https://renovit.klaryoflowai.workers.dev/dashboard-financiar.html - dashboard financiar operational
-- https://renovit.klaryoflowai.workers.dev/unit-economics-sac-25kg.html - calculator unit economics per sac 25kg
+- https://renovit.klaryoflowai.workers.dev/unit-economics-sac-25kg.html - legacy / auxiliar per sac 25kg
 - https://renovit.klaryoflowai.workers.dev/instrumente.html - hub instrumente
-- https://renovit.klaryoflowai.workers.dev/proces-tehnologic-gips.html - proces tehnologic interactiv
-- https://renovit.klaryoflowai.workers.dev/raport-vizita-cariera.html - raport vizita cariera
-- https://renovit.klaryoflowai.workers.dev/assets/proces_tehnologic_gips_renovit.svg - diagrama SVG
+- https://renovit.klaryoflowai.workers.dev/raport-vizita-cariera.html - raport vizita Volodeni / calcar / materiale de finisaj
+- https://renovit.klaryoflowai.workers.dev/proces-tehnologic-gips.html - proces tehnologic legacy pe gips
+- https://renovit.klaryoflowai.workers.dev/assets/proces_tehnologic_gips_renovit.svg - diagrama SVG legacy
 
 ## Cum folosesti vault-ul in Obsidian
 
@@ -60,8 +62,12 @@ Sistemul adoptat este:
    - `03_Finance/02_Planning_And_Control/03_Economic_Simulation_Hub.md`
    - `03_Finance/02_Planning_And_Control/04_Financial_Control_Dashboard.md`
    - `04_Execution/06_Technology_CAPEX/00_Technology_CAPEX_Lab.md`
-   - `05_Quality/01_Raw_Gypsum_Working_Thresholds.md`
-   - `05_Quality/02_EU_Standards_And_CE_Path.md`
+   - `00_HQ/10_Strategic_Pivot_Cupcini_Limestone.md`
+   - `02_Strategy/10_Finishing_Materials_Thesis_Cupcini.md`
+   - `03_Finance/01_Economic_Engine/05_Limestone_Finishing_Materials_Unit_Economics.md`
+   - `03_Finance/01_Economic_Engine/06_Price_Benchmark_Check_Limestone_Finishes.md`
+   - `05_Quality/06_Limestone_Finishing_Materials_Standards.md`
+   - `07_Meetings/2026-04-10_Volodeni_First_Visit/02_Question_Pack_Volodeni.md`
    - `04_Execution/03_Decision_Control/02_Risk_Register.md`
 5. Pentru plan de afaceri, continua cu:
    - `02_Strategy/01_Business_Model.md`
@@ -86,7 +92,7 @@ Sistemul adoptat este:
 
 ## Cum folosesti calculatorul local
 
-Deschide `index.html`, `unit-economics-sac-25kg.html`, `simulare-economica.html` sau `dashboard-financiar.html` in browser sau ruleaza:
+Deschide `index.html`, `simulare-economica.html` sau `dashboard-financiar.html` in browser sau ruleaza:
 
 ```bash
 python3 -m http.server 8000

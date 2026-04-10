@@ -33,11 +33,11 @@ Acesta este hub-ul central pentru simularea economica RENOVIT.
 
 Modelul acopera:
 
-- produs initial: tencuiala gipsata ambalata in sac 25kg
+- produs initial: portofoliu materiale de finisaj pe baza de calcar Cupcini
 - capacitati canonice: `3k`, `5k`, `10k`, `20k tone/an`
 - strategii echipament: `used`, `hybrid`, `new`
-- cost materie prima: extractie, transport cariera-fabrica, randament
-- costuri procesare: calcinare, macinare, aditivi, manopera, ambalaj, distributie
+- cost materie prima: calcar / filler, transport intern, randament
+- costuri procesare: micronizare, sortare, mixare, aditivi, manopera, ambalaj, distributie
 - CAPEX: echipament, instalare, repair reserve, contingency si scalare capacitate
 - capital de lucru
 - finantare optionala: procent finantat, dobanda, termen credit

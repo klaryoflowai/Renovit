@@ -19,8 +19,8 @@ next_action: Treci ipotezele validate in [[03_Finance/01_Economic_Engine/01_Assu
 
 ## Core Assumptions
 
-- tencuiala gips ambalata este produsul corect de intrare
-- sacul de 25kg este formatul de ambalare tinta pentru modelarea comerciala initiala
+- materialele de finisaj pe baza de calcar Cupcini sunt produsul corect de intrare
+- formatul trebuie modelat per produs: glet 20kg, tencuiala decorativa 25kg, adeziv / mortar 25kg
 - materia prima proprie ofera avantaj real de cost
 - piata poate absorbi un jucator nou cu produs bine pozitionat
 - partenerul poate sustine financiar faza 1
@@ -29,9 +29,9 @@ next_action: Treci ipotezele validate in [[03_Finance/01_Economic_Engine/01_Assu
 ## Assumptions Requiring Validation
 
 - costul real de extractie / tona
-- randamentul real al procesarii
-- pretul en-gros real pe piata MD / RO
-- CAPEX-ul real pentru linia minima
+- randamentul real al micronizarii / sortarii / mixarii
+- pretul angro real pe fiecare produs in piata MD / RO
+- CAPEX-ul real pentru linia minima de materiale de finisaj
 - termenele de plata si discounturile distribuitorilor
 
 ## Current Rule
