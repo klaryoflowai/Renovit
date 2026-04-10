@@ -24,7 +24,7 @@ Sistemul adoptat este:
 ## Fisiere tehnice
 
 - `index.html` - calculator browser-ready pentru unit economics
-- `unit-economics-sac-30kg.html` - calculator browser-ready pentru unit economics per sac 30kg
+- `unit-economics-sac-25kg.html` - calculator browser-ready pentru unit economics per sac 25kg
 - `gips-unit-economics.jsx` - sursa React a calculatorului
 - `instrumente.html` - hub public pentru instrumentele online
 - `proces-tehnologic-gips.html` - pagina browser pentru procesul tehnologic
@@ -37,7 +37,7 @@ Sistemul adoptat este:
 ## Instrumente publice
 
 - https://renovit.klaryoflowai.workers.dev/ - calculator unit economics
-- https://renovit.klaryoflowai.workers.dev/unit-economics-sac-30kg.html - calculator unit economics per sac 30kg
+- https://renovit.klaryoflowai.workers.dev/unit-economics-sac-25kg.html - calculator unit economics per sac 25kg
 - https://renovit.klaryoflowai.workers.dev/instrumente.html - hub instrumente
 - https://renovit.klaryoflowai.workers.dev/proces-tehnologic-gips.html - proces tehnologic interactiv
 - https://renovit.klaryoflowai.workers.dev/raport-vizita-cariera.html - raport vizita cariera
@@ -72,7 +72,7 @@ Sistemul adoptat este:
 
 ## Cum folosesti calculatorul local
 
-Deschide `index.html` sau `unit-economics-sac-30kg.html` in browser sau ruleaza:
+Deschide `index.html` sau `unit-economics-sac-25kg.html` in browser sau ruleaza:
 
 ```bash
 python3 -m http.server 8000

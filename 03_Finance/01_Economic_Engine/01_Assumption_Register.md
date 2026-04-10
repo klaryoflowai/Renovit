@@ -3,7 +3,7 @@ title: Assumption Register
 type: register
 status: canonical
 owner: Yuri
-updated: 2026-04-09
+updated: 2026-04-10
 tags:
   - renovit
   - finance
@@ -25,6 +25,7 @@ next_action: Valideaza in teren si actualizeaza statusul fiecarei ipoteze.
 | Raw material quality | SiO2 ceiling for standard plaster route | <=3 | % | working threshold | quality KB | to be verified by lab |
 | Processing yield | Yield brut -> finished product | 75 | % | working baseline | local calculator | |
 | Selling price | Wholesale selling price | 90-130 | EUR/t | estimated | benchmark notes | |
+| Packaging | Target bag size | 25 | kg/bag | active assumption | D-001 | Replaces the earlier package-size working view; calculator uses 40 bags/t |
 | CAPEX | Phase 1 processing line | 150000-300000 | EUR | estimated | market search | second-hand baseline |
 | Margin threshold | Target gross margin | >=35 | % | canonical | working rule | |
 | Volume | Initial monthly sales volume | TBD | t/month | open | market validation | |

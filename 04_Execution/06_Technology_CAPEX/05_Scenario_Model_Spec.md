@@ -61,8 +61,8 @@ Modelul trebuie sa calculeze:
 - cost aditivi per tona
 - cost ambalaj per tona
 - cost total per tona
-- cost total per sac 30kg
-- marja bruta per sac 30kg
+- cost total per sac 25kg
+- marja bruta per sac 25kg
 - saci si paleti pe luna
 - marja bruta
 - break-even lunar
@@ -89,7 +89,7 @@ Workbook-ul este generat din CSV-uri si trebuie tratat ca instrument de lucru, n
 ## Link to browser calculator
 
 - https://renovit.klaryoflowai.workers.dev/
-- https://renovit.klaryoflowai.workers.dev/unit-economics-sac-30kg.html
+- https://renovit.klaryoflowai.workers.dev/unit-economics-sac-25kg.html
 
 ## Rule
 

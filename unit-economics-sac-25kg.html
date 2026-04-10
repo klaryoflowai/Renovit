@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>RENOVIT — Unit Economics / Sac 30kg</title>
+    <title>RENOVIT — Unit Economics / Sac 25kg</title>
     <meta
       name="description"
-      content="Calculator de unit economics per sac 30kg pentru tencuiala gipsata RENOVIT."
+      content="Calculator de unit economics per sac 25kg pentru tencuiala gipsata RENOVIT."
     >
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -287,7 +287,7 @@
   <body>
     <main class="app">
       <div class="eyebrow">RENOVIT — instrument analiză</div>
-      <h1>Unit Economics / Sac 30kg</h1>
+      <h1>Unit Economics / Sac 25kg</h1>
       <div class="subtitle">View comercial pentru tencuiala gipsată ambalată. Modelul pe tonă rămâne baza de fezabilitate.</div>
 
       <section class="section">
@@ -295,10 +295,10 @@
         <div class="row">
           <div class="row-main">
             <div class="label">Greutate sac</div>
-            <div class="sublabel">standard target pentru produsul tip Supraten</div>
+            <div class="sublabel">standard target actual pentru produsul RENOVIT</div>
           </div>
           <div class="row-input">
-            <input id="greutateSacKg" type="number" min="1" step="0.1" value="30">
+            <input id="greutateSacKg" type="number" min="1" step="0.1" value="25">
             <span class="unit">kg</span>
           </div>
         </div>
@@ -376,7 +376,7 @@
             <div class="sublabel">prețul primit de RENOVIT de la distribuitor / retail B2B</div>
           </div>
           <div class="row-input">
-            <input id="pretSacEngros" type="number" min="0" step="0.01" value="3.6">
+            <input id="pretSacEngros" type="number" min="0" step="0.01" value="3">
             <span class="unit">€/sac</span>
           </div>
         </div>
@@ -489,7 +489,7 @@
       </div>
 
       <div class="notes">
-        * Pentru 30kg, o tonă are 33.33 saci. Prețul de €3.60/sac înseamnă €120/t.<br>
+        * Pentru 25kg, o tonă are 40 saci. Prețul de €3.00/sac înseamnă €120/t.<br>
         * Calculatorul per sac este util pentru pricing, negociere cu distribuitori și estimarea logisticii.<br>
         * Pentru decizia de investiție folosește în continuare calculatorul pe tonă și modelul CAPEX.
       </div>
@@ -505,13 +505,13 @@
 
     <script>
       const defaults = {
-        greutateSacKg: 30,
+        greutateSacKg: 25,
         saciPalet: 48,
         costProductieTona: 65,
         amortizareTona: 8.9,
         logisticaTona: 6,
         costAmbalajSac: 0.15,
-        pretSacEngros: 3.6,
+        pretSacEngros: 3,
         volumTonaLuna: 400,
         costuriFixeLuna: 5000,
       };
@@ -602,8 +602,8 @@
         if (state.pretSacEngros > 0 && pretTonaEchivalent < costTonaEchivalent) {
           warnings.push("Prețul echivalent pe tonă este sub costul echivalent pe tonă.");
         }
-        if (state.greutateSacKg !== 30) {
-          warnings.push(`Ai schimbat greutatea sacului. Comparațiile cu benchmarkul de 30kg trebuie recalibrate la ${formatFixed(saciPerTona, 2)} saci/t.`);
+        if (state.greutateSacKg !== 25) {
+          warnings.push(`Ai schimbat greutatea sacului. Comparațiile cu benchmarkul de 25kg trebuie recalibrate la ${formatFixed(saciPerTona, 2)} saci/t.`);
         }
 
         return {

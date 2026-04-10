@@ -8,7 +8,7 @@ stage_id,stage_name,equipment_key,capacity_5kt_year,input,output,owner_question,
 7,Mixing,Industrial mixer,around 10 t/hour,Dosed blend,Homogeneous plaster mix,Can mixer keep consistent quality at target volume?,working_assumption,Homogeneity affects complaints and returns
 8,Cooling,Air cooler,TBD,Hot finished mix,Cooled mix under 40C,Is cooling needed before silos and bagging?,open,Temperature affects storage and packaging
 9,Binder / product storage,Silo 100-200t,TBD,Cooled mix,Stored bulk product,How much buffer stock is needed?,working_assumption,Silo sizing should support scale-up
-10,Bag filling,30kg bagging machine,300-600 bags/hour,Bulk product,30kg filled bags,Can used line handle target bag rate?,critical,Commercial bottleneck for retail-ready product
+10,Bag filling,25kg bagging machine,300-600 bags/hour,Bulk product,25kg filled bags,Can used line handle target bag rate?,critical,Commercial bottleneck for retail-ready product
 11,Stitching and printing,Bag stitcher + printer,TBD,Filled bags,Sealed labelled bags,What label / compliance information is required?,open,Connects quality and product readiness
 12,Palletizing,Manual or robot palletizing,1 pallet / 5 min benchmark,Sealed bags,1.2t pallet,Manual now or robot later?,working_assumption,Robot likely not needed for phase 1
 13,Finished goods storage and loading,Forklift + warehouse,TBD,Pallets,Ready-to-ship product,How many days of finished goods stock are needed?,open,Needs warehouse and moisture control

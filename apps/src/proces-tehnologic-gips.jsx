@@ -45,7 +45,7 @@ export default function App() {
         { title: "Depozit expediere & gestiune stoc", sub: "FIFO · umiditate < 65% · depozit uscat" },
         { title: "Transport & distribuție", sub: "Camion acoperit · distribuitor regional" },
         { title: "Distribuitor / retailer materiale", sub: "Magazin specializat · depozit en-gros" },
-        { title: "Client final — sac 30 kg", sub: "Constructor · finisator · tencuială B3", note: "EN 13279" },
+        { title: "Client final — sac 25 kg", sub: "Constructor · finisator · tencuială B3", note: "EN 13279" },
       ]
     },
   ];

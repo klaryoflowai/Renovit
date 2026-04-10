@@ -21,7 +21,7 @@ next_action: Valideaza procesul cu un tehnolog / furnizor de echipamente.
 
 ## Working process
 
-Procesul tinta pentru tencuiala gipsata ambalata 30kg este:
+Procesul tinta pentru tencuiala gipsata ambalata 25kg este:
 
 1. extractie
 2. transport cariera -> fabrica
@@ -32,7 +32,7 @@ Procesul tinta pentru tencuiala gipsata ambalata 30kg este:
 7. amestecare
 8. racire
 9. silo / stocare liant
-10. umplere saci 30kg
+10. umplere saci 25kg
 11. cusut / print / etichetare
 12. paletizare
 13. depozitare produs finit si incarcare
@@ -42,7 +42,7 @@ Procesul tinta pentru tencuiala gipsata ambalata 30kg este:
 - `calcinare`: cea mai importanta etapa pentru calitate, energie si capacitate
 - `macinare`: afecteaza finetea si performanta produsului
 - `dozare aditivi`: afecteaza timp de intarire, culoare si stabilitate
-- `ambalare 30kg`: afecteaza ritmul comercial si retail-readiness
+- `ambalare 25kg`: afecteaza ritmul comercial si retail-readiness
 - `depozitare`: afecteaza umiditatea si reclamatiile
 
 ## Data source

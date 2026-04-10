@@ -3,7 +3,7 @@ title: Assumption Summary
 type: summary
 status: working
 owner: Yuri
-updated: 2026-04-09
+updated: 2026-04-10
 tags:
   - renovit
   - hq
@@ -20,6 +20,7 @@ next_action: Treci ipotezele validate in [[03_Finance/01_Economic_Engine/01_Assu
 ## Core Assumptions
 
 - tencuiala gips ambalata este produsul corect de intrare
+- sacul de 25kg este formatul de ambalare tinta pentru modelarea comerciala initiala
 - materia prima proprie ofera avantaj real de cost
 - piata poate absorbi un jucator nou cu produs bine pozitionat
 - partenerul poate sustine financiar faza 1
@@ -36,4 +37,3 @@ next_action: Treci ipotezele validate in [[03_Finance/01_Economic_Engine/01_Assu
 ## Current Rule
 
 Nicio ipoteza cu impact material nu devine "adevar operational" pana nu este trecuta in [[03_Finance/01_Economic_Engine/01_Assumption_Register]] cu sursa si status.
-

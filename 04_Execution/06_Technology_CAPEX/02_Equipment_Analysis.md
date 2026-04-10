@@ -24,7 +24,7 @@ next_action: Aduna minimum 3 oferte comparabile pentru linia de 5kt/an.
 Analiza echipamentelor trebuie impartita in patru grupuri:
 
 1. `Core process`: calcinare, macinare, mixer
-2. `Commercial readiness`: linie ambalare 30kg, cusut, printer, paletizare
+2. `Commercial readiness`: linie ambalare 25kg, cusut, printer, paletizare
 3. `Infrastructure`: silozuri, praf / filtre, electric, gaz / combustibil, warehouse
 4. `Quality control`: laborator minim si teste externalizate
 

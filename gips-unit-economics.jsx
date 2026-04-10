@@ -223,7 +223,7 @@ export default function App() {
       <Section title="02 — Costuri de Procesare / Tonă Produs Finit">
         <Row label="Calcinare (furnale)" value={costCalcinare} onChange={setCostCalcinare} unit="€/t" min={0} />
         <Row label="Măcinare" value={costMacinare} onChange={setCostMacinare} unit="€/t" min={0} />
-        <Row label="Ambalare (saci 25–30kg)" value={costAmbalare} onChange={setCostAmbalare} unit="€/t" min={0} />
+        <Row label="Ambalare (saci 25kg)" value={costAmbalare} onChange={setCostAmbalare} unit="€/t" min={0} />
         <Row label="Manoperă directă" value={costManopera} onChange={setCostManopera} unit="€/t" min={0} />
         <Row label="Logistică / distribuție" value={costLogistica} onChange={setCostLogistica} unit="€/t" min={0} />
         <Row label="COST TOTAL fără CAPEX" readOnly highlight value={`${CURRENCY}${formatFixed(calc.costOperational)}`} unit="/t" />

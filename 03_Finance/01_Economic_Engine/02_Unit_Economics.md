@@ -9,8 +9,8 @@ Documentul oficial care raspunde daca modelul fazei 1 are sens economic sau nu.
 - cost operational / tona produs finit
 - amortizare / tona
 - cost total / tona cu CAPEX
-- cost total / sac 30kg
-- marja bruta / sac 30kg
+- cost total / sac 25kg
+- marja bruta / sac 25kg
 - saci vanduti / luna si paleti / luna
 - marja bruta
 - cash flow operational lunar
@@ -27,7 +27,7 @@ Documentul oficial care raspunde daca modelul fazei 1 are sens economic sau nu.
 ## Local tools
 
 - browser calculator pe tona: `../../index.html`
-- browser calculator per sac 30kg: `../../unit-economics-sac-30kg.html`
+- browser calculator per sac 25kg: `../../unit-economics-sac-25kg.html`
 - React source: `../../gips-unit-economics.jsx`
 - raw tables: `../../data/finance/`
 
@@ -35,4 +35,4 @@ Documentul oficial care raspunde daca modelul fazei 1 are sens economic sau nu.
 
 Calculatorul pe tona ramane baza deciziei de fezabilitate si CAPEX.
 
-Calculatorul per sac 30kg este view-ul comercial: traduce costul pe tona in cost / sac, pret / sac, marja / sac, saci / luna, paleti / luna si break-even comercial.
+Calculatorul per sac 25kg este view-ul comercial: traduce costul pe tona in cost / sac, pret / sac, marja / sac, saci / luna, paleti / luna si break-even comercial.

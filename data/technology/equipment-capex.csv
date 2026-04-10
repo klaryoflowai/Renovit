@@ -1,7 +1,7 @@
 equipment_item,phase,criticality,second_hand_low_eur,second_hand_high_eur,new_low_eur,new_high_eur,source_hint,status,notes
 Calcination caldron / drum,Phase 1,critical,60000,120000,150000,250000,MachineSeeker / OLX RO / Machineryline,working_assumption,Core process bottleneck and quality risk
 Grinding + mixer package,Phase 1,critical,30000,50000,80000,120000,Agrotehnica / used industrial listings,working_assumption,May be separate machines in real offers
-30kg bagging line,Phase 1,critical,20000,40000,50000,80000,Machineryline / regional suppliers,working_assumption,Check bag size and accuracy
+25kg bagging line,Phase 1,critical,20000,40000,50000,80000,Machineryline / regional suppliers,working_assumption,Check bag size and accuracy
 Silo + internal logistics,Phase 1,important,15000,30000,40000,60000,Regional suppliers,working_assumption,Needs moisture protection
 Jaw crusher,Phase 1,important,,,,,,open,Add after feed-size validation
 Dust collection / filters,Phase 1,critical,,,,,,open,Must not be ignored for environment and worker safety
