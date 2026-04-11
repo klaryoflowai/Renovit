@@ -31,7 +31,7 @@ Sistemul adoptat este:
 - `dashboard-financiar.html` - dashboard browser-ready pentru cash-flow, fonduri, P&L operativ si balance sheet
 - `gips-unit-economics.jsx` - sursa React legacy a calculatorului vechi
 - `instrumente.html` - hub public pentru instrumentele online
-- `proces-tehnologic-gips.html` - pagina legacy pentru procesul tehnologic pe gips
+- `proces-tehnologic-gips.html` - pagina actualizata pentru procesul tehnologic al finisajelor minerale
 - `raport-vizita-cariera.html` - formular browser pentru raportul primei vizite Volodeni
 - `assets/proces_tehnologic_gips_renovit.svg` - diagrama SVG statica legacy pentru ruta veche pe gips
 - `apps/src/` - sursele JSX pentru instrumentele publicate
@@ -47,7 +47,7 @@ Sistemul adoptat este:
 - https://renovit.klaryoflowai.workers.dev/unit-economics-sac-25kg.html - legacy / auxiliar per sac 25kg
 - https://renovit.klaryoflowai.workers.dev/instrumente.html - hub instrumente
 - https://renovit.klaryoflowai.workers.dev/raport-vizita-cariera.html - raport vizita Volodeni / calcar / materiale de finisaj
-- https://renovit.klaryoflowai.workers.dev/proces-tehnologic-gips.html - proces tehnologic legacy pe gips
+- https://renovit.klaryoflowai.workers.dev/proces-tehnologic-gips.html - proces tehnologic actualizat pentru finisaje minerale
 - https://renovit.klaryoflowai.workers.dev/assets/proces_tehnologic_gips_renovit.svg - diagrama SVG legacy
 
 ## Cum folosesti vault-ul in Obsidian

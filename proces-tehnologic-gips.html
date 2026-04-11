@@ -3,17 +3,20 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>RENOVIT — Proces Tehnologic Gips</title>
-    <meta name="description" content="Harta procesului tehnologic pentru productie tencuiala gipsata RENOVIT.">
+    <title>RENOVIT — Proces Tehnologic Finisaje Minerale</title>
+    <meta
+      name="description"
+      content="Harta procesului tehnologic corectat pentru RENOVIT: Volodeni + Ocnița -> finisaje minerale pe bază de calcar, în saci de 20kg și 25kg."
+    >
     <style>
       :root {
         color-scheme: light;
-        --bg: #f7f2e8;
-        --paper: #fffaf0;
-        --ink: #1f1b14;
-        --muted: #776b5b;
-        --line: #dfd1b8;
-        --accent: #ba7517;
+        --bg: #f5efe3;
+        --paper: #fffaf2;
+        --ink: #231d14;
+        --muted: #6e6252;
+        --line: #d9ccb3;
+        --accent: #a86411;
       }
 
       * {
@@ -24,13 +27,14 @@
         margin: 0;
         min-height: 100vh;
         background:
-          radial-gradient(circle at 10% 0%, rgba(186, 117, 23, 0.16), transparent 28rem),
-          linear-gradient(180deg, #fbf4e8 0%, var(--bg) 55%, #efe3cf 100%);
+          radial-gradient(circle at 10% 0%, rgba(168, 100, 17, 0.16), transparent 28rem),
+          radial-gradient(circle at 90% 6%, rgba(28, 102, 85, 0.08), transparent 24rem),
+          linear-gradient(180deg, #faf3e6 0%, var(--bg) 60%, #eee2ca 100%);
         color: var(--ink);
       }
 
       header {
-        width: min(100%, 760px);
+        width: min(100%, 820px);
         margin: 0 auto;
         padding: 28px 18px 12px;
         font-family: "DM Mono", "Courier New", monospace;
@@ -54,8 +58,8 @@
       .sub {
         color: var(--muted);
         font-size: 13px;
-        line-height: 1.7;
-        max-width: 60ch;
+        line-height: 1.75;
+        max-width: 64ch;
       }
 
       .actions {
@@ -68,7 +72,7 @@
       .actions a {
         color: var(--ink);
         border: 1px solid var(--line);
-        background: rgba(255, 250, 240, 0.72);
+        background: rgba(255, 250, 242, 0.78);
         padding: 9px 12px;
         text-decoration: none;
         font-size: 11px;
@@ -77,13 +81,13 @@
       }
 
       main {
-        width: min(100%, 760px);
+        width: min(100%, 820px);
         margin: 0 auto;
         padding: 8px 10px 40px;
       }
 
       #root {
-        background: rgba(255, 250, 240, 0.76);
+        background: rgba(255, 250, 242, 0.8);
         border: 1px solid var(--line);
         box-shadow: 0 30px 80px rgba(60, 36, 8, 0.12);
       }
@@ -98,12 +102,18 @@
   <body>
     <header>
       <div class="eyebrow">RENOVIT tool</div>
-      <h1>Proces tehnologic gips</h1>
-      <div class="sub">Hartă interactivă pentru fluxul carieră gips Edineț → tencuială ambalată 25kg.</div>
+      <h1>Proces tehnologic finisaje minerale</h1>
+      <div class="sub">
+        Hartă interactivă a fluxului corectat pentru varianta actuală RENOVIT:
+        materie primă Volodeni + Ocnița, fabrică posibil amplasată la Ocnița, produse
+        dry-mix în saci de 20kg și 25kg. Accentul este pe procesul canonic de fază 1,
+        nu pe promisiuni comerciale.
+      </div>
       <div class="actions">
-        <a href="/">Calculator unit economics</a>
-        <a href="/raport-vizita-cariera.html">Raport vizită carieră</a>
-        <a href="/assets/proces_tehnologic_gips_renovit.svg">SVG detaliat</a>
+        <a href="/">Unit Economics</a>
+        <a href="/simulare-economica.html">Simulare economică</a>
+        <a href="/raport-vizita-cariera.html">Raport vizită</a>
+        <a href="/assets/proces_tehnologic_gips_renovit.svg">SVG actualizat</a>
       </div>
     </header>
     <main>

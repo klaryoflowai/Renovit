@@ -72,8 +72,8 @@ De aceea, zona aceasta functioneaza ca punte:
 - https://renovit.klaryoflowai.workers.dev/simulare-economica.html - hub simulare economica pentru CAPEX si capacitate
 - https://renovit.klaryoflowai.workers.dev/dashboard-financiar.html - dashboard financiar pentru cash-flow si fonduri
 - https://renovit.klaryoflowai.workers.dev/unit-economics-sac-25kg.html - legacy / auxiliar per sac 25kg
-- https://renovit.klaryoflowai.workers.dev/proces-tehnologic-gips.html - legacy gips
-- https://renovit.klaryoflowai.workers.dev/assets/proces_tehnologic_gips_renovit.svg - legacy gips
+- https://renovit.klaryoflowai.workers.dev/proces-tehnologic-gips.html - harta actualizata pentru finisaje minerale Volodeni + Ocnița
+- https://renovit.klaryoflowai.workers.dev/assets/proces_tehnologic_gips_renovit.svg - SVG actualizat pentru fluxul canonic
 
 ## Working thesis
 

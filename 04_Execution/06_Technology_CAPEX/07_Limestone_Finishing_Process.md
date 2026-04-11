@@ -3,7 +3,7 @@ title: Limestone Finishing Materials Process
 type: technology-note
 status: draft
 owner: Yuri
-updated: 2026-04-10
+updated: 2026-04-11
 tags:
   - renovit
   - technology
@@ -22,19 +22,84 @@ next_action: Cerem oferte pentru micronizare, sortare, mixer, dozare aditivi si 
 
 # Limestone Finishing Materials Process
 
-## Flux tehnologic tinta
+## Verdict rapid dupa review
 
-1. Selectie calcar alb Volodeni pentru gletul premium.
+Procesul propus este corect doar la nivel de arhitectura generala:
+
+- selectie materie prima
+- transport la fabrica
+- pregatire mecanica
+- formulare dry-mix
+- control calitate
+- ambalare si expediere
+
+Corectiile obligatorii sunt:
+
+1. scoatem complet logica de `calcinare` din harta canonica
+2. nu tratam tencuiala decorativa ca produs obtinut din aceeasi pulbere ultrafina folosita la glet
+3. nu tratam faza 1 ca `3 linii dedicate`; modelul realist este productie pe campanii cu `1-2 mixere` si o `linie flexibila 20kg / 25kg`
+4. nu tratam fillerul de calcar drept binder suficient pentru glet / tencuiala / adeziv
+5. nu modelam randament de `75%` ca baseline pentru dry-mix pe calcar daca materiile prime sunt deja relativ uscate
+
+## Flux tehnologic tinta - varianta corectata
+
+1. Selectie calcar alb Volodeni pentru linia premium.
 2. Selectie calcar / faina / bentonita Ocnița pentru volum si functionalitate.
 3. Transport Volodeni -> Ocnița, daca fabrica ramane la Ocnița.
-4. Concasare / pre-macinare, daca nu exista deja faina de calcar potrivita.
-5. Micronizare pentru glet extra-alb.
-6. Sortare granulometrica pentru tencuieli decorative.
-7. Dozare aditivi: polimeri, celuloza, retentori apa, eventual pigmenti / stabilizatori.
-8. Mixare uscata.
-9. Control calitate lot.
-10. Ambalare 20kg / 25kg.
-11. Paletizare si distributie prin rutier / feroviar.
+4. Pre-zdrobire, separare metalica si aspiratie.
+5. Conditionare umiditate doar daca materia prima iese din spec.
+6. Ruta A: micronizare / clasificare fina pentru glet si filler fin.
+7. Ruta B: zdrobire / cernere pentru fractii decorative, separate de ruta ultrafina.
+8. Dozare binderi si aditivi in functie de SKU.
+9. Mixare uscata pe campanii.
+10. Control calitate lot, specific produsului.
+11. Ambalare flexibila 20kg / 25kg.
+12. Paletizare, depozit uscat, distributie rutiera / feroviara.
+
+## Ce NU este corect in propunerea initiala
+
+### 1. Decorativa nu trebuie modelata ca pulbere complet micronizata
+
+Pentru tencuiala decorativa minerala ai nevoie de fractii controlate de agregat. Asta inseamna o ruta separata de:
+
+- zdrobire
+- cernere
+- clasificare pe granule
+
+nu doar filler ultrafin.
+
+### 2. Retetele sunt prea incomplete
+
+Propunerile de tip:
+
+- `85% filler + 8% polimer + 2% HPMC`
+- `70% F2 + 20% F1 + 5% granule`
+- `60% F3 + 30% var + 5% fibre`
+
+nu sunt suficiente ca retete de executie industriala. Lipsesc sistemele reale de binder si aditivi pentru fiecare familie de produs.
+
+### 3. Faza 1 nu cere 3 linii dedicate
+
+La volumele de inceput, configuratia mai credibila este:
+
+- 1 backbone de pregatire materie prima
+- 1 ruta ultrafina
+- 1 ruta pentru fractii decorative
+- 1-2 mixere
+- 1 linie de ambalare flexibila 20kg / 25kg
+
+### 4. Randamentul de 75% este prea sever pentru baseline
+
+Pentru dry-mix pe baza de calcar, fara calcinare si cu recuperare buna de praf, baseline-ul de modelare ar trebui sa fie mai aproape de:
+
+- `92-98%` masa recuperata
+
+Poti cobori sub asta daca ai:
+
+- umiditate mare
+- reject semnificativ la cernere
+- contaminare
+- pierderi mari la manipulare
 
 ## Diferenta fata de gips
 
@@ -48,6 +113,44 @@ Pentru calcar, focusul este:
 - absorbtie
 - reteta de aditivi
 - stabilitatea loturilor
+
+## Familii de produs - logica corecta
+
+### Glet premium 20kg
+
+Limestone functioneaza ca filler fin, dar produsul are nevoie de un sistem real de binder alb. In practica, asta inseamna o combinatie validata din:
+
+- filler ultrafin
+- var hidratat si / sau ciment alb
+- celuloza
+- pulbere polimerica redispersabila
+- alte aditii de lucrabilitate
+
+Daca dorim un glet pasta, asta inseamna o alta fabrica, cu flux umed.
+
+### Tencuiala decorativa minerala 25kg
+
+Tencuiala decorativa minerala are nevoie de:
+
+- binder mineral
+- fractii granulometrice decorative
+- aditivi de lucrabilitate / aderenta / retentie apa
+
+Ruta de referinta pentru mortar de tencuire ramane `EN 998-1`.
+
+### Adeziv 25kg
+
+Un adeziv uscat trebuie modelat ca mortar cimentic, nu ca amestec de filler + var + fibre. Canonicul este:
+
+- ciment
+- filler / nisip selectat
+- celuloza
+- pulbere polimerica
+- aditii minore
+
+Pentru performanta, ruta de referinta este `EN 12004`.
+
+Bentonita poate ramane tema de laborator, nu dogma de reteta.
 
 ## CAPEX candidate
 
@@ -63,11 +166,12 @@ Pentru calcar, focusul este:
 
 ## Configuratie tinta 10kt/an
 
-- moara micronizare: `5 t/h` sub `100 microni`
-- sortare / classifier: `5 t/h`, fractii `0.1-2 mm`
+- moara micronizare: `5 t/h` pentru filler fin
+- ruta separata de cernere / agregat decorativ
 - mixer: `2 t/ciclu`, aprox. `10 t/h`
-- ambalare: `600 saci/h`, reglabil `15-30kg`, folosit pentru `20kg` si `25kg`
+- ambalare: `500-800 saci/h`, reglabil `15-30kg`, folosit pentru `20kg` si `25kg`
 - laborator: control granulometrie, umiditate, alb, aderenta / rezistenta dupa standardul produsului
+- disciplina linie alba: curatare / schimbare lot pentru produsul premium
 
 ## Decizie used vs new
 
