@@ -1,22 +1,22 @@
 category,key,label,default_value,unit,notes
-Product,target_bag_kg,Target bag size,25,kg,Average modeling bag; glet may be 20kg and tencuiala / mortar 25kg
+Product,target_bag_kg,Target bag size,25,kg,Average modeling bag; glet may be 20kg and granule / filler 25kg or vrac
 Product,bags_per_pallet,Bags per pallet,48,bags,Working logistics assumption
-Revenue,selling_price_eur_per_ton,Wholesale selling price,420,EUR/t,Portfolio average; replace with validated product mix
+Revenue,selling_price_eur_per_ton,Wholesale selling price,330,EUR/t,Portfolio average fallback; replace with validated product mix
 Production,process_yield,Raw to finished yield,0.95,ratio,Limestone filler to finished packaged dry mix
 Raw material,volodeni_limestone_cost_eur_per_raw_t,Volodeni white limestone extraction,5,EUR/raw t,Top product main raw material
 Raw material,volodeni_to_ocnita_transport_eur_per_raw_t,Volodeni to Ocnita transport,8,EUR/raw t,Critical if factory is located at Ocnita
-Raw material,ocnita_limestone_cost_eur_per_raw_t,Ocnita limestone extraction,4,EUR/raw t,Volume base for decorative render and adhesive
+Raw material,ocnita_limestone_cost_eur_per_raw_t,Ocnita limestone extraction,4,EUR/raw t,Volume base for filler micronizat and glet structure
 Raw material,ocnita_bentonite_cost_eur_per_raw_t,Ocnita bentonite extraction / preparation,20,EUR/raw t,Includes working activation / preparation assumption
 Raw material,weighted_raw_material_cost_eur_per_raw_t,Weighted raw material cost,5,EUR/raw t,Calculated in date-initiale.html and pushed into simulation
 Raw material,weighted_raw_transport_eur_per_raw_t,Weighted quarry to plant transport,2,EUR/raw t,Calculated in date-initiale.html based on product recipe mix
-Processing,calcination_eur_per_finished_t,Micronization / sorting cost,25,EUR/t,Former calcination field retained only for model compatibility
+Processing,calcination_eur_per_finished_t,Micronization / sorting cost,25,EUR/t,Legacy key retained only for model compatibility; use as route-processing bundle
 Processing,grinding_eur_per_finished_t,Dry mixing cost,10,EUR/t,Mixing and dosing to target recipe
-Processing,additives_eur_per_finished_t,Additives cost,55,EUR/t,Polymers cellulose lime/cement and performance additives
+Processing,additives_eur_per_finished_t,Additives cost,18,EUR/t,Portfolio average for low-chemistry glet route; filler and granules stay near zero
 Processing,direct_labor_eur_per_finished_t,Direct labor,7,EUR/t,Production labor
 Packaging,bag_packaging_eur_per_bag,Bag and label cost,0.18,EUR/bag,20/25kg bag and labeling
 Logistics,distribution_eur_per_finished_t,Distribution cost,6,EUR/t,Finished goods local logistics
 Other,other_variable_eur_per_finished_t,Other variable cost,3,EUR/t,Spares losses and handling
-Fixed,fixed_opex_eur_per_month,Fixed operating cost,8000,EUR/month,Admin sales warehouse and base overhead
+Fixed,fixed_opex_eur_per_month,Fixed operating cost,15000,EUR/month,Working conservative baseline for admin commercial lab warehouse and operating overhead at 10kt/year
 Working capital,working_capital_months,Working capital buffer,1.5,months,Months of variable plus fixed cost to fund
 Financing,financing_enabled,Financing enabled,1,0/1,1 means model debt service
 Financing,financed_share,Financed share of funding need,0.4,ratio,Optional debt share

@@ -1,0 +1,644 @@
+<!doctype html>
+<html lang="ro">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RENOVIT — Sales & Marketing Feasibility Hub</title>
+    <meta
+      name="description"
+      content="Instrument browser pentru colectarea datelor de piata, competitie, canale si lead-uri RENOVIT, cu raport exportabil pentru studiul de fezabilitate."
+    >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap"
+      rel="stylesheet"
+    >
+    <style>
+      :root {
+        --bg: #090807;
+        --panel: #13110d;
+        --input: #1d1912;
+        --border: #3a2e20;
+        --border-soft: #261f16;
+        --text: #fff4dd;
+        --muted: #b5a68d;
+        --muted-2: #7a6d58;
+        --accent: #d4aa48;
+        --green: #6fb78a;
+        --warn: #df9850;
+        --red: #df6b5b;
+        --blue: #7aa7c7;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background:
+          radial-gradient(circle at 12% 0%, rgba(212, 170, 72, 0.18), transparent 26rem),
+          radial-gradient(circle at 88% 5%, rgba(122, 167, 199, 0.12), transparent 24rem),
+          linear-gradient(140deg, #090807 0%, #15120c 60%, #0a0907 100%);
+        color: var(--text);
+        font-family: "DM Mono", monospace;
+      }
+
+      main {
+        width: min(100%, 1240px);
+        margin: 0 auto;
+        padding: 34px 16px 48px;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
+        gap: 18px;
+        align-items: end;
+      }
+
+      .eyebrow {
+        color: var(--accent);
+        font-size: 10px;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 10px 0 12px;
+        font-family: "DM Serif Display", serif;
+        font-size: clamp(42px, 8vw, 84px);
+        font-weight: 400;
+        line-height: 0.9;
+      }
+
+      p {
+        color: var(--muted);
+        line-height: 1.7;
+        max-width: 82ch;
+      }
+
+      .hero-card,
+      .panel {
+        border: 1px solid var(--border);
+        background: rgba(19, 17, 13, 0.9);
+      }
+
+      .hero-card {
+        padding: 18px;
+      }
+
+      .hero-card strong {
+        display: block;
+        color: var(--accent);
+        font-family: "DM Serif Display", serif;
+        font-size: 32px;
+        font-weight: 400;
+        line-height: 1;
+      }
+
+      .hero-card span {
+        display: block;
+        margin-top: 10px;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.7;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 14px;
+        margin-top: 18px;
+      }
+
+      .panel {
+        grid-column: span 6;
+        border-left: 3px solid var(--section-accent, var(--accent));
+        padding: 18px;
+      }
+
+      .panel.full { grid-column: 1 / -1; }
+
+      .panel-title {
+        margin: 0 0 14px;
+        color: var(--section-accent, var(--accent));
+        font-size: 10px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 11px;
+      }
+
+      th,
+      td {
+        border-bottom: 1px solid var(--border-soft);
+        padding: 8px;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      th {
+        color: var(--accent);
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      td { color: var(--muted); }
+
+      td:nth-child(4),
+      td:nth-child(5) {
+        text-align: right;
+      }
+
+      tr.section-row td {
+        background: rgba(212, 170, 72, 0.08);
+        color: var(--accent);
+        font-weight: 500;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      input,
+      select,
+      textarea {
+        width: 100%;
+        border: 1px solid #403624;
+        background: var(--input);
+        color: var(--text);
+        font: inherit;
+        padding: 7px 8px;
+        outline: none;
+      }
+
+      input[type="number"] { text-align: right; }
+      textarea { min-height: 72px; resize: vertical; }
+
+      .metric-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 10px;
+      }
+
+      .metric {
+        border: 1px solid var(--border-soft);
+        background: rgba(26, 24, 17, 0.78);
+        padding: 14px;
+      }
+
+      .metric span {
+        display: block;
+        color: var(--muted-2);
+        font-size: 10px;
+        line-height: 1.45;
+      }
+
+      .metric strong {
+        display: block;
+        margin-top: 8px;
+        color: var(--text);
+        font-family: "DM Serif Display", serif;
+        font-size: 28px;
+        font-weight: 400;
+        line-height: 1;
+      }
+
+      .metric.good strong { color: var(--green); }
+      .metric.warn strong { color: var(--warn); }
+      .metric.bad strong { color: var(--red); }
+
+      .footer-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 16px;
+      }
+
+      .button {
+        border: 1px solid #403624;
+        background: transparent;
+        color: var(--text);
+        font: inherit;
+        padding: 10px 12px;
+        cursor: pointer;
+        text-decoration: none;
+      }
+
+      .button.primary {
+        background: var(--accent);
+        color: #120f09;
+        border-color: var(--accent);
+      }
+
+      .button:hover { border-color: var(--accent); color: var(--accent); }
+      .button.primary:hover { color: #120f09; }
+
+      .report-box {
+        width: 100%;
+        min-height: 420px;
+        border: 1px solid #403624;
+        background: var(--input);
+        color: var(--text);
+        font: inherit;
+        padding: 12px;
+        line-height: 1.7;
+        resize: vertical;
+      }
+
+      .tag {
+        display: inline-block;
+        padding: 3px 7px;
+        border: 1px solid var(--border);
+        color: var(--accent);
+        font-size: 10px;
+      }
+
+      @media (max-width: 900px) {
+        .hero,
+        .grid { display: block; }
+        .hero-card,
+        .panel { margin-top: 14px; }
+        table {
+          display: block;
+          overflow-x: auto;
+          white-space: nowrap;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="hero">
+        <div>
+          <div class="eyebrow">RENOVIT — commercial diligence</div>
+          <h1>Sales & Marketing Hub</h1>
+          <p>
+            Acesta este instrumentul canonic pentru pilonul cel mai slab al proiectului: piață, competitori, lead list reală,
+            buyer validation, prețuri confirmate și termeni comerciali. Obiectivul nu este doar să strângem note, ci să generăm
+            un raport utilizabil direct în studiul de fezabilitate.
+          </p>
+        </div>
+        <div class="hero-card">
+          <strong id="verdictLabel">INSUFICIENT</strong>
+          <span id="verdictText">Adaugă surse de piață, competitori, prețuri validate și leaduri nominale. Verdictul comercial se actualizează live.</span>
+        </div>
+      </section>
+
+      <section class="grid">
+        <div class="panel full" style="--section-accent: var(--accent);">
+          <h2 class="panel-title">01 — Date de colectat</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Secțiune</th>
+                <th>Ce colectăm</th>
+                <th>Valoare</th>
+                <th>Unitate</th>
+                <th>De ce contează</th>
+              </tr>
+            </thead>
+            <tbody id="inputRows"></tbody>
+          </table>
+          <div class="footer-actions">
+            <button class="button primary" id="saveData" type="button">Salvează datele</button>
+            <button class="button" id="resetData" type="button">Reset la ipoteze</button>
+            <button class="button" id="copyJson" type="button">Copiază JSON</button>
+            <a class="button" href="/date-initiale.html">Date inițiale</a>
+            <a class="button" href="/instrumente.html">Toate instrumentele</a>
+          </div>
+        </div>
+
+        <div class="panel full" style="--section-accent: var(--green);">
+          <h2 class="panel-title">02 — Rezumat comercial</h2>
+          <div class="metric-grid">
+            <div class="metric"><span>Readiness comercial</span><strong id="readinessScore">0%</strong></div>
+            <div class="metric"><span>Competitori mapați</span><strong id="competitorsMetric">0</strong></div>
+            <div class="metric"><span>Price points validate</span><strong id="pricePointsMetric">0</strong></div>
+            <div class="metric"><span>Leaduri nominale</span><strong id="leadsMetric">0</strong></div>
+            <div class="metric"><span>Potențial pilot</span><strong id="pilotMetric">0 t/lună</strong></div>
+            <div class="metric"><span>Zile medii de plată</span><strong id="paymentMetric">0 zile</strong></div>
+            <div class="metric"><span>Piață adresabilă</span><strong id="marketMetric">0 t/an</strong></div>
+            <div class="metric"><span>Surse de piață</span><strong id="sourcesMetric">0</strong></div>
+          </div>
+        </div>
+
+        <div class="panel full" style="--section-accent: var(--blue);">
+          <h2 class="panel-title">03 — Raport exportabil pentru fezabilitate</h2>
+          <p id="reportSummary">
+            Raportul se construiește automat din datele introduse mai sus și poate fi lipit direct în studiul de fezabilitate sau în Notion / Obsidian.
+          </p>
+          <textarea id="reportPreview" class="report-box" readonly></textarea>
+          <div class="footer-actions">
+            <button class="button primary" id="copyReport" type="button">Copiază raportul</button>
+            <a class="button" href="/simulare-economica.html">Simulare economică</a>
+            <a class="button" href="/">Unit Economics</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const STORAGE_KEY = "RENOVIT_SALES_MARKETING_INPUTS";
+
+      const fields = [
+        { section: "General", id: "analysisDate", label: "Data analizei", unit: "", type: "text", value: "2026-04-11", note: "Pune data versiunii de raport." },
+        { section: "General", id: "owner", label: "Owner / autor", unit: "", type: "text", value: "Yuri", note: "Cine răspunde de datele comerciale." },
+        { section: "General", id: "geography", label: "Geografie țintă", unit: "", type: "select", value: "MD + Nord + Chișinău", options: ["MD + Nord + Chișinău", "MD național", "MD + RO frontieră", "Custom"], note: "Definește aria de fezabilitate." },
+        { section: "General", id: "scopeNote", label: "Teză comercială", unit: "", type: "text", value: "resource-first: filler cash-cow, granule monetizare, glet produs de imagine", note: "Rezumatul poziționării comerciale." },
+
+        { section: "Dimensiune piață", id: "marketSourcesCount", label: "Surse de piață colectate", unit: "count", type: "number", value: 0, note: "Rapoarte, interviuri, benchmarkuri, date publice." },
+        { section: "Dimensiune piață", id: "gletMarketTYear", label: "Piață adresabilă glet", unit: "t/an", type: "number", value: 0, note: "Nu TAM global abstract, ci piață adresabilă realistă." },
+        { section: "Dimensiune piață", id: "granulesMarketTYear", label: "Piață adresabilă granule", unit: "t/an", type: "number", value: 0, note: "Segmente și fracții pentru care există cerere reală." },
+        { section: "Dimensiune piață", id: "fillerMarketTYear", label: "Piață adresabilă filler", unit: "t/an", type: "number", value: 0, note: "B2B la sac și / sau vrac." },
+        { section: "Dimensiune piață", id: "marketGrowthPct", label: "Creștere / contracție piață", unit: "%", type: "number", value: 0, note: "Ipoteză anuală bazată pe surse." },
+        { section: "Dimensiune piață", id: "seasonalityNote", label: "Sezonalitate", unit: "", type: "textarea", value: "", note: "Luni tari/slabe, impact pe cash și stoc." },
+
+        { section: "Competiție", id: "competitorsMapped", label: "Competitori mapați", unit: "count", type: "number", value: 0, note: "Număr de competitori analizați cu nume și produse." },
+        { section: "Competiție", id: "competitorList", label: "Listă competitori", unit: "", type: "textarea", value: "", note: "Nume, produs comparabil, punct forte, punct slab, canal." },
+        { section: "Competiție", id: "gletPricePoints", label: "Price points glet", unit: "count", type: "number", value: 0, note: "Număr de observații reale din piață." },
+        { section: "Competiție", id: "granulesPricePoints", label: "Price points granule", unit: "count", type: "number", value: 0, note: "Număr de observații reale din piață." },
+        { section: "Competiție", id: "fillerPricePoints", label: "Price points filler", unit: "count", type: "number", value: 0, note: "Include sac și vrac." },
+        { section: "Competiție", id: "whiteSpace", label: "White space comercial", unit: "", type: "textarea", value: "", note: "Unde avem avantaj față de concurenți?" },
+
+        { section: "Prețuri validate", id: "gletTargetMdlBag", label: "Preț țintă glet", unit: "MDL/sac", type: "number", value: 0, note: "Preț angro validat, nu dorit." },
+        { section: "Prețuri validate", id: "granulesTargetMdlBag", label: "Preț țintă granule", unit: "MDL/sac", type: "number", value: 0, note: "Preț angro validat pentru fracția principală." },
+        { section: "Prețuri validate", id: "fillerTargetMdlBag", label: "Preț țintă filler la sac", unit: "MDL/sac", type: "number", value: 0, note: "Validat cu buyer sau distribuitor." },
+        { section: "Prețuri validate", id: "fillerBulkTargetEurT", label: "Preț țintă filler vrac", unit: "EUR/t", type: "number", value: 0, note: "Validat cu client industrial." },
+        { section: "Prețuri validate", id: "maxDiscountPct", label: "Discount comercial maxim", unit: "%", type: "number", value: 0, note: "Din listă până la preț net." },
+
+        { section: "Canale", id: "distributorsMapped", label: "Distribuitori mapați", unit: "count", type: "number", value: 0, note: "Nume reale, nu segmente abstracte." },
+        { section: "Canale", id: "activeConversations", label: "Conversații active", unit: "count", type: "number", value: 0, note: "Discuții reale în curs." },
+        { section: "Canale", id: "diyChainsMapped", label: "Retail / DIY mapat", unit: "count", type: "number", value: 0, note: "Lanțuri sau retail specializat." },
+        { section: "Canale", id: "avgMarkupPct", label: "Markup mediu distribuitor", unit: "%", type: "number", value: 0, note: "Ajută la calculul prețului net." },
+        { section: "Canale", id: "avgPaymentDays", label: "Termen mediu plată", unit: "zile", type: "number", value: 0, note: "Impact direct în cash-flow." },
+        { section: "Canale", id: "logisticsBurdenEurT", label: "Povară logistică client", unit: "EUR/t", type: "number", value: 0, note: "Cost mediu livrare până la client / depozit." },
+        { section: "Canale", id: "listingFeesEur", label: "Taxe listare / intrare", unit: "EUR", type: "number", value: 0, note: "Doar dacă canalul le cere." },
+        { section: "Canale", id: "channelNotes", label: "Note canale", unit: "", type: "textarea", value: "", note: "Baraje, cerințe, condiții, suport cerut." },
+
+        { section: "Leaduri & buyeri", id: "namedLeads", label: "Leaduri nominale", unit: "count", type: "number", value: 0, note: "Companii reale, nu categorii." },
+        { section: "Leaduri & buyeri", id: "qualifiedBuyers", label: "Buyeri calificați", unit: "count", type: "number", value: 0, note: "Au nevoie, buget și interes real." },
+        { section: "Leaduri & buyeri", id: "pilotDiscussions", label: "Discuții pilot", unit: "count", type: "number", value: 0, note: "Test lot, probă, ofertă concretă." },
+        { section: "Leaduri & buyeri", id: "loiCount", label: "LOI / intenții scrise", unit: "count", type: "number", value: 0, note: "Dacă există." },
+        { section: "Leaduri & buyeri", id: "gletPilotTMonth", label: "Pilot potențial glet", unit: "t/lună", type: "number", value: 0, note: "Volum lunar discutat concret." },
+        { section: "Leaduri & buyeri", id: "granulesPilotTMonth", label: "Pilot potențial granule", unit: "t/lună", type: "number", value: 0, note: "Volum lunar discutat concret." },
+        { section: "Leaduri & buyeri", id: "fillerPilotTMonth", label: "Pilot potențial filler", unit: "t/lună", type: "number", value: 0, note: "Volum lunar discutat concret." },
+        { section: "Leaduri & buyeri", id: "leadNames", label: "Lead list nominală", unit: "", type: "textarea", value: "", note: "Companie, oraș, contact, produs, volum, status." },
+        { section: "Leaduri & buyeri", id: "buyerNotes", label: "Buyer insights", unit: "", type: "textarea", value: "", note: "Obiecții, motive de cumpărare, cerințe, feedback." },
+
+        { section: "Concluzii", id: "mainRisks", label: "Riscuri comerciale principale", unit: "", type: "textarea", value: "", note: "Ce poate invalida teza de piață." },
+        { section: "Concluzii", id: "missingData", label: "Date lipsă", unit: "", type: "textarea", value: "", note: "Ce lipsește încă pentru fezabilitate." },
+        { section: "Concluzii", id: "nextActions", label: "Următorii pași", unit: "", type: "textarea", value: "", note: "Acțiuni concrete și deadline-uri." },
+      ];
+
+      const inputs = {};
+      let values = Object.fromEntries(fields.map(field => [field.id, field.value]));
+
+      function readSaved() {
+        try {
+          const parsed = JSON.parse(localStorage.getItem(STORAGE_KEY) || "null");
+          if (parsed?.fields) {
+            values = { ...values, ...parsed.fields };
+          }
+        } catch {
+          values = Object.fromEntries(fields.map(field => [field.id, field.value]));
+        }
+      }
+
+      function fieldInput(field) {
+        if (field.type === "select") {
+          return `<select id="${field.id}">${field.options.map(option => `<option value="${option}">${option}</option>`).join("")}</select>`;
+        }
+        if (field.type === "textarea") {
+          return `<textarea id="${field.id}">${field.value || ""}</textarea>`;
+        }
+        return `<input id="${field.id}" type="${field.type}" value="${field.value}" ${field.type === "number" ? 'step="0.01"' : ""}>`;
+      }
+
+      function renderInputRows() {
+        let currentSection = "";
+        const rows = [];
+        fields.forEach(field => {
+          if (field.section !== currentSection) {
+            currentSection = field.section;
+            rows.push(`<tr class="section-row"><td colspan="5">${currentSection}</td></tr>`);
+          }
+          rows.push(`
+            <tr>
+              <td>${field.section}</td>
+              <td>${field.label}</td>
+              <td>${fieldInput(field)}</td>
+              <td>${field.unit}</td>
+              <td>${field.note}</td>
+            </tr>
+          `);
+        });
+        document.getElementById("inputRows").innerHTML = rows.join("");
+        fields.forEach(field => {
+          inputs[field.id] = document.getElementById(field.id);
+          inputs[field.id].value = values[field.id];
+          const handler = () => {
+            values[field.id] = inputs[field.id].value;
+            render();
+            save(false);
+          };
+          inputs[field.id].addEventListener("input", handler);
+          inputs[field.id].addEventListener("change", handler);
+        });
+      }
+
+      function n(id) {
+        const value = Number.parseFloat(values[id]);
+        return Number.isFinite(value) ? value : 0;
+      }
+
+      function filledFieldsCount() {
+        return fields.filter(field => String(values[field.id] ?? "").trim() !== "").length;
+      }
+
+      function pct(value, digits = 0) {
+        if (!Number.isFinite(value)) return "N/A";
+        return `${value.toLocaleString("ro-RO", { minimumFractionDigits: digits, maximumFractionDigits: digits })}%`;
+      }
+
+      function num(value, digits = 0) {
+        if (!Number.isFinite(value)) return "N/A";
+        return value.toLocaleString("ro-RO", { minimumFractionDigits: digits, maximumFractionDigits: digits });
+      }
+
+      function money(value, currency = "EUR", digits = 0) {
+        if (!Number.isFinite(value)) return "N/A";
+        const prefix = currency === "MDL" ? "MDL " : "€";
+        return `${prefix}${value.toLocaleString("ro-RO", { minimumFractionDigits: digits, maximumFractionDigits: digits })}`;
+      }
+
+      function compute() {
+        const totalMarketTYear = n("gletMarketTYear") + n("granulesMarketTYear") + n("fillerMarketTYear");
+        const totalPricePoints = n("gletPricePoints") + n("granulesPricePoints") + n("fillerPricePoints");
+        const totalPilotTMonth = n("gletPilotTMonth") + n("granulesPilotTMonth") + n("fillerPilotTMonth");
+        const coverage = filledFieldsCount() / fields.length;
+        const evidenceScore01 = (
+          Math.min(n("marketSourcesCount") / 6, 1) +
+          Math.min(n("competitorsMapped") / 6, 1) +
+          Math.min(n("distributorsMapped") / 10, 1) +
+          Math.min(totalPricePoints / 12, 1) +
+          Math.min(n("namedLeads") / 12, 1) +
+          Math.min(totalPilotTMonth / 200, 1)
+        ) / 6;
+        const readiness = Math.round((coverage * 0.35 + evidenceScore01 * 0.65) * 100);
+
+        let verdict = "INSUFICIENT";
+        let verdictText = "Pilonul comercial nu este încă suficient de solid pentru studiul de fezabilitate.";
+        if (readiness >= 75 && n("namedLeads") >= 10 && totalPricePoints >= 12 && n("competitorsMapped") >= 5 && totalPilotTMonth >= 150) {
+          verdict = "GO COMERCIAL";
+          verdictText = "Există suficientă validare de piață pentru a susține capitolul comercial din fezabilitate.";
+        } else if (readiness >= 55) {
+          verdict = "GO CONDIȚIONAT";
+          verdictText = "Direcția este promițătoare, dar mai lipsesc dovezi comerciale critice.";
+        } else if (readiness >= 35) {
+          verdict = "FRAGIL";
+          verdictText = "Există ceva semnale, dar pilonul Sales & Marketing este încă prea slab pentru a susține un Go puternic.";
+        }
+
+        return {
+          totalMarketTYear,
+          totalPricePoints,
+          totalPilotTMonth,
+          coverage,
+          readiness,
+          verdict,
+          verdictText,
+        };
+      }
+
+      function buildReport(calc) {
+        return [
+          "# Sales & Marketing Feasibility Report — RENOVIT",
+          "",
+          `Data: ${values.analysisDate || "TBD"}`,
+          `Owner: ${values.owner || "TBD"}`,
+          `Geografie: ${values.geography || "TBD"}`,
+          `Teză comercială: ${values.scopeNote || "TBD"}`,
+          "",
+          "## Verdict",
+          `- Verdict: ${calc.verdict}`,
+          `- Readiness comercial: ${calc.readiness}%`,
+          `- Explicație: ${calc.verdictText}`,
+          "",
+          "## Rezumat executiv",
+          `- Piață adresabilă totală: ${num(calc.totalMarketTYear, 0)} t/an`,
+          `- Competitori mapați: ${num(n("competitorsMapped"), 0)}`,
+          `- Price points validate: ${num(calc.totalPricePoints, 0)}`,
+          `- Leaduri nominale: ${num(n("namedLeads"), 0)}`,
+          `- Buyeri calificați: ${num(n("qualifiedBuyers"), 0)}`,
+          `- Potențial pilot agregat: ${num(calc.totalPilotTMonth, 0)} t/lună`,
+          `- Termen mediu de plată: ${num(n("avgPaymentDays"), 0)} zile`,
+          "",
+          "## Piață și cerere",
+          `- Surse de piață colectate: ${num(n("marketSourcesCount"), 0)}`,
+          `- Glet adresabil: ${num(n("gletMarketTYear"), 0)} t/an`,
+          `- Granule adresabile: ${num(n("granulesMarketTYear"), 0)} t/an`,
+          `- Filler adresabil: ${num(n("fillerMarketTYear"), 0)} t/an`,
+          `- Creștere / contracție piață: ${pct(n("marketGrowthPct"), 1)}`,
+          `- Sezonalitate: ${values.seasonalityNote || "TBD"}`,
+          "",
+          "## Competiție",
+          `- Competitori mapați: ${num(n("competitorsMapped"), 0)}`,
+          `- Price points glet: ${num(n("gletPricePoints"), 0)}`,
+          `- Price points granule: ${num(n("granulesPricePoints"), 0)}`,
+          `- Price points filler: ${num(n("fillerPricePoints"), 0)}`,
+          `- Listă competitori: ${values.competitorList || "TBD"}`,
+          `- White space: ${values.whiteSpace || "TBD"}`,
+          "",
+          "## Prețuri și reguli comerciale",
+          `- Glet țintă: ${money(n("gletTargetMdlBag"), "MDL", 0)}/sac`,
+          `- Granule țintă: ${money(n("granulesTargetMdlBag"), "MDL", 0)}/sac`,
+          `- Filler țintă la sac: ${money(n("fillerTargetMdlBag"), "MDL", 0)}/sac`,
+          `- Filler țintă vrac: ${money(n("fillerBulkTargetEurT"), "EUR", 0)}/t`,
+          `- Discount maxim: ${pct(n("maxDiscountPct"), 1)}`,
+          "",
+          "## Canale",
+          `- Distribuitori mapați: ${num(n("distributorsMapped"), 0)}`,
+          `- Conversații active: ${num(n("activeConversations"), 0)}`,
+          `- Retail / DIY mapat: ${num(n("diyChainsMapped"), 0)}`,
+          `- Markup mediu: ${pct(n("avgMarkupPct"), 1)}`,
+          `- Povară logistică: ${money(n("logisticsBurdenEurT"), "EUR", 1)}/t`,
+          `- Taxe de listare: ${money(n("listingFeesEur"), "EUR", 0)}`,
+          `- Note canal: ${values.channelNotes || "TBD"}`,
+          "",
+          "## Leaduri și buyeri",
+          `- Leaduri nominale: ${num(n("namedLeads"), 0)}`,
+          `- Buyeri calificați: ${num(n("qualifiedBuyers"), 0)}`,
+          `- Discuții pilot: ${num(n("pilotDiscussions"), 0)}`,
+          `- LOI / intenții scrise: ${num(n("loiCount"), 0)}`,
+          `- Pilot glet: ${num(n("gletPilotTMonth"), 0)} t/lună`,
+          `- Pilot granule: ${num(n("granulesPilotTMonth"), 0)} t/lună`,
+          `- Pilot filler: ${num(n("fillerPilotTMonth"), 0)} t/lună`,
+          `- Lead list nominală: ${values.leadNames || "TBD"}`,
+          `- Buyer insights: ${values.buyerNotes || "TBD"}`,
+          "",
+          "## Riscuri și date lipsă",
+          `- Riscuri principale: ${values.mainRisks || "TBD"}`,
+          `- Date lipsă: ${values.missingData || "TBD"}`,
+          "",
+          "## Următorii pași",
+          values.nextActions || "TBD",
+          "",
+          "## Concluzie de utilizare în fezabilitate",
+          calc.verdict === "GO COMERCIAL"
+            ? "Pilonul Sales & Marketing poate fi folosit ca bază pentru capitolul comercial din studiul de fezabilitate, cu condiția păstrării surselor și a datelor brute."
+            : "Pilonul Sales & Marketing nu este încă suficient pentru o teză de fezabilitate solidă. Trebuie completate price points, competitor map, lead list nominală și pilot discussions.",
+        ].join("\n");
+      }
+
+      function save(showMessage = true) {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify({ updatedAt: new Date().toISOString(), fields: { ...values } }));
+        if (showMessage) {
+          document.getElementById("reportSummary").textContent = "Datele de Sales & Marketing au fost salvate în browser și raportul a fost actualizat.";
+        }
+      }
+
+      function render() {
+        const calc = compute();
+        document.getElementById("readinessScore").textContent = `${calc.readiness}%`;
+        document.getElementById("competitorsMetric").textContent = num(n("competitorsMapped"), 0);
+        document.getElementById("pricePointsMetric").textContent = num(calc.totalPricePoints, 0);
+        document.getElementById("leadsMetric").textContent = num(n("namedLeads"), 0);
+        document.getElementById("pilotMetric").textContent = `${num(calc.totalPilotTMonth, 0)} t/lună`;
+        document.getElementById("paymentMetric").textContent = `${num(n("avgPaymentDays"), 0)} zile`;
+        document.getElementById("marketMetric").textContent = `${num(calc.totalMarketTYear, 0)} t/an`;
+        document.getElementById("sourcesMetric").textContent = num(n("marketSourcesCount"), 0);
+        document.getElementById("verdictLabel").textContent = calc.verdict;
+        document.getElementById("verdictText").textContent = calc.verdictText;
+        document.getElementById("reportSummary").textContent = `Completare formular: ${pct(calc.coverage * 100, 0)}. Pentru un pilon comercial bun, ai nevoie de price points validate, leaduri nominale, buyeri calificați și volum pilot discutat.`;
+        document.getElementById("reportPreview").value = buildReport(calc);
+      }
+
+      document.getElementById("saveData").addEventListener("click", () => save(true));
+      document.getElementById("resetData").addEventListener("click", () => {
+        values = Object.fromEntries(fields.map(field => [field.id, field.value]));
+        fields.forEach(field => {
+          if (inputs[field.id]) inputs[field.id].value = values[field.id];
+        });
+        render();
+        save(true);
+      });
+      document.getElementById("copyJson").addEventListener("click", async () => {
+        await navigator.clipboard.writeText(JSON.stringify({ fields: values }, null, 2));
+        document.getElementById("reportSummary").textContent = "JSON-ul Sales & Marketing este în clipboard.";
+      });
+      document.getElementById("copyReport").addEventListener("click", async () => {
+        await navigator.clipboard.writeText(document.getElementById("reportPreview").value);
+        document.getElementById("reportSummary").textContent = "Raportul Sales & Marketing a fost copiat în clipboard.";
+      });
+
+      readSaved();
+      renderInputRows();
+      render();
+    </script>
+  </body>
+</html>

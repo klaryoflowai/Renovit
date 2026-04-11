@@ -23,15 +23,15 @@ next_action: Construieste pipeline-ul de validare produs -> pret -> CAPEX.
 
 ## Thesis
 
-RENOVIT poate deveni o divizie de materiale de finisaj pe baza de calcar alb, folosind avantajul de resursa al Minei din Cupcini si intrand in piata prin produse ambalate cu valoare adaugata.
+RENOVIT poate deveni o divizie `resource-first` pe baza de calcar alb, folosind avantajul de resursa al Minei din Cupcini si intrand in piata prin produse unde resursa proprie ramane dominanta in masa si relevanta economic.
 
 ## Portofoliu faza 1
 
 | Produs | Format de lucru | Logica |
 |---|---:|---|
-| Glet extra-alb | 20kg | volum, intrare simpla in retail / distributie |
-| Tencuiala decorativa minerala | 25kg | produs cu diferentiere vizuala si potential premium |
-| Mortar ETICS | 25kg | produs de volum pentru fatade, cu fit mai bun pentru resursa locala si pentru canalul de materiale de finisaj |
+| Glet mineral de baza | 20kg | produs comercial de imagine, cu chimie minim necesara si mix de alb Volodeni + volum Ocnita |
+| Granule decorative selectate | 25kg | monetizarea culorii si raritatii vizuale a pietrei de la Volodeni |
+| Filler micronizat alb | 25kg / vrac | cash-cow industrial pe baza resursei proprii, orientat spre volum, PSD si cost logistic mic |
 
 ## Ce nu includem acum
 
@@ -54,6 +54,6 @@ Acestea raman oportunitati ale companiei, dar nu sunt focusul proiectului RENOVI
 
 ## Principiu economic
 
-Nu vindem doar faina de calcar.
+Nu urmarim doar "valoare adaugata aparenta".
 
-Transformam calcarul in produs ambalat vandabil, dar doar acolo unde diferenta dintre pretul angro validat si costul complet pe sac sustine marja.
+Transformam calcarul in produs vandabil doar acolo unde resursa proprie ramane motorul economic al marjei. Daca o reteta devine dominata de materii prime externe, ea iese din portofoliul canonic si trece in analiza secundara.

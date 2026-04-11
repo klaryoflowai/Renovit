@@ -27,7 +27,7 @@
   <rect x="24" y="1182" width="6" height="238" rx="3" fill="#3a6f16" />
 
   <text x="60" y="52" class="title">Proces tehnologic corectat - RENOVIT</text>
-  <text x="60" y="78" class="sub">VOLODENI + OCNITA - FABRICA LA OCNITA - GLET 20KG / TENCUIALA 25KG / ADEZIV 25KG</text>
+  <text x="60" y="78" class="sub">VOLODENI + OCNITA - HUB SI FABRICA LA OCNITA - GLET 20KG / GRANULE 25KG / FILLER 25KG SAU VRAC</text>
 
   <text x="42" y="68" class="section">materie prima</text>
   <text x="42" y="308" class="section">pregatire</text>
@@ -39,14 +39,14 @@
     <rect x="60" y="110" width="320" height="110" rx="12" fill="#faebd9" stroke="#b86b15" stroke-width="2" />
     <text x="84" y="142" class="box-title" fill="#5d3304">Volodeni - calcar alb premium</text>
     <text x="84" y="170" class="box-sub">Extractie selectiva, mostre codificate, loturi separate</text>
-    <text x="84" y="192" class="box-sub">Materia prima principala pentru produsul de top</text>
+    <text x="84" y="192" class="box-sub">Sursa dominanta pentru granule decorative si upgrade de alb</text>
   </g>
 
   <g>
     <rect x="540" y="110" width="320" height="110" rx="12" fill="#faebd9" stroke="#b86b15" stroke-width="2" />
     <text x="564" y="142" class="box-title" fill="#5d3304">Ocnița - calcar volum + bentonita</text>
-    <text x="564" y="170" class="box-sub">Calcar de volum, faina / reziduu, bentonita separata</text>
-    <text x="564" y="192" class="box-sub">Hub industrial si logistic, nu substitut pentru linia alba</text>
+    <text x="564" y="170" class="box-sub">Calcar de volum, faina / reziduu, bentonita pe ruta separata</text>
+    <text x="564" y="192" class="box-sub">Hub industrial si logistic pentru filler si baza de volum</text>
   </g>
 
   <line x1="220" y1="220" x2="460" y2="264" class="line" />
@@ -54,16 +54,16 @@
 
   <g>
     <rect x="280" y="264" width="360" height="70" rx="12" fill="#faebd9" stroke="#b86b15" stroke-width="2" />
-    <text x="304" y="292" class="box-title" fill="#5d3304">Logistica Volodeni -> Ocnița + stocuri separate</text>
-    <text x="304" y="314" class="box-sub">Costul pe tona si disciplina pe linia alba sunt critice</text>
+    <text x="304" y="292" class="box-title" fill="#5d3304">Hub Ocnița + logistica Volodeni -> Ocnița</text>
+    <text x="304" y="314" class="box-sub">Costul pe tona, recepția segregata si linia alba sunt critice</text>
   </g>
 
   <line x1="460" y1="334" x2="460" y2="386" class="line" />
 
   <g>
     <rect x="290" y="386" width="340" height="72" rx="12" fill="#e0f4ee" stroke="#0f7561" stroke-width="2" />
-    <text x="314" y="414" class="box-title" fill="#07382f">Pre-zdrobire, separare metalica, aspiratie</text>
-    <text x="314" y="436" class="box-sub">Pregatire feed si protectie pentru moara / clasificator</text>
+    <text x="314" y="414" class="box-title" fill="#07382f">Recepție, pre-zdrobire, separare metalica</text>
+    <text x="314" y="436" class="box-sub">Pregatire feed, aspiratie si protectie pentru moara / clasificator</text>
   </g>
 
   <line x1="460" y1="458" x2="460" y2="510" class="line" />
@@ -83,21 +83,21 @@
     <rect x="50" y="660" width="280" height="118" rx="12" fill="#eceafe" stroke="#5a54ba" stroke-width="2" />
     <text x="74" y="692" class="box-title" fill="#26215e">Ruta A - ultrafin pentru glet / filler</text>
     <text x="74" y="720" class="box-sub">Moara fina + clasificator de aer</text>
-    <text x="74" y="742" class="box-sub">Control strict pe alb, PSD si curatenia liniei</text>
+    <text x="74" y="742" class="box-sub">Control strict pe alb, PSD si eliberare la sac sau vrac</text>
   </g>
 
   <g>
     <rect x="320" y="660" width="280" height="118" rx="12" fill="#eceafe" stroke="#5a54ba" stroke-width="2" />
     <text x="344" y="692" class="box-title" fill="#26215e">Ruta B - fractii decorative</text>
-    <text x="344" y="720" class="box-sub">Zdrobire / cernere pentru 0.5-3.0 mm</text>
+    <text x="344" y="720" class="box-sub">Zdrobire / cernere / dedusting pentru 0.5-3.0 mm</text>
     <text x="344" y="742" class="box-sub">Granulele decorative nu se fac din pulbere complet micronizata</text>
   </g>
 
   <g>
     <rect x="590" y="660" width="280" height="118" rx="12" fill="#eceafe" stroke="#5a54ba" stroke-width="2" />
-    <text x="614" y="692" class="box-title" fill="#26215e">Ruta C - binderi si aditivi</text>
-    <text x="614" y="720" class="box-sub">Ciment alb, var hidratat, celuloza, RDP, pigmenti</text>
-    <text x="614" y="742" class="box-sub">Bentonita ramane ingredient optional, nu coloana vertebrala</text>
+    <text x="614" y="692" class="box-title" fill="#26215e">Ruta C - bentonita fina + microdozare</text>
+    <text x="614" y="720" class="box-sub">Uscare / micronizare bentonita si pachet functional minim</text>
+    <text x="614" y="742" class="box-sub">Ruta este dedicata gletului si cere validare de laborator</text>
   </g>
 
   <line x1="190" y1="778" x2="460" y2="840" class="line" />
@@ -107,7 +107,7 @@
   <g>
     <rect x="240" y="840" width="440" height="86" rx="12" fill="#e6f0fa" stroke="#1a66a8" stroke-width="2" />
     <text x="264" y="870" class="box-title" fill="#0b355c">Formulare pe campanii - 1 sau 2 mixere in faza 1</text>
-    <text x="264" y="894" class="box-sub">Mai realist decat 3 linii dedicate din ziua 1; retetele se schimba pe SKU</text>
+    <text x="264" y="894" class="box-sub">Mai realist decat 3 linii dedicate; pana la ~60k saci/luna nu e nevoie de 3 packeri</text>
   </g>
 
   <line x1="460" y1="926" x2="460" y2="964" class="line" />
@@ -117,26 +117,26 @@
 
   <g>
     <rect x="40" y="1010" width="280" height="126" rx="12" fill="#e6f0fa" stroke="#1a66a8" stroke-width="2" />
-    <text x="64" y="1042" class="box-title" fill="#0b355c">Glet premium 20kg</text>
-    <text x="64" y="1070" class="box-sub">Filler ultrafin + sistem de binder alb</text>
-    <text x="64" y="1092" class="box-sub">Celuloza + polimer + control pe alb si netezime</text>
-    <text x="64" y="1114" class="box-sub">Daca devine pasta, inseamna alta fabrica, nu acest flux</text>
+    <text x="64" y="1042" class="box-title" fill="#0b355c">Glet mineral de baza 20kg</text>
+    <text x="64" y="1070" class="box-sub">Mix Ocnita + Volodeni + bentonita in dozaj controlat</text>
+    <text x="64" y="1092" class="box-sub">Dry mix; apa se adauga pe santier, nu in fabrica</text>
+    <text x="64" y="1114" class="box-sub">Produs de imagine, nu motorul principal de volum</text>
   </g>
 
   <g>
     <rect x="320" y="1010" width="280" height="126" rx="12" fill="#e6f0fa" stroke="#1a66a8" stroke-width="2" />
-    <text x="344" y="1042" class="box-title" fill="#0b355c">Tencuiala decorativa 25kg</text>
-    <text x="344" y="1070" class="box-sub">Binder mineral + fractii decorative controlate</text>
-    <text x="344" y="1092" class="box-sub">Ruta tehnica de referinta: EN 998-1</text>
-    <text x="344" y="1114" class="box-sub">Nu se modeleaza doar ca amestec de pulberi foarte fine</text>
+    <text x="344" y="1042" class="box-title" fill="#0b355c">Granule decorative 25kg</text>
+    <text x="344" y="1070" class="box-sub">Fractii controlate, alb si lot consistency</text>
+    <text x="344" y="1092" class="box-sub">Produs mineral selectat, nu mortar final canonic</text>
+    <text x="344" y="1114" class="box-sub">Volodeni este sursa dominanta pentru estetica</text>
   </g>
 
   <g>
     <rect x="600" y="1010" width="280" height="126" rx="12" fill="#e6f0fa" stroke="#1a66a8" stroke-width="2" />
-    <text x="624" y="1042" class="box-title" fill="#0b355c">Mortar ETICS 25kg</text>
-    <text x="624" y="1070" class="box-sub">Mortar cimentic pentru lipire + strat armat</text>
-    <text x="624" y="1092" class="box-sub">Celuloza + RDP + fibre; bentonita doar dupa testare</text>
-    <text x="624" y="1114" class="box-sub">Ruta ETICS, nu tile adhesive by default</text>
+    <text x="624" y="1042" class="box-title" fill="#0b355c">Filler micronizat alb</text>
+    <text x="624" y="1070" class="box-sub">GCC strategic cu baza Ocnita si alb optional din Volodeni</text>
+    <text x="624" y="1092" class="box-sub">Aceeasi ruta iese la sac sau vrac, in functie de client</text>
+    <text x="624" y="1114" class="box-sub">Cash-cow canonic, focus pe PSD, alb si cost logistic mic</text>
   </g>
 
   <line x1="180" y1="1136" x2="460" y2="1190" class="line" />
@@ -146,15 +146,15 @@
   <g>
     <rect x="250" y="1190" width="420" height="84" rx="12" fill="#e7f1de" stroke="#3a6f16" stroke-width="2" />
     <text x="274" y="1220" class="box-title" fill="#1a3707">Control calitate specific produsului</text>
-    <text x="274" y="1244" class="box-sub">Alb, umiditate, PSD, lucrabilitate, aderenta, vapori si comportament ETICS</text>
+    <text x="274" y="1244" class="box-sub">Alb, umiditate, PSD, lucrabilitate si consistenta lotului pe fiecare ruta</text>
   </g>
 
   <line x1="460" y1="1274" x2="460" y2="1318" class="line" />
 
   <g>
     <rect x="280" y="1318" width="360" height="78" rx="12" fill="#e7f1de" stroke="#3a6f16" stroke-width="2" />
-    <text x="304" y="1348" class="box-title" fill="#1a3707">Ambalare flexibila 20kg / 25kg</text>
-    <text x="304" y="1372" class="box-sub">O singura linie buna este mai realista la start decat 3 linii paralele</text>
+    <text x="304" y="1348" class="box-title" fill="#1a3707">Ambalare flexibila 20kg / 25kg + incarcare vrac</text>
+    <text x="304" y="1372" class="box-sub">O singura linie buna este mai realista la start; fillerul poate iesi si vrac</text>
   </g>
 
   <line x1="460" y1="1396" x2="460" y2="1438" class="line" />
@@ -175,15 +175,15 @@
   <g>
     <rect x="680" y="820" width="200" height="118" rx="12" fill="#fff7ea" stroke="#cfa96d" stroke-width="1.6" />
     <text x="704" y="848" class="callout-title">Corectie 2</text>
-    <text x="704" y="874" class="callout-sub">75% yield este prea dur pentru</text>
-    <text x="704" y="896" class="callout-sub">o linie dry-mix pe calcar uscat.</text>
-    <text x="704" y="918" class="callout-sub">Modeleaza mai aproape de 92-98%.</text>
+    <text x="704" y="874" class="callout-sub">Dry glet nu primeste apa in fabrica.</text>
+    <text x="704" y="896" class="callout-sub">Apa intra la aplicator, pe santier.</text>
+    <text x="704" y="918" class="callout-sub">Produsul pasta inseamna alta fabrica.</text>
   </g>
 
   <g>
     <rect x="60" y="1210" width="170" height="98" rx="12" fill="#fff7ea" stroke="#cfa96d" stroke-width="1.6" />
     <text x="84" y="1238" class="callout-title">Corectie 3</text>
-    <text x="84" y="1264" class="callout-sub">Harta de proces nu trebuie sa</text>
-    <text x="84" y="1286" class="callout-sub">pretinda clienti garantati sau profit</text>
+    <text x="84" y="1264" class="callout-sub">1.500 t/luna inseamna scenariu</text>
+    <text x="84" y="1286" class="callout-sub">de scalare spre ~18 kt/an, nu baseline</text>
   </g>
 </svg>

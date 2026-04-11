@@ -27,9 +27,14 @@ Modelul nu mai este `tencuiala gipsata 25kg`.
 
 Modelul devine portofoliu:
 
-- glet extra-alb 20kg
-- tencuiala decorativa minerala 25kg
-- mortar ETICS 25kg
+- glet mineral de baza 20kg
+- granule decorative selectate 25kg
+- filler micronizat alb 25kg / vrac
+
+Regula noua este:
+
+- favorizam produsele unde resursa proprie domina masa si costul total
+- orice reteta cu dependenta mare de input extern ramane in scenarii secundare
 
 ## Principiu de modelare
 

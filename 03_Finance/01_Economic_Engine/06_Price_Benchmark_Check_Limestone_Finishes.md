@@ -29,9 +29,9 @@ Primele verificari online indica diferente importante, dar nu avem inca suficien
 
 | Produs / benchmark | Pret observat online | Observatie |
 |---|---:|---|
-| Glet extra-alb 20kg | nevalidat inca | cere 3 benchmarkuri directe |
-| Tencuiala decorativa minerala Baumit EdelPutz Spezial 25kg | 259 MDL retail/promo observat pe Domic.md | contrazice ipoteza de 450-550 MDL daca produsul comparabil este mineral uscat |
-| Mortar ETICS 25kg | nevalidat inca | cere benchmark direct pe adeziv / masa de spaclu pentru termosistem, nu pe tile adhesive |
+| Glet mineral de baza 20kg | nevalidat inca | cere 3 benchmarkuri directe pe glet mineral simplu, nu extra-premium |
+| Granule decorative selectate 25kg | nevalidat inca | cere benchmark direct pe fracții decorative / agregat alb selecționat |
+| Filler micronizat alb 25kg / vrac | nevalidat inca | cere benchmark pe GCC / filler pentru dry-mix, vopsele sau mortare |
 
 ## Regula RENOVIT
 
@@ -50,4 +50,4 @@ Nu folosim preturile din document drept baza de investitie pana nu avem:
 
 Modelul poate ramane atractiv, dar scenariul trebuie refacut cu preturi angro reale.
 
-Cel mai riscant produs ca pret este tencuiala decorativa minerala, pentru ca benchmarkul online verificat arata o valoare mult mai mica decat documentul initial daca produsul comparabil este mineral uscat, nu tencuiala decorativa gata preparata premium.
+Cel mai important produs de validat ca pret este `fillerul micronizat`, pentru ca acolo se decide daca resursa proprie poate deveni baza de profit B2B, nu doar produs ambalat de raft.

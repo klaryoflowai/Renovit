@@ -6,7 +6,7 @@
     <title>RENOVIT — Calcar Finishing Materials Unit Economics</title>
     <meta
       name="description"
-      content="Calculator RENOVIT pentru materiale de finisaj pe baza de calcar: glet, tencuiala decorativa minerala si mortar ETICS."
+      content="Calculator RENOVIT pentru portofoliul resource-first pe baza de calcar: glet mineral, granule decorative si filler micronizat."
     >
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -327,7 +327,7 @@
           </div>
           <div class="field">
             <label>Costuri fixe lunare <small>EUR / luna</small></label>
-            <input id="fixedOpex" type="number" min="0" step="100" value="8000">
+            <input id="fixedOpex" type="number" min="0" step="100" value="15000">
           </div>
           <div class="field">
             <label>Utilizare an 1 <small>% din volumele introduse</small></label>
@@ -339,7 +339,7 @@
           <h2 class="panel-title">02 — Atentie preturi</h2>
           <div class="notice">
             Preturile din documentele initiale sunt tratate ca ipoteze. Am vazut benchmarkuri online care sugereaza ca unele valori pot fi prea sus,
-            mai ales la tencuiala decorativa minerala. Introdu aici preturile angro reale dupa discutii cu distribuitorii.
+            mai ales cand se amesteca produse B2B cu produse de raft. Introdu aici preturile angro reale dupa discutii cu distribuitorii si clientii industriali.
           </div>
           <div class="footer-actions">
             <a class="button" href="/date-initiale.html">Date inițiale</a>
@@ -365,31 +365,31 @@
             </thead>
             <tbody>
               <tr>
-                <td>Glet extra-alb</td>
+                <td>Glet mineral de bază</td>
                 <td><input id="gletKg" type="number" min="1" step="1" value="20"></td>
                 <td><input id="gletBags" type="number" min="0" step="1000" value="75000"></td>
-                <td><input id="gletPrice" type="number" min="0" step="1" value="200"></td>
-                <td><input id="gletCost" type="number" min="0" step="1" value="121"></td>
-                <td><input id="gletRetail" type="number" min="0" step="1" value="260"></td>
+                <td><input id="gletPrice" type="number" min="0" step="1" value="185"></td>
+                <td><input id="gletCost" type="number" min="0" step="1" value="85"></td>
+                <td><input id="gletRetail" type="number" min="0" step="1" value="225"></td>
                 <td>Draft doc / de verificat angro</td>
               </tr>
               <tr>
-                <td>Tencuiala decorativa minerala</td>
-                <td><input id="decorKg" type="number" min="1" step="1" value="25"></td>
-                <td><input id="decorBags" type="number" min="0" step="1000" value="50000"></td>
-                <td><input id="decorPrice" type="number" min="0" step="1" value="240"></td>
-                <td><input id="decorCost" type="number" min="0" step="1" value="156"></td>
-                <td><input id="decorRetail" type="number" min="0" step="1" value="259"></td>
-                <td>Retail verificat orientativ / angro de verificat</td>
+                <td>Granule decorative selectate</td>
+                <td><input id="granulesKg" type="number" min="1" step="1" value="25"></td>
+                <td><input id="granulesBags" type="number" min="0" step="1000" value="50000"></td>
+                <td><input id="granulesPrice" type="number" min="0" step="1" value="150"></td>
+                <td><input id="granulesCost" type="number" min="0" step="1" value="52"></td>
+                <td><input id="granulesRetail" type="number" min="0" step="1" value="185"></td>
+                <td>Benchmark B2B / de validat direct</td>
               </tr>
               <tr>
-                <td>Mortar ETICS / strat armat</td>
-                <td><input id="adhesiveKg" type="number" min="1" step="1" value="25"></td>
-                <td><input id="adhesiveBags" type="number" min="0" step="1000" value="35000"></td>
-                <td><input id="adhesivePrice" type="number" min="0" step="1" value="220"></td>
-                <td><input id="adhesiveCost" type="number" min="0" step="1" value="156"></td>
-                <td><input id="adhesiveRetail" type="number" min="0" step="1" value="275"></td>
-                <td>Draft benchmark ETICS / de verificat direct</td>
+                <td>Filler micronizat alb</td>
+                <td><input id="fillerKg" type="number" min="1" step="1" value="25"></td>
+                <td><input id="fillerBags" type="number" min="0" step="1000" value="60000"></td>
+                <td><input id="fillerPrice" type="number" min="0" step="1" value="110"></td>
+                <td><input id="fillerCost" type="number" min="0" step="1" value="45"></td>
+                <td><input id="fillerRetail" type="number" min="0" step="1" value="135"></td>
+                <td>Benchmark filler / GCC / de validat direct</td>
               </tr>
             </tbody>
           </table>
@@ -431,14 +431,14 @@
           <h2 class="panel-title">06 — Resursa</h2>
           <p>
             Documentele Cupcini indica faina de calcar cu `CaCO3` aproximativ 94.20-94.70% si rezerve active relevante la Ocnita,
-            Volodeni si Hancauti. Acest lucru este promitator, dar decizia se ia pe reteta finala si teste de produs.
+            Volodeni si Hancauti. Logica noua este simpla: Ocnita da volum si cost, Volodeni da alb si diferentiere.
           </p>
         </div>
 
         <div class="panel third" style="--section-accent: var(--orange);">
           <h2 class="panel-title">07 — Urmatorul gate</h2>
           <p>
-            Nu comandam echipament doar pe baza acestor cifre. Gate-ul urmator este pret angro validat + reteta testata + oferta CAPEX
+            Nu comandam echipament doar pe baza acestor cifre. Gate-ul urmator este pret angro validat + specificatie de produs + oferta CAPEX
             pentru micronizare, sortare, mixare si ambalare.
           </p>
         </div>
@@ -446,8 +446,8 @@
         <div class="panel third" style="--section-accent: var(--green);">
           <h2 class="panel-title">08 — Interpretare</h2>
           <p>
-            `GO` daca marja bruta ramane peste 40% dupa preturi verificate. `GO conditionat` intre 25-39%. Sub 25%, brandul nou
-            are risc mare fara contracte ferme.
+            `GO` daca marja bruta ramane peste 40% dupa preturi verificate. `GO conditionat` intre 25-39%. Sub 25%, portofoliul trebuie
+            simplificat si adus mai aproape de resursa proprie.
           </p>
         </div>
       </section>
@@ -455,9 +455,9 @@
 
     <script>
       const productDefs = [
-        { key: "glet", name: "Glet extra-alb" },
-        { key: "decor", name: "Tencuiala decorativa minerala" },
-        { key: "adhesive", name: "Mortar ETICS / strat armat" },
+        { key: "glet", name: "Glet mineral de bază" },
+        { key: "granules", name: "Granule decorative selectate" },
+        { key: "filler", name: "Filler micronizat alb" },
       ];
 
       const inputIds = [
@@ -498,15 +498,18 @@
         setInput("fixedOpex", fields.fixedOpexEurMonth);
         setInput("utilization", fields.utilizationPct);
         [
-          ["glet", "glet"],
-          ["decor", "decor"],
-          ["adhesive", "adhesive"],
-        ].forEach(([sharedKey, localKey]) => {
-          const product = products[sharedKey];
-          setInput(`${localKey}Kg`, fields[`${sharedKey}Kg`]);
-          setInput(`${localKey}Bags`, fields[`${sharedKey}AnnualBags`]);
-          setInput(`${localKey}Price`, fields[`${sharedKey}WholesaleMdlBag`]);
-          setInput(`${localKey}Retail`, fields[`${sharedKey}RetailMdlBag`]);
+          ["glet", "glet", null],
+          ["granules", "granules", "decor"],
+          ["filler", "filler", "adhesive"],
+        ].forEach(([sharedKey, localKey, fallbackKey]) => {
+          const effectiveKey = products[sharedKey] ? sharedKey : fallbackKey;
+          const product = effectiveKey ? products[effectiveKey] : undefined;
+          const fieldKey = fields[`${sharedKey}Kg`] !== undefined ? sharedKey : fallbackKey;
+          if (!fieldKey) return;
+          setInput(`${localKey}Kg`, fields[`${fieldKey}Kg`]);
+          setInput(`${localKey}Bags`, fields[`${fieldKey}AnnualBags`]);
+          setInput(`${localKey}Price`, fields[`${fieldKey}WholesaleMdlBag`]);
+          setInput(`${localKey}Retail`, fields[`${fieldKey}RetailMdlBag`]);
           if (product?.costMdlBag !== undefined) {
             setInput(`${localKey}Cost`, product.costMdlBag);
           }

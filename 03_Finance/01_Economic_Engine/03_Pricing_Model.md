@@ -13,3 +13,6 @@
 - care este pretul competitiv?
 - la ce marja nu mai merita business-ul?
 
+## Canonical source
+
+Price validation-ul trebuie centralizat in `sales-marketing-hub.html` si apoi reconciliat cu `date-initiale.html`.

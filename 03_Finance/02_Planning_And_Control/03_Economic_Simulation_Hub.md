@@ -3,7 +3,7 @@ title: Economic Simulation Hub
 type: model-hub
 status: canonical
 owner: Yuri
-updated: 2026-04-10
+updated: 2026-04-11
 tags:
   - renovit
   - finance
@@ -41,6 +41,7 @@ Modelul acopera:
 - costuri procesare: micronizare, sortare, mixare, aditivi, manopera, ambalaj, distributie
 - CAPEX: echipament, instalare, repair reserve, contingency si scalare capacitate
 - capital de lucru
+- overhead fix implicit mai prudent, in zona `15k EUR/luna` pentru o structura `10kt/an`
 - finantare optionala: procent finantat, dobanda, termen credit
 - output: cost/t, cost/sac, marja, EBITDA, break-even, payback, ROI 3 ani, cash dupa debt service
 
@@ -48,6 +49,7 @@ Modelul acopera:
 
 - https://renovit.klaryoflowai.workers.dev/date-initiale.html
 - https://renovit.klaryoflowai.workers.dev/simulare-economica.html
+- https://renovit.klaryoflowai.workers.dev/sales-marketing-hub.html
 
 Foloseste-l pentru:
 

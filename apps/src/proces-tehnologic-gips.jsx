@@ -9,16 +9,16 @@ export default function App() {
       steps: [
         {
           title: "Volodeni - calcar alb premium",
-          sub: "extractie selectiva, mostre codificate, stoc separat pentru produsul top",
+          sub: "extractie selectiva, mostre codificate, stoc separat pentru granule decorative si upgrade de alb",
           note: "alb + constanta",
         },
         {
           title: "Ocnița - calcar volum + bentonita",
-          sub: "calcar de volum, faina / reziduu utilizabil, bentonita numai dupa validare",
+          sub: "calcar de volum, faina / reziduu utilizabil, bentonita pe ruta separata numai dupa validare",
         },
         {
-          title: "Logistica Volodeni -> Ocnița",
-          sub: "transport rutier validat pe EUR/t, cu depozitare separata pentru materia prima alba",
+          title: "Hub Ocnița + logistica Volodeni -> Ocnița",
+          sub: "transport rutier validat pe EUR/t, recepție segregata si disciplina pe linia alba",
           note: "cost critic",
         },
       ],
@@ -31,8 +31,8 @@ export default function App() {
       text: "#07382F",
       steps: [
         {
-          title: "Pre-zdrobire si protectie echipament",
-          sub: "concasare, separator metalic, aspiratie si alimentare controlata",
+          title: "Recepție, pre-zdrobire si protectie echipament",
+          sub: "receptie pe sursa, concasare, separator metalic, aspiratie si alimentare controlata",
         },
         {
           title: "Conditionare umiditate - doar daca este necesar",
@@ -40,8 +40,8 @@ export default function App() {
           note: "etapa conditionala",
         },
         {
-          title: "Silozuri separate pe sursa si culoare",
-          sub: "linie alba protejata de contaminare cu material de volum sau loturi mai inchise",
+          title: "Silozuri / buncare separate pe sursa si culoare",
+          sub: "linia alba protejata de contaminare cu material de volum, praf sau loturi mai inchise",
         },
       ],
     },
@@ -53,18 +53,18 @@ export default function App() {
       text: "#26215E",
       steps: [
         {
-          title: "Ruta A - ultrafin pentru glet / filler",
-          sub: "mori + clasificator de aer pentru filler foarte fin, cu control strict pe alb si distributie granulometrica",
+          title: "Ruta A - ultrafin pentru filler / glet",
+          sub: "mori + clasificator de aer pentru GCC foarte fin, cu control strict pe alb, PSD si eliberare la sac sau vrac",
           note: "nu calcina",
         },
         {
           title: "Ruta B - fractii decorative",
-          sub: "zdrobire / cernere pentru 0.5-3.0 mm; granulele decorative nu trebuie modelate ca produs complet micronizat",
+          sub: "zdrobire / cernere / dedusting pentru 0.5-3.0 mm; granulele decorative nu trebuie modelate ca produs complet micronizat",
         },
         {
-          title: "Ruta C - microdozare binderi si aditivi",
-          sub: "ciment alb, var hidratat, celuloza, pulberi polimerice, pigmenti si alte aditii in dozaje mici",
-          note: "SKU specific",
+          title: "Ruta C - bentonita fina + pachet functional minim",
+          sub: "uscarea / micronizarea bentonitei este separata; doar gletul cere microdozare si validare de laborator",
+          note: "glet only",
         },
       ],
     },
@@ -77,21 +77,21 @@ export default function App() {
       steps: [
         {
           title: "Mixare pe campanii, nu 3 fabrici separate",
-          sub: "faza 1 poate functiona cu 1-2 mixere si o linie flexibila de ambalare; retetele se schimba pe SKU",
+          sub: "faza 1 poate functiona cu 1-2 mixere si o linie flexibila de ambalare; la ~60k saci/lună nu sunt necesare 3 linii dedicate",
           note: "mai realist",
         },
         {
-          title: "Glet premium 20kg",
-          sub: "filler ultrafin + sistem de binder alb (var / ciment alb) + celuloza + polimer; daca vrem pasta, e alta linie",
+          title: "Glet mineral de baza 20kg",
+          sub: "mix Ocnita + Volodeni + bentonita, ca dry mix; apa se adauga pe santier, nu in fabrica",
         },
         {
-          title: "Tencuiala decorativa 25kg",
-          sub: "binder mineral + fractii controlate + aditivi; standardul de referinta este ruta EN 998-1 pentru mortar de tencuire",
+          title: "Granule decorative selectate 25kg",
+          sub: "fractii controlate, alb si lot consistency; produs mineral selectat, nu mortar final canonic",
         },
         {
-          title: "Mortar ETICS 25kg",
-          sub: "mortar cimentic pentru lipire + strat armat: ciment + filler / fractii selectate + celuloza + polimer + fibre; bentonita doar dupa testare serioasa",
-          note: "ETICS route",
+          title: "Filler micronizat alb 25kg / vrac",
+          sub: "aceeasi ruta GCC poate iesi la sac sau vrac; baza Ocnita, upgrade de alb din Volodeni doar unde clientul il cere",
+          note: "cash-cow",
         },
       ],
     },
@@ -104,11 +104,11 @@ export default function App() {
       steps: [
         {
           title: "Control calitate specific produsului",
-          sub: "alb, umiditate, PSD, lucrabilitate, aderenta, permeabilitate, fisurare si comportament ETICS - in functie de familie",
+          sub: "alb, umiditate, PSD, lucrabilitate si consistenta lotului - in functie de familie si de ruta",
         },
         {
           title: "O singura linie flexibila 20kg / 25kg in faza 1",
-          sub: "de regula suficienta pentru portofoliul initial; a doua linie are sens dupa validarea cererii si a uptime-ului",
+          sub: "de regula suficienta pentru portofoliul initial si chiar pentru o rampa superioara spre 1.500 t/lună; a doua linie vine la scalare",
           note: "scale later",
         },
         {
@@ -130,15 +130,19 @@ export default function App() {
     },
     {
       title: "Granule decorative separat",
-      text: "Tencuiala decorativa are nevoie de fractii controlate, nu de aceeasi pulbere ultrafina folosita la glet.",
+      text: "Granulele decorative au nevoie de fractii controlate, nu de aceeasi pulbere ultrafina folosita la glet si filler.",
     },
     {
-      title: "Yield mai realist",
-      text: "Pentru o linie dry-mix pe calcar, un model de 92-98% masa recuperata este mult mai sanatos decat 75%, daca materiile prime sunt uscate si praful se recupereaza.",
+      title: "Dry mix inseamna fara apa in fabrica",
+      text: "La gletul uscat, apa intra la utilizator pe santier. Daca vrem produs pasta, inseamna alt flux, alta utilitate si alta fabrica.",
     },
     {
-      title: "Retete cu binder real",
-      text: "Limestone este filler, nu binder suficient. Gletul, tencuiala minerala si mortarul ETICS cer sisteme diferite de binder si aditivi.",
+      title: "1.500 t/luna este scenariu de scalare",
+      text: "1.500 t/luna produs finit inseamna aproximativ 18 kt/an si cere doar ~1.580 t/luna feed calificat la yield 95%. Nu trebuie confundat cu baseline-ul de lansare la 10 kt/an.",
+    },
+    {
+      title: "Chimia minima, nu maxima",
+      text: "Limestone este baza economica. Gletul cere doar o zona functionala minima validata in laborator; granulele si fillerul trebuie sa ramana cat mai aproape de resursa proprie.",
     },
   ];
 
@@ -224,7 +228,7 @@ export default function App() {
         <div style={styles.header}>
           <div style={styles.title}>Flux tehnologic corectat - faza 1</div>
           <div style={styles.subtitle}>
-            VOLODENI + OCNITA -> FABRICA LA OCNITA -> GLET 20KG / TENCUIALA 25KG / ADEZIV 25KG
+            VOLODENI + OCNITA -> HUB SI FABRICA LA OCNITA -> GLET 20KG / GRANULE 25KG / FILLER 25KG SAU VRAC
           </div>
         </div>
 

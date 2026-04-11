@@ -47,9 +47,10 @@ Modelul este atractiv doar daca functioneaza simultan 4 lucruri:
 Stage 1 merge pe model lean:
 
 - fara diversificare prematura
-- focus exclusiv pe materiale de finisaj: glet extra-alb, tencuiala decorativa minerala, mortar ETICS 25kg
-- folosirea avantajului structural al calcarului alb local
+- focus exclusiv pe materiale de finisaj si intermediare minerale: glet mineral de baza 20kg, granule decorative selectate 25kg si filler micronizat alb 25kg / vrac
+- folosirea avantajului structural al calcarului alb local si al volumului Ocnita
 - accent pe marja si validare, nu pe volum fortat
+- maximizarea resursei proprii inaintea retetelor dependente de chimie externa
 
 ## First 90 Days Success Criteria
 

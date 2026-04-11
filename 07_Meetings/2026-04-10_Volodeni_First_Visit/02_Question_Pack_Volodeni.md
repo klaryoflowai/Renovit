@@ -23,7 +23,7 @@ linked_decisions:
 open_questions:
   - Este Ocnița cel mai bun amplasament pentru fabrica datorita nodului feroviar?
   - Care este costul real Volodeni -> Ocnița pe tona?
-  - Bentonita de la Ocnița este activa tehnologic?
+  - Bentonita de la Ocnița este activa tehnologic si utila in doza mica pentru glet?
 next_action: Foloseste acest pack in vizita 1 si completeaza datele in `date-initiale.html`.
 ---
 
@@ -37,7 +37,7 @@ Vizita 1 trebuie sa raspunda la o intrebare:
 
 Ipoteza actuala:
 
-- `Volodeni` = sursa principala pentru produsul premium de top: glet de finisaj alb / ultra-white.
+- `Volodeni` = sursa dominanta pentru granule decorative si sursa de alb pentru portofoliu.
 - `Ocnița` = baza de volum: calcar, faina de calcar / reziduu, bentonita si posibil amplasament fabrica datorita nodului feroviar.
 - `Fabrica la Ocnița` = scenariu de lucru, daca logistica feroviara, utilitatile si terenul confirma.
 
@@ -46,7 +46,7 @@ Ipoteza actuala:
 1. Confirmam traseul vizitei: Volodeni, Ocnița, infrastructura feroviara / rampa, posibila locatie fabrica.
 2. Luam mostre codificate din Volodeni si Ocnița, inclusiv bentonita si faina de calcar existenta.
 3. Verificam costurile reale: extractie, procesare existenta, transport Volodeni -> Ocnița, utilitati, incarcare feroviara.
-4. Validam daca primul produs premium poate fi construit pe materie prima Volodeni.
+4. Validam daca fillerul si gletul pot fi sustinute ca masa de Ocnita, iar Volodeni ridica alb si diferentiere.
 5. Colectam datele pentru `date-initiale.html`, ca toate calculatoarele sa porneasca din aceleasi inputuri.
 
 ## 1. Decizia de amplasare fabrica - Ocnița
@@ -76,66 +76,85 @@ Ipoteza actuala:
 20. Care este costul real de extractie la Volodeni: EUR/t sau MDL/t?
 21. Care este costul de concasare / pre-macinare la Volodeni, daca exista?
 22. Putem lua mostre din minimum 3 zone diferite pentru testul gletului premium?
-23. Confirmare critica: primul produs de top foloseste calcar Volodeni ca materie prima principala. Ce risc exista pentru volum, alb si constanta?
+23. Confirmare critica: granulele decorative pot fi tinute la 90-100% Volodeni fara sa pierdem constanta de culoare si fractie?
+24. Daca costul de extractie este `80-100 lei/t`, iar piata vrac este aprox. `250 lei/t`, la ce pret intern de transfer poate RENOVIT prelua materia prima de la Volodeni?
 
 ## 3. Ocnița - calcar de volum, faina si bentonita
 
-24. Care sunt rezervele confirmate pentru calcar Ocnița in m3 si tone?
-25. Care sunt rezervele confirmate pentru argila bentonitica Ocnița?
-26. Care este analiza chimica pentru calcarul Ocnița?
-27. Care este analiza pentru bentonita: umflare, tixotropie, plasticitate, impuritati?
-28. Bentonita este activa? Se umfla in contact cu apa?
-29. Exista teste interne sau externe pentru bentonita in mortare ETICS / mase de spaclu armate?
-30. Cat costa extractia calcarului Ocnița per tona?
-31. Cat costa extractia / pregatirea bentonitei per tona?
-32. Exista faina de calcar ca reziduu din taierea blocurilor?
-33. Reziduul / faina provine din stratul cu puritate de aprox. 94%?
-34. Ce volum lunar de faina / reziduu este disponibil azi?
-35. Este faina suficient de curata pentru mortar ETICS sau necesita sortare / spalare / uscare?
+25. Care sunt rezervele confirmate pentru calcar Ocnița in m3 si tone?
+26. Care sunt rezervele confirmate pentru argila bentonitica Ocnița?
+27. Care este analiza chimica pentru calcarul Ocnița?
+28. Care este analiza pentru bentonita: umflare, tixotropie, plasticitate, impuritati?
+29. Bentonita este activa? Se umfla in contact cu apa?
+30. Exista teste interne sau externe pentru bentonita in gleturi sau alte mortare minerale?
+31. Cat costa extractia calcarului Ocnița per tona?
+32. Cat costa extractia / pregatirea bentonitei per tona?
+33. Exista faina de calcar ca reziduu din taierea blocurilor?
+34. Reziduul / faina provine din stratul cu puritate de aprox. 94%?
+35. Ce volum lunar de faina / reziduu este disponibil azi?
+36. Este faina suficient de curata pentru filler micronizat sau necesita sortare / spalare / uscare?
+37. Daca piata vrac este aprox. `250 lei/t`, la ce pret intern de transfer poate RENOVIT prelua calcarul Ocnița?
+38. Bentonita va avea acelasi principiu de transfer pricing sau un pret intern separat?
+
+### Bentonita - intrebari obligatorii
+
+- Din ce sector exact vine argila subbentonitica si cat de usor se poate extrage separat de calcar?
+- Care sunt rezervele confirmate doar pentru bentonita si ce continuitate are calitatea intre loturi?
+- Care este umiditatea la extractie si cat costa uscarea pana la o forma utilizabila industrial?
+- Exista deja flux de uscare si micronizare pentru bentonita sau trebuie CAPEX separat?
+- Ce finete minima trebuie atinsa ca bentonita sa functioneze bine in glet?
+- Ce teste de umflare, tixotropie, retentie de apa si plasticitate au fost facute pana acum?
+- In ce procent realist poate intra in `gletul mineral de baza`: `5%`, `7%`, `10%`?
+- Ce se intampla cu lucrabilitatea si aderenta daca bentonita urca peste `10%`?
+- Poate bentonita reduce partial necesarul de aditivi externi sau este nevoie totusi de un pachet minim functional?
+- Exista clienti actuali sau potentiali pentru bentonita ca produs separat: hidroizolatii, filler tehnic, foraj, amestecuri economice?
+- Ce cost total am avea pentru bentonita utila industrial: extractie + uscare + micronizare + manipulare?
+- Putem lua mostre separate de bentonita din minimum 2-3 zone diferite pentru laborator?
 
 ## 4. Logistica Volodeni -> Ocnița
 
-36. Care este distanta rutiera reala Volodeni -> Ocnița / fabrica propusa?
-37. Ce tip de camion se poate folosi si care este sarcina utila?
-38. Care este costul complet per cursa si per tona: combustibil, sofer, incarcare, descarcare, uzura?
-39. Drumul este accesibil tot anul?
-40. Cate tone pe zi pot fi transportate fara sa blocheze operatiunea curenta?
-41. Exista alternativa feroviara sau doar rutiera pentru Volodeni -> Ocnița?
-42. Care este pierderea / contaminarea posibila la transport si depozitare?
-43. Trebuie acoperite camioanele pentru umiditate / praf?
+39. Care este distanta rutiera reala Volodeni -> Ocnița / fabrica propusa?
+40. Ce tip de camion se poate folosi si care este sarcina utila?
+41. Care este costul complet per cursa si per tona: combustibil, sofer, incarcare, descarcare, uzura?
+42. Drumul este accesibil tot anul?
+43. Cate tone pe zi pot fi transportate fara sa blocheze operatiunea curenta?
+44. Exista alternativa feroviara sau doar rutiera pentru Volodeni -> Ocnița?
+45. Care este pierderea / contaminarea posibila la transport si depozitare?
+46. Trebuie acoperite camioanele pentru umiditate / praf?
 
 ## 5. Retete faza 1 - ipoteze de validat
 
-44. `Glet de finisaj alb / ultra-white`: ce combinatie reala de calcar Volodeni, liant alb si aditivi poate atinge alb, finete si lucrabilitate vandabile?
-45. Pentru glet: ce finete trebuie atinsa si ce grad de alb este minim acceptabil?
-46. `Tencuiala decorativa minerala`: ce fractii si ce sistem de binder sunt necesare daca produsul ramane mineral si dry-mix?
-47. Pentru tencuiala decorativa: ce fractii granulometrice sunt necesare: 1.5 mm, 2.0 mm, 2.5 mm?
-48. `Mortar ETICS 25kg`: confirmam ca produsul tinta este mortar adeziv si masa de spaclu pentru termosistem?
-49. Cine poate formula si testa retetele?
-50. Ce laborator intern / extern poate testa aderenta, lucrabilitatea, timp de priza, umiditate, rezistenta?
+47. `Glet mineral de baza`: ce combinatie reala de Ocnita + Volodeni + bentonita poate atinge alb, finete si lucrabilitate vandabile cu minim de chimie externa?
+48. Pentru glet: ce finete trebuie atinsa si ce grad de alb este minim acceptabil?
+49. `Granule decorative selectate`: ce fractii sunt cele mai vandabile si pot fi tinute constant lot dupa lot?
+50. Pentru granule decorative: ce fractii granulometrice sunt necesare: 0.5-1.0 mm, 1.0-1.5 mm, 1.5-2.5 mm?
+51. `Filler micronizat alb`: ce finete si ce procent de Volodeni sunt necesare pentru clasele standard vs premium?
+52. Cine poate formula si testa gletul si cine poate valida PSD / alb pentru filler si granule?
+53. Ce laborator intern / extern poate testa PSD, alb, umiditate, aderenta si lucrabilitate?
 
 ## 6. Echipamente si CAPEX
 
-51. Exista la Ocnița mori, buncare, silozuri sau linii care pot fi reconditionate?
-52. Ce echipamente existente pot fi folosite pentru micronizare, sortare, mixare, ambalare?
-53. Exista linie de ambalare 20/25kg?
-54. Exista filtre praf / sistem de desprafuire?
-55. Care echipamente trebuie cumparate noi obligatoriu?
-56. Care echipamente pot fi uzate / refurbished fara risc major?
-57. Exista oferte reale de la furnizori pentru moara, mixer, dozatoare, ambalare?
-58. Cine poate face instalarea si commissioning-ul in Moldova?
+54. Exista la Ocnița mori, buncare, silozuri sau linii care pot fi reconditionate?
+55. Ce echipamente existente pot fi folosite pentru micronizare, sortare, mixare, ambalare?
+56. Exista linie de ambalare 20/25kg?
+57. Exista filtre praf / sistem de desprafuire?
+58. Care echipamente trebuie cumparate noi obligatoriu?
+59. Care echipamente pot fi uzate / refurbished fara risc major?
+60. Exista oferte reale de la furnizori pentru moara, mixer, dozatoare, ambalare?
+61. Cine poate face instalarea si commissioning-ul in Moldova?
 
 ## 7. Comercial si preturi
 
-59. La ce pret se vinde azi faina de calcar vrac?
-60. Cine sunt clientii actuali pentru calcar, faina, blocuri sau piatra?
-61. Exista contacte in distributia materialelor de finisaj?
-62. Ce pret angro real pot confirma pentru glet?
-63. Ce pret angro real pot confirma pentru tencuiala decorativa minerala?
-64. Ce pret angro real pot confirma pentru mortar ETICS?
-65. Ce volum anual este realist pentru fiecare produs in anul 1?
-66. Cine poate fi client pilot?
-67. Daca fabrica este la Ocnița, ce avantaj comercial ofera exportul feroviar?
+62. La ce pret se vinde azi faina de calcar vrac?
+63. Cine sunt clientii actuali pentru calcar, faina, blocuri sau piatra?
+64. Exista contacte in distributia materialelor de finisaj?
+65. Ce pret angro real pot confirma pentru glet mineral de baza?
+66. Ce pret angro real pot confirma pentru granule decorative selectate?
+67. Ce pret angro real pot confirma pentru filler micronizat alb?
+68. Ce volum anual este realist pentru fiecare produs in anul 1?
+69. Cine poate fi client pilot?
+70. Daca fabrica este la Ocnița, ce avantaj comercial ofera exportul feroviar?
+71. Cine aprobă regula de transfer pricing pentru proiect și când putem avea decizia scrisă?
 
 ## 8. Documente de cerut
 
@@ -196,6 +215,7 @@ Raportul complet dupa vizita trebuie sa includa:
 - ce mostre au fost luate, cu cod si zona
 - ce costuri logistice Volodeni -> Ocnița au fost confirmate
 - ce echipamente exista deja si ce lipseste pentru faza 1
+- ce poate sustine realist bentonita in glet si ca produs tehnic separat
 - ce preturi / volume au fost confirmate si de cine
 - ce riscuri trebuie rezolvate inainte de CAPEX
 - ce actiuni se fac in urmatoarele 48 de ore

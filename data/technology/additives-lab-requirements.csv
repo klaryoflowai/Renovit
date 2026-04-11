@@ -1,12 +1,13 @@
 item,type,working_range_or_need,role,price_working_range_eur_t,status,notes
-Cellulose ether / water-retention additive,additive,TBD by recipe,Workability and water retention,2000-6000,working_assumption,Essential for glet and ETICS mortar recipes; validate dosage with technologist
-Polymer / redispersible powder,additive,TBD by recipe,Adhesion flexibility and performance,2500-7000,working_assumption,Can dominate additive cost; avoid assumptions before formulation tests
-Whitening / brightening additive,additive,TBD,Improves whiteness / visual sellability,3000-5000,working_assumption,Only if limestone whiteness is not sufficient for extra-white positioning
+Minimal white binder package,additive,low dosage only if required,Supports glet base route,800-2500,working_assumption,Validate how much external binder is really needed before canonizing it
+Cellulose ether / workability aid,additive,very low dosage for glet only,Workability and water retention,2000-6000,working_assumption,Do not assume it for filler or granules
+Optional polymer / strength aid,additive,only if glet fails without it,Adhesion and robustness,2500-7000,working_assumption,Keep parked unless lab proves need
+Whitening / brightening additive,additive,optional,Improves whiteness / visual sellability,3000-5000,working_assumption,Only if Volodeni contribution is not enough for target class
 Anti-moisture / hydrophobic agent,additive,TBD,Improves storage stability,1000-3000,working_assumption,Check need based on packaging and warehouse humidity
 Analytical balance,lab,required,Lab baseline,,open,Define spec with lab / technologist
 Moisture analyzer,lab,required,Raw material and finished dry mix moisture control,,open,Important for storage stability and batching
-Whiteness meter / colorimeter,lab,required or outsourced,Controls extra-white positioning and lot consistency,,open,Can outsource initially but should be part of quality roadmap
-Sieve set / particle size tools,lab,required,Fineness and fraction control,,open,Needed for micronization / decorative texture control
-Flow / workability tools,lab,required,Application behavior testing,,open,Select exact tooling after product standard mapping
-Adhesion / strength testing,lab,required or outsourced,Product performance validation for EN 998-1 / ETICS route,,open,Can outsource accredited tests initially
+Whiteness meter / colorimeter,lab,required or outsourced,Controls product class and lot consistency,,open,Important for Volodeni upgrade and premium filler classes
+Sieve set / particle size tools,lab,required,Fineness and fraction control,,open,Needed for filler PSD and decorative fractions
+Flow / workability tools,lab,required,Application behavior testing for glet,,open,Select exact tooling after product standard mapping
+Adhesion / strength testing,lab,required or outsourced,Product performance validation for glet route,,open,Can outsource accredited tests initially
 Sample retention system,lab,required,Traceability and claims handling,,open,Keep coded samples by batch and raw material zone

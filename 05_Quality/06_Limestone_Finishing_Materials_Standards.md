@@ -46,15 +46,16 @@ Aceste valori sunt promitatoare pentru materiale de finisaj, dar nu inlocuiesc t
 
 | Produs candidat | Standard / familie de verificat | Observatie |
 |---|---|---|
-| Glet / mortar fin mineral | EN 998-1 sau standard specific retetei | daca produsul este mortar de tencuire / finisare pe baza minerala |
-| Tencuiala decorativa minerala | EN 998-1 sau EN 15824 | depinde daca liantul final este mineral sau organic |
-| Mortar ETICS / masa de spaclu armata | ruta de produs + ruta de sistem ETICS, in functie de intended use | nu il fortam sub EN 12004 doar pentru ca "lipeste"; verificam separat produsul si, daca este cazul, sistemul / kitul |
+| Glet mineral de baza | EN 998-1 sau standard specific retetei | relevant numai daca produsul ramane mortar mineral de finisare; reteta finala decide maparea exacta |
+| Granule decorative selectate | specificatie contractuala + standardul aplicatiei clientului | tratam produsul ca mineral selectat / fractie decorativa, nu ca mortar final canonic |
+| Filler micronizat alb | specificatie contractuala pentru GCC / intermediar mineral | focus pe PSD, alb, umiditate, chimie si lot consistency; maparea la CPR se face doar daca devine produs final de constructii cu intended use propriu |
+| Mortar ETICS / masa de spaclu armata | ruta de produs + ruta de sistem ETICS, in functie de intended use | ruta parcata, nu produs canonic de faza 1 |
 | Adeziv pentru placi | EN 12004 | relevant doar daca RENOVIT lanseaza ulterior un SKU separat de adeziv de placi |
 | Var folosit ca liant | EN 459-1 | relevant daca reteta intra pe var de constructii |
 | Piatra / placi naturale | EN 1469 / EN 12057 / EN 12058 | relevant doar daca intram pe placi, nu pentru faza 1 amestecuri uscate |
 | Agregate / piatra sparta | EN 12620 / EN 13139 | relevant doar pentru agregate, nu pentru glet premium |
 
-Vezi si [[05_Quality/07_Process_Validation_Memo_Limestone_Finishes]] si [[05_Quality/08_ETICS_Mortar_Working_Formula_And_Test_Pack]] pentru maparea canonica produs -> binder -> test pack.
+Vezi si [[05_Quality/07_Process_Validation_Memo_Limestone_Finishes]] pentru maparea canonica produs -> rolul resursei -> test pack.
 
 ## Ce cerem laboratorului
 
@@ -68,6 +69,7 @@ Vezi si [[05_Quality/07_Process_Validation_Memo_Limestone_Finishes]] si [[05_Qua
 - rezistenta compresiune / incovoiere unde se aplica
 - timp de lucru si timp de intarire
 - reactie la foc / emisii / substante periculoase daca standardul cere
+- specificatie PSD pe lot pentru filler si granule
 
 ## Red flags
 
@@ -75,6 +77,7 @@ Vezi si [[05_Quality/07_Process_Validation_Memo_Limestone_Finishes]] si [[05_Qua
 - granulometrie instabila intre loturi
 - alb insuficient pentru promisiunea "extra-alb"
 - reteta care necesita aditivi scumpi si anuleaza avantajul calcarului propriu
+- filler sau granule vandute fara specificatie contractuala clara pe PSD, alb si umiditate
 - produs incadrat gresit in standard, ceea ce poate bloca retail / export
 
 ## Regula RENOVIT

@@ -77,5 +77,8 @@ El trebuie tradus in:
 - [[05_Quality/00_Quality_System]]
 - [[05_Quality/06_Limestone_Finishing_Materials_Standards]]
 - [[05_Quality/07_Process_Validation_Memo_Limestone_Finishes]]
-- [[05_Quality/08_ETICS_Mortar_Working_Formula_And_Test_Pack]]
 - [[05_Quality/02_EU_Standards_And_CE_Path]] - legacy gips
+
+## Strategy pivots
+
+- [[02_Strategy/11_Resource_First_Product_Map]]

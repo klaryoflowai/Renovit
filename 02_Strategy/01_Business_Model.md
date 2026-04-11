@@ -13,9 +13,15 @@ Avantajul potential vine din controlul resursei, alb natural, retete bune si dis
 
 ## Phase 1 product candidates
 
-- glet extra-alb 20kg
-- tencuiala decorativa minerala 25kg
-- mortar ETICS 25kg
+- glet mineral de baza 20kg
+- granule decorative selectate 25kg
+- filler micronizat alb 25kg / vrac
+
+## Product logic
+
+- `Glet`: produs de imagine si intrare comerciala, dar tinut simplu chimic.
+- `Granule decorative`: monetizare directa a culorii si a fractiilor selectate.
+- `Filler micronizat`: produs strategic, orientat spre volum, cost mic si vanzare B2B.
 
 ## Pricing rule
 

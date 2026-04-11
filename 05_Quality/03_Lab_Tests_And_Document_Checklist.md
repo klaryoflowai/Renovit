@@ -48,8 +48,10 @@ grad de alb = ____     cu metoda de test clar mentionata
 ## Product-specific pilot tests to ask for
 
 - glet mineral: lucrabilitate, consum de apa, aderenta, aspect dupa uscare, slefuire, fisurare, rezistenta daca reteta o cere
-- decorativa minerala: fractii granulometrice, textura finala, aderenta, absorbtie apa, permeabilitate la vapori, comportament la aplicare
-- mortar ETICS: aderenta, lucrabilitate pe verticala, retentie apa, comportament in strat armat, absorbtie, vapori si alte teste relevante familiei reale de produs
+- granule decorative selectate: fractii granulometrice, textura, alb, praf rezidual, consistenta lotului, umiditate si comportament la ambalare
+- filler micronizat: PSD, grad de alb, umiditate, densitate aparenta, consistenta lotului si compatibilitate de baza cu aplicatia tinta a clientului
+
+Ruta `ETICS` ramane analiza parcata. Daca este reactivata ulterior, se adauga un checklist separat de performanta pentru produsul respectiv.
 
 ## Sampling discipline
 

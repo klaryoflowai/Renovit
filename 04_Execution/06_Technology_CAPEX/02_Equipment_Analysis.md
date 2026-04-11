@@ -33,7 +33,7 @@ Analiza echipamentelor trebuie impartita in patru grupuri:
 Contextul curent pentru RFQ:
 
 - capacitate tinta: `10.000 t/an` produs finit
-- produse: glet extra-alb 20kg, tencuiala decorativa minerala 25kg, mortar ETICS 25kg
+- produse: glet mineral de baza 20kg, granule decorative selectate 25kg, filler micronizat alb 25kg / vrac
 - ambalare: linie reglabila `15-30kg`, cu lucru real pe `20kg` si `25kg`
 - strategie recomandata: `hibrid`, cu echipamente noi / puternic verificate pe punctele critice si uzat pe auxiliar
 
@@ -42,7 +42,7 @@ Contextul curent pentru RFQ:
 | Echipament | Capacitate | UZAT | HIBRID | NOU | Observatie |
 |---|---:|---:|---:|---:|---|
 | Moara micronizare | 5 t/h sub 100 microni | 60-90k EUR | 100-140k EUR | 180-250k EUR | Bottleneck de calitate pentru glet |
-| Sita vibratii / classifier | 5 t/h, 0.1-2 mm | 15-25k EUR | 30-40k EUR | 50-70k EUR | Critic pentru tencuiala decorativa |
+| Sita vibratii / classifier | 5 t/h, 0.1-2 mm | 15-25k EUR | 30-40k EUR | 50-70k EUR | Critic pentru granule decorative si sortare filler |
 | Transportor surub | 10 t/h | 8-12k EUR | 15-20k EUR | 25-35k EUR | Atentie la praf si etansare |
 
 Subtotal orientativ: `83-127k EUR` uzat, `145-200k EUR` hibrid, `255-355k EUR` nou.
@@ -76,7 +76,7 @@ Subtotal orientativ: `63-98k EUR` uzat, `135-200k EUR` hibrid, `260-380k EUR` no
 | Silo produs finit | 15-25k EUR | 100 t |
 | Racordare electrica | 10-15k EUR | 315 kW trifazat, de verificat prin audit |
 | Racordare apa | 5-8k EUR | 10 m3/zi |
-| Laborator calitate | 25-35k EUR | ETICS route + EN 998-1 unde se aplica, in functie de intended use |
+| Laborator calitate | 25-35k EUR | PSD, alb, umiditate, granulometrie si lot consistency; testele functionale pe glet se pot externaliza la inceput |
 | Birou + vestiar | 10-15k EUR | daca infrastructura existenta nu ajunge |
 
 Subtotal auxiliar: `85-128k EUR`.

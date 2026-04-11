@@ -4,7 +4,7 @@ Acest repository este organizat ca un vault de business in stilul `BioStream`, d
 
 Nota 2026-04-10: proiectul a pivotat de la `gips / ipsos Edinet` la `S.A. Mina din Cupcini / calcar / materiale de finisaj`.
 
-Nota 2026-04-11: produsul 3 canonic pentru faza 1 este acum `mortar ETICS 25kg`, nu `adeziv generic de placi`.
+Nota 2026-04-11: arhitectura canonica de faza 1 este acum `resource-first`: `glet mineral de baza 20kg`, `granule decorative selectate 25kg` si `filler micronizat alb 25kg / vrac`. Analiza `ETICS` ramane parcata ca ruta optionala, nu ca produs canonic de lansare.
 
 Sistemul adoptat este:
 
@@ -31,11 +31,12 @@ Sistemul adoptat este:
 - `unit-economics-sac-25kg.html` - calculator legacy / auxiliar pentru unit economics per sac 25kg
 - `simulare-economica.html` - hub browser-ready pentru simulare economica completa
 - `dashboard-financiar.html` - dashboard browser-ready pentru cash-flow, fonduri, P&L operativ si balance sheet
+- `sales-marketing-hub.html` - hub browser-ready pentru piata, competitie, canale, leaduri si raport de fezabilitate comerciala
 - `gips-unit-economics.jsx` - sursa React legacy a calculatorului vechi
 - `instrumente.html` - hub public pentru instrumentele online
 - `proces-tehnologic-gips.html` - pagina actualizata pentru procesul tehnologic al finisajelor minerale
 - `raport-vizita-cariera.html` - formular browser pentru raportul primei vizite Volodeni
-- `assets/proces_tehnologic_gips_renovit.svg` - diagrama SVG statica actualizata pentru fluxul canonic pe calcar / ETICS
+- `assets/proces_tehnologic_gips_renovit.svg` - diagrama SVG statica actualizata pentru fluxul canonic pe calcar, pe logica `glet / granule / filler`
 - `apps/src/` - sursele JSX pentru instrumentele publicate
 - `data/` - layer de date brute si CSV-uri, inclusiv modelul tehnologic / CAPEX
 - `data/finance/RENOVIT_Economic_Simulation_Model.xlsx` - workbook Excel pentru simulare economica completa
@@ -46,6 +47,7 @@ Sistemul adoptat este:
 - https://renovit.klaryoflowai.workers.dev/ - calculator materiale de finisaj pe baza de calcar
 - https://renovit.klaryoflowai.workers.dev/simulare-economica.html - hub simulare economica
 - https://renovit.klaryoflowai.workers.dev/dashboard-financiar.html - dashboard financiar operational
+- https://renovit.klaryoflowai.workers.dev/sales-marketing-hub.html - hub Sales & Marketing pentru fezabilitate
 - https://renovit.klaryoflowai.workers.dev/unit-economics-sac-25kg.html - legacy / auxiliar per sac 25kg
 - https://renovit.klaryoflowai.workers.dev/instrumente.html - hub instrumente
 - https://renovit.klaryoflowai.workers.dev/raport-vizita-cariera.html - raport vizita Volodeni / calcar / materiale de finisaj
@@ -66,11 +68,12 @@ Sistemul adoptat este:
    - `04_Execution/06_Technology_CAPEX/00_Technology_CAPEX_Lab.md`
    - `00_HQ/10_Strategic_Pivot_Cupcini_Limestone.md`
    - `02_Strategy/10_Finishing_Materials_Thesis_Cupcini.md`
+   - `02_Strategy/11_Resource_First_Product_Map.md`
    - `03_Finance/01_Economic_Engine/05_Limestone_Finishing_Materials_Unit_Economics.md`
    - `03_Finance/01_Economic_Engine/06_Price_Benchmark_Check_Limestone_Finishes.md`
+   - `06_Sales_Marketing/07_Sales_Marketing_Feasibility_System.md`
    - `05_Quality/06_Limestone_Finishing_Materials_Standards.md`
    - `05_Quality/07_Process_Validation_Memo_Limestone_Finishes.md`
-   - `05_Quality/08_ETICS_Mortar_Working_Formula_And_Test_Pack.md`
    - `07_Meetings/2026-04-10_Volodeni_First_Visit/02_Question_Pack_Volodeni.md`
    - `04_Execution/03_Decision_Control/02_Risk_Register.md`
 5. Pentru plan de afaceri, continua cu:
@@ -79,6 +82,7 @@ Sistemul adoptat este:
    - `02_Strategy/09_One_Page_Strategic_Plan.md`
    - `04_Execution/06_Technology_CAPEX/04_Phased_Implementation_Scaling.md`
    - `06_Sales_Marketing/01_ICP_And_Segments.md`
+   - `06_Sales_Marketing/07_Sales_Marketing_Feasibility_System.md`
 
 ## Cum folosesti modelul Technology / CAPEX
 
@@ -93,6 +97,12 @@ Sistemul adoptat este:
 2. Pentru simulare rapida, deschide `simulare-economica.html`.
 3. Pentru lucru profund, deschide `data/finance/RENOVIT_Economic_Simulation_Model.xlsx`.
 4. Actualizeaza sursa versionabila in `data/finance/simulation/`.
+
+## Cum folosesti hub-ul Sales & Marketing
+
+1. Deschide `sales-marketing-hub.html`.
+2. Completeaza sursele de piata, competitorii, price points, leadurile si buyerii nominali.
+3. Foloseste raportul exportat pentru capitolul comercial din studiul de fezabilitate.
 
 ## Cum folosesti calculatorul local
 

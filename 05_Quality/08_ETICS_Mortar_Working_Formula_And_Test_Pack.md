@@ -1,7 +1,7 @@
 ---
 title: ETICS Mortar - Working Formula And Lab Test Pack
 type: formulation-note
-status: working
+status: parked
 owner: Yuri
 updated: 2026-04-11
 tags:
@@ -20,10 +20,16 @@ linked_decisions:
 open_questions:
   - Vrem sa vindem doar mortarul uscat sau tintim ulterior si ruta de sistem ETICS / kit?
   - Ce laborator poate rula rapid testele pilot relevante pentru mortar ETICS?
-next_action: Ruleaza 3 loturi pilot A / B / C si compara costul cu performanta inainte de a bloca modelul economic.
+next_action: Pastreaza acest document doar ca analiza secundara si nu il reactiva fara decizie explicita de iesire din strategia `resource-first`.
 ---
 
 # ETICS Mortar - Working Formula And Lab Test Pack
+
+## Status
+
+Aceasta nota este `parked`.
+
+Nu mai reprezinta produsul 3 canonic pentru RENOVIT. O pastram doar ca analiza secundara, in cazul in care dupa validarea portofoliului `glet / granule / filler` apare un motiv economic clar pentru a reevalua ETICS.
 
 ## Product definition
 

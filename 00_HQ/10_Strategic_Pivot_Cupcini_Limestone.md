@@ -48,11 +48,13 @@ Aceasta nu este o schimbare de denumire. Se schimba:
 
 ## Focus faza 1
 
-Produsele candidate din documentele primite:
+Portofoliul canonic de faza 1 este acum:
 
-1. Glet extra-alb pe baza de calcar macinat fin.
-2. Tencuiala decorativa minerala pe baza de granule de calcar selectate.
-3. Mortar ETICS 25kg, ca produs de volum pentru fatade.
+1. Glet mineral de baza `20kg`, ca produs comercial de imagine, cu albul ridicat prin mix Ocnita + Volodeni.
+2. Granule decorative selectate `25kg`, ca monetizare vizibila a resursei albe de la Volodeni.
+3. Filler micronizat alb `25kg / vrac`, ca produs strategic si cash-cow pe baza resursei proprii.
+
+Ruta `ETICS` ramane analizata separat, dar este parcata din portofoliul canonic deoarece in forma actuala transfera prea mult din valoarea economica spre inputurile externe.
 
 ## Fapte extrase din documente
 
@@ -92,9 +94,10 @@ De aceea, instrumentele browser vor avea preturi editabile manual. Decizia de in
 Thesis-ul pe calcar pentru materiale de finisaj este mai interesant decat thesis-ul vechi pe gips, deoarece exista:
 
 - baza de resurse mai ampla
-- produse multiple pe aceeasi infrastructura de mixare / ambalare
+- produse multiple pe aceeasi infrastructura de micronizare / sortare / ambalare
 - posibilitate de diferentiere prin alb natural si poveste minerala
 - risc mai mic pe tehnologie fata de calcinarea gipsului, daca faina de calcar este deja disponibila / usor de obtinut
+- posibilitate de monetizare directa a resursei prin filler si granule, nu doar prin retete cu chimie externa
 
 Totusi, verdictul este `GO conditional`, nu `GO absolut`.
 

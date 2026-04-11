@@ -6,7 +6,7 @@
     <title>RENOVIT — Economic Simulation Hub</title>
     <meta
       name="description"
-      content="Hub de simulare economica RENOVIT pentru capacitate, CAPEX, echipament uzat vs nou, costuri, break-even si finantare."
+      content="Hub de simulare economică RENOVIT pentru portofoliul resource-first: glet mineral, granule decorative și filler micronizat la sac sau vrac."
     >
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -371,9 +371,8 @@
           <div class="eyebrow">RENOVIT — simulation cockpit</div>
           <h1>Economic Simulation Hub</h1>
           <p>
-            Simulare completă pentru materiale de finisaj pe bază de calcar: baseline RFQ 10k t/an, cu sensibilitate 3k/5k/20k,
-            echipament uzat vs hibrid vs nou, cost materie primă, micronizare, sortare, mixare, logistică, CAPEX,
-            finanțare opțională, break-even și ROI.
+            Simulare completă pentru portofoliul `resource-first`: baseline 3k/5k/10k/20k t/an, cu sensibilitate pe echipament
+            uzat vs hibrid vs nou, pe mix-ul `glet / granule / filler` și pe scenarii separate pentru filler `la sac` vs `vrac`.
           </p>
         </div>
         <div class="hero-card">
@@ -398,8 +397,12 @@
             <input id="utilization" type="number" min="0" max="100" step="1" value="70">
           </div>
           <div class="field">
-            <label>Preț vânzare mediu <small>EUR / tonă produs finit</small></label>
-            <input id="sellingPrice" type="number" min="0" step="1" value="420">
+            <label>Canal filler <small>compară sac vs vrac</small></label>
+            <select id="fillerRoute"></select>
+          </div>
+          <div class="field">
+            <label>Preț vânzare mediu fallback <small>EUR / tonă dacă lipsesc Date Inițiale</small></label>
+            <input id="sellingPrice" type="number" min="0" step="1" value="330">
           </div>
           <div class="field">
             <label>Multiplicator CAPEX <small>folosit pentru sensibilitate oferte</small></label>
@@ -410,11 +413,11 @@
         <div class="panel" style="--section-accent: var(--blue);">
           <h2 class="panel-title">02 — Costuri operaționale</h2>
           <div class="field">
-            <label>Cost calcar / filler <small>EUR / tonă brută</small></label>
+            <label>Cost calcar / filler fallback <small>EUR / tonă brută</small></label>
             <input id="extractionCost" type="number" min="0" step="0.1" value="5">
           </div>
           <div class="field">
-            <label>Transport intern / aprovizionare <small>EUR / tonă brută</small></label>
+            <label>Transport intern / aprovizionare fallback <small>EUR / tonă brută</small></label>
             <input id="rawTransportCost" type="number" min="0" step="0.1" value="2">
           </div>
           <div class="field">
@@ -422,23 +425,23 @@
             <input id="processYield" type="number" min="1" max="100" step="1" value="95">
           </div>
           <div class="field">
-            <label>Micronizare / sortare <small>EUR / tonă produs finit</small></label>
+            <label>Proces specific fallback <small>EUR / tonă produs finit</small></label>
             <input id="calcinationCost" type="number" min="0" step="0.1" value="25">
           </div>
           <div class="field">
-            <label>Mixare uscata <small>EUR / tonă produs finit</small></label>
+            <label>Mixare uscată fallback <small>EUR / tonă produs finit</small></label>
             <input id="grindingCost" type="number" min="0" step="0.1" value="10">
           </div>
           <div class="field">
-            <label>Aditivi <small>EUR / tonă produs finit</small></label>
-            <input id="additivesCost" type="number" min="0" step="0.1" value="55">
+            <label>Aditivi fallback <small>EUR / tonă produs finit</small></label>
+            <input id="additivesCost" type="number" min="0" step="0.1" value="18">
           </div>
           <div class="field">
             <label>Manoperă directă <small>EUR / tonă produs finit</small></label>
             <input id="laborCost" type="number" min="0" step="0.1" value="7">
           </div>
           <div class="field">
-            <label>Ambalaj sac 20/25kg mediu <small>EUR / sac</small></label>
+            <label>Ambalaj sac fallback <small>EUR / sac</small></label>
             <input id="bagCost" type="number" min="0" step="0.01" value="0.18">
           </div>
           <div class="field">
@@ -451,7 +454,7 @@
           </div>
           <div class="field">
             <label>Costuri fixe <small>EUR / lună</small></label>
-            <input id="fixedOpex" type="number" min="0" step="100" value="8000">
+            <input id="fixedOpex" type="number" min="0" step="100" value="15000">
           </div>
         </div>
 
@@ -485,11 +488,11 @@
             <div class="metric" id="metricFunding"><span>Total funding need</span><strong id="fundingNeed">€0</strong></div>
             <div class="metric"><span>CAPEX scalat</span><strong id="scaledCapex">€0</strong></div>
             <div class="metric"><span>Cost / tonă</span><strong id="costPerTon">€0</strong></div>
-            <div class="metric"><span>Cost / sac mediu</span><strong id="costPerBag">€0.00</strong></div>
-            <div class="metric"><span>Preț / sac mediu</span><strong id="pricePerBag">€0.00</strong></div>
+            <div class="metric"><span>Cost / sac echiv.</span><strong id="costPerBag">€0.00</strong></div>
+            <div class="metric"><span>Preț / sac echiv.</span><strong id="pricePerBag">€0.00</strong></div>
             <div class="metric"><span>EBITDA / lună</span><strong id="ebitdaMonth">€0</strong></div>
             <div class="metric"><span>Break-even</span><strong id="breakEvenTons">0 t</strong></div>
-            <div class="metric"><span>Break-even saci</span><strong id="breakEvenBags">0</strong></div>
+            <div class="metric"><span>Break-even saci echiv.</span><strong id="breakEvenBags">0</strong></div>
             <div class="metric"><span>Payback</span><strong id="paybackYears">0 ani</strong></div>
             <div class="metric"><span>ROI 3 ani</span><strong id="roi3y">0%</strong></div>
             <div class="metric"><span>Debt service / lună</span><strong id="debtMonth">€0</strong></div>
@@ -501,8 +504,29 @@
           </div>
         </div>
 
+        <div class="panel full" style="--section-accent: var(--accent);">
+          <h2 class="panel-title">05 — Portofoliu resource-first</h2>
+          <p id="portfolioSummary">
+            Așteaptă datele din `Date Inițiale` pentru a calcula mixul real, bagging load-ul și separarea filler `la sac` vs `vrac`.
+          </p>
+          <table>
+            <thead>
+              <tr>
+                <th>Canal</th>
+                <th>Rol</th>
+                <th>Pondere</th>
+                <th>Tone / an</th>
+                <th>Preț / tonă</th>
+                <th>Cost / tonă</th>
+                <th>Marjă</th>
+              </tr>
+            </thead>
+            <tbody id="portfolioRows"></tbody>
+          </table>
+        </div>
+
         <div class="panel full" style="--section-accent: var(--blue);">
-          <h2 class="panel-title">05 — Matrice scenarii: capacitate x echipament</h2>
+          <h2 class="panel-title">06 — Matrice scenarii: capacitate x echipament</h2>
           <table>
             <thead>
               <tr>
@@ -525,20 +549,21 @@
         </div>
 
         <div class="panel third" style="--section-accent: var(--accent);">
-          <h2 class="panel-title">06 — Breakdown CAPEX selectat</h2>
+          <h2 class="panel-title">07 — Breakdown CAPEX selectat</h2>
           <div id="capexBars" class="bars"></div>
         </div>
 
         <div class="panel third" style="--section-accent: var(--good);">
-          <h2 class="panel-title">07 — Cost stack / tonă</h2>
+          <h2 class="panel-title">08 — Cost stack / tonă</h2>
           <div id="costBars" class="bars"></div>
         </div>
 
         <div class="panel third" style="--section-accent: var(--warn);">
-          <h2 class="panel-title">08 — Cum folosești</h2>
+          <h2 class="panel-title">09 — Cum folosești</h2>
           <p>
-            Browser hub-ul este pentru decizie rapidă. CAPEX-ul selectat include auxiliar + rezerve de risc; ținta 450k EUR rămâne
-            un prag de negociere pentru hibrid, nu buget final confirmat. Pentru lucru profund, folosește workbook-ul Excel și actualizează CSV-urile din GitHub.
+            Browser hub-ul este pentru decizie rapidă. Dacă există `Date Inițiale`, simulatorul folosește mixul real de produse și compară
+            fillerul la sac cu fillerul vrac. `1.500 t/lună` trebuie tratat ca scenariu de scalare spre `~18 kt/an`, nu ca baseline automat
+            de lansare. Pentru lucru profund, folosește workbook-ul Excel și actualizează CSV-urile din GitHub.
           </p>
           <div class="footer-actions">
             <a class="button" href="/date-initiale.html">Date inițiale</a>
@@ -557,6 +582,12 @@
         { id: "Recommended 10kt", label: "10k t/an — Recomandat RFQ", capacity: 10000, utilization: 0.75 },
         { id: "Industrial 20kt", label: "20k t/an — Industrial", capacity: 20000, utilization: 0.80 },
       ];
+
+      const fillerRoutes = {
+        bagged: { label: "Filler la sac", bulkShare: 0, note: "tot fillerul este vândut ambalat" },
+        hybrid: { label: "Filler hibrid 50/50", bulkShare: 0.5, note: "jumătate ambalat, jumătate vrac" },
+        bulk: { label: "Filler vrac", bulkShare: 1, note: "fillerul merge industrial, fără sac" },
+      };
 
       const strategyRates = {
         used: { label: "Uzat / refurbished", repair: 0.15, contingency: 0.10, exponent: 0.85, maintenance: 0.06, leadTime: 1.5 },
@@ -622,7 +653,7 @@
       };
 
       const fields = [
-        "capacityScenario", "equipmentStrategy", "utilization", "sellingPrice", "capexMultiplier",
+        "capacityScenario", "equipmentStrategy", "utilization", "fillerRoute", "sellingPrice", "capexMultiplier",
         "extractionCost", "rawTransportCost", "processYield", "calcinationCost", "grindingCost",
         "additivesCost", "laborCost", "bagCost", "distributionCost", "otherVariableCost", "fixedOpex",
         "financingEnabled", "financedShare", "interestRate", "loanTerm", "workingCapitalMonths",
@@ -630,12 +661,16 @@
 
       const els = Object.fromEntries(fields.map(id => [id, document.getElementById(id)]));
       const SHARED_INPUTS_KEY = "RENOVIT_SHARED_INPUTS";
+      const BAGGING_RATE_BPH = 500;
       let modelBagKg = 25;
+      let sharedInputsCache = null;
 
       function readSharedInputs() {
         try {
-          return JSON.parse(localStorage.getItem(SHARED_INPUTS_KEY) || "null");
+          sharedInputsCache = JSON.parse(localStorage.getItem(SHARED_INPUTS_KEY) || "null");
+          return sharedInputsCache;
         } catch {
+          sharedInputsCache = null;
           return null;
         }
       }
@@ -714,8 +749,15 @@
           option.textContent = strategy.label;
           els.equipmentStrategy.appendChild(option);
         });
+        Object.entries(fillerRoutes).forEach(([key, route]) => {
+          const option = document.createElement("option");
+          option.value = key;
+          option.textContent = route.label;
+          els.fillerRoute.appendChild(option);
+        });
         els.capacityScenario.value = "Recommended 10kt";
         els.equipmentStrategy.value = "hybrid";
+        els.fillerRoute.value = "hybrid";
         syncUtilization();
         applySharedInputs();
         fields.forEach(id => {
@@ -759,11 +801,143 @@
         return equipmentCosts[strategy].reduce((sum, [, cost]) => sum + cost, 0);
       }
 
+      function getSharedProduct(primaryKey, fallbackKey) {
+        const products = sharedInputsCache?.products || {};
+        return products[primaryKey] || (fallbackKey ? products[fallbackKey] : null);
+      }
+
+      function buildPortfolioModel(finishedTYear) {
+        const glet = getSharedProduct("glet");
+        const granules = getSharedProduct("granules", "decor");
+        const fillerBag = getSharedProduct("filler", "adhesive");
+        if (!glet || !granules || !fillerBag) return null;
+
+        const totalReferenceTons = [glet, granules, fillerBag].reduce((sum, product) => sum + Number(product.annualTons || 0), 0);
+        if (!(totalReferenceTons > 0)) return null;
+
+        const fields = sharedInputsCache?.fields || {};
+        const fillerRoute = fillerRoutes[els.fillerRoute.value] || fillerRoutes.hybrid;
+        const fillerBagShare = Number(fillerBag.annualTons || 0) / totalReferenceTons * (1 - fillerRoute.bulkShare);
+        const fillerBulkShare = Number(fillerBag.annualTons || 0) / totalReferenceTons * fillerRoute.bulkShare;
+        const fillerBulkPriceTon = Number(fields.fillerBulkWholesaleEurT || 0) > 0
+          ? Number(fields.fillerBulkWholesaleEurT)
+          : Number(fillerBag.priceEurT || 0) * 0.8;
+        const fillerBulkHandling = Number(fields.fillerBulkHandlingCostEurT || 0) > 0
+          ? Number(fields.fillerBulkHandlingCostEurT)
+          : 4;
+        const fillerBulkCostTon = Math.max(
+          Number(fillerBag.totalCostEurT || 0) - Number(fillerBag.packagingCost || 0) + fillerBulkHandling,
+          0
+        );
+
+        const channels = [
+          {
+            key: "glet",
+            label: "Glet mineral",
+            role: "showroom / imagine",
+            share: Number(glet.annualTons || 0) / totalReferenceTons,
+            bagKg: Number(glet.kg || 0),
+            ownMassShare: Number(glet.ownMassShare || 0),
+            priceTon: Number(glet.priceEurT || 0),
+            costTon: Number(glet.totalCostEurT || 0),
+            rawTon: Number(glet.rawMaterialCost || 0),
+            rawTransportTon: Number(glet.rawTransportCost || 0),
+            processTon: Number(glet.processCost || 0),
+            additiveTon: Number(glet.additiveCost || 0),
+            packagingTon: Number(glet.packagingCost || 0),
+          },
+          {
+            key: "granules",
+            label: "Granule decorative",
+            role: "monetizare culoare",
+            share: Number(granules.annualTons || 0) / totalReferenceTons,
+            bagKg: Number(granules.kg || 0),
+            ownMassShare: Number(granules.ownMassShare || 0),
+            priceTon: Number(granules.priceEurT || 0),
+            costTon: Number(granules.totalCostEurT || 0),
+            rawTon: Number(granules.rawMaterialCost || 0),
+            rawTransportTon: Number(granules.rawTransportCost || 0),
+            processTon: Number(granules.processCost || 0),
+            additiveTon: Number(granules.additiveCost || 0),
+            packagingTon: Number(granules.packagingCost || 0),
+          },
+        ];
+
+        if (fillerBagShare > 0) {
+          channels.push({
+            key: "filler-bag",
+            label: "Filler la sac",
+            role: "B2B ambalat",
+            share: fillerBagShare,
+            bagKg: Number(fillerBag.kg || 25),
+            ownMassShare: Number(fillerBag.ownMassShare || 0),
+            priceTon: Number(fillerBag.priceEurT || 0),
+            costTon: Number(fillerBag.totalCostEurT || 0),
+            rawTon: Number(fillerBag.rawMaterialCost || 0),
+            rawTransportTon: Number(fillerBag.rawTransportCost || 0),
+            processTon: Number(fillerBag.processCost || 0),
+            additiveTon: Number(fillerBag.additiveCost || 0),
+            packagingTon: Number(fillerBag.packagingCost || 0),
+          });
+        }
+
+        if (fillerBulkShare > 0) {
+          channels.push({
+            key: "filler-bulk",
+            label: "Filler vrac",
+            role: "cash-cow industrial",
+            share: fillerBulkShare,
+            bagKg: 0,
+            ownMassShare: Number(fillerBag.ownMassShare || 0),
+            priceTon: fillerBulkPriceTon,
+            costTon: fillerBulkCostTon,
+            rawTon: Number(fillerBag.rawMaterialCost || 0),
+            rawTransportTon: Number(fillerBag.rawTransportCost || 0),
+            processTon: Number(fillerBag.processCost || 0),
+            additiveTon: 0,
+            packagingTon: fillerBulkHandling,
+          });
+        }
+
+        const weighted = (key) => channels.reduce((sum, channel) => sum + channel[key] * channel.share, 0);
+        const baggedChannels = channels.filter(channel => channel.bagKg > 0);
+        const baggedShare = baggedChannels.reduce((sum, channel) => sum + channel.share, 0);
+        const avgBagKg = baggedShare > 0
+          ? baggedChannels.reduce((sum, channel) => sum + channel.bagKg * (channel.share / baggedShare), 0)
+          : modelBagKg;
+
+        const enrichedChannels = channels.map(channel => {
+          const tonsYear = finishedTYear * channel.share;
+          const revenueYear = tonsYear * channel.priceTon;
+          const costYear = tonsYear * channel.costTon;
+          return {
+            ...channel,
+            tonsYear,
+            revenueYear,
+            costYear,
+            margin: channel.priceTon > 0 ? (channel.priceTon - channel.costTon) / channel.priceTon : 0,
+          };
+        });
+
+        return {
+          channels: enrichedChannels,
+          avgBagKg,
+          weightedPriceTon: weighted("priceTon"),
+          weightedCostTon: weighted("costTon"),
+          weightedRawTon: weighted("rawTon"),
+          weightedRawTransportTon: weighted("rawTransportTon"),
+          weightedProcessTon: weighted("processTon"),
+          weightedAdditivesTon: weighted("additiveTon"),
+          weightedPackagingTon: weighted("packagingTon"),
+          weightedOwnMassShare: weighted("ownMassShare"),
+          totalRevenueYear: enrichedChannels.reduce((sum, channel) => sum + channel.revenueYear, 0),
+          totalCostYear: enrichedChannels.reduce((sum, channel) => sum + channel.costYear, 0),
+        };
+      }
+
       function compute(capacityId, strategy, utilizationRatio) {
         const capacity = capacities.find(item => item.id === capacityId);
         const rates = strategyRates[strategy];
-        const bagKg = modelBagKg;
-        const bagsPerTon = 1000 / bagKg;
         const baseEquipment = equipmentBase(strategy);
         const repairReserve = baseEquipment * rates.repair;
         const contingency = (baseEquipment + repairReserve) * rates.contingency;
@@ -772,29 +946,49 @@
         const scaledCapex = capex10k * scaleFactor * num("capexMultiplier");
         const finishedTYear = capacity.capacity * utilizationRatio;
         const finishedTMonth = finishedTYear / 12;
+        const portfolio = buildPortfolioModel(finishedTYear);
+        const bagKg = portfolio?.avgBagKg || modelBagKg;
+        const bagsPerTon = 1000 / Math.max(bagKg, 0.01);
         const yieldRatio = Math.max(num("processYield") / 100, 0.01);
-        const rawCostPerTon = (num("extractionCost") + num("rawTransportCost")) / yieldRatio;
-        const packagingPerTon = num("bagCost") * bagsPerTon;
-        const variableCostPerTon =
-          rawCostPerTon +
+        const rawFeedTMonth = finishedTMonth / yieldRatio;
+        const manualRawCostPerTon = (num("extractionCost") + num("rawTransportCost")) / yieldRatio;
+        const manualPackagingPerTon = num("bagCost") * bagsPerTon;
+        const manualVariableCostPerTon =
+          manualRawCostPerTon +
           num("calcinationCost") +
           num("grindingCost") +
           num("additivesCost") +
           num("laborCost") +
-          packagingPerTon +
+          manualPackagingPerTon +
           num("distributionCost") +
           num("otherVariableCost");
+        const priceTon = portfolio?.weightedPriceTon || num("sellingPrice");
+        const rawCostPerTon = portfolio?.weightedRawTon || manualRawCostPerTon;
+        const rawTransportPerTon = portfolio?.weightedRawTransportTon || num("rawTransportCost");
+        const processPerTon = portfolio?.weightedProcessTon || (num("calcinationCost") + num("grindingCost") + num("laborCost") + num("distributionCost") + num("otherVariableCost"));
+        const additivesPerTon = portfolio?.weightedAdditivesTon || num("additivesCost");
+        const packagingPerTon = portfolio?.weightedPackagingTon || manualPackagingPerTon;
+        const variableCostPerTon = portfolio?.weightedCostTon || manualVariableCostPerTon;
+        const baggedTMonth = portfolio
+          ? portfolio.channels.filter(channel => channel.bagKg > 0).reduce((sum, channel) => sum + channel.tonsYear, 0) / 12
+          : finishedTMonth;
+        const bulkTMonth = portfolio
+          ? portfolio.channels.filter(channel => channel.bagKg === 0).reduce((sum, channel) => sum + channel.tonsYear, 0) / 12
+          : 0;
+        const baggedBagsMonth = portfolio
+          ? portfolio.channels.filter(channel => channel.bagKg > 0).reduce((sum, channel) => sum + ((channel.tonsYear * 1000) / Math.max(channel.bagKg, 0.01)), 0) / 12
+          : finishedTMonth * bagsPerTon;
+        const baggingHoursMonth = baggedBagsMonth / BAGGING_RATE_BPH;
         const maintenanceMonth = (scaledCapex * rates.maintenance) / 12;
         const fixedMonth = num("fixedOpex") + maintenanceMonth;
-        const priceTon = num("sellingPrice");
         const priceBag = priceTon / bagsPerTon;
         const costBag = variableCostPerTon / bagsPerTon;
-        const revenueMonth = priceTon * finishedTMonth;
-        const grossProfitMonth = (priceTon - variableCostPerTon) * finishedTMonth;
-        const ebitdaMonth = revenueMonth - variableCostPerTon * finishedTMonth - fixedMonth;
+        const revenueMonth = portfolio ? portfolio.totalRevenueYear / 12 : priceTon * finishedTMonth;
+        const grossProfitMonth = portfolio ? (portfolio.totalRevenueYear - portfolio.totalCostYear) / 12 : (priceTon - variableCostPerTon) * finishedTMonth;
+        const ebitdaMonth = grossProfitMonth - fixedMonth;
         const workingCapital = num("workingCapitalMonths") * (variableCostPerTon * finishedTMonth + fixedMonth);
         const fundingNeed = scaledCapex + workingCapital;
-        const grossMarginPct = priceTon > 0 ? (priceTon - variableCostPerTon) / priceTon : 0;
+        const grossMarginPct = revenueMonth > 0 ? grossProfitMonth / revenueMonth : 0;
         const breakEvenTMonth = priceTon > variableCostPerTon ? fixedMonth / (priceTon - variableCostPerTon) : Infinity;
         const breakEvenBags = breakEvenTMonth * bagsPerTon;
         const paybackYears = ebitdaMonth > 0 ? fundingNeed / (ebitdaMonth * 12) : Infinity;
@@ -845,11 +1039,19 @@
           rawCostPerTon,
           packagingPerTon,
           variableCostPerTon,
+          rawFeedTMonth,
+          baggedTMonth,
+          bulkTMonth,
+          baggedBagsMonth,
+          baggingHoursMonth,
           maintenanceMonth,
           fixedMonth,
           priceTon,
           priceBag,
           costBag,
+          rawTransportPerTon,
+          processPerTon,
+          additivesPerTon,
           revenueMonth,
           grossProfitMonth,
           ebitdaMonth,
@@ -863,6 +1065,7 @@
           debtMonth,
           cashAfterDebt,
           dscr,
+          portfolio,
           verdict,
           verdictText,
           verdictTone,
@@ -913,6 +1116,23 @@
         document.getElementById("scenarioTable").innerHTML = rows.join("");
       }
 
+      function renderPortfolioTable(calc) {
+        const rows = calc.portfolio?.channels || [];
+        document.getElementById("portfolioRows").innerHTML = rows.length > 0
+          ? rows.map(channel => `
+            <tr>
+              <td>${channel.label}</td>
+              <td>${channel.role}</td>
+              <td>${fmtPct(channel.share, 1)}</td>
+              <td>${fmtNumber(channel.tonsYear, 0)} t</td>
+              <td>${fmtCurrency(channel.priceTon, 1)}</td>
+              <td>${fmtCurrency(channel.costTon, 1)}</td>
+              <td>${fmtPct(channel.margin, 1)}</td>
+            </tr>
+          `).join("")
+          : `<tr><td colspan="7">Lipsește mixul din Date Inițiale. Simulatorul rulează pe fallback manual.</td></tr>`;
+      }
+
       function render() {
         const calc = compute(els.capacityScenario.value, els.equipmentStrategy.value, num("utilization") / 100);
 
@@ -940,19 +1160,21 @@
         document.getElementById("verdictLabel").textContent = calc.verdict;
         document.getElementById("verdictText").textContent = calc.verdictText;
         document.getElementById("heroVerdict").textContent = calc.verdict;
-        document.getElementById("heroSummary").textContent = `${calc.capacity.label}, ${strategyRates[calc.strategy].label}: EBITDA ${fmtCurrency(calc.ebitdaMonth)}/lună, payback ${Number.isFinite(calc.paybackYears) ? fmtNumber(calc.paybackYears, 1) : "N/A"} ani.`;
+        document.getElementById("heroSummary").textContent = `${calc.capacity.label}, ${strategyRates[calc.strategy].label}, ${fillerRoutes[els.fillerRoute.value].label}: EBITDA ${fmtCurrency(calc.ebitdaMonth)}/lună, payback ${Number.isFinite(calc.paybackYears) ? fmtNumber(calc.paybackYears, 1) : "N/A"} ani.`;
+        document.getElementById("portfolioSummary").textContent = calc.portfolio
+          ? `Mix real: ${fmtPct(calc.portfolio.weightedOwnMassShare, 1)} resursă proprie în masă, ${fmtNumber(calc.baggedTMonth, 0)} t/lună bagged, ${fmtNumber(calc.bulkTMonth, 0)} t/lună bulk, ~${fmtNumber(calc.baggedBagsMonth, 0)} saci/lună și ~${fmtNumber(calc.baggingHoursMonth, 0)} ore/lună de ambalare la ${BAGGING_RATE_BPH} saci/h. Feed calificat necesar: ~${fmtNumber(calc.rawFeedTMonth, 0)} t/lună la yield ${fmtPct(num("processYield") / 100, 0)}.`
+          : "Lipsesc Date Inițiale salvate în browser. Simulatorul rulează pe fallback manual și nu poate calcula mixul real bagged vs bulk.";
 
+        renderPortfolioTable(calc);
         renderScenarioTable();
         renderBars("capexBars", equipmentCosts[calc.strategy], "var(--accent)");
         renderBars("costBars", [
           ["Materie primă", calc.rawCostPerTon],
-          ["Micronizare / sortare", num("calcinationCost")],
-          ["Mixare uscata", num("grindingCost")],
-          ["Aditivi", num("additivesCost")],
-          ["Manoperă", num("laborCost")],
+          ["Transport", calc.rawTransportPerTon],
+          ["Proces specific", calc.processPerTon],
+          ["Aditivi", calc.additivesPerTon],
           ["Ambalaj", calc.packagingPerTon],
-          ["Distribuție", num("distributionCost")],
-          ["Altele", num("otherVariableCost")],
+          ["Marjă rămasă", Math.max(calc.priceTon - calc.variableCostPerTon, 0)],
         ], "var(--good)");
       }
 

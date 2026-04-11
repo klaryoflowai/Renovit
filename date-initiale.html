@@ -297,7 +297,8 @@
           <h1>Date Inițiale</h1>
           <p>
             Completează aici datele reale din vizita Volodeni + Ocnița. Tabelul salvează inputurile în browser și alimentează
-            automat Unit Economics, Simularea Economică și Dashboard-ul Financiar. Fără backend, fără magie: un singur loc de adevăr.
+            automat Unit Economics, Simularea Economică și Dashboard-ul Financiar. Logica actuală este `resource-first`: Ocnița susține
+            volumul și fabrica, iar Volodeni ridică albul și diferențierea.
           </p>
         </div>
         <div class="hero-card">
@@ -334,12 +335,13 @@
         <div class="panel full" style="--section-accent: var(--green);">
           <h2 class="panel-title">02 — Rezultat calculat din datele inițiale</h2>
           <div class="metric-grid">
-            <div class="metric"><span>Cost glet Volodeni</span><strong id="gletCost">MDL 0</strong></div>
-            <div class="metric"><span>Cost decorativă</span><strong id="decorCost">MDL 0</strong></div>
-            <div class="metric"><span>Cost mortar ETICS</span><strong id="adhesiveCost">MDL 0</strong></div>
+            <div class="metric"><span>Cost glet mineral</span><strong id="gletCost">MDL 0</strong></div>
+            <div class="metric"><span>Cost granule decorative</span><strong id="granulesCost">MDL 0</strong></div>
+            <div class="metric"><span>Cost filler micronizat</span><strong id="fillerCost">MDL 0</strong></div>
             <div class="metric"><span>Preț mediu portofoliu</span><strong id="avgPrice">€0/t</strong></div>
             <div class="metric"><span>Cost mediu portofoliu</span><strong id="avgCost">€0/t</strong></div>
             <div class="metric"><span>Marjă brută medie</span><strong id="avgMargin">0%</strong></div>
+            <div class="metric"><span>Resursă proprie în masă</span><strong id="ownShare">0%</strong></div>
             <div class="metric"><span>Transport Volodeni inclus</span><strong id="volodeniTransport">€0/t</strong></div>
             <div class="metric"><span>Venit anual estimat</span><strong id="annualRevenue">€0</strong></div>
           </div>
@@ -355,6 +357,7 @@
                 <th>Ocnița calcar</th>
                 <th>Ocnița bentonită</th>
                 <th>Aditivi</th>
+                <th>Total rețetă</th>
                 <th>Cost EUR/t</th>
                 <th>Cost MDL/sac</th>
                 <th>Preț MDL/sac</th>
@@ -368,8 +371,9 @@
         <div class="panel" style="--section-accent: var(--orange);">
           <h2 class="panel-title">04 — Regula proiectului</h2>
           <p>
-            Produsul premium de top este tratat ca produs Volodeni: calcarul alb de la Volodeni este materia primă principală.
-            Ocnița susține proiectul prin volum, bentonită și infrastructură logistică / feroviară.
+            `Fillerul` este cash-cow-ul de volum susținut de Ocnița, cu opțiune de upgrade de alb din Volodeni.
+            `Granulele decorative` valorifică dominant Volodeni. `Gletul` rămâne produsul comercial de imagine, pe mix
+            Ocnița + Volodeni + bentonită, dar numai ca `dry mix` cu apă adăugată pe șantier, nu în fabrică.
           </p>
         </div>
 
@@ -377,7 +381,8 @@
           <h2 class="panel-title">05 — Ce se salvează</h2>
           <p>
             Se salvează un obiect `RENOVIT_SHARED_INPUTS` în `localStorage`: costuri, rețete, prețuri, volume, CAPEX, cash și
-            rezumatul calculat. Dacă deschizi celelalte instrumente în același browser, ele folosesc automat aceste date.
+            rezumatul calculat. Payload-ul include și aliasuri legacy pentru compatibilitate, dar canonicul este acum
+            `glet / granules / filler`.
           </p>
         </div>
       </section>
@@ -392,55 +397,66 @@
         { section: "General", id: "capacityTYear", label: "Capacitate țintă", unit: "t/an", type: "number", value: 10000, note: "Baseline RFQ actual." },
         { section: "General", id: "utilizationPct", label: "Utilizare an 1", unit: "%", type: "number", value: 75, note: "Vânzări reale vs capacitate instalată." },
         { section: "General", id: "capexTotalEur", label: "CAPEX total", unit: "EUR", type: "number", value: 617000, note: "Hibrid 10kt cu auxiliar + rezerve orientative." },
-        { section: "General", id: "fixedOpexEurMonth", label: "Costuri fixe lunare", unit: "EUR/lună", type: "number", value: 8000, note: "Admin, vânzări, warehouse, bază operațională." },
+        { section: "General", id: "fixedOpexEurMonth", label: "Costuri fixe lunare", unit: "EUR/lună", type: "number", value: 15000, note: "Admin, comercial, laborator, warehouse, mentenanță bază, management operațional." },
+        { section: "General", id: "rawMaterialValuationMode", label: "Evaluare materie primă", unit: "", type: "select", value: "Cost extracție", options: ["Cost extracție", "Preț intern de transfer", "Preț piață / cost oportunitate"], note: "Definește dacă modelul ia costul de extracție, transfer price sau costul de oportunitate." },
         { section: "Materie primă Volodeni", id: "volodeniCaco3Pct", label: "CaCO3 Volodeni", unit: "%", type: "number", value: 94.5, note: "De confirmat prin buletin de analiză." },
         { section: "Materie primă Volodeni", id: "volodeniWhiteness", label: "Grad alb Volodeni", unit: "L* / %", type: "text", value: "TBD", note: "Critic pentru gletul premium." },
-        { section: "Materie primă Volodeni", id: "volodeniExtractionCostEurT", label: "Cost extracție Volodeni", unit: "EUR/t", type: "number", value: 5, note: "Materie primă principală pentru glet." },
+        { section: "Materie primă Volodeni", id: "volodeniExtractionCostEurT", label: "Cost extracție Volodeni", unit: "EUR/t", type: "number", value: 5, note: "Sursa de alb și diferențiere pentru portofoliu." },
+        { section: "Materie primă Volodeni", id: "volodeniBulkSaleMdlT", label: "Preț vânzare vrac Volodeni", unit: "MDL/t", type: "number", value: 250, note: "Benchmark actual de piață / cost de oportunitate." },
+        { section: "Materie primă Volodeni", id: "volodeniTransferPriceEurT", label: "Preț intern Volodeni", unit: "EUR/t", type: "number", value: 0, note: "Completează după decizia de transfer pricing." },
         { section: "Materie primă Volodeni", id: "volodeniToOcnitaTransportEurT", label: "Transport Volodeni -> Ocnița", unit: "EUR/t", type: "number", value: 8, note: "Cost nou critic dacă fabrica este la Ocnița." },
-        { section: "Materie primă Volodeni", id: "volodeniAvailableTMonth", label: "Volodeni strat alb disponibil", unit: "t/lună", type: "number", value: 500, note: "Trebuie să acopere produsul premium." },
+        { section: "Materie primă Volodeni", id: "volodeniAvailableTMonth", label: "Volodeni strat alb disponibil", unit: "t/lună", type: "number", value: 600, note: "Critic pentru granule decorative și upgrade de alb." },
         { section: "Materie primă Ocnița", id: "ocnitaLimestoneCaco3Pct", label: "CaCO3 Ocnița calcar", unit: "%", type: "number", value: 94.2, note: "Bază de volum pentru produse." },
         { section: "Materie primă Ocnița", id: "ocnitaLimestoneCostEurT", label: "Cost calcar Ocnița", unit: "EUR/t", type: "number", value: 4, note: "Volum industrial, aproape de fabrică." },
+        { section: "Materie primă Ocnița", id: "ocnitaBulkSaleMdlT", label: "Preț vânzare vrac Ocnița", unit: "MDL/t", type: "number", value: 250, note: "Benchmark actual de piață / cost de oportunitate." },
+        { section: "Materie primă Ocnița", id: "ocnitaTransferPriceEurT", label: "Preț intern Ocnița", unit: "EUR/t", type: "number", value: 0, note: "Completează după decizia de transfer pricing." },
         { section: "Materie primă Ocnița", id: "ocnitaInternalTransportEurT", label: "Transport intern Ocnița", unit: "EUR/t", type: "number", value: 2, note: "Extracție / stoc -> fabrică." },
-        { section: "Materie primă Ocnița", id: "limestoneFlourResidueTMonth", label: "Făină calcar reziduu", unit: "t/lună", type: "number", value: 0, note: "Dacă e din strat bun, poate reduce costul mortarelor ETICS." },
-        { section: "Bentonită Ocnița", id: "bentoniteCostEurT", label: "Cost bentonită Ocnița", unit: "EUR/t", type: "number", value: 8, note: "Plasticitate / retenție apă." },
+        { section: "Materie primă Ocnița", id: "limestoneFlourResidueTMonth", label: "Făină calcar reziduu", unit: "t/lună", type: "number", value: 0, note: "Poate intra direct în filler dacă trece PSD + alb + umiditate." },
+        { section: "Bentonită Ocnița", id: "bentoniteCostEurT", label: "Cost bentonită Ocnița", unit: "EUR/t", type: "number", value: 8, note: "Plasticitate pentru glet, în dozaj controlat." },
+        { section: "Bentonită Ocnița", id: "bentoniteTransferPriceEurT", label: "Preț intern bentonită", unit: "EUR/t", type: "number", value: 0, note: "Completează dacă bentonita are transfer price separat." },
         { section: "Bentonită Ocnița", id: "bentoniteActivationCostEurT", label: "Activare / pregătire bentonită", unit: "EUR/t", type: "number", value: 12, note: "Include măcinare / uscare / activare dacă e necesar." },
-        { section: "Bentonită Ocnița", id: "bentoniteActive", label: "Bentonită activă?", unit: "", type: "select", value: "TBD", options: ["TBD", "Da", "Nu", "Parțial"], note: "Test umflare / tixotropie." },
+        { section: "Bentonită Ocnița", id: "bentoniteActive", label: "Bentonită activă?", unit: "", type: "select", value: "TBD", options: ["TBD", "Da", "Nu", "Parțial"], note: "Importantă mai ales pentru gletul resource-first." },
         { section: "Procesare", id: "processYieldPct", label: "Randament procesare", unit: "%", type: "number", value: 95, note: "Brut -> produs finit ambalat." },
         { section: "Procesare", id: "micronizationCostEurT", label: "Micronizare", unit: "EUR/t", type: "number", value: 25, note: "Finete pentru glet si filler." },
-        { section: "Procesare", id: "sortingCostEurT", label: "Sortare granulometrică", unit: "EUR/t", type: "number", value: 8, note: "Fracții pentru tencuială decorativă." },
+        { section: "Procesare", id: "sortingCostEurT", label: "Sortare granulometrică", unit: "EUR/t", type: "number", value: 8, note: "Fracții pentru granule decorative." },
         { section: "Procesare", id: "dryingCostEurT", label: "Uscare", unit: "EUR/t", type: "number", value: 12, note: "Depinde de umiditate și gaz / energie." },
         { section: "Procesare", id: "dryMixingCostEurT", label: "Mixare uscată", unit: "EUR/t", type: "number", value: 10, note: "Mixer + dozare." },
         { section: "Procesare", id: "directLaborCostEurT", label: "Manoperă directă", unit: "EUR/t", type: "number", value: 7, note: "Operatori / schimburi." },
         { section: "Procesare", id: "bagCostEur", label: "Cost sac + etichetă", unit: "EUR/sac", type: "number", value: 0.18, note: "20kg / 25kg." },
         { section: "Procesare", id: "distributionCostEurT", label: "Distribuție produs finit", unit: "EUR/t", type: "number", value: 6, note: "Fabrică -> client / distribuitor." },
         { section: "Procesare", id: "otherVariableCostEurT", label: "Alte variabile", unit: "EUR/t", type: "number", value: 3, note: "Pierderi, spares, manipulare." },
-        { section: "Produs 1 - Glet Volodeni", id: "gletKg", label: "Sac glet", unit: "kg", type: "number", value: 20, note: "Produs premium." },
-        { section: "Produs 1 - Glet Volodeni", id: "gletAnnualBags", label: "Volum glet", unit: "saci/an", type: "number", value: 75000, note: "Volum comercial an 1." },
-        { section: "Produs 1 - Glet Volodeni", id: "gletWholesaleMdlBag", label: "Preț angro glet", unit: "MDL/sac", type: "number", value: 200, note: "De validat cu distribuitori." },
-        { section: "Produs 1 - Glet Volodeni", id: "gletRetailMdlBag", label: "Retail benchmark glet", unit: "MDL/sac", type: "number", value: 260, note: "Doar benchmark." },
-        { section: "Produs 1 - Glet Volodeni", id: "gletVolodeniPct", label: "Rețetă Volodeni", unit: "%", type: "number", value: 90, note: "Materia primă principală pentru produsul de top." },
-        { section: "Produs 1 - Glet Volodeni", id: "gletOcnitaLimestonePct", label: "Rețetă Ocnița calcar", unit: "%", type: "number", value: 0, note: "Implicit zero pentru produsul premium." },
-        { section: "Produs 1 - Glet Volodeni", id: "gletBentonitePct", label: "Rețetă bentonită", unit: "%", type: "number", value: 5, note: "Plasticitate, de testat." },
-        { section: "Produs 1 - Glet Volodeni", id: "gletAdditivesPct", label: "Rețetă aditivi", unit: "%", type: "number", value: 5, note: "Retenție apă / lucrabilitate." },
-        { section: "Produs 1 - Glet Volodeni", id: "gletAdditivesCostEurT", label: "Cost aditivi glet", unit: "EUR/t produs", type: "number", value: 55, note: "Cost pe tonă de produs finit." },
-        { section: "Produs 2 - Decorativă", id: "decorKg", label: "Sac decorativă", unit: "kg", type: "number", value: 25, note: "Tencuială decorativă minerală." },
-        { section: "Produs 2 - Decorativă", id: "decorAnnualBags", label: "Volum decorativă", unit: "saci/an", type: "number", value: 50000, note: "Volum comercial an 1." },
-        { section: "Produs 2 - Decorativă", id: "decorWholesaleMdlBag", label: "Preț angro decorativă", unit: "MDL/sac", type: "number", value: 240, note: "De validat cu distribuitori." },
-        { section: "Produs 2 - Decorativă", id: "decorRetailMdlBag", label: "Retail benchmark decorativă", unit: "MDL/sac", type: "number", value: 259, note: "Doar benchmark." },
-        { section: "Produs 2 - Decorativă", id: "decorVolodeniPct", label: "Rețetă Volodeni", unit: "%", type: "number", value: 30, note: "Alb / aspect." },
-        { section: "Produs 2 - Decorativă", id: "decorOcnitaLimestonePct", label: "Rețetă Ocnița calcar", unit: "%", type: "number", value: 60, note: "Volum / structură." },
-        { section: "Produs 2 - Decorativă", id: "decorBentonitePct", label: "Rețetă bentonită", unit: "%", type: "number", value: 5, note: "Aderență pe verticală." },
-        { section: "Produs 2 - Decorativă", id: "decorAdditivesPct", label: "Rețetă aditivi", unit: "%", type: "number", value: 5, note: "Hidrofobizanți / stabilizare." },
-        { section: "Produs 2 - Decorativă", id: "decorAdditivesCostEurT", label: "Cost aditivi decorativă", unit: "EUR/t produs", type: "number", value: 65, note: "Cost pe tonă de produs finit." },
-        { section: "Produs 3 - Mortar ETICS", id: "adhesiveKg", label: "Sac mortar ETICS", unit: "kg", type: "number", value: 25, note: "Produs de volum pentru lipire + strat armat." },
-        { section: "Produs 3 - Mortar ETICS", id: "adhesiveAnnualBags", label: "Volum mortar ETICS", unit: "saci/an", type: "number", value: 35000, note: "Volum comercial an 1." },
-        { section: "Produs 3 - Mortar ETICS", id: "adhesiveWholesaleMdlBag", label: "Preț angro mortar ETICS", unit: "MDL/sac", type: "number", value: 220, note: "De validat cu distribuitori pe produse comparabile ETICS." },
-        { section: "Produs 3 - Mortar ETICS", id: "adhesiveRetailMdlBag", label: "Retail benchmark mortar ETICS", unit: "MDL/sac", type: "number", value: 275, note: "Doar benchmark." },
-        { section: "Produs 3 - Mortar ETICS", id: "adhesiveVolodeniPct", label: "Rețetă Volodeni", unit: "%", type: "number", value: 5, note: "Opțional pentru ton deschis / consistență vizuală." },
-        { section: "Produs 3 - Mortar ETICS", id: "adhesiveOcnitaLimestonePct", label: "Rețetă Ocnița calcar", unit: "%", type: "number", value: 65, note: "Baza minerală principală." },
-        { section: "Produs 3 - Mortar ETICS", id: "adhesiveBentonitePct", label: "Rețetă bentonită", unit: "%", type: "number", value: 2, note: "Doar ipoteză de laborator, nu baseline canonic." },
-        { section: "Produs 3 - Mortar ETICS", id: "adhesiveAdditivesPct", label: "Sistem liant + aditivi", unit: "%", type: "number", value: 28, note: "Ciment + polimer + celuloză + fibre, working assumption." },
-        { section: "Produs 3 - Mortar ETICS", id: "adhesiveAdditivesCostEurT", label: "Cost sistem liant + aditivi ETICS", unit: "EUR/t produs", type: "number", value: 110, note: "Include liantul funcțional și aditivii, de validat." },
+        { section: "Procesare", id: "gletRouteProcessCostEurT", label: "Rută proces glet", unit: "EUR/t", type: "number", value: 58, note: "Include micronizare + mixare + handling relevante pentru glet." },
+        { section: "Procesare", id: "granulesRouteProcessCostEurT", label: "Rută proces granule", unit: "EUR/t", type: "number", value: 28, note: "Include sortare / cernere / uscare / handling relevante." },
+        { section: "Procesare", id: "fillerRouteProcessCostEurT", label: "Rută proces filler", unit: "EUR/t", type: "number", value: 34, note: "Include micronizare + clasificare + handling pentru filler." },
+        { section: "Produs 1 - Glet mineral", id: "gletKg", label: "Sac glet", unit: "kg", type: "number", value: 20, note: "Produs comercial de imagine." },
+        { section: "Produs 1 - Glet mineral", id: "gletAnnualBags", label: "Volum glet", unit: "saci/an", type: "number", value: 60000, note: "Volum comercial an 1; produs de imagine, nu motorul de volum." },
+        { section: "Produs 1 - Glet mineral", id: "gletWholesaleMdlBag", label: "Preț angro glet", unit: "MDL/sac", type: "number", value: 185, note: "De validat cu distribuitori." },
+        { section: "Produs 1 - Glet mineral", id: "gletRetailMdlBag", label: "Retail benchmark glet", unit: "MDL/sac", type: "number", value: 225, note: "Doar benchmark." },
+        { section: "Produs 1 - Glet mineral", id: "gletVolodeniPct", label: "Rețetă Volodeni", unit: "%", type: "number", value: 25, note: "Corecție de alb pentru produsul comercial." },
+        { section: "Produs 1 - Glet mineral", id: "gletOcnitaLimestonePct", label: "Rețetă Ocnița calcar", unit: "%", type: "number", value: 65, note: "Masă principală și structură." },
+        { section: "Produs 1 - Glet mineral", id: "gletBentonitePct", label: "Rețetă bentonită", unit: "%", type: "number", value: 5, note: "Plasticitate, de validat separat în laborator." },
+        { section: "Produs 1 - Glet mineral", id: "gletAdditivesPct", label: "Rețetă aditivi", unit: "%", type: "number", value: 5, note: "Pachet minim extern, până la validarea lotului pilot." },
+        { section: "Produs 1 - Glet mineral", id: "gletAdditivesCostEurT", label: "Cost aditivi glet", unit: "EUR/t produs", type: "number", value: 25, note: "Cost pe tonă de produs finit." },
+        { section: "Produs 2 - Granule decorative", id: "granulesKg", label: "Sac granule", unit: "kg", type: "number", value: 25, note: "Poate merge și în big-bag / vrac." },
+        { section: "Produs 2 - Granule decorative", id: "granulesAnnualBags", label: "Volum granule", unit: "saci/an", type: "number", value: 40000, note: "Volum comercial an 1 pentru fracții selectate." },
+        { section: "Produs 2 - Granule decorative", id: "granulesWholesaleMdlBag", label: "Preț angro granule", unit: "MDL/sac", type: "number", value: 150, note: "De validat cu distribuitori / B2B." },
+        { section: "Produs 2 - Granule decorative", id: "granulesRetailMdlBag", label: "Retail benchmark granule", unit: "MDL/sac", type: "number", value: 185, note: "Doar benchmark." },
+        { section: "Produs 2 - Granule decorative", id: "granulesVolodeniPct", label: "Rețetă Volodeni", unit: "%", type: "number", value: 95, note: "Baza vizuală dominantă." },
+        { section: "Produs 2 - Granule decorative", id: "granulesOcnitaLimestonePct", label: "Rețetă Ocnița calcar", unit: "%", type: "number", value: 5, note: "Doar corecție / umplere dacă lotul o cere." },
+        { section: "Produs 2 - Granule decorative", id: "granulesBentonitePct", label: "Rețetă bentonită", unit: "%", type: "number", value: 0, note: "Nu este canonică." },
+        { section: "Produs 2 - Granule decorative", id: "granulesAdditivesPct", label: "Rețetă aditivi", unit: "%", type: "number", value: 0, note: "Zero în baza de model." },
+        { section: "Produs 2 - Granule decorative", id: "granulesAdditivesCostEurT", label: "Cost aditivi granule", unit: "EUR/t produs", type: "number", value: 0, note: "Zero în baza de model." },
+        { section: "Produs 3 - Filler micronizat", id: "fillerKg", label: "Sac filler", unit: "kg", type: "number", value: 25, note: "Poate merge și în big-bag / vrac." },
+        { section: "Produs 3 - Filler micronizat", id: "fillerAnnualBags", label: "Volum filler", unit: "saci/an", type: "number", value: 120000, note: "Volum de bază an 1; fillerul rămâne principalul motor de volum." },
+        { section: "Produs 3 - Filler micronizat", id: "fillerWholesaleMdlBag", label: "Preț angro filler la sac", unit: "MDL/sac", type: "number", value: 110, note: "De validat cu clienți B2B / distribuitori." },
+        { section: "Produs 3 - Filler micronizat", id: "fillerRetailMdlBag", label: "Retail benchmark filler", unit: "MDL/sac", type: "number", value: 135, note: "Doar benchmark." },
+        { section: "Produs 3 - Filler micronizat", id: "fillerVolodeniPct", label: "Rețetă Volodeni", unit: "%", type: "number", value: 20, note: "Upgrade opțional de alb; pune `0%` pentru grad industrial cost-first." },
+        { section: "Produs 3 - Filler micronizat", id: "fillerOcnitaLimestonePct", label: "Rețetă Ocnița calcar", unit: "%", type: "number", value: 80, note: "Baza de volum și cost." },
+        { section: "Produs 3 - Filler micronizat", id: "fillerBentonitePct", label: "Rețetă bentonită", unit: "%", type: "number", value: 0, note: "Nu este canonică." },
+        { section: "Produs 3 - Filler micronizat", id: "fillerAdditivesPct", label: "Rețetă aditivi", unit: "%", type: "number", value: 0, note: "Zero în baza de model." },
+        { section: "Produs 3 - Filler micronizat", id: "fillerAdditivesCostEurT", label: "Cost aditivi filler", unit: "EUR/t produs", type: "number", value: 0, note: "Zero în baza de model." },
+        { section: "Produs 3 - Filler micronizat", id: "fillerBulkWholesaleEurT", label: "Preț filler vrac", unit: "EUR/t", type: "number", value: 165, note: "Scenariu industrial B2B, fără sac." },
+        { section: "Produs 3 - Filler micronizat", id: "fillerBulkHandlingCostEurT", label: "Încărcare filler vrac", unit: "EUR/t", type: "number", value: 4, note: "Cost de încărcare / manipulare pentru vrac." },
         { section: "Financiar", id: "openingCashEur", label: "Cash inițial", unit: "EUR", type: "number", value: 25000, note: "Pentru dashboard cash-flow." },
         { section: "Financiar", id: "financedSharePct", label: "Procent finanțat", unit: "%", type: "number", value: 40, note: "Pentru debt service." },
         { section: "Financiar", id: "interestRatePct", label: "Dobândă anuală", unit: "%", type: "number", value: 9, note: "Finanțare opțională." },
@@ -449,9 +465,9 @@
       ];
 
       const productDefs = [
-        { key: "glet", name: "Glet de finisaj alb", premium: true },
-        { key: "decor", name: "Tencuială decorativă minerală" },
-        { key: "adhesive", name: "Mortar ETICS / strat armat" },
+        { key: "glet", name: "Glet mineral de bază", premium: true },
+        { key: "granules", name: "Granule decorative selectate" },
+        { key: "filler", name: "Filler micronizat alb" },
       ];
 
       const inputs = {};
@@ -537,16 +553,33 @@
       }
 
       function sourceCosts() {
+        const valuationMode = values.rawMaterialValuationMode;
+        const marketVolodeni = n("volodeniBulkSaleMdlT") / Math.max(n("exchangeRate"), 0.01);
+        const marketOcnita = n("ocnitaBulkSaleMdlT") / Math.max(n("exchangeRate"), 0.01);
+        const materialCost = (extractionId, transferId, marketValue) => {
+          const extraction = n(extractionId);
+          const transfer = n(transferId);
+          if (valuationMode === "Preț intern de transfer") {
+            return transfer > 0 ? transfer : extraction;
+          }
+          if (valuationMode === "Preț piață / cost oportunitate") {
+            return marketValue > 0 ? marketValue : (transfer > 0 ? transfer : extraction);
+          }
+          return extraction;
+        };
+        const volodeniMaterial = materialCost("volodeniExtractionCostEurT", "volodeniTransferPriceEurT", marketVolodeni);
+        const ocnitaMaterial = materialCost("ocnitaLimestoneCostEurT", "ocnitaTransferPriceEurT", marketOcnita);
+        const bentoniteBase = materialCost("bentoniteCostEurT", "bentoniteTransferPriceEurT", 0);
         return {
-          volodeniMaterial: n("volodeniExtractionCostEurT"),
+          volodeniMaterial,
           volodeniTransport: n("volodeniToOcnitaTransportEurT"),
-          volodeniLanded: n("volodeniExtractionCostEurT") + n("volodeniToOcnitaTransportEurT"),
-          ocnitaLimestoneMaterial: n("ocnitaLimestoneCostEurT"),
+          volodeniLanded: volodeniMaterial + n("volodeniToOcnitaTransportEurT"),
+          ocnitaLimestoneMaterial: ocnitaMaterial,
           ocnitaLimestoneTransport: n("ocnitaInternalTransportEurT"),
-          ocnitaLimestoneLanded: n("ocnitaLimestoneCostEurT") + n("ocnitaInternalTransportEurT"),
-          bentoniteMaterial: n("bentoniteCostEurT") + n("bentoniteActivationCostEurT"),
+          ocnitaLimestoneLanded: ocnitaMaterial + n("ocnitaInternalTransportEurT"),
+          bentoniteMaterial: bentoniteBase + n("bentoniteActivationCostEurT"),
           bentoniteTransport: n("ocnitaInternalTransportEurT"),
-          bentoniteLanded: n("bentoniteCostEurT") + n("bentoniteActivationCostEurT") + n("ocnitaInternalTransportEurT"),
+          bentoniteLanded: bentoniteBase + n("bentoniteActivationCostEurT") + n("ocnitaInternalTransportEurT"),
         };
       }
 
@@ -558,6 +591,8 @@
         const bentonitePct = n(`${product.key}BentonitePct`) / 100;
         const additivesPct = n(`${product.key}AdditivesPct`) / 100;
         const additiveCost = n(`${product.key}AdditivesCostEurT`);
+        const ownMassShare = volodeniPct + ocnitaPct + bentonitePct;
+        const recipeTotalPct = ownMassShare + additivesPct;
         const rawMaterialCost =
           volodeniPct * costs.volodeniMaterial +
           ocnitaPct * costs.ocnitaLimestoneMaterial +
@@ -566,14 +601,17 @@
           volodeniPct * costs.volodeniTransport +
           ocnitaPct * costs.ocnitaLimestoneTransport +
           bentonitePct * costs.bentoniteTransport;
-        const processCost =
+        const fallbackRouteCost =
           n("micronizationCostEurT") +
           n("sortingCostEurT") +
           n("dryingCostEurT") +
-          n("dryMixingCostEurT") +
+          n("dryMixingCostEurT");
+        const supportCost =
           n("directLaborCostEurT") +
           n("distributionCostEurT") +
           n("otherVariableCostEurT");
+        const routeProcessCost = Math.max(n(`${product.key}RouteProcessCostEurT`), 0) || fallbackRouteCost;
+        const processCost = routeProcessCost + supportCost;
         const bagsPerTon = kg > 0 ? 1000 / kg : 0;
         const packagingCost = bagsPerTon * n("bagCostEur");
         const totalCostEurT = (rawMaterialCost + rawTransportCost) / Math.max(n("processYieldPct") / 100, 0.01) + additiveCost + processCost + packagingCost;
@@ -593,7 +631,12 @@
           ocnitaPct,
           bentonitePct,
           additivesPct,
+          ownMassShare,
+          recipeTotalPct,
           additiveCost,
+          routeProcessCost,
+          supportCost,
+          processCost,
           rawMaterialCost,
           rawTransportCost,
           packagingCost,
@@ -631,18 +674,27 @@
           avgMargin,
           weightedRawMaterialEurT: weighted("rawMaterialCost"),
           weightedRawTransportEurT: weighted("rawTransportCost"),
+          weightedRouteProcessEurT: weighted("routeProcessCost"),
+          weightedSupportCostEurT: weighted("supportCost"),
+          weightedProcessCostEurT: weighted("processCost"),
           avgAdditivesCostEurT: weighted("additiveCost"),
           avgPackagingCostEurT: weighted("packagingCost"),
+          weightedOwnMassShare: weighted("ownMassShare"),
         };
       }
 
       function sharedPayload() {
         const summary = compute();
+        const products = Object.fromEntries(summary.products.map(product => [product.key, product]));
         return {
-          version: 1,
+          version: 2,
           updatedAt: new Date().toISOString(),
           fields: { ...values },
-          products: Object.fromEntries(summary.products.map(product => [product.key, product])),
+          products: {
+            ...products,
+            decor: products.granules,
+            adhesive: products.filler,
+          },
           summary: {
             totalTons: summary.totalTons,
             totalBags: summary.totalBags,
@@ -653,8 +705,12 @@
             avgMargin: summary.avgMargin,
             weightedRawMaterialEurT: summary.weightedRawMaterialEurT,
             weightedRawTransportEurT: summary.weightedRawTransportEurT,
+            weightedRouteProcessEurT: summary.weightedRouteProcessEurT,
+            weightedSupportCostEurT: summary.weightedSupportCostEurT,
+            weightedProcessCostEurT: summary.weightedProcessCostEurT,
             avgAdditivesCostEurT: summary.avgAdditivesCostEurT,
             avgPackagingCostEurT: summary.avgPackagingCostEurT,
+            weightedOwnMassShare: summary.weightedOwnMassShare,
           },
         };
       }
@@ -671,11 +727,12 @@
         const calc = compute();
         const productByKey = Object.fromEntries(calc.products.map(product => [product.key, product]));
         document.getElementById("gletCost").textContent = money(productByKey.glet.costMdlBag, "MDL", 1);
-        document.getElementById("decorCost").textContent = money(productByKey.decor.costMdlBag, "MDL", 1);
-        document.getElementById("adhesiveCost").textContent = money(productByKey.adhesive.costMdlBag, "MDL", 1);
+        document.getElementById("granulesCost").textContent = money(productByKey.granules.costMdlBag, "MDL", 1);
+        document.getElementById("fillerCost").textContent = money(productByKey.filler.costMdlBag, "MDL", 1);
         document.getElementById("avgPrice").textContent = `${money(calc.avgPriceEurT, "EUR", 0)}/t`;
         document.getElementById("avgCost").textContent = `${money(calc.avgCostEurT, "EUR", 0)}/t`;
         document.getElementById("avgMargin").textContent = pct(calc.avgMargin, 1);
+        document.getElementById("ownShare").textContent = pct(calc.weightedOwnMassShare, 1);
         document.getElementById("volodeniTransport").textContent = `${money(calc.weightedRawTransportEurT, "EUR", 1)}/t`;
         document.getElementById("annualRevenue").textContent = money(calc.totalRevenue, "EUR", 0);
         document.getElementById("productRows").innerHTML = calc.products.map(product => `
@@ -685,6 +742,7 @@
             <td>${pct(product.ocnitaPct, 0)}</td>
             <td>${pct(product.bentonitePct, 0)}</td>
             <td>${pct(product.additivesPct, 0)}</td>
+            <td>${pct(product.recipeTotalPct, 0)}</td>
             <td>${money(product.totalCostEurT, "EUR", 1)}</td>
             <td>${money(product.costMdlBag, "MDL", 1)}</td>
             <td>${money(product.priceMdlBag, "MDL", 0)}</td>

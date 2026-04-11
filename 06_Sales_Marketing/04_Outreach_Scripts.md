@@ -2,4 +2,4 @@
 
 ## Distributor outreach
 
-"Salut. Lucram la lansarea unor materiale de finisaj pe baza de calcar local: glet extra-alb, tencuiala decorativa minerala si mortar ETICS 25kg. Validam cererea reala, pretul angro si conditiile comerciale din piata. Ne poti ajuta cu un benchmark scurt pe categoriile acestea?"
+"Salut. Lucram la lansarea unor materiale pe baza de calcar local: glet mineral de baza 20kg, granule decorative selectate 25kg si filler micronizat alb 25kg / vrac. Validam cererea reala, pretul angro si conditiile comerciale din piata. Ne poti ajuta cu un benchmark scurt pe categoriile acestea?"
