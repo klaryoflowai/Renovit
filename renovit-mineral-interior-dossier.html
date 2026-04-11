@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RENOVIT Mineral Interior 25kg — Fișă Tehnică</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#1a1814;--ink2:#4a4540;--ink3:#8a857e;
+  --stone:#f7f3ec;--stone2:#ede8df;--stone3:#e2dbd0;
+  --accent:#7a5c1e;--accent2:#c8a84b;--accent3:#f0e8d0;
+  --green:#3a6b47;--green2:#eaf3de;
+  --blue:#1a4a7a;--blue2:#e6f0fb;
+  --border:#d4ccc0;
+}
+html{scroll-behavior:smooth}
+body{background:var(--stone);color:var(--ink);font-family:'Cormorant Garamond',Georgia,serif;font-size:16px;line-height:1.7}
+
+nav{position:sticky;top:0;z-index:100;background:var(--ink);border-bottom:1px solid #2e2a26}
+.nav-inner{max-width:900px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:52px}
+.nav-brand{color:var(--accent2);font-family:'DM Mono',monospace;font-size:12px;letter-spacing:3px;text-transform:uppercase}
+.nav-links{display:flex;gap:4px}
+.nav-links a{color:#888;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;padding:6px 12px;border-radius:4px;transition:color .15s,background .15s}
+.nav-links a:hover{color:#fff;background:#2e2a26}
+
+.hero{background:var(--ink);color:var(--stone);padding:64px 24px 56px;text-align:center}
+.hero-eyebrow{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--accent2);margin-bottom:16px}
+.hero-title{font-size:clamp(36px,6vw,64px);font-weight:600;line-height:1.1;margin-bottom:12px;letter-spacing:-1px}
+.hero-title em{color:var(--accent2);font-style:italic}
+.hero-sub{font-size:clamp(16px,2vw,20px);color:#aaa9a3;font-style:italic;margin-bottom:28px}
+.hero-badges{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.badge{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;padding:5px 12px;border-radius:3px}
+.badge-green{background:#1e3a28;color:#7ec98a;border:1px solid #2e5038}
+.badge-amber{background:#2e2010;color:var(--accent2);border:1px solid #4a3410}
+.badge-stone{background:#2a2620;color:#c4bfb4;border:1px solid #3a3530}
+
+main{max-width:900px;margin:0 auto;padding:48px 24px 80px}
+section{margin-bottom:56px}
+.section-eyebrow{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:20px;padding-bottom:10px;border-bottom:1px solid var(--border)}
+
+.tagline-block{background:var(--ink);color:var(--stone);padding:24px 28px;border-left:4px solid var(--accent2);margin-bottom:48px}
+.tagline-block p{font-size:18px;font-style:italic;line-height:1.7;color:#ddd8d0}
+
+.adv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:32px}
+.adv-card{padding:20px;border:1px solid var(--border);border-top:3px solid var(--accent2);background:#fff}
+.adv-icon{font-family:'DM Mono',monospace;font-size:11px;color:var(--accent);margin-bottom:10px;letter-spacing:1px}
+.adv-title{font-size:16px;font-weight:600;margin-bottom:8px;color:var(--ink)}
+.adv-text{font-size:14px;color:var(--ink2);line-height:1.6}
+
+.formula-grid{display:grid;gap:14px;margin-bottom:28px}
+.formula-item{background:#fff;border:1px solid var(--border);padding:16px 20px}
+.formula-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.formula-name{font-size:15px;font-weight:600;color:var(--ink)}
+.formula-pct{font-family:'DM Mono',monospace;font-size:20px;font-weight:500;color:var(--accent)}
+.formula-source{font-family:'DM Mono',monospace;font-size:10px;color:var(--ink3);margin-bottom:8px;letter-spacing:1px;text-transform:uppercase}
+.formula-note{font-size:13px;color:var(--ink2);line-height:1.5;font-style:italic}
+.bar-track{height:5px;background:var(--stone3);border-radius:2px;overflow:hidden;margin-top:10px}
+.bar-fill{height:100%;border-radius:2px}
+
+.metrics-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:32px}
+.metric-card{background:#fff;border:1px solid var(--border);padding:16px}
+.metric-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink3);margin-bottom:6px}
+.metric-val{font-size:22px;font-weight:600;color:var(--ink);line-height:1.1}
+.metric-unit{font-size:13px;color:var(--ink2);margin-top:4px;font-style:italic}
+
+.tech-table{width:100%;border-collapse:collapse;margin-bottom:24px;font-size:14px}
+.tech-table th{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--ink3);text-align:left;padding:10px 14px;border-bottom:2px solid var(--border);background:var(--stone2)}
+.tech-table td{padding:10px 14px;border-bottom:1px solid var(--stone3);vertical-align:top}
+.tech-table tr:hover td{background:var(--stone2)}
+.tech-table td:last-child{font-family:'DM Mono',monospace;font-size:12px;color:var(--accent);text-align:right}
+.td-note{font-size:12px;color:var(--ink3);font-style:italic;display:block;margin-top:2px}
+.tag-critic{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;background:#fcebeb;color:#791f1f;border:1px solid #f09595;padding:2px 6px;border-radius:2px;text-transform:uppercase}
+
+.steps{display:grid;gap:16px}
+.step{display:flex;gap:16px;align-items:flex-start}
+.step-num{width:32px;height:32px;background:var(--ink);color:var(--accent2);font-family:'DM Mono',monospace;font-size:13px;font-weight:500;display:flex;align-items:center;justify-content:center;flex-shrink:0;border-radius:50%}
+.step-body{flex:1;padding-top:4px}
+.step-title{font-size:15px;font-weight:600;margin-bottom:4px}
+.step-detail{font-size:14px;color:var(--ink2);line-height:1.6}
+
+.comp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-bottom:24px}
+.comp-card{background:#fff;border:1px solid var(--border);padding:20px}
+.comp-card.ours{border:2px solid var(--accent2);background:var(--accent3)}
+.comp-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;background:var(--ink);color:var(--accent2);padding:3px 8px;display:inline-block;margin-bottom:10px}
+.comp-name{font-size:17px;font-weight:600;margin-bottom:4px}
+.comp-sub{font-family:'DM Mono',monospace;font-size:11px;color:var(--ink3);margin-bottom:14px}
+.comp-row{display:flex;justify-content:space-between;font-size:13px;padding:5px 0;border-bottom:1px solid var(--stone3)}
+.comp-attr{color:var(--ink2)}
+.comp-val{font-family:'DM Mono',monospace;font-size:12px}
+.good{color:var(--green)}
+.bad{color:#a32d2d}
+.mid{color:#854F0B}
+
+.calc-box{background:#fff;border:1px solid var(--border);padding:28px;margin-bottom:24px}
+.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:24px}
+.calc-label{font-family:'DM Mono',monospace;font-size:11px;color:var(--ink3);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;display:block}
+input[type=range]{width:100%;height:4px;accent-color:var(--accent);margin-bottom:6px}
+.calc-display{font-family:'DM Mono',monospace;font-size:18px;font-weight:500;color:var(--ink)}
+.result-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px}
+.result-card{background:var(--stone2);padding:14px}
+.result-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--ink3);margin-bottom:6px}
+.result-val{font-size:20px;font-weight:600;color:var(--ink)}
+.result-sub{font-size:11px;color:var(--ink3);margin-top:3px;font-family:'DM Mono',monospace}
+
+.channel-grid{display:grid;gap:10px}
+.channel{display:flex;align-items:center;gap:14px;padding:14px 16px;background:#fff;border:1px solid var(--border)}
+.channel-n{font-family:'DM Mono',monospace;font-size:13px;font-weight:500;color:var(--accent2);width:28px;flex-shrink:0}
+.channel-body{flex:1}
+.channel-title{font-size:15px;font-weight:600;margin-bottom:2px}
+.channel-sub{font-size:13px;color:var(--ink2);font-style:italic}
+.channel-tag{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1px;padding:3px 8px;border-radius:2px;flex-shrink:0}
+.tag-start{background:var(--green2);color:#27500A;border:1px solid #C0DD97}
+.tag-soon{background:#FAEEDA;color:#633806;border:1px solid #FAC775}
+.tag-later{background:var(--blue2);color:#0C447C;border:1px solid #B5D4F4}
+
+.quote-block{background:var(--ink);color:var(--stone);padding:28px 32px;margin:32px 0;border-left:4px solid var(--accent2)}
+.quote-block p{font-size:18px;font-style:italic;line-height:1.8;color:#ddd8d0}
+
+footer{background:var(--ink);color:#666;padding:32px 24px;text-align:center;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1px}
+footer span{color:var(--accent2)}
+
+@media(max-width:600px){
+  .calc-grid{grid-template-columns:1fr}
+  .nav-links{display:none}
+  .hero{padding:40px 20px 36px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-brand">RENOVIT · Mineral Interior</div>
+    <div class="nav-links">
+      <a href="/instrumente.html">Instrumente</a>
+      <a href="#avantaje">Avantaje</a>
+      <a href="#formula">Formulare</a>
+      <a href="#tehnic">Tehnic</a>
+      <a href="#aplicare">Aplicare</a>
+      <a href="#calculator">Calculator</a>
+      <a href="#concurenta">vs. Concurență</a>
+    </div>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-eyebrow">Renovit · Produs Locomotivă · MVP v1.0</div>
+  <h1 class="hero-title">Mineral <em>Interior</em> 25kg</h1>
+  <p class="hero-sub">Tencuială minerală respirabilă de interior</p>
+  <div class="hero-badges">
+    <span class="badge badge-green">100% Mineral Natural</span>
+    <span class="badge badge-amber">Materie primă proprie 95%</span>
+    <span class="badge badge-stone">Mina din Cupcini · Moldova</span>
+  </div>
+</div>
+
+<main>
+
+<div class="tagline-block">
+  <p>"Singurul produs de tencuială din Moldova fabricat din calcar alb moldovenesc și argilă bentonitică naturală — fără chimicale importate. Pereții respiră, nu fac mucegai, și costul tău per m² e cu 20–30% mai mic față de alternativele pe bază de gips."</p>
+</div>
+
+<section id="avantaje">
+  <div class="section-eyebrow">01 · Avantaje unice — imposibil de replicat la același cost</div>
+  <div class="adv-grid">
+    <div class="adv-card">
+      <div class="adv-icon">BENTONITA OCNIȚA</div>
+      <div class="adv-title">Aditivul natural din pământul nostru</div>
+      <div class="adv-text">Înlocuiește polimerii sintetici de aderență (HPMC) care costă €2.000–4.000/tonă. Proprietăți tixotropice naturale: produsul stă pe perete fără să curgă.</div>
+    </div>
+    <div class="adv-card">
+      <div class="adv-icon">CALCAR VOLODENI</div>
+      <div class="adv-title">Albul premium fără pigmenți</div>
+      <div class="adv-text">pH natural 8.5–9.2 inhibă fungi și mucegai fără biocide chimice. Culoarea albă vine din mineralul însuși. Unicat documentat ca „cel mai alb calcar din Moldova".</div>
+    </div>
+    <div class="adv-card">
+      <div class="adv-icon">RESPIRABILITATE</div>
+      <div class="adv-title">Certificabilă medical</div>
+      <div class="adv-text">Permeabilitate vapori μ = 5–15, față de μ = 50–100 la produsele polimerice. Pereții respiră — reduc condensul și problemele de sănătate în spații locuite.</div>
+    </div>
+    <div class="adv-card">
+      <div class="adv-icon">INTEGRARE VERTICALĂ</div>
+      <div class="adv-title">Avantaj de cost structural</div>
+      <div class="adv-text">90–95% din masă vine din resurse proprii ale Minei din Cupcini. Concurența plătește prețul de piață pe gips de import plus polimeri chimici.</div>
+    </div>
+  </div>
+</section>
+
+<section id="formula">
+  <div class="section-eyebrow">02 · Formulare — compoziție MVP</div>
+  <div class="formula-grid">
+    <div class="formula-item">
+      <div class="formula-top">
+        <div>
+          <div class="formula-name">Calcar micronizat Volodeni</div>
+          <div class="formula-source">Mina din Cupcini · sector Volodeni</div>
+        </div>
+        <div class="formula-pct">82%</div>
+      </div>
+      <div class="formula-note">Fracție 0–0.2mm. Conferă culoarea albă naturală, pH alcalin anti-fungic și structura portantă a produsului.</div>
+      <div class="bar-track"><div class="bar-fill" style="width:82%;background:#BA7517"></div></div>
+    </div>
+    <div class="formula-item">
+      <div class="formula-top">
+        <div>
+          <div class="formula-name">Bentonită Ocnița</div>
+          <div class="formula-source">Mina din Cupcini · sector Ocnița</div>
+        </div>
+        <div class="formula-pct">10%</div>
+      </div>
+      <div class="formula-note">Înlocuiește polimerii sintetici de aderență. Proprietăți tixotropice — produsul nu curge, nu fisurează. Gonflare Enslin ≥ 20 ml/2g.</div>
+      <div class="bar-track"><div class="bar-fill" style="width:10%;background:#3B6D11"></div></div>
+    </div>
+    <div class="formula-item">
+      <div class="formula-top">
+        <div>
+          <div class="formula-name">Ciment Portland CEM I 42.5</div>
+          <div class="formula-source">Furnizor local / import</div>
+        </div>
+        <div class="formula-pct">5%</div>
+      </div>
+      <div class="formula-note">Liant hidraulic. Asigură rezistența mecanică la compresiune ≥ 2 MPa. Cost €80–100/tonă.</div>
+      <div class="bar-track"><div class="bar-fill" style="width:5%;background:#888780"></div></div>
+    </div>
+    <div class="formula-item" style="border:1px dashed var(--border);background:var(--stone2)">
+      <div class="formula-top">
+        <div>
+          <div class="formula-name">Gips natural — opțional</div>
+          <div class="formula-source">Carieră terță · livrat la comandă</div>
+        </div>
+        <div class="formula-pct" style="color:var(--ink3)">3%</div>
+      </div>
+      <div class="formula-note" style="color:var(--ink3)">Se adaugă doar dacă testele de piață indică nevoia de priză mai rapidă (sub 60 min). Fără el: priză 90–150 min. Cu el: 45–70 min.</div>
+      <div class="bar-track"><div class="bar-fill" style="width:3%;background:#B4B2A9"></div></div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px">
+    <div style="padding:16px;background:var(--green2);border:1px solid #C0DD97">
+      <div style="font-family:'DM Mono',monospace;font-size:10px;color:#3B6D11;letter-spacing:1px;margin-bottom:6px;text-transform:uppercase">Cost materie primă proprie / tonă produs</div>
+      <div style="font-size:24px;font-weight:600;color:#27500A">€12–18</div>
+      <div style="font-size:13px;color:#3B6D11;margin-top:4px;font-style:italic">față de €35–55/t la import echivalent</div>
+    </div>
+    <div style="padding:16px;background:var(--accent3);border:1px solid #e8d090">
+      <div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--accent);letter-spacing:1px;margin-bottom:6px;text-transform:uppercase">Marjă brută estimată</div>
+      <div style="font-size:24px;font-weight:600;color:var(--ink)">50–60%</div>
+      <div style="font-size:13px;color:var(--ink2);margin-top:4px;font-style:italic">preț vânzare en-gros €100–130/t</div>
+    </div>
+  </div>
+</section>
+
+<section id="tehnic">
+  <div class="section-eyebrow">03 · Parametri tehnici țintă</div>
+  <div class="metrics-grid">
+    <div class="metric-card">
+      <div class="metric-label">Granulometrie</div>
+      <div class="metric-val">≤ 0.5 mm</div>
+      <div class="metric-unit">D90 fracție calcitică</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Conținut apă</div>
+      <div class="metric-val">28–32%</div>
+      <div class="metric-unit">raport apă/pulbere</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Priză inițială</div>
+      <div class="metric-val">≥ 90 min</div>
+      <div class="metric-unit">fără gips / ≥ 45 cu gips</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">pH amestec</div>
+      <div class="metric-val">11.5–12.5</div>
+      <div class="metric-unit">inhibă fungi natural</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Rezist. compresiune</div>
+      <div class="metric-val">≥ 2.0 MPa</div>
+      <div class="metric-unit">la 28 zile · EN 1015-11</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Aderență suport</div>
+      <div class="metric-val">≥ 0.3 MPa</div>
+      <div class="metric-unit">pull-off · EN 1015-12</div>
+    </div>
+  </div>
+
+  <table class="tech-table">
+    <thead>
+      <tr>
+        <th>Test laborator</th>
+        <th>Metodă EN</th>
+        <th style="text-align:right">Valoare țintă</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Granulometrie calcar<span class="td-note">dimensiunea maximă particulă</span></td><td>EN 933-1</td><td>D90 ≤ 0.5mm <span class="tag-critic">Critic</span></td></tr>
+      <tr><td>Activitate bentonită<span class="td-note">gonflare Enslin</span></td><td>ISO 787</td><td>≥ 20 ml/2g <span class="tag-critic">Critic</span></td></tr>
+      <tr><td>Consistență amestec<span class="td-note">flow table test</span></td><td>EN 1015-3</td><td>165–185 mm <span class="tag-critic">Critic</span></td></tr>
+      <tr><td>Timp priză inițial<span class="td-note">Vicat</span></td><td>EN 196-3</td><td>≥ 90 min <span class="tag-critic">Critic</span></td></tr>
+      <tr><td>Rezistență la compresiune<span class="td-note">28 zile</span></td><td>EN 1015-11</td><td>≥ 2.0 MPa <span class="tag-critic">Critic</span></td></tr>
+      <tr><td>Aderență suport BCA<span class="td-note">pull-off test</span></td><td>EN 1015-12</td><td>≥ 0.3 MPa <span class="tag-critic">Critic</span></td></tr>
+      <tr><td>Absorbție capilară</td><td>EN 1015-18</td><td>≤ 0.5 kg/m²·min⁰·⁵</td></tr>
+      <tr><td>Permeabilitate vapori</td><td>EN 1015-19</td><td>μ = 5–15</td></tr>
+      <tr><td>pH amestec proaspăt</td><td>ISO 4316</td><td>11.5–12.5</td></tr>
+      <tr><td>Rezistență îngheț-dezgheț</td><td>EN 539-2</td><td>≥ 25 cicluri fără fisuri</td></tr>
+    </tbody>
+  </table>
+
+  <div style="padding:14px 18px;background:var(--blue2);border:1px solid #B5D4F4;font-size:13px;color:#0C447C;line-height:1.7">
+    <strong style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1px;display:block;margin-bottom:4px">LABORATOR RECOMANDAT PENTRU CERTIFICARE MVP</strong>
+    INCERC Iași (România) — laborator acreditat, cel mai apropiat de Edineț. Pachet complet de testare: €800–1.500. Certificare finală EN 998-1 necesară pentru export România / UE.
+  </div>
+</section>
+
+<section id="aplicare">
+  <div class="section-eyebrow">04 · Instrucțiuni de aplicare</div>
+
+  <div class="metrics-grid" style="margin-bottom:28px">
+    <div class="metric-card">
+      <div class="metric-label">Consum strat 8mm</div>
+      <div class="metric-val">10–11</div>
+      <div class="metric-unit">kg/m²</div>
+    </div>
+    <div class="metric-card" style="border:2px solid var(--accent2)">
+      <div class="metric-label">Consum strat 12mm</div>
+      <div class="metric-val">14–16</div>
+      <div class="metric-unit">kg/m² · standard</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Consum strat 15mm</div>
+      <div class="metric-val">18–21</div>
+      <div class="metric-unit">kg/m²</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Sac 25kg acoperă (12mm)</div>
+      <div class="metric-val">1.6–1.8</div>
+      <div class="metric-unit">m² per sac</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Cameră 20m² pereți</div>
+      <div class="metric-val">11–13</div>
+      <div class="metric-unit">saci de 25kg</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Apartament 3 camere</div>
+      <div class="metric-val">45–52</div>
+      <div class="metric-unit">saci ≈ 2 paleți</div>
+    </div>
+  </div>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <div class="step-title">Pregătirea suportului</div>
+        <div class="step-detail">Suportul trebuie să fie curat, fără praf, grăsimi sau eflorescențe. Suprafețele absorbante (BCA, cărămidă) se amorsează cu amorsa acrilică diluată 1:3. Timp de așteptare: 2–4 ore.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <div class="step-title">Prepararea amestecului</div>
+        <div class="step-detail">Se adaugă 28–32% apă rece curată în recipient. Se adaugă pudra RENOVIT treptat, amestecând continuu cu malaxorul la 400–600 rpm. Timp amestecare: 3–4 minute. Repaus 5 minute, remalaxare 1 minut.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <div class="step-title">Aplicarea primului strat</div>
+        <div class="step-detail">Grosime strat: 5–8mm. Se aplică cu drișca de inox, tracționând de jos în sus. Timp deschis: 45–60 minute. Nu se aplică sub +5°C sau peste +35°C.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <div class="step-title">Strat al doilea (dacă grosime &gt;10mm)</div>
+        <div class="step-detail">Se aplică după 24 ore — suportul trebuie să fie prizat dar nu complet uscat. Grosime totală maximă recomandată: 15mm per aplicare.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-body">
+        <div class="step-title">Drișcuire și finisare</div>
+        <div class="step-detail">La 60–90 minute după aplicare, suprafața se drișcuiește cu drișca de spumă sau plastic umedă. Rezultat: suprafață netedă gata pentru glet sau vopsea.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">6</div>
+      <div class="step-body">
+        <div class="step-title">Maturare și protecție</div>
+        <div class="step-detail">Priză completă: 24–48 ore. Rezistența deplină la 28 zile. Protejați de îngheț minimum 48 ore și de curenți puternici de aer în primele 24 ore.</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:24px;padding:16px;background:var(--stone2);border:1px solid var(--border);font-size:13px;color:var(--ink2)">
+    <strong style="color:var(--ink)">Domenii de aplicare:</strong> Pereți interiori BCA · Cărămidă · Beton monolit · Blocuri calcar · Renovare peste tencuieli vechi.<br>
+    <strong style="color:var(--ink)">Nu se aplică pe:</strong> Suprafețe cu umiditate activă · Tencuieli sulfoaluminate · Gresie sau faianță.
+  </div>
+</section>
+
+<section id="calculator">
+  <div class="section-eyebrow">05 · Calculator consum proiect</div>
+  <div class="calc-box">
+    <div class="calc-grid">
+      <div>
+        <label class="calc-label">Suprafață pereți totală (m²)</label>
+        <input type="range" min="100" max="20000" step="100" value="8000" id="suprafata" oninput="calcBloc()">
+        <div class="calc-display" id="suprafata-out">8.000 m²</div>
+      </div>
+      <div>
+        <label class="calc-label">Grosime strat aplicare (mm)</label>
+        <input type="range" min="6" max="20" step="1" value="12" id="grosime" oninput="calcBloc()">
+        <div class="calc-display" id="grosime-out">12 mm</div>
+      </div>
+    </div>
+    <div class="result-grid">
+      <div class="result-card">
+        <div class="result-label">Consum total</div>
+        <div class="result-val" id="r-tone">112 t</div>
+        <div class="result-sub" id="r-kgm2">la 14 kg/m²</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Saci 25 kg necesari</div>
+        <div class="result-val" id="r-saci">4.480</div>
+        <div class="result-sub">saci</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Paleți (42 saci)</div>
+        <div class="result-val" id="r-paleti">107</div>
+        <div class="result-sub">paleți de 1.05 t</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Valoare comandă</div>
+        <div class="result-val" id="r-valoare">€13.440</div>
+        <div class="result-sub">la €3/sac en-gros</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Profit brut RENOVIT</div>
+        <div class="result-val" id="r-profit" style="color:var(--green)">€6.720</div>
+        <div class="result-sub">la marjă 50%</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Camioane necesare</div>
+        <div class="result-val" id="r-camioane">5</div>
+        <div class="result-sub">la 24 t/TIR</div>
+      </div>
+    </div>
+    <div style="margin-top:16px;padding:12px 14px;background:var(--accent3);border:1px solid #e8d090;font-size:13px;color:var(--ink2);line-height:1.7">
+      <strong style="color:var(--ink)">Context bloc 8 etaje:</strong> 64 apartamente × 125 m² pereți = 8.000 m². Un singur contract de bloc acoperă o lună de producție la capacitate medie.
+    </div>
+  </div>
+</section>
+
+<section id="concurenta">
+  <div class="section-eyebrow">06 · Comparativ concurență</div>
+  <div class="comp-grid">
+    <div class="comp-card ours">
+      <div class="comp-label">Produsul nostru</div>
+      <div class="comp-name">RENOVIT Mineral Interior</div>
+      <div class="comp-sub">Calcar + Bentonită · Cupcini</div>
+      <div class="comp-row"><span class="comp-attr">Preț sac 25kg en-gros</span><span class="comp-val good">€2.50–3.50</span></div>
+      <div class="comp-row"><span class="comp-attr">Baza minerală</span><span class="comp-val">Calcar + Bentonit</span></div>
+      <div class="comp-row"><span class="comp-attr">Respirabil</span><span class="comp-val good">DA — μ 5–15</span></div>
+      <div class="comp-row"><span class="comp-attr">Risc mucegai</span><span class="comp-val good">Minim</span></div>
+      <div class="comp-row"><span class="comp-attr">Materie primă</span><span class="comp-val good">Proprie 95%</span></div>
+      <div class="comp-row"><span class="comp-attr">Marjă producție</span><span class="comp-val good">50–60%</span></div>
+    </div>
+    <div class="comp-card">
+      <div class="comp-label" style="background:#333;color:#ccc">Concurență MD</div>
+      <div class="comp-name">Supraten Orizont</div>
+      <div class="comp-sub">Lider Moldova · gips import</div>
+      <div class="comp-row"><span class="comp-attr">Preț sac 30kg</span><span class="comp-val mid">€4.50–5.50</span></div>
+      <div class="comp-row"><span class="comp-attr">Baza minerală</span><span class="comp-val">Gips hemihidrat</span></div>
+      <div class="comp-row"><span class="comp-attr">Respirabil</span><span class="comp-val mid">Parțial</span></div>
+      <div class="comp-row"><span class="comp-attr">Risc mucegai</span><span class="comp-val mid">Mediu</span></div>
+      <div class="comp-row"><span class="comp-attr">Materie primă</span><span class="comp-val bad">Import 100%</span></div>
+      <div class="comp-row"><span class="comp-attr">Marjă producție</span><span class="comp-val">30–40%</span></div>
+    </div>
+    <div class="comp-card">
+      <div class="comp-label" style="background:#333;color:#ccc">Premium import</div>
+      <div class="comp-name">Knauf Rotband</div>
+      <div class="comp-sub">Standard european · import RO</div>
+      <div class="comp-row"><span class="comp-attr">Preț sac 30kg</span><span class="comp-val bad">€6.00–8.00</span></div>
+      <div class="comp-row"><span class="comp-attr">Baza minerală</span><span class="comp-val">Gips premium</span></div>
+      <div class="comp-row"><span class="comp-attr">Respirabil</span><span class="comp-val mid">Parțial</span></div>
+      <div class="comp-row"><span class="comp-attr">Risc mucegai</span><span class="comp-val mid">Mediu</span></div>
+      <div class="comp-row"><span class="comp-attr">Materie primă</span><span class="comp-val bad">Import 100%</span></div>
+      <div class="comp-row"><span class="comp-attr">Marjă producție</span><span class="comp-val">25–35%</span></div>
+    </div>
+  </div>
+
+  <div style="padding:16px;background:var(--green2);border:1px solid #C0DD97;font-size:14px;color:#27500A;line-height:1.8">
+    <strong>Economia per bloc 8.000 m² (strat 12mm):</strong><br>
+    Față de Supraten: <strong>€5.210 mai ieftin</strong> pentru constructor · Față de Knauf: <strong>€12.670 mai ieftin</strong>
+  </div>
+</section>
+
+<section>
+  <div class="section-eyebrow">07 · Strategie intrare pe piață</div>
+  <div class="channel-grid">
+    <div class="channel">
+      <div class="channel-n">01</div>
+      <div class="channel-body">
+        <div class="channel-title">Meșteri constructori — direct</div>
+        <div class="channel-sub">Testare MVP, feedback rapid, volum mediu · Edineț, Bălți, Soroca</div>
+      </div>
+      <span class="channel-tag tag-start">Start</span>
+    </div>
+    <div class="channel">
+      <div class="channel-n">02</div>
+      <div class="channel-body">
+        <div class="channel-title">Depozite materiale nord Moldova</div>
+        <div class="channel-sub">2–5 depozite · comenzi regulate · 20–50 tone/lună per punct</div>
+      </div>
+      <span class="channel-tag tag-soon">Luna 2–3</span>
+    </div>
+    <div class="channel">
+      <div class="channel-n">03</div>
+      <div class="channel-body">
+        <div class="channel-title">Developeri imobiliari — contracte bloc</div>
+        <div class="channel-sub">Volume mari B2B · un bloc = o lună producție · preț negociat palet</div>
+      </div>
+      <span class="channel-tag tag-soon">Luna 3–6</span>
+    </div>
+    <div class="channel">
+      <div class="channel-n">04</div>
+      <div class="channel-body">
+        <div class="channel-title">Retail Chișinău + magazine online</div>
+        <div class="channel-sub">Vizibilitate brand · marjă mai mare · consumator final</div>
+      </div>
+      <span class="channel-tag tag-later">Luna 6–12</span>
+    </div>
+    <div class="channel">
+      <div class="channel-n">05</div>
+      <div class="channel-body">
+        <div class="channel-title">Export nord România — Iași, Suceava</div>
+        <div class="channel-sub">După certificare EN 998-1 · piață 10× mai mare · preț mai bun</div>
+      </div>
+      <span class="channel-tag tag-later">An 2</span>
+    </div>
+  </div>
+</section>
+
+<div class="quote-block">
+  <p>"Noi nu cumpărăm chimie de la alții — noi avem chimia noastră în pământ. Bentonita de la Ocnița face gletul mai bun și mai ieftin decât orice produs de import. Aceasta este povestea care asigură finanțarea și succesul în nord."</p>
+</div>
+
+<div style="padding:16px 20px;border:1px dashed var(--border);background:var(--stone2);font-size:13px;color:var(--ink3);line-height:1.7">
+  <strong style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1px;color:var(--ink2)">NOTĂ MVP · v1.0 · 2025</strong><br>
+  Acest document este o fișă de lucru pentru faza de testare. Parametrii tehnici sunt valori-țintă bazate pe formulare standard EN 998-1. Valorile finale se stabilesc după testele de laborator. Nu se utilizează pentru certificare sau declarație de conformitate înainte de finalizarea testelor complete.
+</div>
+
+</main>
+
+<footer>
+  <p><span>RENOVIT</span> · Mineral Interior 25kg · Mina din Cupcini, Edineț · República Moldova</p>
+  <p style="margin-top:6px">Document intern MVP v1.0 · KlaryoFlow AI · 2025</p>
+</footer>
+
+<script>
+function calcBloc() {
+  const s = parseInt(document.getElementById('suprafata').value);
+  const g = parseInt(document.getElementById('grosime').value);
+  const kgM2 = g * 1.15;
+  const totalKg = s * kgM2;
+  const tone = totalKg / 1000;
+  const saci = Math.round(totalKg / 25);
+  const paleti = Math.ceil(saci / 42);
+  const camioane = Math.ceil(tone / 24);
+  const valoare = saci * 3;
+  const profit = Math.round(valoare * 0.5);
+
+  document.getElementById('suprafata-out').textContent = s.toLocaleString('ro') + ' m²';
+  document.getElementById('grosime-out').textContent = g + ' mm';
+  document.getElementById('r-tone').textContent = tone.toFixed(0) + ' t';
+  document.getElementById('r-kgm2').textContent = 'la ' + kgM2.toFixed(1) + ' kg/m²';
+  document.getElementById('r-saci').textContent = saci.toLocaleString('ro');
+  document.getElementById('r-paleti').textContent = paleti;
+  document.getElementById('r-valoare').textContent = '€' + valoare.toLocaleString('ro');
+  document.getElementById('r-camioane').textContent = camioane;
+  document.getElementById('r-profit').textContent = '€' + profit.toLocaleString('ro');
+}
+calcBloc();
+</script>
+
+</body>
+</html>
