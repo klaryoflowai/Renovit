@@ -3,7 +3,7 @@ title: Limestone Finishing Materials - Quality And EU Standards
 type: knowledge-base
 status: draft
 owner: Yuri
-updated: 2026-04-10
+updated: 2026-04-11
 tags:
   - renovit
   - quality
@@ -48,10 +48,13 @@ Aceste valori sunt promitatoare pentru materiale de finisaj, dar nu inlocuiesc t
 |---|---|---|
 | Glet / mortar fin mineral | EN 998-1 sau standard specific retetei | daca produsul este mortar de tencuire / finisare pe baza minerala |
 | Tencuiala decorativa minerala | EN 998-1 sau EN 15824 | depinde daca liantul final este mineral sau organic |
-| Adeziv pentru placi | EN 12004 | pentru adezivi de placi ceramice |
+| Adeziv pentru placi | EN 12004 | doar daca SKU-ul este clar definit ca adeziv pentru placi ceramice |
+| Mortar adeziv / masa de spaclu ETICS | traseu separat de conformitate, nu il fortam sub EN 12004 doar pentru ca "lipeste" | necesita definire exacta a intended use-ului si a sistemului in care intra |
 | Var folosit ca liant | EN 459-1 | relevant daca reteta intra pe var de constructii |
 | Piatra / placi naturale | EN 1469 / EN 12057 / EN 12058 | relevant doar daca intram pe placi, nu pentru faza 1 amestecuri uscate |
 | Agregate / piatra sparta | EN 12620 / EN 13139 | relevant doar pentru agregate, nu pentru glet premium |
+
+Vezi si [[05_Quality/07_Process_Validation_Memo_Limestone_Finishes]] pentru maparea canonica produs -> binder -> test pack.
 
 ## Ce cerem laboratorului
 

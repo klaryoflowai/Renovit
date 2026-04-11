@@ -106,11 +106,11 @@ Ipoteza actuala:
 
 ## 5. Retete faza 1 - ipoteze de validat
 
-44. `Glet de finisaj alb / ultra-white`: confirmam scenariul `90% Volodeni + 5% bentonita Ocnița + 5% aditivi`?
+44. `Glet de finisaj alb / ultra-white`: ce combinatie reala de calcar Volodeni, liant alb si aditivi poate atinge alb, finete si lucrabilitate vandabile?
 45. Pentru glet: ce finete trebuie atinsa si ce grad de alb este minim acceptabil?
-46. `Tencuiala decorativa minerala`: confirmam scenariul `60% calcar Ocnița + 30% Volodeni + 5% bentonita + 5% aditivi`?
+46. `Tencuiala decorativa minerala`: ce fractii si ce sistem de binder sunt necesare daca produsul ramane mineral si dry-mix?
 47. Pentru tencuiala decorativa: ce fractii granulometrice sunt necesare: 1.5 mm, 2.0 mm, 2.5 mm?
-48. `Adeziv / mortar var-calcar`: confirmam scenariul `85% calcar / faina Ocnița + 12% bentonita + 3% aditivi`, cu Volodeni doar optional pentru culoare?
+48. `Adeziv / mortar 25kg`: vorbim despre adeziv pentru placi, mortar adeziv ETICS sau alt produs? Care este intended use-ul exact?
 49. Cine poate formula si testa retetele?
 50. Ce laborator intern / extern poate testa aderenta, lucrabilitatea, timp de priza, umiditate, rezistenta?
 

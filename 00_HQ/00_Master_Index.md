@@ -3,7 +3,7 @@ title: Master Index
 type: moc
 status: canonical
 owner: Yuri
-updated: 2026-04-10
+updated: 2026-04-11
 tags:
   - renovit
   - hq
@@ -117,11 +117,12 @@ next_action: Foloseste acest index ca prima pagina pentru orice lucru nou pe pro
 
 - [[05_Quality/00_Quality_System]]
 - [[05_Quality/06_Limestone_Finishing_Materials_Standards]]
+- [[05_Quality/07_Process_Validation_Memo_Limestone_Finishes]]
+- [[05_Quality/03_Lab_Tests_And_Document_Checklist]]
+- [[05_Quality/04_Product_Quality_Targets]]
 - [[05_Quality/05_EN13279_Master_Framework]] - legacy gips
 - [[05_Quality/01_Raw_Gypsum_Working_Thresholds]] - legacy gips
 - [[05_Quality/02_EU_Standards_And_CE_Path]] - legacy gips
-- [[05_Quality/03_Lab_Tests_And_Document_Checklist]]
-- [[05_Quality/04_Product_Quality_Targets]]
 
 ## People
 

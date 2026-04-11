@@ -140,15 +140,12 @@ Ruta de referinta pentru mortar de tencuire ramane `EN 998-1`.
 
 ### Adeziv 25kg
 
-Un adeziv uscat trebuie modelat ca mortar cimentic, nu ca amestec de filler + var + fibre. Canonicul este:
+Un adeziv uscat nu trebuie tratat ca formula fixa pana nu definim familia exacta de produs. Canonicul este:
 
-- ciment
-- filler / nisip selectat
-- celuloza
-- pulbere polimerica
-- aditii minore
+- daca este `adeziv pentru placi`: mortar cimentic cu ciment, filler / nisip selectat, celuloza, pulbere polimerica si aditii minore
+- daca este `mortar adeziv / masa de spaclu ETICS`: reteta si traseul de conformitate se schimba, chiar daca ingredientele de baza pot semana partial
 
-Pentru performanta, ruta de referinta este `EN 12004`.
+Pentru performanta, `EN 12004` este referinta doar pentru adezivii de placi. Pentru restul familiilor nu fortam incadrarea pana nu inchidem intended use-ul.
 
 Bentonita poate ramane tema de laborator, nu dogma de reteta.
 

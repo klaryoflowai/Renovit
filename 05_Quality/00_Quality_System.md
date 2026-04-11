@@ -3,7 +3,7 @@ title: Quality System
 type: moc
 status: canonical
 owner: Yuri
-updated: 2026-04-09
+updated: 2026-04-11
 tags:
   - renovit
   - quality
@@ -28,12 +28,16 @@ Pilonul `Quality` separa clar:
 ## Core quality stack
 
 - [[05_Quality/06_Limestone_Finishing_Materials_Standards]]
+- [[05_Quality/07_Process_Validation_Memo_Limestone_Finishes]]
+- [[05_Quality/03_Lab_Tests_And_Document_Checklist]]
+- [[05_Quality/04_Product_Quality_Targets]]
 - [[07_Meetings/2026-04-10_Volodeni_First_Visit/02_Question_Pack_Volodeni]]
+
+## Legacy reference set
+
 - [[05_Quality/05_EN13279_Master_Framework]]
 - [[05_Quality/01_Raw_Gypsum_Working_Thresholds]]
 - [[05_Quality/02_EU_Standards_And_CE_Path]]
-- [[05_Quality/03_Lab_Tests_And_Document_Checklist]]
-- [[05_Quality/04_Product_Quality_Targets]]
 
 Nota: documentele EN13279 / gips sunt legacy dupa pivotul spre Cupcini / calcar. Pentru deciziile noi foloseste mai intai documentul de standarde pentru materiale de finisaj pe baza de calcar.
 

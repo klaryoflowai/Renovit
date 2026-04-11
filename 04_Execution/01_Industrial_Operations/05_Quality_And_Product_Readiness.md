@@ -27,6 +27,6 @@ Daca datele de calitate sunt inca `estimated` sau `unsupported`, toate calculele
 ## Linked quality notes
 
 - [[05_Quality/00_Quality_System]]
-- [[05_Quality/01_Raw_Gypsum_Working_Thresholds]]
-- [[05_Quality/02_EU_Standards_And_CE_Path]]
+- [[05_Quality/06_Limestone_Finishing_Materials_Standards]]
+- [[05_Quality/07_Process_Validation_Memo_Limestone_Finishes]]
 - [[05_Quality/03_Lab_Tests_And_Document_Checklist]]

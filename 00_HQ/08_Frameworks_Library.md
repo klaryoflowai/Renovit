@@ -3,7 +3,7 @@ title: Frameworks Library
 type: canonical-note
 status: canonical
 owner: Yuri
-updated: 2026-04-09
+updated: 2026-04-11
 tags:
   - renovit
   - hq
@@ -75,4 +75,6 @@ El trebuie tradus in:
 ## Quality / regulatory frameworks
 
 - [[05_Quality/00_Quality_System]]
-- [[05_Quality/02_EU_Standards_And_CE_Path]]
+- [[05_Quality/06_Limestone_Finishing_Materials_Standards]]
+- [[05_Quality/07_Process_Validation_Memo_Limestone_Finishes]]
+- [[05_Quality/02_EU_Standards_And_CE_Path]] - legacy gips
