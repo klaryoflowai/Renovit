@@ -85,13 +85,13 @@ Ipoteza actuala:
 26. Care este analiza chimica pentru calcarul Ocnița?
 27. Care este analiza pentru bentonita: umflare, tixotropie, plasticitate, impuritati?
 28. Bentonita este activa? Se umfla in contact cu apa?
-29. Exista teste interne sau externe pentru bentonita in adezivi / mortare?
+29. Exista teste interne sau externe pentru bentonita in mortare ETICS / mase de spaclu armate?
 30. Cat costa extractia calcarului Ocnița per tona?
 31. Cat costa extractia / pregatirea bentonitei per tona?
 32. Exista faina de calcar ca reziduu din taierea blocurilor?
 33. Reziduul / faina provine din stratul cu puritate de aprox. 94%?
 34. Ce volum lunar de faina / reziduu este disponibil azi?
-35. Este faina suficient de curata pentru adezivi sau necesita sortare / spalare / uscare?
+35. Este faina suficient de curata pentru mortar ETICS sau necesita sortare / spalare / uscare?
 
 ## 4. Logistica Volodeni -> Ocnița
 
@@ -110,7 +110,7 @@ Ipoteza actuala:
 45. Pentru glet: ce finete trebuie atinsa si ce grad de alb este minim acceptabil?
 46. `Tencuiala decorativa minerala`: ce fractii si ce sistem de binder sunt necesare daca produsul ramane mineral si dry-mix?
 47. Pentru tencuiala decorativa: ce fractii granulometrice sunt necesare: 1.5 mm, 2.0 mm, 2.5 mm?
-48. `Adeziv / mortar 25kg`: vorbim despre adeziv pentru placi, mortar adeziv ETICS sau alt produs? Care este intended use-ul exact?
+48. `Mortar ETICS 25kg`: confirmam ca produsul tinta este mortar adeziv si masa de spaclu pentru termosistem?
 49. Cine poate formula si testa retetele?
 50. Ce laborator intern / extern poate testa aderenta, lucrabilitatea, timp de priza, umiditate, rezistenta?
 
@@ -132,7 +132,7 @@ Ipoteza actuala:
 61. Exista contacte in distributia materialelor de finisaj?
 62. Ce pret angro real pot confirma pentru glet?
 63. Ce pret angro real pot confirma pentru tencuiala decorativa minerala?
-64. Ce pret angro real pot confirma pentru adeziv / mortar?
+64. Ce pret angro real pot confirma pentru mortar ETICS?
 65. Ce volum anual este realist pentru fiecare produs in anul 1?
 66. Cine poate fi client pilot?
 67. Daca fabrica este la Ocnița, ce avantaj comercial ofera exportul feroviar?

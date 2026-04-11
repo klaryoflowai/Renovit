@@ -15,7 +15,7 @@ Avantajul potential vine din controlul resursei, alb natural, retete bune si dis
 
 - glet extra-alb 20kg
 - tencuiala decorativa minerala 25kg
-- adeziv / mortar var-calcar 25kg
+- mortar ETICS 25kg
 
 ## Pricing rule
 

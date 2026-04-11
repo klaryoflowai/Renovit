@@ -3,7 +3,7 @@ title: Project Charter
 type: canonical-note
 status: canonical
 owner: Yuri
-updated: 2026-04-10
+updated: 2026-04-11
 tags:
   - renovit
   - hq
@@ -47,7 +47,7 @@ Modelul este atractiv doar daca functioneaza simultan 4 lucruri:
 Stage 1 merge pe model lean:
 
 - fara diversificare prematura
-- focus exclusiv pe materiale de finisaj: glet extra-alb, tencuiala decorativa minerala, adeziv / mortar var-calcar
+- focus exclusiv pe materiale de finisaj: glet extra-alb, tencuiala decorativa minerala, mortar ETICS 25kg
 - folosirea avantajului structural al calcarului alb local
 - accent pe marja si validare, nu pe volum fortat
 

@@ -38,7 +38,7 @@ Corectiile obligatorii sunt:
 1. scoatem complet logica de `calcinare` din harta canonica
 2. nu tratam tencuiala decorativa ca produs obtinut din aceeasi pulbere ultrafina folosita la glet
 3. nu tratam faza 1 ca `3 linii dedicate`; modelul realist este productie pe campanii cu `1-2 mixere` si o `linie flexibila 20kg / 25kg`
-4. nu tratam fillerul de calcar drept binder suficient pentru glet / tencuiala / adeziv
+4. nu tratam fillerul de calcar drept binder suficient pentru glet / tencuiala / mortar ETICS
 5. nu modelam randament de `75%` ca baseline pentru dry-mix pe calcar daca materiile prime sunt deja relativ uscate
 
 ## Flux tehnologic tinta - varianta corectata
@@ -138,14 +138,14 @@ Tencuiala decorativa minerala are nevoie de:
 
 Ruta de referinta pentru mortar de tencuire ramane `EN 998-1`.
 
-### Adeziv 25kg
+### Mortar ETICS 25kg
 
-Un adeziv uscat nu trebuie tratat ca formula fixa pana nu definim familia exacta de produs. Canonicul este:
+Produsul 3 este acum definit ca mortar adeziv si masa de spaclu pentru ETICS, nu ca adeziv generic de placi. Canonicul este:
 
-- daca este `adeziv pentru placi`: mortar cimentic cu ciment, filler / nisip selectat, celuloza, pulbere polimerica si aditii minore
-- daca este `mortar adeziv / masa de spaclu ETICS`: reteta si traseul de conformitate se schimba, chiar daca ingredientele de baza pot semana partial
+- mortar cimentic cu ciment, filler / fractii minerale selectate, celuloza, pulbere polimerica, fibre si aditii minore
+- bentonita intra doar ca variabila de laborator, nu ca substitut presupus pentru sistemul functional canonic
 
-Pentru performanta, `EN 12004` este referinta doar pentru adezivii de placi. Pentru restul familiilor nu fortam incadrarea pana nu inchidem intended use-ul.
+La nivel de conformitate, nu il fortam in `EN 12004`. Mapam intended use-ul corect pentru produs si, daca strategia merge acolo, si traseul ETICS de sistem.
 
 Bentonita poate ramane tema de laborator, nu dogma de reteta.
 

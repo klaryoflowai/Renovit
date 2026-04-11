@@ -49,7 +49,7 @@ grad de alb = ____     cu metoda de test clar mentionata
 
 - glet mineral: lucrabilitate, consum de apa, aderenta, aspect dupa uscare, slefuire, fisurare, rezistenta daca reteta o cere
 - decorativa minerala: fractii granulometrice, textura finala, aderenta, absorbtie apa, permeabilitate la vapori, comportament la aplicare
-- adeziv / mortar: aderenta, open time, slip sau parametrii specifici familiei reale de produs, retentie apa, comportament dupa maturare
+- mortar ETICS: aderenta, lucrabilitate pe verticala, retentie apa, comportament in strat armat, absorbtie, vapori si alte teste relevante familiei reale de produs
 
 ## Sampling discipline
 

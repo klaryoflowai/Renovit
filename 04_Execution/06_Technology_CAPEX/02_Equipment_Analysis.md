@@ -3,7 +3,7 @@ title: Equipment Analysis
 type: working-note
 status: working
 owner: Yuri
-updated: 2026-04-10
+updated: 2026-04-11
 tags:
   - renovit
   - equipment
@@ -33,7 +33,7 @@ Analiza echipamentelor trebuie impartita in patru grupuri:
 Contextul curent pentru RFQ:
 
 - capacitate tinta: `10.000 t/an` produs finit
-- produse: glet extra-alb 20kg, tencuiala decorativa minerala 25kg, adeziv / mortar var-calcar 25kg
+- produse: glet extra-alb 20kg, tencuiala decorativa minerala 25kg, mortar ETICS 25kg
 - ambalare: linie reglabila `15-30kg`, cu lucru real pe `20kg` si `25kg`
 - strategie recomandata: `hibrid`, cu echipamente noi / puternic verificate pe punctele critice si uzat pe auxiliar
 
@@ -76,7 +76,7 @@ Subtotal orientativ: `63-98k EUR` uzat, `135-200k EUR` hibrid, `260-380k EUR` no
 | Silo produs finit | 15-25k EUR | 100 t |
 | Racordare electrica | 10-15k EUR | 315 kW trifazat, de verificat prin audit |
 | Racordare apa | 5-8k EUR | 10 m3/zi |
-| Laborator calitate | 25-35k EUR | EN 998-1 / EN 12004 in functie de produs |
+| Laborator calitate | 25-35k EUR | ETICS route + EN 998-1 unde se aplica, in functie de intended use |
 | Birou + vestiar | 10-15k EUR | daca infrastructura existenta nu ajunge |
 
 Subtotal auxiliar: `85-128k EUR`.

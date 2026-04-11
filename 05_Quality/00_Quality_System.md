@@ -29,6 +29,7 @@ Pilonul `Quality` separa clar:
 
 - [[05_Quality/06_Limestone_Finishing_Materials_Standards]]
 - [[05_Quality/07_Process_Validation_Memo_Limestone_Finishes]]
+- [[05_Quality/08_ETICS_Mortar_Working_Formula_And_Test_Pack]]
 - [[05_Quality/03_Lab_Tests_And_Document_Checklist]]
 - [[05_Quality/04_Product_Quality_Targets]]
 - [[07_Meetings/2026-04-10_Volodeni_First_Visit/02_Question_Pack_Volodeni]]
@@ -56,7 +57,7 @@ Nota: documentele EN13279 / gips sunt legacy dupa pivotul spre Cupcini / calcar.
 
 - `Raw material screening`: ne spune daca merita sa continuam.
 - `Lab evidence`: ne spune daca datele sunt reale sau doar declarative.
-- `Product route`: glet, tencuiala decorativa minerala, adeziv / mortar sau alta ruta.
+- `Product route`: glet, tencuiala decorativa minerala, mortar ETICS sau alta ruta.
 - `EU / CE path`: ne spune ce trebuie sa demonstreze produsul final, nu doar cariera.
 - `Go / No-Go gate`: leaga chimia, tehnologia, economia si piata.
 

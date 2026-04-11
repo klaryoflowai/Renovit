@@ -3,7 +3,7 @@ title: Finishing Materials Thesis - Cupcini Limestone
 type: strategy-note
 status: canonical
 owner: Yuri
-updated: 2026-04-10
+updated: 2026-04-11
 tags:
   - renovit
   - strategy
@@ -31,7 +31,7 @@ RENOVIT poate deveni o divizie de materiale de finisaj pe baza de calcar alb, fo
 |---|---:|---|
 | Glet extra-alb | 20kg | volum, intrare simpla in retail / distributie |
 | Tencuiala decorativa minerala | 25kg | produs cu diferentiere vizuala si potential premium |
-| Adeziv / mortar var-calcar | 25kg | produs complementar pentru canalul de materiale de finisaj |
+| Mortar ETICS | 25kg | produs de volum pentru fatade, cu fit mai bun pentru resursa locala si pentru canalul de materiale de finisaj |
 
 ## Ce nu includem acum
 

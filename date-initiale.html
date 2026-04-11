@@ -336,7 +336,7 @@
           <div class="metric-grid">
             <div class="metric"><span>Cost glet Volodeni</span><strong id="gletCost">MDL 0</strong></div>
             <div class="metric"><span>Cost decorativă</span><strong id="decorCost">MDL 0</strong></div>
-            <div class="metric"><span>Cost adeziv</span><strong id="adhesiveCost">MDL 0</strong></div>
+            <div class="metric"><span>Cost mortar ETICS</span><strong id="adhesiveCost">MDL 0</strong></div>
             <div class="metric"><span>Preț mediu portofoliu</span><strong id="avgPrice">€0/t</strong></div>
             <div class="metric"><span>Cost mediu portofoliu</span><strong id="avgCost">€0/t</strong></div>
             <div class="metric"><span>Marjă brută medie</span><strong id="avgMargin">0%</strong></div>
@@ -401,7 +401,7 @@
         { section: "Materie primă Ocnița", id: "ocnitaLimestoneCaco3Pct", label: "CaCO3 Ocnița calcar", unit: "%", type: "number", value: 94.2, note: "Bază de volum pentru produse." },
         { section: "Materie primă Ocnița", id: "ocnitaLimestoneCostEurT", label: "Cost calcar Ocnița", unit: "EUR/t", type: "number", value: 4, note: "Volum industrial, aproape de fabrică." },
         { section: "Materie primă Ocnița", id: "ocnitaInternalTransportEurT", label: "Transport intern Ocnița", unit: "EUR/t", type: "number", value: 2, note: "Extracție / stoc -> fabrică." },
-        { section: "Materie primă Ocnița", id: "limestoneFlourResidueTMonth", label: "Făină calcar reziduu", unit: "t/lună", type: "number", value: 0, note: "Dacă e din strat bun, poate reduce costul adezivilor." },
+        { section: "Materie primă Ocnița", id: "limestoneFlourResidueTMonth", label: "Făină calcar reziduu", unit: "t/lună", type: "number", value: 0, note: "Dacă e din strat bun, poate reduce costul mortarelor ETICS." },
         { section: "Bentonită Ocnița", id: "bentoniteCostEurT", label: "Cost bentonită Ocnița", unit: "EUR/t", type: "number", value: 8, note: "Plasticitate / retenție apă." },
         { section: "Bentonită Ocnița", id: "bentoniteActivationCostEurT", label: "Activare / pregătire bentonită", unit: "EUR/t", type: "number", value: 12, note: "Include măcinare / uscare / activare dacă e necesar." },
         { section: "Bentonită Ocnița", id: "bentoniteActive", label: "Bentonită activă?", unit: "", type: "select", value: "TBD", options: ["TBD", "Da", "Nu", "Parțial"], note: "Test umflare / tixotropie." },
@@ -432,15 +432,15 @@
         { section: "Produs 2 - Decorativă", id: "decorBentonitePct", label: "Rețetă bentonită", unit: "%", type: "number", value: 5, note: "Aderență pe verticală." },
         { section: "Produs 2 - Decorativă", id: "decorAdditivesPct", label: "Rețetă aditivi", unit: "%", type: "number", value: 5, note: "Hidrofobizanți / stabilizare." },
         { section: "Produs 2 - Decorativă", id: "decorAdditivesCostEurT", label: "Cost aditivi decorativă", unit: "EUR/t produs", type: "number", value: 65, note: "Cost pe tonă de produs finit." },
-        { section: "Produs 3 - Adeziv", id: "adhesiveKg", label: "Sac adeziv", unit: "kg", type: "number", value: 25, note: "Produs de volum." },
-        { section: "Produs 3 - Adeziv", id: "adhesiveAnnualBags", label: "Volum adeziv", unit: "saci/an", type: "number", value: 35000, note: "Volum comercial an 1." },
-        { section: "Produs 3 - Adeziv", id: "adhesiveWholesaleMdlBag", label: "Preț angro adeziv", unit: "MDL/sac", type: "number", value: 220, note: "De validat cu distribuitori." },
-        { section: "Produs 3 - Adeziv", id: "adhesiveRetailMdlBag", label: "Retail benchmark adeziv", unit: "MDL/sac", type: "number", value: 275, note: "Doar benchmark." },
-        { section: "Produs 3 - Adeziv", id: "adhesiveVolodeniPct", label: "Rețetă Volodeni", unit: "%", type: "number", value: 0, note: "Doar opțional pentru culoare." },
-        { section: "Produs 3 - Adeziv", id: "adhesiveOcnitaLimestonePct", label: "Rețetă Ocnița calcar", unit: "%", type: "number", value: 85, note: "Volum / cost mic." },
-        { section: "Produs 3 - Adeziv", id: "adhesiveBentonitePct", label: "Rețetă bentonită", unit: "%", type: "number", value: 12, note: "Retenție apă și aderență." },
-        { section: "Produs 3 - Adeziv", id: "adhesiveAdditivesPct", label: "Rețetă aditivi", unit: "%", type: "number", value: 3, note: "Priză / performanță." },
-        { section: "Produs 3 - Adeziv", id: "adhesiveAdditivesCostEurT", label: "Cost aditivi adeziv", unit: "EUR/t produs", type: "number", value: 45, note: "Cost pe tonă de produs finit." },
+        { section: "Produs 3 - Mortar ETICS", id: "adhesiveKg", label: "Sac mortar ETICS", unit: "kg", type: "number", value: 25, note: "Produs de volum pentru lipire + strat armat." },
+        { section: "Produs 3 - Mortar ETICS", id: "adhesiveAnnualBags", label: "Volum mortar ETICS", unit: "saci/an", type: "number", value: 35000, note: "Volum comercial an 1." },
+        { section: "Produs 3 - Mortar ETICS", id: "adhesiveWholesaleMdlBag", label: "Preț angro mortar ETICS", unit: "MDL/sac", type: "number", value: 220, note: "De validat cu distribuitori pe produse comparabile ETICS." },
+        { section: "Produs 3 - Mortar ETICS", id: "adhesiveRetailMdlBag", label: "Retail benchmark mortar ETICS", unit: "MDL/sac", type: "number", value: 275, note: "Doar benchmark." },
+        { section: "Produs 3 - Mortar ETICS", id: "adhesiveVolodeniPct", label: "Rețetă Volodeni", unit: "%", type: "number", value: 5, note: "Opțional pentru ton deschis / consistență vizuală." },
+        { section: "Produs 3 - Mortar ETICS", id: "adhesiveOcnitaLimestonePct", label: "Rețetă Ocnița calcar", unit: "%", type: "number", value: 65, note: "Baza minerală principală." },
+        { section: "Produs 3 - Mortar ETICS", id: "adhesiveBentonitePct", label: "Rețetă bentonită", unit: "%", type: "number", value: 2, note: "Doar ipoteză de laborator, nu baseline canonic." },
+        { section: "Produs 3 - Mortar ETICS", id: "adhesiveAdditivesPct", label: "Sistem liant + aditivi", unit: "%", type: "number", value: 28, note: "Ciment + polimer + celuloză + fibre, working assumption." },
+        { section: "Produs 3 - Mortar ETICS", id: "adhesiveAdditivesCostEurT", label: "Cost sistem liant + aditivi ETICS", unit: "EUR/t produs", type: "number", value: 110, note: "Include liantul funcțional și aditivii, de validat." },
         { section: "Financiar", id: "openingCashEur", label: "Cash inițial", unit: "EUR", type: "number", value: 25000, note: "Pentru dashboard cash-flow." },
         { section: "Financiar", id: "financedSharePct", label: "Procent finanțat", unit: "%", type: "number", value: 40, note: "Pentru debt service." },
         { section: "Financiar", id: "interestRatePct", label: "Dobândă anuală", unit: "%", type: "number", value: 9, note: "Finanțare opțională." },
@@ -451,7 +451,7 @@
       const productDefs = [
         { key: "glet", name: "Glet de finisaj alb", premium: true },
         { key: "decor", name: "Tencuială decorativă minerală" },
-        { key: "adhesive", name: "Adeziv / mortar var-calcar" },
+        { key: "adhesive", name: "Mortar ETICS / strat armat" },
       ];
 
       const inputs = {};

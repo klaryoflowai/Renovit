@@ -21,9 +21,9 @@ source_documents:
 linked_decisions:
   - strategic-pivot-cupcini-limestone
 open_questions:
-  - Care este familia exacta pentru SKU-ul numit acum "adeziv 25kg": tile adhesive sau mortar adeziv / masa de spaclu ETICS?
+  - Vindem initial doar mortarul uscat sau vrem ulterior si ruta de sistem / kit ETICS?
   - Cine valideaza retetele de laborator pentru loturile pilot faza 1?
-  - Ce laborator poate testa rapid conformitatea pe EN 998-1 si EN 12004?
+  - Ce laborator poate testa rapid produsul si, ulterior, traseul ETICS relevant?
 next_action: Foloseste acest memo ca filtru obligatoriu pentru orice scenariu CAPEX, reteta, model financiar sau pitch comercial.
 ---
 
@@ -36,10 +36,10 @@ Procesul nou pe calcar este viabil ca directie industriala, dar numai daca il tr
 Concluziile canonice sunt:
 
 1. Nu exista calcinare in ruta actuala.
-2. Gletul, decorativa si adezivul nu au aceeasi logica de binder.
+2. Gletul, decorativa si mortarul ETICS nu au aceeasi logica de binder.
 3. Decorativa are nevoie de fractii granulometrice dedicate, nu doar de filler ultrafin.
 4. In faza 1, configuratia realista este productie pe campanii cu `1-2 mixere` si o `linie flexibila 20kg / 25kg`, nu `3 linii dedicate`.
-5. "Adeziv 25kg" trebuie definit exact, pentru ca traseul de conformitate difera intre `adeziv pentru placi` si `mortar adeziv / masa de spaclu pentru ETICS`.
+5. Produsul 3 este definit acum ca `mortar ETICS 25kg`, nu ca adeziv generic de placi.
 
 ## Ce era gresit sau prea agresiv in propunerea initiala
 
@@ -55,7 +55,7 @@ Concluziile canonice sunt:
 |---|---|---|---|---|---|
 | Glet mineral extra-alb `20kg` | filler ultrafin alb, control culoare si finete | calcar micronizat + var hidratat si / sau ciment alb + eter de celuloza + polimer redispersabil + aditivi de lucrabilitate | `EN 998-1` daca ramane mortar mineral de finisare; alt standard doar daca schimbam intended use-ul | granulometrie fina, grad de alb, umiditate, densitate aparenta, consum apa, lucrabilitate, aderenta pe suport, rezistenta la compresiune / incovoiere daca se cere de reteta, aspect dupa uscare | daca Volodeni da alb suficient pentru promisiunea `extra-alb`; ce combinatie reala de var / ciment alb functioneaza; daca produsul ramane cu adevarat dry-mix mineral |
 | Tencuiala decorativa minerala `25kg` | filler + fractii decorative controlate | binder mineral daca ramane mortar uscat mineral; ruta organica se analizeaza separat | `EN 998-1` pentru mortar mineral; `EN 15824` doar daca produsul devine render / plaster pe baza de lianti organici sau sistem tip pasta / organic powder | distributie granulometrica pe fractii, umiditate, grad de alb / culoare, aderenta, absorbtie apa, permeabilitate la vapori, lucrabilitate pe suport, aspect final textura | daca produsul va fi mineral sau organic; ce fractii decorative pot fi tinute stabil din Volodeni / Ocnita; ce culoare si textura sunt vandabile fara pigmentare scumpa |
-| Adeziv `25kg` | filler functional, ajustare reologie si cost | doua rute posibile: `A.` adeziv pentru placi cu ciment + filler / nisip selectat + celuloza + polimer; `B.` mortar adeziv / masa de spaclu ETICS cu ciment + filler + fibre / polimer + aditivi, in functie de sistem | `EN 12004` daca SKU-ul este adeziv pentru placi; daca SKU-ul este mortar adeziv / spaclu pentru ETICS, familia de conformitate se schimba si nu trebuie fortata in aceeasi caseta | aderenta initiala, aderenta dupa apa / caldura / inghet daca se urmareste clasa respectiva, open time, slip, lucrabilitate, retentie apa, granulometrie, umiditate | ce familie de produs vrem de fapt sa lansam; daca bentonita are un rol real sau doar experimental; ce clasa de performanta urmarim si ce pret o sustine |
+| Mortar ETICS `25kg` | filler functional, ajustare reologie si cost | mortar cimentic pentru lipire + strat armat, cu ciment, filler / fractii minerale selectate, celuloza, polimer, fibre si pachet de aditivi; bentonita doar dupa validare | nu il fortam in `EN 12004`; intended use-ul trebuie mapat pe ruta corecta de produs si, daca este cazul, pe ruta ETICS de sistem / kit | aderenta, lucrabilitate, retentie apa, comportament pe verticala, absorbtie, vapori, fisurare in strat armat, stabilitate lot | cat bentonita ajuta fara sa penalizeze; ce cost are sistemul real de liant; daca produsul va fi vandut doar ca mortar sau in logica de sistem |
 
 ## Reguli procesuale care raman adevarate pentru toate SKU-urile
 
@@ -100,17 +100,16 @@ Bentonita poate fi:
 
 Nu trebuie insa tratata ca schelet obligatoriu al fiecarui produs.
 
-## Ghid rapid de decizie pentru "adeziv 25kg"
+## Ghid rapid de decizie pentru produsul ETICS
 
 Inainte sa continuam cu costare, CAPEX sau preturi, trebuie inchisa o singura intrebare:
 
-`Ce inseamna exact SKU-ul "adeziv 25kg"?`
+`Vindem mortarul ETICS ca produs singular sau vrem sa pregatim ulterior si ruta de sistem?`
 
 Scenariile sunt:
 
-1. `Adeziv pentru placi ceramice` -> mergem pe logica `EN 12004`, cu sistem cimentic si polimeri.
-2. `Mortar adeziv / masa de spaclu pentru ETICS` -> alta familie tehnica si alta mapa de testare.
-3. `Mortar de uz general` -> nu are voie sa fie costuit sau vandut sub eticheta de adeziv premium daca performanta nu sustine promisiunea.
+1. `Produs singular faza 1` -> focus pe reteta, cost, QC si benchmark comercial.
+2. `Ruta ETICS extinsa` -> pregatim si logica de sistem / kit, ceea ce ridica cerintele de validare.
 
 ## Gate-uri obligatorii inainte de CAPEX final
 
@@ -127,6 +126,7 @@ Acest document trebuie citit impreuna cu:
 
 - [[04_Execution/06_Technology_CAPEX/07_Limestone_Finishing_Process]]
 - [[05_Quality/06_Limestone_Finishing_Materials_Standards]]
+- [[05_Quality/08_ETICS_Mortar_Working_Formula_And_Test_Pack]]
 - [[05_Quality/03_Lab_Tests_And_Document_Checklist]]
 - [[07_Meetings/2026-04-10_Volodeni_First_Visit/02_Question_Pack_Volodeni]]
 

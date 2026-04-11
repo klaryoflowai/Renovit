@@ -1,5 +1,5 @@
 item,type,working_range_or_need,role,price_working_range_eur_t,status,notes
-Cellulose ether / water-retention additive,additive,TBD by recipe,Workability and water retention,2000-6000,working_assumption,Essential for glet / mortar recipes; validate dosage with technologist
+Cellulose ether / water-retention additive,additive,TBD by recipe,Workability and water retention,2000-6000,working_assumption,Essential for glet and ETICS mortar recipes; validate dosage with technologist
 Polymer / redispersible powder,additive,TBD by recipe,Adhesion flexibility and performance,2500-7000,working_assumption,Can dominate additive cost; avoid assumptions before formulation tests
 Whitening / brightening additive,additive,TBD,Improves whiteness / visual sellability,3000-5000,working_assumption,Only if limestone whiteness is not sufficient for extra-white positioning
 Anti-moisture / hydrophobic agent,additive,TBD,Improves storage stability,1000-3000,working_assumption,Check need based on packaging and warehouse humidity
@@ -8,5 +8,5 @@ Moisture analyzer,lab,required,Raw material and finished dry mix moisture contro
 Whiteness meter / colorimeter,lab,required or outsourced,Controls extra-white positioning and lot consistency,,open,Can outsource initially but should be part of quality roadmap
 Sieve set / particle size tools,lab,required,Fineness and fraction control,,open,Needed for micronization / decorative texture control
 Flow / workability tools,lab,required,Application behavior testing,,open,Select exact tooling after product standard mapping
-Adhesion / strength testing,lab,required or outsourced,Product performance validation for EN 998-1 / EN 12004 route,,open,Can outsource accredited tests initially
+Adhesion / strength testing,lab,required or outsourced,Product performance validation for EN 998-1 / ETICS route,,open,Can outsource accredited tests initially
 Sample retention system,lab,required,Traceability and claims handling,,open,Keep coded samples by batch and raw material zone

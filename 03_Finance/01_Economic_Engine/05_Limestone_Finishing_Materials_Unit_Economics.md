@@ -3,7 +3,7 @@ title: Limestone Finishing Materials Unit Economics
 type: finance-model-note
 status: canonical
 owner: Yuri
-updated: 2026-04-10
+updated: 2026-04-11
 tags:
   - renovit
   - finance
@@ -29,7 +29,7 @@ Modelul devine portofoliu:
 
 - glet extra-alb 20kg
 - tencuiala decorativa minerala 25kg
-- adeziv / mortar var-calcar 25kg
+- mortar ETICS 25kg
 
 ## Principiu de modelare
 

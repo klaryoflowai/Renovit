@@ -30,7 +30,7 @@ const SECTIONS = [
       { id: "granulometrie", label: "Granulometrie existentă", type: "textarea", placeholder: "0-3mm, 0-5mm, micronizare, % sub 100 microni, % sub 63 microni" },
       { id: "umiditate", label: "Umiditate / uscare", type: "text", placeholder: "Umiditate naturală, necesar uscare, stabilitate la depozitare" },
       { id: "analize", label: "Analize laborator văzute?", type: "select", options: ["Da — copie obținută", "Da — văzut dar fără copie", "Nu", "Există dar trebuie cerute"] },
-      { id: "bentonita", label: "Bentonită Ocnița", type: "textarea", placeholder: "Este activă? Test umflare / tixotropie? Cost extracție + activare? Rol în glet/adeziv?" },
+      { id: "bentonita", label: "Bentonită Ocnița", type: "textarea", placeholder: "Este activă? Test umflare / tixotropie? Cost extracție + activare? Rol în glet / mortar ETICS?" },
     ],
   },
   {
@@ -49,7 +49,7 @@ const SECTIONS = [
     fields: [
       { id: "glet", label: "Glet extra-alb 20kg", type: "textarea", placeholder: "Produs top: materie primă principală Volodeni. Confirmă alb, volum, finete, cost, mostre." },
       { id: "decor", label: "Tencuială decorativă minerală 25kg", type: "textarea", placeholder: "Granule necesare, texturi, alb, liant, produs comparabil, standard țintă" },
-      { id: "adeziv", label: "Adeziv / mortar var-calcar 25kg", type: "textarea", placeholder: "Retetă, ciment/var, aditivi, performanță, standard EN 12004 dacă e adeziv plăci" },
+      { id: "adeziv", label: "Mortar ETICS 25kg", type: "textarea", placeholder: "Reteta pentru lipire + strat armat: ciment, filler, celuloza, polimer, fibre, bentonita doar daca trece testele" },
       { id: "retete", label: "Cine poate formula / testa rețetele?", type: "textarea", placeholder: "Laborator, tehnolog, consultant, furnizor aditivi" },
       { id: "mostre_produs", label: "Mostre produs finit existente?", type: "select", options: ["Da — testate", "Da — netestate", "Nu", "În lucru"] },
     ],
@@ -81,7 +81,7 @@ const SECTIONS = [
       { id: "transport_volodeni_ocnita", label: "Cost transport Volodeni -> Ocnița", type: "textarea", placeholder: "EUR/t sau MDL/t, distanță, camion, cost cursă, tone/zi, pierderi, sezonalitate" },
       { id: "pret_glet", label: "Preț angro validat glet", type: "textarea", placeholder: "Distribuitor, preț, volum, condiții, produs comparabil" },
       { id: "pret_decor", label: "Preț angro validat tencuială decorativă", type: "textarea", placeholder: "Distribuitor, preț, volum, condiții, produs comparabil" },
-      { id: "pret_adeziv", label: "Preț angro validat adeziv / mortar", type: "textarea", placeholder: "Distribuitor, preț, volum, condiții, produs comparabil" },
+      { id: "pret_adeziv", label: "Preț angro validat mortar ETICS", type: "textarea", placeholder: "Distribuitor, preț, volum, condiții, produs comparabil ETICS" },
       { id: "canale", label: "Canale potențiale", type: "textarea", placeholder: "DIY, depozite materiale, echipe finisaje, proiecte B2B, export" },
     ],
   },

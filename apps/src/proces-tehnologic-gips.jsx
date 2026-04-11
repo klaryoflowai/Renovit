@@ -89,9 +89,9 @@ export default function App() {
           sub: "binder mineral + fractii controlate + aditivi; standardul de referinta este ruta EN 998-1 pentru mortar de tencuire",
         },
         {
-          title: "Adeziv 25kg",
-          sub: "mortar cimentic cu filler / nisip selectat + celuloza + pulbere polimerica; bentonita intra doar dupa testare serioasa",
-          note: "EN 12004",
+          title: "Mortar ETICS 25kg",
+          sub: "mortar cimentic pentru lipire + strat armat: ciment + filler / fractii selectate + celuloza + polimer + fibre; bentonita doar dupa testare serioasa",
+          note: "ETICS route",
         },
       ],
     },
@@ -104,7 +104,7 @@ export default function App() {
       steps: [
         {
           title: "Control calitate specific produsului",
-          sub: "alb, umiditate, PSD, lucrabilitate, aderenta, permeabilitate sau clasa adezivului - in functie de familie",
+          sub: "alb, umiditate, PSD, lucrabilitate, aderenta, permeabilitate, fisurare si comportament ETICS - in functie de familie",
         },
         {
           title: "O singura linie flexibila 20kg / 25kg in faza 1",
@@ -138,7 +138,7 @@ export default function App() {
     },
     {
       title: "Retete cu binder real",
-      text: "Limestone este filler, nu binder suficient. Gletul, tencuiala minerala si adezivul cer sisteme diferite de binder si aditivi.",
+      text: "Limestone este filler, nu binder suficient. Gletul, tencuiala minerala si mortarul ETICS cer sisteme diferite de binder si aditivi.",
     },
   ];
 

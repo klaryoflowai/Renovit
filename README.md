@@ -4,6 +4,8 @@ Acest repository este organizat ca un vault de business in stilul `BioStream`, d
 
 Nota 2026-04-10: proiectul a pivotat de la `gips / ipsos Edinet` la `S.A. Mina din Cupcini / calcar / materiale de finisaj`.
 
+Nota 2026-04-11: produsul 3 canonic pentru faza 1 este acum `mortar ETICS 25kg`, nu `adeziv generic de placi`.
+
 Sistemul adoptat este:
 
 - `Scaling Up` pentru arhitectura business-ului
@@ -33,7 +35,7 @@ Sistemul adoptat este:
 - `instrumente.html` - hub public pentru instrumentele online
 - `proces-tehnologic-gips.html` - pagina actualizata pentru procesul tehnologic al finisajelor minerale
 - `raport-vizita-cariera.html` - formular browser pentru raportul primei vizite Volodeni
-- `assets/proces_tehnologic_gips_renovit.svg` - diagrama SVG statica legacy pentru ruta veche pe gips
+- `assets/proces_tehnologic_gips_renovit.svg` - diagrama SVG statica actualizata pentru fluxul canonic pe calcar / ETICS
 - `apps/src/` - sursele JSX pentru instrumentele publicate
 - `data/` - layer de date brute si CSV-uri, inclusiv modelul tehnologic / CAPEX
 - `data/finance/RENOVIT_Economic_Simulation_Model.xlsx` - workbook Excel pentru simulare economica completa
@@ -48,7 +50,7 @@ Sistemul adoptat este:
 - https://renovit.klaryoflowai.workers.dev/instrumente.html - hub instrumente
 - https://renovit.klaryoflowai.workers.dev/raport-vizita-cariera.html - raport vizita Volodeni / calcar / materiale de finisaj
 - https://renovit.klaryoflowai.workers.dev/proces-tehnologic-gips.html - proces tehnologic actualizat pentru finisaje minerale
-- https://renovit.klaryoflowai.workers.dev/assets/proces_tehnologic_gips_renovit.svg - diagrama SVG legacy
+- https://renovit.klaryoflowai.workers.dev/assets/proces_tehnologic_gips_renovit.svg - diagrama SVG actualizata
 
 ## Cum folosesti vault-ul in Obsidian
 
@@ -67,6 +69,8 @@ Sistemul adoptat este:
    - `03_Finance/01_Economic_Engine/05_Limestone_Finishing_Materials_Unit_Economics.md`
    - `03_Finance/01_Economic_Engine/06_Price_Benchmark_Check_Limestone_Finishes.md`
    - `05_Quality/06_Limestone_Finishing_Materials_Standards.md`
+   - `05_Quality/07_Process_Validation_Memo_Limestone_Finishes.md`
+   - `05_Quality/08_ETICS_Mortar_Working_Formula_And_Test_Pack.md`
    - `07_Meetings/2026-04-10_Volodeni_First_Visit/02_Question_Pack_Volodeni.md`
    - `04_Execution/03_Decision_Control/02_Risk_Register.md`
 5. Pentru plan de afaceri, continua cu:

@@ -133,10 +133,10 @@
 
   <g>
     <rect x="600" y="1010" width="280" height="126" rx="12" fill="#e6f0fa" stroke="#1a66a8" stroke-width="2" />
-    <text x="624" y="1042" class="box-title" fill="#0b355c">Adeziv 25kg</text>
-    <text x="624" y="1070" class="box-sub">Mortar cimentic cu filler / nisip selectat</text>
-    <text x="624" y="1092" class="box-sub">Celuloza + RDP + control aderenta si open time</text>
-    <text x="624" y="1114" class="box-sub">Ruta standard: EN 12004, nu doar mortar cu var</text>
+    <text x="624" y="1042" class="box-title" fill="#0b355c">Mortar ETICS 25kg</text>
+    <text x="624" y="1070" class="box-sub">Mortar cimentic pentru lipire + strat armat</text>
+    <text x="624" y="1092" class="box-sub">Celuloza + RDP + fibre; bentonita doar dupa testare</text>
+    <text x="624" y="1114" class="box-sub">Ruta ETICS, nu tile adhesive by default</text>
   </g>
 
   <line x1="180" y1="1136" x2="460" y2="1190" class="line" />
@@ -146,7 +146,7 @@
   <g>
     <rect x="250" y="1190" width="420" height="84" rx="12" fill="#e7f1de" stroke="#3a6f16" stroke-width="2" />
     <text x="274" y="1220" class="box-title" fill="#1a3707">Control calitate specific produsului</text>
-    <text x="274" y="1244" class="box-sub">Alb, umiditate, PSD, lucrabilitate, aderenta, vapori sau clasa adezivului</text>
+    <text x="274" y="1244" class="box-sub">Alb, umiditate, PSD, lucrabilitate, aderenta, vapori si comportament ETICS</text>
   </g>
 
   <line x1="460" y1="1274" x2="460" y2="1318" class="line" />

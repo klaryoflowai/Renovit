@@ -3,7 +3,7 @@ title: Strategic Pivot - Cupcini Limestone Finishing Materials
 type: decision-brief
 status: canonical
 owner: Yuri
-updated: 2026-04-10
+updated: 2026-04-11
 tags:
   - renovit
   - pivot
@@ -52,7 +52,7 @@ Produsele candidate din documentele primite:
 
 1. Glet extra-alb pe baza de calcar macinat fin.
 2. Tencuiala decorativa minerala pe baza de granule de calcar selectate.
-3. Adezivi / mortare pe baza de var-calcar.
+3. Mortar ETICS 25kg, ca produs de volum pentru fatade.
 
 ## Fapte extrase din documente
 

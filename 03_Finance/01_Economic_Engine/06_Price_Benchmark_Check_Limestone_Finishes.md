@@ -3,7 +3,7 @@ title: Price Benchmark Check - Limestone Finishes
 type: market-check
 status: working
 owner: Yuri
-updated: 2026-04-10
+updated: 2026-04-11
 tags:
   - renovit
   - pricing
@@ -31,7 +31,7 @@ Primele verificari online indica diferente importante, dar nu avem inca suficien
 |---|---:|---|
 | Glet extra-alb 20kg | nevalidat inca | cere 3 benchmarkuri directe |
 | Tencuiala decorativa minerala Baumit EdelPutz Spezial 25kg | 259 MDL retail/promo observat pe Domic.md | contrazice ipoteza de 450-550 MDL daca produsul comparabil este mineral uscat |
-| Adeziv standard 25kg | nevalidat inca | cere 3 benchmarkuri directe, separat de adezivi premium |
+| Mortar ETICS 25kg | nevalidat inca | cere benchmark direct pe adeziv / masa de spaclu pentru termosistem, nu pe tile adhesive |
 
 ## Regula RENOVIT
 

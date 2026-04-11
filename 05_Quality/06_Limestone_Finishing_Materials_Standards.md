@@ -48,13 +48,13 @@ Aceste valori sunt promitatoare pentru materiale de finisaj, dar nu inlocuiesc t
 |---|---|---|
 | Glet / mortar fin mineral | EN 998-1 sau standard specific retetei | daca produsul este mortar de tencuire / finisare pe baza minerala |
 | Tencuiala decorativa minerala | EN 998-1 sau EN 15824 | depinde daca liantul final este mineral sau organic |
-| Adeziv pentru placi | EN 12004 | doar daca SKU-ul este clar definit ca adeziv pentru placi ceramice |
-| Mortar adeziv / masa de spaclu ETICS | traseu separat de conformitate, nu il fortam sub EN 12004 doar pentru ca "lipeste" | necesita definire exacta a intended use-ului si a sistemului in care intra |
+| Mortar ETICS / masa de spaclu armata | ruta de produs + ruta de sistem ETICS, in functie de intended use | nu il fortam sub EN 12004 doar pentru ca "lipeste"; verificam separat produsul si, daca este cazul, sistemul / kitul |
+| Adeziv pentru placi | EN 12004 | relevant doar daca RENOVIT lanseaza ulterior un SKU separat de adeziv de placi |
 | Var folosit ca liant | EN 459-1 | relevant daca reteta intra pe var de constructii |
 | Piatra / placi naturale | EN 1469 / EN 12057 / EN 12058 | relevant doar daca intram pe placi, nu pentru faza 1 amestecuri uscate |
 | Agregate / piatra sparta | EN 12620 / EN 13139 | relevant doar pentru agregate, nu pentru glet premium |
 
-Vezi si [[05_Quality/07_Process_Validation_Memo_Limestone_Finishes]] pentru maparea canonica produs -> binder -> test pack.
+Vezi si [[05_Quality/07_Process_Validation_Memo_Limestone_Finishes]] si [[05_Quality/08_ETICS_Mortar_Working_Formula_And_Test_Pack]] pentru maparea canonica produs -> binder -> test pack.
 
 ## Ce cerem laboratorului
 

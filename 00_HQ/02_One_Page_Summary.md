@@ -6,7 +6,7 @@ O divizie industriala in formare, bazata pe calcarul alb / calcar-travertin din 
 
 ## Product entry point
 
-Portofoliu faza 1: glet extra-alb 20kg, tencuiala decorativa minerala 25kg, adeziv / mortar var-calcar 25kg.
+Portofoliu faza 1: glet extra-alb 20kg, tencuiala decorativa minerala 25kg, mortar ETICS 25kg.
 
 ## Core advantage
 
