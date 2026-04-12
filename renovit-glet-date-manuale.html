@@ -1,0 +1,685 @@
+<!doctype html>
+<html lang="ro">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RENOVIT BIO-WHITE — Date Manuale</title>
+    <meta
+      name="description"
+      content="Pagina canonică de input manual pentru Gletul RENOVIT BIO-WHITE: piață, rețetă, costuri, concurență și unit economics."
+    >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=DM+Serif+Display&amp;display=swap"
+      rel="stylesheet"
+    >
+    <style>
+      :root {
+        --bg: #0a0907;
+        --panel: #14120e;
+        --panel-2: #1a1711;
+        --input: #201c14;
+        --border: #3e3323;
+        --border-soft: #282117;
+        --text: #fff4dd;
+        --muted: #baa98f;
+        --muted-2: #796b57;
+        --accent: #d4aa48;
+        --green: #6fb78a;
+        --orange: #df9850;
+        --red: #df6b5b;
+        --blue: #7aa7c7;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background:
+          radial-gradient(circle at 14% 0%, rgba(212, 170, 72, 0.18), transparent 24rem),
+          radial-gradient(circle at 86% 4%, rgba(122, 167, 199, 0.12), transparent 22rem),
+          linear-gradient(140deg, #0a0907 0%, #15120d 60%, #090806 100%);
+        color: var(--text);
+        font-family: "DM Mono", monospace;
+      }
+
+      main {
+        width: min(100%, 1280px);
+        margin: 0 auto;
+        padding: 34px 16px 48px;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(300px, 420px);
+        gap: 18px;
+        align-items: end;
+      }
+
+      .eyebrow {
+        color: var(--accent);
+        font-size: 10px;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 10px 0 12px;
+        font-family: "DM Serif Display", serif;
+        font-size: clamp(40px, 8vw, 82px);
+        font-weight: 400;
+        line-height: 0.9;
+      }
+
+      p {
+        color: var(--muted);
+        line-height: 1.7;
+        max-width: 82ch;
+      }
+
+      .hero-card,
+      .panel {
+        border: 1px solid var(--border);
+        background: rgba(20, 18, 14, 0.92);
+      }
+
+      .hero-card { padding: 18px; }
+
+      .hero-card strong {
+        display: block;
+        color: var(--accent);
+        font-family: "DM Serif Display", serif;
+        font-size: 32px;
+        font-weight: 400;
+        line-height: 1;
+      }
+
+      .hero-card span {
+        display: block;
+        margin-top: 10px;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.7;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 14px;
+        margin-top: 18px;
+      }
+
+      .panel {
+        grid-column: span 6;
+        border-left: 3px solid var(--section-accent, var(--accent));
+        padding: 18px;
+      }
+
+      .panel.full { grid-column: 1 / -1; }
+      .panel.third { grid-column: span 4; }
+
+      .panel-title {
+        margin: 0 0 14px;
+        color: var(--section-accent, var(--accent));
+        font-size: 10px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 11px;
+      }
+
+      th,
+      td {
+        border-bottom: 1px solid var(--border-soft);
+        padding: 8px;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      th {
+        color: var(--accent);
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      td { color: var(--muted); }
+
+      td:nth-child(4),
+      td:nth-child(5) {
+        text-align: right;
+      }
+
+      tr.section-row td {
+        background: rgba(212, 170, 72, 0.08);
+        color: var(--accent);
+        font-weight: 500;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      input,
+      select,
+      textarea {
+        width: 100%;
+        border: 1px solid #403624;
+        background: var(--input);
+        color: var(--text);
+        font: inherit;
+        padding: 7px 8px;
+        outline: none;
+      }
+
+      input[type="number"] { text-align: right; }
+      textarea { min-height: 90px; resize: vertical; }
+
+      .metric-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 10px;
+      }
+
+      .metric {
+        border: 1px solid var(--border-soft);
+        background: rgba(26, 24, 17, 0.78);
+        padding: 14px;
+      }
+
+      .metric span {
+        display: block;
+        color: var(--muted-2);
+        font-size: 10px;
+        line-height: 1.45;
+      }
+
+      .metric strong {
+        display: block;
+        margin-top: 8px;
+        color: var(--text);
+        font-family: "DM Serif Display", serif;
+        font-size: 28px;
+        font-weight: 400;
+        line-height: 1;
+      }
+
+      .metric.good strong { color: var(--green); }
+      .metric.warn strong { color: var(--orange); }
+      .metric.bad strong { color: var(--red); }
+
+      .note {
+        margin-top: 14px;
+        padding: 12px 14px;
+        border-left: 3px solid var(--orange);
+        background: rgba(223, 152, 80, 0.08);
+        color: #f1cfb0;
+        font-size: 11px;
+        line-height: 1.7;
+      }
+
+      .footer-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 16px;
+      }
+
+      .button {
+        border: 1px solid #403624;
+        background: transparent;
+        color: var(--text);
+        font: inherit;
+        padding: 10px 12px;
+        cursor: pointer;
+        text-decoration: none;
+      }
+
+      .button.primary {
+        background: var(--accent);
+        color: #15120c;
+        border-color: var(--accent);
+      }
+
+      .button:hover { border-color: var(--accent); color: var(--accent); }
+      .button.primary:hover { color: #15120c; }
+
+      .tag {
+        display: inline-block;
+        border: 1px solid var(--border);
+        color: var(--accent);
+        padding: 3px 7px;
+        font-size: 10px;
+      }
+
+      @media (max-width: 900px) {
+        .hero,
+        .grid { display: block; }
+        .hero-card,
+        .panel { margin-top: 14px; }
+        table {
+          display: block;
+          overflow-x: auto;
+          white-space: nowrap;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="hero">
+        <div>
+          <div class="eyebrow">RENOVIT — working data room</div>
+          <h1>Glet Date Manuale</h1>
+          <p>
+            Aceasta este pagina canonică pentru completarea treptată a datelor reale ale produsului
+            <strong>RENOVIT BIO-WHITE</strong>:
+            piață, concurență, rețetă, costuri, canale și unit economics. Se salvează local în browser și alimentează
+            dosarul de Glet.
+          </p>
+        </div>
+        <div class="hero-card">
+          <strong id="statusLabel">Draft</strong>
+          <span id="statusText">Inputurile sunt salvate local. Actualizează-le pe măsură ce apar date confirmate din piață, laborator și discuții comerciale.</span>
+        </div>
+      </section>
+
+      <section class="grid">
+        <div class="panel full" style="--section-accent: var(--accent);">
+          <h2 class="panel-title">01 — Tabel unic de lucru pentru Glet</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Secțiune</th>
+                <th>Dată</th>
+                <th>Input</th>
+                <th>Unitate</th>
+                <th>De ce contează</th>
+              </tr>
+            </thead>
+            <tbody id="inputRows"></tbody>
+          </table>
+          <div class="footer-actions">
+            <button class="button primary" id="saveData" type="button">Salvează datele</button>
+            <button class="button" id="resetData" type="button">Reset la ipoteze</button>
+            <button class="button" id="copyJson" type="button">Copiază JSON</button>
+            <a class="button" href="/renovit-bio-white-dossier.html">Deschide dosarul</a>
+            <a class="button" href="/date-initiale.html">Date inițiale generale</a>
+            <a class="button" href="/instrumente.html">Toate instrumentele</a>
+          </div>
+        </div>
+
+        <div class="panel full" style="--section-accent: var(--green);">
+          <h2 class="panel-title">02 — Rezumat economic live</h2>
+          <div class="metric-grid">
+            <div class="metric"><span>Total rețetă</span><strong id="recipeTotal">0%</strong></div>
+            <div class="metric"><span>Resursă proprie în masă</span><strong id="ownMass">0%</strong></div>
+            <div class="metric"><span>Input extern în masă</span><strong id="externalMass">0%</strong></div>
+            <div class="metric"><span>Cost total</span><strong id="costPerTon">€0/t</strong></div>
+            <div class="metric"><span>Cost per sac</span><strong id="costPerBag">MDL 0</strong></div>
+            <div class="metric"><span>Preț țintă angro</span><strong id="pricePerTon">€0/t</strong></div>
+            <div class="metric"><span>Marjă brută</span><strong id="grossMargin">0%</strong></div>
+            <div class="metric"><span>Break-even</span><strong id="breakEvenTons">0 t/lună</strong></div>
+            <div class="metric"><span>Venit lunar</span><strong id="monthlyRevenue">€0</strong></div>
+            <div class="metric"><span>Profit brut lunar</span><strong id="monthlyGrossProfit">€0</strong></div>
+            <div class="metric"><span>Readiness comercial</span><strong id="commercialScore">0%</strong></div>
+            <div class="metric"><span>Verdict</span><strong id="verdict">Fragil</strong></div>
+          </div>
+          <div class="note" id="warningBox">
+            Lucrăm cu ipoteze de start. Ținta sănătoasă este rețetă validată ~100%, marjă brută >=35%, minimum 5 price points și minimum 3 discuții pilot reale.
+          </div>
+        </div>
+
+        <div class="panel third" style="--section-accent: var(--blue);">
+          <h2 class="panel-title">03 — Strategia de lansare</h2>
+          <p>
+            Teza curentă: <span class="tag">GLET = LOCOMOTIVĂ DE CASH-FLOW</span>.
+            Gletul intră înaintea tencuielii pentru că are rotație mai rapidă, barieră de intrare mai mică și poate deschide distribuția
+            pentru restul portofoliului.
+          </p>
+        </div>
+
+        <div class="panel third" style="--section-accent: var(--orange);">
+          <h2 class="panel-title">04 — Ce trebuie apărat</h2>
+          <p>
+            Nu tratăm bentonita ca înlocuitor automat pentru tot pachetul funcțional. Dacă intră prea mult input extern, produsul își pierde
+            logica `resource-first`. Dacă intră prea puțin, poate pierde lucrabilitate și acceptare în piață.
+          </p>
+        </div>
+
+        <div class="panel third" style="--section-accent: var(--green);">
+          <h2 class="panel-title">05 — Conexiune cu restul sistemului</h2>
+          <p>
+            Pagina citește implicit din <code>RENOVIT_SHARED_INPUTS</code> și <code>RENOVIT_SALES_MARKETING_INPUTS</code>,
+            dar salvează separat setul canonic de lucru pentru dosarul de Glet în <code>RENOVIT_GLET_MANUAL_INPUTS</code>.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const STORAGE_KEY = "RENOVIT_GLET_MANUAL_INPUTS";
+      const SHARED_INPUTS_KEY = "RENOVIT_SHARED_INPUTS";
+      const SALES_INPUTS_KEY = "RENOVIT_SALES_MARKETING_INPUTS";
+
+      function safeParse(key) {
+        try {
+          return JSON.parse(localStorage.getItem(key) || "null");
+        } catch {
+          return null;
+        }
+      }
+
+      function buildDefaults() {
+        const shared = safeParse(SHARED_INPUTS_KEY);
+        const sales = safeParse(SALES_INPUTS_KEY);
+        const sharedFields = shared?.fields || {};
+        const glet = shared?.products?.glet || {};
+        const salesFields = sales?.fields || {};
+        const exchangeRate = Number(sharedFields.exchangeRate || 20);
+        const bagsPerTon = Number(glet.kg) > 0 ? 1000 / Number(glet.kg) : 50;
+        const landedVolodeni = Number(glet.volodeniPct || 0) > 0
+          ? Number(shared?.summary ? 0 : 0)
+          : 0;
+        return {
+          analysisDate: "2026-04-12",
+          owner: "Yuri",
+          thesis: "Gletul este produsul de lansare pentru cash-flow, distributie si validare de brand.",
+          bagKg: Number(sharedFields.gletKg || glet.kg || 20),
+          exchangeRate,
+          annualMarketTYear: Number(salesFields.gletMarketTYear || 12000),
+          addressableMarketTYear: Number(salesFields.gletMarketTYear || 8400),
+          stockRotationDays: 15,
+          namedLeads: Number(salesFields.namedLeads || 0),
+          pilotDiscussions: Number(salesFields.pilotDiscussions || 0),
+          pilotPotentialTMonth: Number(salesFields.gletPilotTMonth || 0),
+          pricePoints: Number(salesFields.gletPricePoints || 0),
+          competitorsMapped: Number(salesFields.competitorsMapped || 0),
+          targetWholesaleMdlBag: Number(sharedFields.gletWholesaleMdlBag || salesFields.gletTargetMdlBag || glet.priceMdlBag || 185),
+          targetRetailMdlBag: Number(sharedFields.gletRetailMdlBag || 225),
+          avgPaymentDays: Number(salesFields.avgPaymentDays || 30),
+          distributorMarkupPct: Number(salesFields.avgMarkupPct || 20),
+          monthlySalesTons: Math.max(Number(glet.annualTons || 0) / 12, Number(salesFields.gletPilotTMonth || 0), 60),
+          saciPalet: 54,
+          processYieldPct: Number(sharedFields.processYieldPct || 95),
+          volodeniPct: Number(sharedFields.gletVolodeniPct || 25),
+          ocnitaPct: Number(sharedFields.gletOcnitaLimestonePct || 65),
+          bentonitePct: Number(sharedFields.gletBentonitePct || 5),
+          additivesPct: Number(sharedFields.gletAdditivesPct || 5),
+          volodeniLandedEurT: (Number(sharedFields.volodeniExtractionCostEurT || 5) + Number(sharedFields.volodeniToOcnitaTransportEurT || 8)),
+          ocnitaLandedEurT: (Number(sharedFields.ocnitaLimestoneCostEurT || 4) + Number(sharedFields.ocnitaInternalTransportEurT || 2)),
+          bentoniteLandedEurT: (Number(sharedFields.bentoniteCostEurT || 8) + Number(sharedFields.bentoniteActivationCostEurT || 12) + Number(sharedFields.ocnitaInternalTransportEurT || 2)),
+          additivesCostEurT: Number(sharedFields.gletAdditivesCostEurT || 25),
+          routeProcessEurT: Number(sharedFields.gletRouteProcessCostEurT || 58),
+          supportCostEurT: Number(sharedFields.directLaborCostEurT || 7) + Number(sharedFields.distributionCostEurT || 6) + Number(sharedFields.otherVariableCostEurT || 3),
+          packagingCostEurBag: Number(sharedFields.bagCostEur || 0.18),
+          fixedOpexEurMonth: Number(sharedFields.fixedOpexEurMonth || 15000),
+          whitenessTarget: "L* / reflectanță TBD",
+          psdTarget: "D97 <= 0.2 mm / fracție fină de validat",
+          bentoniteActivity: "Enslin / MB / plasticitate TBD",
+          moistureTarget: "<= 0.5%",
+          competitorNotes: "",
+          channelNotes: "",
+          technicalRisks: "Variabilitate alb, plasticitate, umiditate, acceptare meșteri, creep al pachetului extern.",
+          nextActions: "Valideaza price points, formula pilot A/B/C si discutiile cu 3 depozite + 3 echipe de aplicatori."
+        };
+      }
+
+      const fields = [
+        { section: "General", id: "analysisDate", label: "Data versiunii", unit: "", type: "text", note: "Păstrează data ultimei versiuni revizuite." },
+        { section: "General", id: "owner", label: "Owner", unit: "", type: "text", note: "Cine răspunde de validarea datelor." },
+        { section: "General", id: "thesis", label: "Teza produsului", unit: "", type: "textarea", note: "Rezumatul strategic în 1-2 fraze." },
+        { section: "General", id: "bagKg", label: "Greutate sac", unit: "kg", type: "number", note: "Canonicul actual pentru Glet este 20kg." },
+        { section: "General", id: "exchangeRate", label: "Curs MDL / EUR", unit: "MDL/EUR", type: "number", note: "Pentru conversiile economice." },
+
+        { section: "Piață & distribuție", id: "annualMarketTYear", label: "Piață totală estimată", unit: "t/an", type: "number", note: "Poate fi estimate internă; marchează sursa separat." },
+        { section: "Piață & distribuție", id: "addressableMarketTYear", label: "Piață adresabilă realistă", unit: "t/an", type: "number", note: "Nu TAM abstract, ci ce putem atinge realist." },
+        { section: "Piață & distribuție", id: "stockRotationDays", label: "Rotație stoc", unit: "zile", type: "number", note: "Ipoteză critică pentru cash-flow." },
+        { section: "Piață & distribuție", id: "namedLeads", label: "Leaduri nominale", unit: "count", type: "number", note: "Minim 10 pentru un pilon comercial sănătos." },
+        { section: "Piață & distribuție", id: "pilotDiscussions", label: "Discuții pilot", unit: "count", type: "number", note: "Minim 3 pentru a începe să credem în teza de piață." },
+        { section: "Piață & distribuție", id: "pilotPotentialTMonth", label: "Potențial pilot", unit: "t/lună", type: "number", note: "Volum lunar discutat concret." },
+        { section: "Piață & distribuție", id: "pricePoints", label: "Price points validate", unit: "count", type: "number", note: "Ținta minimă: 5-7 observații reale." },
+        { section: "Piață & distribuție", id: "competitorsMapped", label: "Competitori mapați", unit: "count", type: "number", note: "Ținta minimă: 4-6 nume relevante." },
+        { section: "Piață & distribuție", id: "targetWholesaleMdlBag", label: "Preț țintă angro", unit: "MDL/sac", type: "number", note: "Trebuie ancorat în piață, nu doar dorit." },
+        { section: "Piață & distribuție", id: "targetRetailMdlBag", label: "Retail benchmark", unit: "MDL/sac", type: "number", note: "Doar benchmark, nu neapărat targetul RENOVIT." },
+        { section: "Piață & distribuție", id: "avgPaymentDays", label: "Termen mediu plată", unit: "zile", type: "number", note: "Impact direct în capitalul de lucru." },
+        { section: "Piață & distribuție", id: "distributorMarkupPct", label: "Markup distribuitor", unit: "%", type: "number", note: "Ajută la reconstrucția prețului net." },
+        { section: "Piață & distribuție", id: "monthlySalesTons", label: "Vânzare lunară modelată", unit: "t/lună", type: "number", note: "Volum de lucru pentru P&L simplificat." },
+
+        { section: "Rețetă & costuri", id: "processYieldPct", label: "Randament proces", unit: "%", type: "number", note: "Brut -> produs finit." },
+        { section: "Rețetă & costuri", id: "volodeniPct", label: "Volodeni", unit: "%", type: "number", note: "Alb și diferențiere." },
+        { section: "Rețetă & costuri", id: "ocnitaPct", label: "Ocnița calcar", unit: "%", type: "number", note: "Masă principală." },
+        { section: "Rețetă & costuri", id: "bentonitePct", label: "Bentonită", unit: "%", type: "number", note: "Plasticitate; de validat atent." },
+        { section: "Rețetă & costuri", id: "additivesPct", label: "Aditivi / liant extern", unit: "%", type: "number", note: "Aici se vede cât de curat rămâne modelul resource-first." },
+        { section: "Rețetă & costuri", id: "volodeniLandedEurT", label: "Volodeni landed", unit: "EUR/t", type: "number", note: "Cost material + transport până în fabrică." },
+        { section: "Rețetă & costuri", id: "ocnitaLandedEurT", label: "Ocnița landed", unit: "EUR/t", type: "number", note: "Cost material + transport intern." },
+        { section: "Rețetă & costuri", id: "bentoniteLandedEurT", label: "Bentonită landed", unit: "EUR/t", type: "number", note: "Include activare / uscare dacă este necesar." },
+        { section: "Rețetă & costuri", id: "additivesCostEurT", label: "Cost pachet extern", unit: "EUR/t produs", type: "number", note: "Cost efectiv pe tonă produs finit." },
+        { section: "Rețetă & costuri", id: "routeProcessEurT", label: "Rută proces Glet", unit: "EUR/t", type: "number", note: "Micronizare, clasificare, dozare, mixare, QC." },
+        { section: "Rețetă & costuri", id: "supportCostEurT", label: "Cost suport variabil", unit: "EUR/t", type: "number", note: "Manoperă, distribuție, pierderi, manipulare." },
+        { section: "Rețetă & costuri", id: "packagingCostEurBag", label: "Ambalaj per sac", unit: "EUR/sac", type: "number", note: "Sac, etichetă, paletizare asociată minimă." },
+        { section: "Rețetă & costuri", id: "fixedOpexEurMonth", label: "Costuri fixe lunare", unit: "EUR/lună", type: "number", note: "Default prudent la nivel de proiect." },
+        { section: "Rețetă & costuri", id: "saciPalet", label: "Saci / palet", unit: "count", type: "number", note: "Pentru logistică și ofertare." },
+
+        { section: "Calitate & risc", id: "whitenessTarget", label: "Țintă alb / whiteness", unit: "", type: "text", note: "Poate fi L*, ISO brightness sau altă scală internă." },
+        { section: "Calitate & risc", id: "psdTarget", label: "Țintă PSD", unit: "", type: "text", note: "Granulometria critică pentru lucrabilitate și finisaj." },
+        { section: "Calitate & risc", id: "bentoniteActivity", label: "Activitate bentonită", unit: "", type: "text", note: "Enslin / MB / observație tehnologică." },
+        { section: "Calitate & risc", id: "moistureTarget", label: "Țintă umiditate", unit: "", type: "text", note: "Critică pentru stabilitate și depozitare." },
+        { section: "Calitate & risc", id: "competitorNotes", label: "Note concurență", unit: "", type: "textarea", note: "Nume, prețuri, observații și weak spots." },
+        { section: "Calitate & risc", id: "channelNotes", label: "Note canale", unit: "", type: "textarea", note: "Depozite, meșteri, big-bag, proiecte mari." },
+        { section: "Calitate & risc", id: "technicalRisks", label: "Riscuri critice", unit: "", type: "textarea", note: "Ce poate rupe modelul în tehnic sau comercial." },
+        { section: "Calitate & risc", id: "nextActions", label: "Următorii pași", unit: "", type: "textarea", note: "Ce trebuie făcut în următoarele 2-4 săptămâni." }
+      ];
+
+      let defaults = buildDefaults();
+      let values = { ...defaults };
+      const inputs = {};
+
+      function readSaved() {
+        const parsed = safeParse(STORAGE_KEY);
+        if (parsed?.fields) {
+          values = { ...defaults, ...parsed.fields };
+        }
+      }
+
+      function fieldInput(field) {
+        if (field.type === "textarea") {
+          return `<textarea id="${field.id}"></textarea>`;
+        }
+        return `<input id="${field.id}" type="${field.type}" ${field.type === "number" ? 'step="0.01"' : ""}>`;
+      }
+
+      function renderInputRows() {
+        let currentSection = "";
+        const rows = [];
+        fields.forEach(field => {
+          if (field.section !== currentSection) {
+            currentSection = field.section;
+            rows.push(`<tr class="section-row"><td colspan="5">${currentSection}</td></tr>`);
+          }
+          rows.push(`
+            <tr>
+              <td>${field.section}</td>
+              <td>${field.label}</td>
+              <td>${fieldInput(field)}</td>
+              <td>${field.unit}</td>
+              <td>${field.note}</td>
+            </tr>
+          `);
+        });
+        document.getElementById("inputRows").innerHTML = rows.join("");
+
+        fields.forEach(field => {
+          inputs[field.id] = document.getElementById(field.id);
+          inputs[field.id].value = values[field.id] ?? "";
+          const handler = () => {
+            values[field.id] = inputs[field.id].value;
+            render();
+            save(false);
+          };
+          inputs[field.id].addEventListener("input", handler);
+          inputs[field.id].addEventListener("change", handler);
+        });
+      }
+
+      function n(id) {
+        const value = Number.parseFloat(values[id]);
+        return Number.isFinite(value) ? value : 0;
+      }
+
+      function money(value, currency = "EUR", digits = 0) {
+        if (!Number.isFinite(value)) return "N/A";
+        const prefix = currency === "MDL" ? "MDL " : "€";
+        return `${prefix}${value.toLocaleString("ro-RO", { minimumFractionDigits: digits, maximumFractionDigits: digits })}`;
+      }
+
+      function pct(value, digits = 1) {
+        if (!Number.isFinite(value)) return "N/A";
+        return `${value.toLocaleString("ro-RO", { minimumFractionDigits: digits, maximumFractionDigits: digits })}%`;
+      }
+
+      function calc() {
+        const bagKg = Math.max(n("bagKg"), 1);
+        const bagsPerTon = 1000 / bagKg;
+        const recipeTotal = n("volodeniPct") + n("ocnitaPct") + n("bentonitePct") + n("additivesPct");
+        const ownMass = n("volodeniPct") + n("ocnitaPct") + n("bentonitePct");
+        const externalMass = n("additivesPct");
+        const yieldFactor = Math.max(n("processYieldPct") / 100, 0.01);
+
+        const rawCost =
+          (n("volodeniPct") / 100) * n("volodeniLandedEurT") +
+          (n("ocnitaPct") / 100) * n("ocnitaLandedEurT") +
+          (n("bentonitePct") / 100) * n("bentoniteLandedEurT");
+
+        const packagingPerTon = bagsPerTon * n("packagingCostEurBag");
+        const totalCostPerTon = (rawCost / yieldFactor) + n("additivesCostEurT") + n("routeProcessEurT") + n("supportCostEurT") + packagingPerTon;
+        const totalCostPerBagEur = totalCostPerTon / bagsPerTon;
+        const totalCostPerBagMdl = totalCostPerBagEur * n("exchangeRate");
+        const pricePerBagEur = n("targetWholesaleMdlBag") / Math.max(n("exchangeRate"), 0.01);
+        const pricePerTonEur = pricePerBagEur * bagsPerTon;
+        const marginPct = pricePerTonEur > 0 ? ((pricePerTonEur - totalCostPerTon) / pricePerTonEur) * 100 : 0;
+        const monthlyRevenue = n("monthlySalesTons") * pricePerTonEur;
+        const monthlyGrossProfit = n("monthlySalesTons") * (pricePerTonEur - totalCostPerTon);
+        const contributionT = pricePerTonEur - totalCostPerTon;
+        const breakEvenTons = contributionT > 0 ? n("fixedOpexEurMonth") / contributionT : 0;
+        const readinessScore = Math.min(100, Math.round((
+          Math.min(n("pricePoints") / 5, 1) * 0.25 +
+          Math.min(n("namedLeads") / 10, 1) * 0.2 +
+          Math.min(n("pilotDiscussions") / 3, 1) * 0.2 +
+          Math.min(n("competitorsMapped") / 5, 1) * 0.15 +
+          Math.min(n("pilotPotentialTMonth") / 60, 1) * 0.2
+        ) * 100));
+
+        let verdict = "Fragil";
+        if (recipeTotal >= 98 && recipeTotal <= 102 && marginPct >= 35 && readinessScore >= 65) {
+          verdict = "Go condiționat";
+        }
+        if (recipeTotal >= 99 && recipeTotal <= 101 && marginPct >= 42 && readinessScore >= 80 && n("pilotDiscussions") >= 3) {
+          verdict = "Go solid";
+        }
+        if (marginPct < 20 || recipeTotal < 95 || recipeTotal > 105) {
+          verdict = "No-go temporar";
+        }
+
+        return {
+          bagKg,
+          bagsPerTon,
+          recipeTotal,
+          ownMass,
+          externalMass,
+          rawCost,
+          packagingPerTon,
+          totalCostPerTon,
+          totalCostPerBagMdl,
+          totalCostPerBagEur,
+          pricePerTonEur,
+          marginPct,
+          monthlyRevenue,
+          monthlyGrossProfit,
+          breakEvenTons,
+          readinessScore,
+          verdict
+        };
+      }
+
+      function payload() {
+        const summary = calc();
+        return {
+          version: 1,
+          updatedAt: new Date().toISOString(),
+          fields: { ...values },
+          summary
+        };
+      }
+
+      function save(showMessage = true) {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(payload()));
+        if (showMessage) {
+          document.getElementById("statusLabel").textContent = "Salvat";
+          document.getElementById("statusText").textContent = "Datele de Glet au fost salvate și pot fi citite direct de dosarul RENOVIT BIO-WHITE.";
+        }
+      }
+
+      function render() {
+        const summary = calc();
+        document.getElementById("recipeTotal").textContent = pct(summary.recipeTotal, 0);
+        document.getElementById("ownMass").textContent = pct(summary.ownMass, 0);
+        document.getElementById("externalMass").textContent = pct(summary.externalMass, 0);
+        document.getElementById("costPerTon").textContent = `${money(summary.totalCostPerTon, "EUR", 1)}/t`;
+        document.getElementById("costPerBag").textContent = money(summary.totalCostPerBagMdl, "MDL", 1);
+        document.getElementById("pricePerTon").textContent = `${money(summary.pricePerTonEur, "EUR", 1)}/t`;
+        document.getElementById("grossMargin").textContent = pct(summary.marginPct, 1);
+        document.getElementById("breakEvenTons").textContent = `${summary.breakEvenTons.toLocaleString("ro-RO", { maximumFractionDigits: 1 })} t/lună`;
+        document.getElementById("monthlyRevenue").textContent = money(summary.monthlyRevenue, "EUR", 0);
+        document.getElementById("monthlyGrossProfit").textContent = money(summary.monthlyGrossProfit, "EUR", 0);
+        document.getElementById("commercialScore").textContent = pct(summary.readinessScore, 0);
+        document.getElementById("verdict").textContent = summary.verdict;
+
+        const warnings = [];
+        if (summary.recipeTotal < 99 || summary.recipeTotal > 101) {
+          warnings.push("Rețeta nu este aproape de 100%. Ajustează procentele înainte să tragi concluzii economice.");
+        }
+        if (summary.marginPct < 35) {
+          warnings.push("Marja brută este sub pragul canonic de 35%. Verifică prețul, costul aditivilor și costul de proces.");
+        }
+        if (n("pricePoints") < 5) {
+          warnings.push("Ai prea puține price points validate. Prețul țintă este încă fragil.");
+        }
+        if (n("pilotDiscussions") < 3) {
+          warnings.push("Nu există încă suficiente discuții pilot pentru a considera canalul validat.");
+        }
+        if (n("stockRotationDays") > 30) {
+          warnings.push("Rotația de stoc este mai lentă decât teza de 'cash-flow locomotive'. Verifică ipoteza comercială.");
+        }
+        document.getElementById("warningBox").innerHTML = warnings.length
+          ? warnings.map(item => `• ${item}`).join("<br>")
+          : "Setul curent de date arată coerent pentru o ipoteză de lucru. Următorul pas este validarea pilot + piață.";
+      }
+
+      document.getElementById("saveData").addEventListener("click", () => save(true));
+      document.getElementById("resetData").addEventListener("click", () => {
+        defaults = buildDefaults();
+        values = { ...defaults };
+        fields.forEach(field => {
+          if (inputs[field.id]) inputs[field.id].value = values[field.id] ?? "";
+        });
+        render();
+        save(true);
+      });
+      document.getElementById("copyJson").addEventListener("click", async () => {
+        await navigator.clipboard.writeText(JSON.stringify(payload(), null, 2));
+        document.getElementById("statusLabel").textContent = "Copiat";
+        document.getElementById("statusText").textContent = "Payload-ul pentru Glet este în clipboard.";
+      });
+
+      readSaved();
+      renderInputRows();
+      render();
+      save(false);
+    </script>
+  </body>
+</html>

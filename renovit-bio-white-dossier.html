@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RENOVIT BIO-WHITE 20kg — Dossier</title>
+<meta name="description" content="Dosar browser-ready pentru RENOVIT BIO-WHITE: piață, concurență, proces tehnologic, puncte critice și unit economics conectat la date manuale.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&amp;family=DM+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#1a1814;--ink2:#4a4540;--ink3:#8a857e;
+  --stone:#f7f3ec;--stone2:#ede8df;--stone3:#e2dbd0;
+  --accent:#7a5c1e;--accent2:#c8a84b;--accent3:#f0e8d0;
+  --green:#3a6b47;--green2:#eaf3de;
+  --blue:#1a4a7a;--blue2:#e6f0fb;
+  --red:#7a2d2d;--red2:#faebeb;
+  --orange:#854f0b;--orange2:#faeeda;
+  --border:#d4ccc0;
+}
+html{scroll-behavior:smooth}
+body{background:var(--stone);color:var(--ink);font-family:'Cormorant Garamond',Georgia,serif;font-size:16px;line-height:1.7}
+nav{position:sticky;top:0;z-index:100;background:var(--ink);border-bottom:1px solid #2e2a26}
+.nav-inner{max-width:980px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:52px}
+.nav-brand{color:var(--accent2);font-family:'DM Mono',monospace;font-size:12px;letter-spacing:3px;text-transform:uppercase}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}
+.nav-links a{color:#888;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;padding:6px 10px;border-radius:4px;transition:color .15s,background .15s}
+.nav-links a:hover{color:#fff;background:#2e2a26}
+.hero{background:var(--ink);color:var(--stone);padding:64px 24px 56px;text-align:center}
+.hero-eyebrow{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--accent2);margin-bottom:16px}
+.hero-title{font-size:clamp(34px,6vw,62px);font-weight:600;line-height:1.05;margin-bottom:12px;letter-spacing:-1px}
+.hero-title em{color:var(--accent2);font-style:italic}
+.hero-sub{font-size:clamp(16px,2vw,20px);color:#aaa9a3;font-style:italic;margin-bottom:28px}
+.hero-badges{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.badge{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;padding:5px 12px;border-radius:3px}
+.badge-green{background:#1e3a28;color:#7ec98a;border:1px solid #2e5038}
+.badge-amber{background:#2e2010;color:var(--accent2);border:1px solid #4a3410}
+.badge-stone{background:#2a2620;color:#c4bfb4;border:1px solid #3a3530}
+main{max-width:980px;margin:0 auto;padding:48px 24px 80px}
+section{margin-bottom:56px}
+.section-eyebrow{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:20px;padding-bottom:10px;border-bottom:1px solid var(--border)}
+.tagline-block{background:var(--ink);color:var(--stone);padding:24px 28px;border-left:4px solid var(--accent2);margin-bottom:48px}
+.tagline-block p{font-size:18px;font-style:italic;line-height:1.7;color:#ddd8d0}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-bottom:20px}
+.card{padding:20px;border:1px solid var(--border);border-top:3px solid var(--accent2);background:#fff}
+.card .kicker{font-family:'DM Mono',monospace;font-size:11px;color:var(--accent);margin-bottom:10px;letter-spacing:1px}
+.card h3{font-size:18px;font-weight:600;margin-bottom:8px}
+.card p{font-size:14px;color:var(--ink2);line-height:1.6}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.box{background:#fff;border:1px solid var(--border);padding:18px}
+.box h3{font-size:18px;margin-bottom:10px}
+.box p,.box li{font-size:14px;color:var(--ink2);line-height:1.65}
+.box ul{padding-left:18px}
+.formula-grid{display:grid;gap:14px;margin-bottom:28px}
+.formula-item{background:#fff;border:1px solid var(--border);padding:16px 20px}
+.formula-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.formula-name{font-size:15px;font-weight:600;color:var(--ink)}
+.formula-pct{font-family:'DM Mono',monospace;font-size:20px;font-weight:500;color:var(--accent)}
+.formula-source{font-family:'DM Mono',monospace;font-size:10px;color:var(--ink3);margin-bottom:8px;letter-spacing:1px;text-transform:uppercase}
+.formula-note{font-size:13px;color:var(--ink2);line-height:1.5;font-style:italic}
+.bar-track{height:5px;background:var(--stone3);border-radius:2px;overflow:hidden;margin-top:10px}
+.bar-fill{height:100%;border-radius:2px}
+.metrics-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:24px}
+.metric-card{background:#fff;border:1px solid var(--border);padding:16px}
+.metric-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink3);margin-bottom:6px}
+.metric-val{font-size:22px;font-weight:600;color:var(--ink);line-height:1.1}
+.metric-unit{font-size:13px;color:var(--ink2);margin-top:4px;font-style:italic}
+.tech-table{width:100%;border-collapse:collapse;margin-bottom:24px;font-size:14px}
+.tech-table th{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--ink3);text-align:left;padding:10px 14px;border-bottom:2px solid var(--border);background:var(--stone2)}
+.tech-table td{padding:10px 14px;border-bottom:1px solid var(--stone3);vertical-align:top}
+.tech-table tr:hover td{background:var(--stone2)}
+.td-note{font-size:12px;color:var(--ink3);font-style:italic;display:block;margin-top:2px}
+.risk-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.risk-card{padding:18px;background:#fff;border:1px solid var(--border)}
+.risk-card.red{border-left:4px solid var(--red);background:var(--red2)}
+.risk-card.orange{border-left:4px solid var(--orange);background:var(--orange2)}
+.risk-card.green{border-left:4px solid var(--green);background:var(--green2)}
+.risk-card h3{font-size:16px;margin-bottom:6px}
+.risk-card p{font-size:14px;color:var(--ink2);line-height:1.6}
+.cta-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.button{display:inline-block;border:1px solid var(--border);background:#fff;color:var(--ink);padding:10px 12px;text-decoration:none;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase}
+.button.primary{background:var(--ink);border-color:var(--ink);color:var(--accent2)}
+.button:hover{border-color:var(--accent2);color:var(--accent)}
+.source-list{display:grid;gap:10px}
+.source-item{background:#fff;border:1px solid var(--border);padding:14px}
+.source-item a{color:var(--blue);text-decoration:none}
+.source-item a:hover{text-decoration:underline}
+.mono{font-family:'DM Mono',monospace}
+footer{background:var(--ink);color:#666;padding:32px 24px;text-align:center;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1px}
+footer span{color:var(--accent2)}
+@media(max-width:760px){
+  .split{grid-template-columns:1fr}
+  .nav-links{display:none}
+  .hero{padding:40px 20px 36px}
+}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <div class="nav-brand">RENOVIT · BIO-WHITE</div>
+    <div class="nav-links">
+      <a href="/instrumente.html">Instrumente</a>
+      <a href="#strategie">Strategie</a>
+      <a href="#piata">Piață</a>
+      <a href="#concurenta">Concurență</a>
+      <a href="#proces">Proces</a>
+      <a href="#economics">Economics</a>
+      <a href="#surse">Surse</a>
+    </div>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-eyebrow">Renovit · Produs de lansare · Working dossier</div>
+  <h1 class="hero-title">BIO-<em>WHITE</em> 20kg</h1>
+  <p class="hero-sub">Glet mineral de finisaj / Минеральная финишная шпаклёвка</p>
+  <div class="hero-badges">
+    <span class="badge badge-green">Launch-first hypothesis</span>
+    <span class="badge badge-amber">Resource-first logic</span>
+    <span class="badge badge-stone">Volodeni + Ocnița</span>
+  </div>
+</div>
+
+<main>
+
+<div class="tagline-block">
+  <p id="heroThesis">Teza de lucru: Gletul este produsul potrivit pentru lansare deoarece poate roti mai rapid capitalul, cere mai puțină educare de piață decât tencuiala și ne permite să testăm brandul RENOVIT înainte de a împinge produse mai grele în distribuție.</p>
+</div>
+
+<section id="strategie">
+  <div class="section-eyebrow">01 · De ce Gletul</div>
+  <div class="card-grid">
+    <div class="card">
+      <div class="kicker">Cash-flow first</div>
+      <h3>Rotație mai rapidă</h3>
+      <p>Teza actuală spune că gletul are șanse mai bune să intre în depozite și renovări mici, cu ciclu de vânzare mai scurt decât tencuiala minerală groasă.</p>
+    </div>
+    <div class="card">
+      <div class="kicker">Brand entry</div>
+      <h3>Barieră de adopție mai mică</h3>
+      <p>Meșterul acceptă mai ușor un glet nou dacă e alb, lucrează curat și are preț bun, decât un produs nou care devine stratul de bază al peretelui.</p>
+    </div>
+    <div class="card">
+      <div class="kicker">Resource-first</div>
+      <h3>Folosește resursa proprie, dar controlat</h3>
+      <p>Volodeni ridică albul, Ocnița dă masa de bază, iar bentonita este testată disciplinat ca aditiv funcțional, nu ca promisiune magică nevalidată.</p>
+    </div>
+    <div class="card">
+      <div class="kicker">System sale</div>
+      <h3>Deschide drumul pentru restul gamei</h3>
+      <p>Dacă Gletul intră în canal, putem lansa mai ușor și tencuiala minerală, fillerul sau soluțiile premium, sub același nume și cu aceeași rețea.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-eyebrow">02 · Ce este verificat și ce rămâne ipoteză</div>
+  <div class="split">
+    <div class="box">
+      <h3>Context public verificat</h3>
+      <ul>
+        <li>Sectorul construcțiilor din Moldova a crescut puternic în <span class="mono">2025</span>, conform Biroului Național de Statistică.</li>
+        <li>Piața regională are deja jucători clari pe gleturi minerale și pe bază de ipsos: Supraten, Baumit, Knauf.</li>
+        <li>Există benchmark-uri publice pentru gleturi de interior, atât pe bază de ciment, cât și pe bază de ipsos.</li>
+      </ul>
+    </div>
+    <div class="box">
+      <h3>Ipoteze interne de proiect</h3>
+      <ul>
+        <li>Gletul are rotație comercială mai rapidă decât tencuiala și este locomotiva de cash-flow în faza 1.</li>
+        <li>Piața adresabilă pentru glet este semnificativ mai mare decât pentru tencuiala minerală de interior.</li>
+        <li>Bentonita poate reduce o parte din dependența de input extern, dar formula finală trebuie validată în laborator și în pilot.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-eyebrow">03 · Ipoteza de formulare</div>
+  <div class="formula-grid">
+    <div class="formula-item">
+      <div class="formula-top">
+        <div>
+          <div class="formula-name">Calcar alb Volodeni</div>
+          <div class="formula-source">Corecție de alb / diferențiere</div>
+        </div>
+        <div class="formula-pct" id="fVolodeni">25%</div>
+      </div>
+      <div class="formula-note">Intră în produs pentru a ridica albul și percepția de calitate, fără a împinge prea sus costul logistic.</div>
+      <div class="bar-track"><div id="fVolodeniBar" class="bar-fill" style="width:25%;background:#ba7517"></div></div>
+    </div>
+    <div class="formula-item">
+      <div class="formula-top">
+        <div>
+          <div class="formula-name">Calcar Ocnița</div>
+          <div class="formula-source">Baza de masă și cost</div>
+        </div>
+        <div class="formula-pct" id="fOcnita">65%</div>
+      </div>
+      <div class="formula-note">Masa principală a produsului. Aici se câștigă economia industrială, nu în poveste.</div>
+      <div class="bar-track"><div id="fOcnitaBar" class="bar-fill" style="width:65%;background:#3a6b47"></div></div>
+    </div>
+    <div class="formula-item">
+      <div class="formula-top">
+        <div>
+          <div class="formula-name">Bentonită Ocnița</div>
+          <div class="formula-source">Plasticitate / de validat</div>
+        </div>
+        <div class="formula-pct" id="fBentonite">5%</div>
+      </div>
+      <div class="formula-note">Nu este tratată ca „înlocuitor total” pentru pachetul funcțional extern. Intră disciplinat, doar cât susțin testele.</div>
+      <div class="bar-track"><div id="fBentoniteBar" class="bar-fill" style="width:5%;background:#1a4a7a"></div></div>
+    </div>
+    <div class="formula-item">
+      <div class="formula-top">
+        <div>
+          <div class="formula-name">Pachet extern</div>
+          <div class="formula-source">Liant / aditiv / compatibilitate</div>
+        </div>
+        <div class="formula-pct" id="fExternal">5%</div>
+      </div>
+      <div class="formula-note">Aici stă cheia economică a produsului: dacă această zonă crește prea mult, gletul își pierde logica `resource-first`.</div>
+      <div class="bar-track"><div id="fExternalBar" class="bar-fill" style="width:5%;background:#8a857e"></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="piata">
+  <div class="section-eyebrow">04 · Piață și canale</div>
+  <div class="metrics-grid">
+    <div class="metric-card">
+      <div class="metric-label">Piață totală modelată</div>
+      <div class="metric-val" id="mTotalMarket">0 t/an</div>
+      <div class="metric-unit">estimate internă / de validat</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Piață adresabilă</div>
+      <div class="metric-val" id="mAddressable">0 t/an</div>
+      <div class="metric-unit">distribuție realistă</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Rotație stoc</div>
+      <div class="metric-val" id="mRotation">0 zile</div>
+      <div class="metric-unit">teza de cash-flow</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Leaduri nominale</div>
+      <div class="metric-val" id="mLeads">0</div>
+      <div class="metric-unit">companii / contacte</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Price points</div>
+      <div class="metric-val" id="mPrices">0</div>
+      <div class="metric-unit">observații validate</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Pilot potențial</div>
+      <div class="metric-val" id="mPilot">0 t/lună</div>
+      <div class="metric-unit">semnal comercial real</div>
+    </div>
+  </div>
+  <div class="card-grid">
+    <div class="card">
+      <div class="kicker">Canal 1</div>
+      <h3>Depozite materiale</h3>
+      <p>Primul test realist pentru Glet: intrare în 2-3 depozite din nord și Chișinău, cu price point clar, rotație și feedback de aplicator.</p>
+    </div>
+    <div class="card">
+      <div class="kicker">Canal 2</div>
+      <h3>Meșteri și echipe mici</h3>
+      <p>Canalul care validează dacă produsul „se întinde bine” și dacă numele RENOVIT capătă încredere în teren.</p>
+    </div>
+    <div class="card">
+      <div class="kicker">Canal 3</div>
+      <h3>Dezvoltatori / pachete mari</h3>
+      <p>Intrarea aici vine mai ușor după ce produsul a fost acceptat ca finisaj. Opțional: saci standard + big-bag pentru lucrări mai mari.</p>
+    </div>
+  </div>
+</section>
+
+<section id="concurenta">
+  <div class="section-eyebrow">05 · Concurență și benchmark</div>
+  <table class="tech-table">
+    <thead>
+      <tr>
+        <th>Produs / brand</th>
+        <th>Tip</th>
+        <th>Bază</th>
+        <th>Poziționare</th>
+        <th>Ce urmărim</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>RENOVIT BIO-WHITE</td>
+        <td>Glet mineral de finisaj<span class="td-note">working hypothesis</span></td>
+        <td>Calcar + bentonită + pachet extern minim</td>
+        <td>Launch-first / cash-flow / brand entry</td>
+        <td>Alb, lucrabilitate, cost net, acceptare în depozit</td>
+      </tr>
+      <tr>
+        <td>Baumit FinoBrillant</td>
+        <td>Glet de ciment alb pentru interior<span class="td-note">sursă publică oficială</span></td>
+        <td>Ciment alb</td>
+        <td>Benchmark mineral / interior</td>
+        <td>Alb, grosime 0.1-3 mm, argumente de aplicare și poziționare</td>
+      </tr>
+      <tr>
+        <td>Baumit FinoBello</td>
+        <td>Glet extrafin de ipsos<span class="td-note">sursă publică oficială</span></td>
+        <td>Ipsos</td>
+        <td>Benchmark ipsos / finisaj fin</td>
+        <td>Cât de fin trebuie să pară produsul comparativ cu piața</td>
+      </tr>
+      <tr>
+        <td>Supraten</td>
+        <td>Gamă gleturi / mortare<span class="td-note">catalog public</span></td>
+        <td>Mixt, în funcție de produs</td>
+        <td>Benchmark local Moldova</td>
+        <td>Preț, disponibilitate, limbaj comercial local</td>
+      </tr>
+      <tr>
+        <td>Knauf</td>
+        <td>Masă de șpaclu / glet / ipsos<span class="td-note">fișe produs și pagini oficiale</span></td>
+        <td>Ipsos / sisteme uscate</td>
+        <td>Benchmark de reputație</td>
+        <td>Ce standard de încredere trebuie bătut în teren</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="box">
+    <h3>Notă de interpretare</h3>
+    <p id="competitorNotesBox">Concurența și price points trebuie actualizate continuu din piață. Acest dosar nu tratează benchmarkurile ca adevăr fix, ci ca hartă de lucru. Când apar date reale, pagina de date manuale devine sursa canonică.</p>
+  </div>
+</section>
+
+<section id="proces">
+  <div class="section-eyebrow">06 · Proces tehnologic propus</div>
+  <table class="tech-table">
+    <thead>
+      <tr>
+        <th>Etapă</th>
+        <th>Input</th>
+        <th>Output</th>
+        <th>Punct critic</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>1. Selecție materie primă</td><td>Volodeni + Ocnița + bentonită</td><td>Feed separat pe lot</td><td>Consistență de alb și impurități</td></tr>
+      <tr><td>2. Zdrobire / pregătire feed</td><td>Piatră brută</td><td>Fracție pregătită pentru moară</td><td>Umiditate și uniformitate</td></tr>
+      <tr><td>3. Uscare dacă este necesar</td><td>Fracție umedă / bentonită</td><td>Feed uscat și stabil</td><td>Umiditate finală pentru depozitare</td></tr>
+      <tr><td>4. Micronizare / clasificare</td><td>Feed mineral</td><td>Fracție fină pentru glet</td><td>PSD și finețe constantă</td></tr>
+      <tr><td>5. Pregătire bentonită</td><td>Bentonită brută</td><td>Pulbere activă / dozabilă</td><td>Activitate reală, nu declarativă</td></tr>
+      <tr><td>6. Dozare rețetă</td><td>Fracții + pachet extern</td><td>Încărcare controlată în mixer</td><td>Rețetă aproape 100%, fără deriva lotului</td></tr>
+      <tr><td>7. Mixare uscată</td><td>Blend de glet</td><td>Produs omogen</td><td>Uniformitate și repetabilitate</td></tr>
+      <tr><td>8. QC laborator</td><td>Mostră lot</td><td>Lot aprobat / blocat</td><td>Alb, PSD, lucrabilitate, umiditate</td></tr>
+      <tr><td>9. Ambalare</td><td>Produs finit</td><td>Sac 20kg / opțional big-bag</td><td>Etanșeitate și protecție la umiditate</td></tr>
+      <tr><td>10. Depozit / distribuție</td><td>Paletizat</td><td>Client / depozit</td><td>Termen de plată și rotație reală</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <div class="section-eyebrow">07 · Puncte critice</div>
+  <div class="risk-grid">
+    <div class="risk-card red">
+      <h3>Alb instabil între loturi</h3>
+      <p>Dacă Volodeni nu este selectat consecvent, produsul își pierde rapid diferențierea la raft și în aplicare.</p>
+    </div>
+    <div class="risk-card red">
+      <h3>Prea mult input extern</h3>
+      <p>Dacă pachetul extern urcă, gletul poate rămâne bun ca produs, dar slab ca teză economică `resource-first`.</p>
+    </div>
+    <div class="risk-card orange">
+      <h3>Bentonită nevalidată</h3>
+      <p>Nu trebuie transformată în poveste comercială înainte să avem confirmare de laborator și pilot de șantier.</p>
+    </div>
+    <div class="risk-card orange">
+      <h3>Canal fragil</h3>
+      <p>Fără minim 3 piloți și un set de prețuri validate, orice unit economics rămâne teoretic.</p>
+    </div>
+    <div class="risk-card green">
+      <h3>Avantajul real</h3>
+      <p>Alb local + cost de masă controlat + intrare mai ușoară în distribuție. Aici poate sta adevărata forță a produsului.</p>
+    </div>
+  </div>
+</section>
+
+<section id="economics">
+  <div class="section-eyebrow">08 · Unit Economics din datele manuale</div>
+  <div class="metrics-grid">
+    <div class="metric-card">
+      <div class="metric-label">Preț angro</div>
+      <div class="metric-val" id="eWholesale">MDL 0</div>
+      <div class="metric-unit">per sac</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Cost total</div>
+      <div class="metric-val" id="eCostBag">MDL 0</div>
+      <div class="metric-unit">per sac</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Marjă brută</div>
+      <div class="metric-val" id="eMargin">0%</div>
+      <div class="metric-unit">prag canonic >=35%</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Break-even</div>
+      <div class="metric-val" id="eBreakEven">0 t/lună</div>
+      <div class="metric-unit">la costul fix introdus</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Venit lunar</div>
+      <div class="metric-val" id="eRevenue">€0</div>
+      <div class="metric-unit">la volumul introdus</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Verdict</div>
+      <div class="metric-val" id="eVerdict">Fragil</div>
+      <div class="metric-unit">working output</div>
+    </div>
+  </div>
+  <div class="box">
+    <h3>Interpretare</h3>
+    <p id="economicsText">Pagina de date manuale nu este încă populată. Completează costurile reale și price points pentru a vedea verdictul economic al Gletului.</p>
+    <div class="cta-row">
+      <a class="button primary" href="/renovit-glet-date-manuale.html">Editează datele manuale</a>
+      <a class="button" href="/date-initiale.html">Vezi datele generale</a>
+      <a class="button" href="/sales-marketing-hub.html">Vezi Sales &amp; Marketing</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-eyebrow">09 · Reguli de decizie</div>
+  <div class="split">
+    <div class="box">
+      <h3>Go conditionat</h3>
+      <ul>
+        <li>Marjă brută >= 35%</li>
+        <li>Minim 5 price points reale</li>
+        <li>Minim 3 discuții pilot</li>
+        <li>Rețetă aproape 100% și lot pilot funcțional</li>
+      </ul>
+    </div>
+    <div class="box">
+      <h3>No-go temporar</h3>
+      <ul>
+        <li>Marjă sub 20%</li>
+        <li>Pachet extern crește și distruge logica economică</li>
+        <li>Alb / PSD / lucrabilitate instabile</li>
+        <li>Canalul refuză produsul la price point-ul realist</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="surse">
+  <div class="section-eyebrow">10 · Surse și note</div>
+  <div class="source-list">
+    <div class="source-item">
+      <strong>Biroul Național de Statistică</strong><br>
+      <a href="https://statistica.gov.md/ro/lucrari-de-constructii-executate-in-anul-2025-9801_62328.html" target="_blank" rel="noreferrer">Lucrări de construcții executate în anul 2025</a><br>
+      <span>Folosit ca suport macro pentru contextul pieței de construcții din Moldova.</span>
+    </div>
+    <div class="source-item">
+      <strong>Baumit</strong><br>
+      <a href="https://baumit.ro/products/tencuieli-decorative-vopsele-si-gleturi/gleturi/baumit-finobrillant" target="_blank" rel="noreferrer">Baumit FinoBrillant</a><br>
+      <a href="https://baumit.ro/products/tencuieli-decorative-vopsele-si-gleturi/gleturi/baumit-finobello" target="_blank" rel="noreferrer">Baumit FinoBello</a><br>
+      <span>Folosite pentru benchmark public pe gleturi de interior mineral vs ipsos.</span>
+    </div>
+    <div class="source-item">
+      <strong>Supraten</strong><br>
+      <a href="https://supraten.md/i/brochures/2019/Catalog-produse-Supraten-07.2019.pdf" target="_blank" rel="noreferrer">Catalog produse Supraten</a><br>
+      <span>Benchmark local Moldova pentru limbaj comercial și existența gamei de gleturi / mortare.</span>
+    </div>
+    <div class="source-item">
+      <strong>Knauf</strong><br>
+      Knauf Romania - game de șpaclu / glet / ipsos folosite ca benchmark de reputație și standard de încredere în piață.<br>
+      <span>Am lăsat sursa ca referință de brand, nu ca link direct, deoarece paginile lor sunt uneori protejate la acces automat.</span>
+    </div>
+    <div class="source-item">
+      <strong>Surse interne</strong><br>
+      Assumption Register, Date Inițiale, Sales &amp; Marketing Hub și setul de date manuale pentru Glet.<br>
+      <span>Acestea conțin ipotezele și inputurile de lucru care trebuie actualizate pe măsură ce intră date reale.</span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p><span>RENOVIT</span> · BIO-WHITE 20kg · Working Dossier · Cupcini, Moldova</p>
+  <p style="margin-top:6px">Document intern de lucru · surse publice + ipoteze interne marcate separat</p>
+</footer>
+
+<script>
+const STORAGE_KEY = "RENOVIT_GLET_MANUAL_INPUTS";
+
+function safeParse(key) {
+  try {
+    return JSON.parse(localStorage.getItem(key) || "null");
+  } catch {
+    return null;
+  }
+}
+
+function money(value, currency = "EUR", digits = 0) {
+  if (!Number.isFinite(value)) return "N/A";
+  const prefix = currency === "MDL" ? "MDL " : "€";
+  return `${prefix}${value.toLocaleString("ro-RO", { minimumFractionDigits: digits, maximumFractionDigits: digits })}`;
+}
+
+function pct(value, digits = 0) {
+  if (!Number.isFinite(value)) return "N/A";
+  return `${value.toLocaleString("ro-RO", { minimumFractionDigits: digits, maximumFractionDigits: digits })}%`;
+}
+
+function fallbackData() {
+  const fields = {
+    thesis: "Gletul este produsul potrivit pentru lansare deoarece poate roti mai rapid capitalul, cere mai puțină educare de piață decât tencuiala și ne permite să testăm brandul RENOVIT înainte de a împinge produse mai grele în distribuție.",
+    bagKg: 20,
+    annualMarketTYear: 12000,
+    addressableMarketTYear: 8400,
+    stockRotationDays: 15,
+    namedLeads: 0,
+    pricePoints: 0,
+    pilotPotentialTMonth: 0,
+    targetWholesaleMdlBag: 185,
+    volodeniPct: 25,
+    ocnitaPct: 65,
+    bentonitePct: 5,
+    additivesPct: 5,
+    exchangeRate: 20,
+    monthlySalesTons: 60,
+    processYieldPct: 95,
+    volodeniLandedEurT: 13,
+    ocnitaLandedEurT: 6,
+    bentoniteLandedEurT: 22,
+    additivesCostEurT: 25,
+    routeProcessEurT: 58,
+    supportCostEurT: 16,
+    packagingCostEurBag: 0.18,
+    fixedOpexEurMonth: 15000,
+    competitorNotes: "Completează benchmarkul local cu prețuri și observații reale din piață."
+  };
+
+  const bagsPerTon = 1000 / fields.bagKg;
+  const rawCost =
+    (fields.volodeniPct / 100) * fields.volodeniLandedEurT +
+    (fields.ocnitaPct / 100) * fields.ocnitaLandedEurT +
+    (fields.bentonitePct / 100) * fields.bentoniteLandedEurT;
+  const totalCostPerTon =
+    (rawCost / (fields.processYieldPct / 100)) +
+    fields.additivesCostEurT +
+    fields.routeProcessEurT +
+    fields.supportCostEurT +
+    (bagsPerTon * fields.packagingCostEurBag);
+  const pricePerTonEur = (fields.targetWholesaleMdlBag / fields.exchangeRate) * bagsPerTon;
+  const marginPct = pricePerTonEur > 0 ? ((pricePerTonEur - totalCostPerTon) / pricePerTonEur) * 100 : 0;
+  const contribution = pricePerTonEur - totalCostPerTon;
+
+  return {
+    fields,
+    summary: {
+      totalCostPerTon,
+      totalCostPerBagMdl: (totalCostPerTon / bagsPerTon) * fields.exchangeRate,
+      pricePerTonEur,
+      marginPct,
+      breakEvenTons: contribution > 0 ? fields.fixedOpexEurMonth / contribution : 0,
+      monthlyRevenue: fields.monthlySalesTons * pricePerTonEur,
+      readinessScore: 0,
+      verdict: "Working baseline"
+    }
+  };
+}
+
+function render() {
+  const data = safeParse(STORAGE_KEY) || fallbackData();
+  const fields = data?.fields || null;
+  const summary = data?.summary || null;
+
+  if (!fields || !summary) {
+    return;
+  }
+
+  document.getElementById("heroThesis").textContent = fields.thesis || document.getElementById("heroThesis").textContent;
+  document.getElementById("fVolodeni").textContent = `${Number(fields.volodeniPct || 0).toLocaleString("ro-RO", { maximumFractionDigits: 0 })}%`;
+  document.getElementById("fOcnita").textContent = `${Number(fields.ocnitaPct || 0).toLocaleString("ro-RO", { maximumFractionDigits: 0 })}%`;
+  document.getElementById("fBentonite").textContent = `${Number(fields.bentonitePct || 0).toLocaleString("ro-RO", { maximumFractionDigits: 0 })}%`;
+  document.getElementById("fExternal").textContent = `${Number(fields.additivesPct || 0).toLocaleString("ro-RO", { maximumFractionDigits: 0 })}%`;
+  document.getElementById("fVolodeniBar").style.width = `${fields.volodeniPct || 0}%`;
+  document.getElementById("fOcnitaBar").style.width = `${fields.ocnitaPct || 0}%`;
+  document.getElementById("fBentoniteBar").style.width = `${fields.bentonitePct || 0}%`;
+  document.getElementById("fExternalBar").style.width = `${fields.additivesPct || 0}%`;
+
+  document.getElementById("mTotalMarket").textContent = `${Number(fields.annualMarketTYear || 0).toLocaleString("ro-RO")} t/an`;
+  document.getElementById("mAddressable").textContent = `${Number(fields.addressableMarketTYear || 0).toLocaleString("ro-RO")} t/an`;
+  document.getElementById("mRotation").textContent = `${Number(fields.stockRotationDays || 0).toLocaleString("ro-RO")} zile`;
+  document.getElementById("mLeads").textContent = Number(fields.namedLeads || 0).toLocaleString("ro-RO");
+  document.getElementById("mPrices").textContent = Number(fields.pricePoints || 0).toLocaleString("ro-RO");
+  document.getElementById("mPilot").textContent = `${Number(fields.pilotPotentialTMonth || 0).toLocaleString("ro-RO")} t/lună`;
+  document.getElementById("competitorNotesBox").textContent = fields.competitorNotes || "Completează pagina de date manuale cu observațiile reale din piață pentru a transforma benchmarkul într-un capitol comercial solid.";
+
+  document.getElementById("eWholesale").textContent = money(Number(fields.targetWholesaleMdlBag || 0), "MDL", 0);
+  document.getElementById("eCostBag").textContent = money(summary.totalCostPerBagMdl, "MDL", 1);
+  document.getElementById("eMargin").textContent = pct(summary.marginPct, 1);
+  document.getElementById("eBreakEven").textContent = `${Number(summary.breakEvenTons || 0).toLocaleString("ro-RO", { maximumFractionDigits: 1 })} t/lună`;
+  document.getElementById("eRevenue").textContent = money(summary.monthlyRevenue, "EUR", 0);
+  document.getElementById("eVerdict").textContent = summary.verdict;
+
+  const text = [];
+  text.push(`Setul curent modelează Gletul la ${fields.bagKg}kg, cu cost total ${money(summary.totalCostPerTon, "EUR", 1)}/t și preț angro echivalent ${money(summary.pricePerTonEur, "EUR", 1)}/t.`);
+  text.push(`Marja brută rezultată este ${pct(summary.marginPct, 1)}, iar break-even-ul lunar este ${Number(summary.breakEvenTons || 0).toLocaleString("ro-RO", { maximumFractionDigits: 1 })} t.`);
+  text.push(`Readiness-ul comercial modelat este ${pct(summary.readinessScore, 0)}, pe baza leadurilor, price points-urilor și pilotului potențial introduse.`);
+  document.getElementById("economicsText").textContent = text.join(" ");
+}
+
+render();
+</script>
+
+</body>
+</html>
