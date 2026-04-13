@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RENOVIT Glet Pure-White — Value Engine Map · Ryan Deiss</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  background:#0a0908;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:36px 16px 60px;
+  font-family:'DM Mono',monospace;
+}
+.page-wrap{max-width:680px;width:100%}
+.header{margin-bottom:28px}
+.h-eyebrow{font-size:9px;letter-spacing:4px;text-transform:uppercase;color:#c8a84b;opacity:.65;margin-bottom:10px}
+.h-title{font-family:'Playfair Display',serif;font-size:clamp(26px,5vw,38px);font-weight:900;color:#e0d8c8;letter-spacing:-0.5px;line-height:1.1;margin-bottom:6px}
+.h-title em{color:#c8a84b;font-style:italic}
+.h-sub{font-size:11px;color:#5a5550;letter-spacing:2px;text-transform:uppercase}
+.legend{
+  display:flex;gap:18px;flex-wrap:wrap;
+  padding:14px 16px;border:1px solid #222018;
+  background:#0e0d0b;margin-bottom:24px;
+}
+.li{display:flex;align-items:center;gap:8px}
+.li svg{flex-shrink:0}
+.li span{font-size:9px;letter-spacing:1px;text-transform:uppercase;color:#5a5550}
+.diagram svg{width:100%;display:block}
+.note{
+  margin-top:18px;padding:14px 16px;
+  border:1px solid #222018;background:#0e0d0b;
+  font-size:11px;color:#4a4540;line-height:1.7;
+}
+.note strong{color:#6a6560}
+</style>
+</head>
+<body>
+<div class="page-wrap">
+
+<div class="header">
+  <div class="h-eyebrow">Ryan Deiss · Get Scalable · Standard Notation</div>
+  <h1 class="h-title">RENOVIT <em>Glet Pure-White</em></h1>
+  <p class="h-sub">Value Engine Map · Mina din Cupcini → Client Final</p>
+</div>
+
+<!-- LEGEND -->
+<div class="legend">
+  <div class="li">
+    <svg width="44" height="20" viewBox="0 0 44 20">
+      <rect x="0" y="4" width="44" height="12" rx="6" fill="#c8a84b"/>
+    </svg>
+    <span style="color:#c8a84b">Pill — start / end</span>
+  </div>
+  <div class="li">
+    <svg width="36" height="20" viewBox="0 0 36 20">
+      <rect x="1" y="1" width="34" height="18" rx="3" fill="#131110" stroke="#4a4540" stroke-width="1"/>
+    </svg>
+    <span>Square — activitate</span>
+  </div>
+  <div class="li">
+    <svg width="36" height="24" viewBox="0 0 36 24">
+      <polygon points="18,1 35,12 18,23 1,12" fill="#100e08" stroke="#c8a84b" stroke-width="1"/>
+    </svg>
+    <span style="color:#c8a84b">Diamond — decizie</span>
+  </div>
+  <div class="li">
+    <svg width="40" height="20" viewBox="0 0 40 20">
+      <polygon points="8,1 38,1 32,19 2,19" fill="#080e18" stroke="#4a7ab5" stroke-width="1" stroke-dasharray="3 2"/>
+    </svg>
+    <span style="color:#4a7ab5">Parallelogram — date</span>
+  </div>
+  <div class="li">
+    <svg width="36" height="16" viewBox="0 0 36 16">
+      <defs><marker id="leg-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M1 1L9 5L1 9" fill="none" stroke="#888070" stroke-width="1.5" stroke-linecap="round"/></marker></defs>
+      <line x1="2" y1="8" x2="32" y2="8" stroke="#888070" stroke-width="1.5" marker-end="url(#leg-arr)"/>
+    </svg>
+    <span>Linie — flux</span>
+  </div>
+</div>
+
+<!-- DIAGRAM -->
+<div class="diagram">
+<svg viewBox="0 0 680 1320" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>Value Engine Map RENOVIT Glet Pure-White — notație Ryan Deiss Get Scalable</title>
+<desc>Harta completă a Value Engine-ului RENOVIT de la extracția calcarului Volodeni până la livrarea produsului finit, folosind simbolurile standard Deiss: pill, square, diamond, parallelogram, arrows</desc>
+
+<defs>
+  <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <path d="M1 1L9 5L1 9" fill="none" stroke="#888070" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+  <marker id="arr-yes" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <path d="M1 1L9 5L1 9" fill="none" stroke="#3a9050" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+  <marker id="arr-no" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <path d="M1 1L9 5L1 9" fill="none" stroke="#a03030" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+  <marker id="arr-data" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <path d="M1 1L9 5L1 9" fill="none" stroke="#4a7ab5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+</defs>
+
+<!-- background -->
+<rect width="680" height="1320" fill="#0a0908"/>
+
+<!-- ── subtle vertical center guide (invisible) ── -->
+
+<!-- ════════════════════════════════
+     START — PILL
+════════════════════════════════ -->
+<rect x="270" y="28" width="140" height="30" rx="15" fill="#c8a84b"/>
+<text x="340" y="48" text-anchor="middle"
+  font-family="'DM Mono',monospace" font-size="11" font-weight="500"
+  fill="#0a0908" letter-spacing="2">INCEPE PROCESUL</text>
+
+<!-- ↓ -->
+<line x1="340" y1="58" x2="340" y2="80"
+  stroke="#888070" stroke-width="1.5" marker-end="url(#arr)"/>
+
+<!-- ════════════════════════════════
+     RECT 1 — Extracție calcar Volodeni
+════════════════════════════════ -->
+<rect x="240" y="82" width="200" height="52" rx="4"
+  fill="#131110" stroke="#3a3530" stroke-width="1"/>
+<text x="340" y="103" text-anchor="middle"
+  font-family="'DM Mono',monospace" font-size="12" font-weight="500" fill="#e0d8c8">Extracție calcar</text>
+<text x="340" y="122" text-anchor="middle"
+  font-family="'DM Mono',monospace" font-size="10" fill="#5a5550">Volodeni · carieră deschisă</text>
+
+<!-- ↓ -->
+<line x1="340" y1="134" x2="340" y2="156"
+  stroke="#888070" stroke-width="1.5" marker-end="url(#arr)"/>
+
+<!-- ════════════════════════════════
+     RECT 2 — Sortare & Inspecție
+════════════════════════════════ -->
+<rect x="240" y="158" width="200" height="52" rx="4"
+  fill="#131110" stroke="#3a3530" stroke-width="1"/>
+<text x="340" y="179" text-anchor="middle"
+  font-family="'DM Mono',monospace" font-size="12" font-weight="500" fill="#e0d8c8">Sortare &amp; Inspecție</text>
+<text x="340" y="198" text-anchor="middle"
+  font-family="'DM Mono',monospace" font-size="10" fill="#5a5550">protocol vizual + test CIE teren</text>
+
+<!-- ↓ -->
+<line x1="340" y1="210" x2="340" y2="238"
+  stroke="#888070" stroke-width="1.5" marker-end="url(#arr)"/>
+
+<!-- ════════════════════════════════
+     DIAMOND 1 — Alb CIE ≥ 85?
+     center: (340, 282), hw=88, hh=42
+     top=240, right=(428,282), bottom=324, left=(252,282)
+════════════════════════════════ -->
+<polygon points="340,240 428,282 340,324 252,282"
+  fill="#100e08" stroke="#c8a84b" stroke-width="1.5"/>
+<text x="340" y="277" text-anchor="middle"
+  font-family="'DM Mono',monospace" font-size="11" font-weight="500" fill="#c8a84b">Alb CIE ≥ 85?</text>
+<text x="340" y="296" text-anchor="middle"
+  font-family="'DM Mono',monospace" font-size="9" fill="#7a6a40">calitate culoare</text>
+
+<!-- YES ↓ -->
+<line x1="340" y1="324" x2="340" y2="352"
+  stroke="#3a9050" stroke-width="1.5" marker-end="url(#arr-yes)"/>
+<text x="350" y="342"
+  font-family="'DM Mono',monospace" font-size="9" fill="#3a9050">DA</text>
+
+<!-- NO → right -->
+<line x1="428" y1="282" x2="462" y2="282"
+  stroke="#a03030" stroke-width="1.5" marker-end="url(#arr-no)"/>
+<text x="440" y="276"
+  font-family="'DM Mono',monospace" font-size="9" fill="#a03030">NU</text>
+<!-- NO rect right -->
+<rect x="464" y="260" width="148" height="44" rx="4"
+  fill="#180808" stroke="#4a2020" stroke-width="1"/>
+<text x="538" y="279" text-anchor="middle"
+  font-family="'DM Mono',monospace" font-size="10" fill="#c05050">Calcar gri / impur</text>
+<text x="538" y="296" text-anchor="middle"
+  font-family="'DM Mono',monospace" font-size="9" fill="#5a3030">redirecționat produs alternativ</text>
+<!-- mini end pill for this branch -->
+<line x1="538" y1="304" x2="538" y2="320"
+  stroke="#a03030" stroke-width="1" marker-end="url(#arr-no)"/>
+<rect x="503" y="322" width="70" height="22" rx="11"
+  fill="#1e0808" stroke="#4a2020" stroke-width="1"/>
+<text x="538" y="337" text-anchor="middle"
+  font-family="'DM Mono',monospace" font-size="9" fill="#804040">flux alternativ</text>
+
+<!-- ════════════════════════════════
+     RECT 3 — Concasare & Spălare
+════════════════════════════════ -->
+<rect x="240" y="354" width="200" height="52" rx="4"
+  fill="#131110" stroke="#3a3530" stroke-width="1"/>
+<text x="340" y="375" text-anchor="middle"
+  font-family="'DM Mono',monospace" font-size="12" font-weight="500" fill="#e0d8c8">Concasare &amp; Spălare</text>
+<text x="340" y="394" text-anchor="middle"
+  font-family="'DM Mono',monospace" font-size="10" fill="#5a5550">fracție 0.5–2 mm · fără argilă</text>
+
+<!-- ↓ -->
+<line x1="340" y1="406" x2="340" y2="428"
+  stroke="#888070" stroke-width="1.5" marker-end="url(#arr)"/>
+
+<!-- ════════════════════════════════
+     RECT 4 — Micronizare
+════════════════════════════════ -->
+<rect x="240" y="430" width="200" height="52" rx="4"
+  fill="#131110" stroke="#3a3530" stroke-width="1"/>
+<text x="340" y="451" text-anchor="middle"
+  font-family="'DM Mono',monospace" font-size="12" font-weight="500" fill="#e0d8c8">Micronizare</text>
+<text x="340" y="470" text-anchor="middle"
+  font-family="'DM Mono',monospace" font-size="10" fill="#5a5550">D50 &lt; 15 μm · clasificator aerian</text>
+
+<!-- ↓ -->
+<line x1="340" y1="482" x2="340" y2="504"
+  stroke="#888070" stroke-width="1.5" marker-end="url(#arr)"/>
+
+<!-- ════════════════════════════════
+     PARALLELOGRAM 1 — Raport granulometrie lot
+     Data OUTPUT din Micronizare
+     center y=532, h=40, top=512, bottom=552
+     skew=14: top-left=x+14, top-right=x+w+14, bottom-left=x, bottom-right=x+w
+     x=240 → top-left=(254,512), top-right=(446,512), bottom-right=(432,552), bottom-left=(240,552)
+════════════════════════════════ -->
+<polygon points="254,506 446,506 432,548 240,548"
+  fill="#080e18" stroke="#4a7ab5" stroke-width="1" stroke-dasharray="4 2"/>
+<text x="340" y="524" text-anchor="middle"
+  font-family="'DM Mono',monospace" font-size="10" font-weight="500" fill="#6090c0">Raport granulometrie lot</text>
+<text x="340" y="540" text-anchor="middle"
+  font-family="'DM Mono',monospace" font-size="9" fill="#3a5a80">D50 · D90 · laser · export dată</text>
+
+<!-- ↓ -->
+<line x1="340" y1="548" x2="340" y2="570"
+  stroke="#888070" stroke-width="1.5" marker-end="url(#arr)"/>
+
+<!-- ════════════════════════════════
+     DIAMOND 2 — D50 în specificație?
+     center: (340, 614), hw=88, hh=42
+     top=572, right=(428,614), bottom=656, left=(252,614)
+════════════════════════════════ -->
+<polygon points="340,572 428,614 340,656 252,614"
+  fill="#100e08" stroke="#c8a84b" stroke-width="1.5"/>
+<text x="340" y="609" text-anchor="middle"
+  font-family="'DM Mono',monospace" font-size="11" font-weight="500" fill="#c8a84b">D50 &lt; 15 μm?</text>
+<text x="340" y="628" text-anchor="middle"
+  font-family="'DM Mono',monospace" font-size="9" fill="#7a6a40">granulometrie în spec?</text>
+
+<!-- YES ↓ -->
+<line x1="340" y1="656" x2="340" y2="684"
+  stroke="#3a9050" stroke-width="1.5" marker-end="url(#arr-yes)"/>
+<text x="350" y="674"
+  font-family="'DM Mono',monospace" font-size="9" fill="#3a9050">DA</text>
+
+<!-- NO ← left — LOOP BACK to Micronizare -->
+<!-- from left point (252, 614) → left → up → right into n4 left edge -->
+<path d="M252,614 L170,614 L170,456 L240,456"
+  fill="none" stroke="#a03030" stroke-width="1.5"
+  stroke-dasharray="5 3" marker-end="url(#arr-no)"/>
+<!-- NU label on path -->
+<text x="204" y="608"
+  font-family="'DM Mono',monospace" font-size="9" fill="#a03030">NU</text>
+<!-- small label on vertical segment -->
+<text x="158" y="535"
+  font-family="'DM Mono',monospace" font-size="8" fill="#703030"
+  transform="rotate(-90,158,535)">Remăcinare</text>
+
+<!-- ════════════════════════════════
+     RECT 5 — Formulare / Mixing
+════════════════════════════════ -->
+<rect x="240" y="686" width="200" height="52" rx="4"
+  fill="#131110" stroke="#3a3530" stroke-width="1"/>
+<text x="340" y="707" text-anchor="middle"
+  font-family="'DM Mono',monospace" font-size="12" font-weight="500" fill="#e0d8c8">Formulare / Mixing</text>
+<text x="340" y="726" text-anchor="middle"
+  font-family="'DM Mono',monospace" font-size="10" fill="#5a5550">malaxor forțat · dozare ±0.3%</text>
+
+<!-- PARALLELOGRAM 2 — Rețeta IP (data INPUT from right side) -->
+<!-- right of rect: rect right edge = 440. Para starts at x=452 -->
+<!-- para: top-left=(464,694), top-right=(596,694), bottom-right=(584,730), bottom-left=(452,730) -->
+<polygon points="464,694 596,694 584,732 452,732"
+  fill="#080e18" stroke="#4a7ab5" stroke-width="1" stroke-dasharray="4 2"/>
+<text x="524" y="710" text-anchor="middle"
+  font-family="'DM Mono',monospace" font-size="9" font-weight="500" fill="#6090c0">Rețeta IP</text>
+<text x="524" y="724" text-anchor="middle"
+  font-family="'DM Mono',monospace" font-size="8" fill="#3a5a80">formulă · proprietate intelectuală</text>
+<!-- dashed arrow: from para left edge (452,713) into rect right edge (440,712) -->
+<line x1="452" y1="713" x2="442" y2="713"
+  stroke="#4a7ab5" stroke-width="1.5" stroke-dasharray="3 2" marker-end="url(#arr-data)"/>
+
+<!-- ↓ -->
+<line x1="340" y1="738" x2="340" y2="760"
+  stroke="#888070" stroke-width="1.5" marker-end="url(#arr)"/>
+
+<!-- ════════════════════════════════
+     RECT 6 — QC Control per lot
+════════════════════════════════ -->
+<rect x="240" y="762" width="200" height="52" rx="4"
+  fill="#131110" stroke="#3a3530" stroke-width="1"/>
+<text x="340" y="783" text-anchor="middle"
+  font-family="'DM Mono',monospace" font-size="12" font-weight="500" fill="#e0d8c8">QC Control per lot</text>
+<text x="340" y="802" text-anchor="middle"
+  font-family="'DM Mono',monospace" font-size="10" fill="#5a5550">alb CIE · consistență · aderență</text>
+
+<!-- ↓ -->
+<line x1="340" y1="814" x2="340" y2="842"
+  stroke="#888070" stroke-width="1.5" marker-end="url(#arr)"/>
+
+<!-- ════════════════════════════════
+     DIAMOND 3 — Parametri EN 998-1 OK?
+     center: (340, 886), hw=88, hh=42
+     top=844, right=(428,886), bottom=928, left=(252,886)
+════════════════════════════════ -->
+<polygon points="340,844 428,886 340,928 252,886"
+  fill="#100e08" stroke="#c8a84b" stroke-width="1.5"/>
+<text x="340" y="878" text-anchor="middle"
+  font-family="'DM Mono',monospace" font-size="10" font-weight="500" fill="#c8a84b">Parametri EN 998-1</text>
+<text x="340" y="896" text-anchor="middle"
+  font-family="'DM Mono',monospace" font-size="10" font-weight="500" fill="#c8a84b">în normă?</text>
+
+<!-- YES ↓ -->
+<line x1="340" y1="928" x2="340" y2="956"
+  stroke="#3a9050" stroke-width="1.5" marker-end="url(#arr-yes)"/>
+<text x="350" y="946"
+  font-family="'DM Mono',monospace" font-size="9" fill="#3a9050">DA</text>
+
+<!-- NO → right — Lot blocat -->
+<line x1="428" y1="886" x2="462" y2="886"
+  stroke="#a03030" stroke-width="1.5" marker-end="url(#arr-no)"/>
+<text x="440" y="880"
+  font-family="'DM Mono',monospace" font-size="9" fill="#a03030">NU</text>
+<rect x="464" y="864" width="150" height="44" rx="4"
+  fill="#180808" stroke="#4a2020" stroke-width="1.5"/>
+<text x="539" y="882" text-anchor="middle"
+  font-family="'DM Mono',monospace" font-size="10" fill="#c05050">Lot blocat</text>
+<text x="539" y="899" text-anchor="middle"
+  font-family="'DM Mono',monospace" font-size="9" fill="#5a3030">investigație · reformulare</text>
+<!-- loop back: up then left to Formulare -->
+<path d="M539,864 L539,820 L634,820 L634,712 L596,712"
+  fill="none" stroke="#a03030" stroke-width="1"
+  stroke-dasharray="4 3" marker-end="url(#arr-no)"/>
+
+<!-- ════════════════════════════════
+     RECT 7 — Ambalare 25kg
+════════════════════════════════ -->
+<rect x="240" y="958" width="200" height="52" rx="4"
+  fill="#131110" stroke="#3a3530" stroke-width="1"/>
+<text x="340" y="979" text-anchor="middle"
+  font-family="'DM Mono',monospace" font-size="12" font-weight="500" fill="#e0d8c8">Ambalare 25 kg</text>
+<text x="340" y="998" text-anchor="middle"
+  font-family="'DM Mono',monospace" font-size="10" fill="#5a5550">sac PP laminat · imprimare lot</text>
+
+<!-- ↓ -->
+<line x1="340" y1="1010" x2="340" y2="1030"
+  stroke="#888070" stroke-width="1.5" marker-end="url(#arr)"/>
+
+<!-- ════════════════════════════════
+     PARALLELOGRAM 3 — Fișă lot + QR trasabilitate
+     Data EXPORT din Ambalare
+     center y=1058, top=1032, bottom=1074
+════════════════════════════════ -->
+<polygon points="254,1032 446,1032 432,1074 240,1074"
+  fill="#080e18" stroke="#4a7ab5" stroke-width="1" stroke-dasharray="4 2"/>
+<text x="340" y="1050" text-anchor="middle"
+  font-family="'DM Mono',monospace" font-size="10" font-weight="500" fill="#6090c0">Fișă lot + QR trasabilitate</text>
+<text x="340" y="1066" text-anchor="middle"
+  font-family="'DM Mono',monospace" font-size="9" fill="#3a5a80">DoP · certificat EN · export dată</text>
+
+<!-- ↓ -->
+<line x1="340" y1="1074" x2="340" y2="1096"
+  stroke="#888070" stroke-width="1.5" marker-end="url(#arr)"/>
+
+<!-- ════════════════════════════════
+     RECT 8 — Depozitare
+════════════════════════════════ -->
+<rect x="240" y="1098" width="200" height="52" rx="4"
+  fill="#131110" stroke="#3a3530" stroke-width="1"/>
+<text x="340" y="1119" text-anchor="middle"
+  font-family="'DM Mono',monospace" font-size="12" font-weight="500" fill="#e0d8c8">Depozitare</text>
+<text x="340" y="1138" text-anchor="middle"
+  font-family="'DM Mono',monospace" font-size="10" fill="#5a5550">stoc tampon · FIFO · condiții uscate</text>
+
+<!-- ↓ -->
+<line x1="340" y1="1150" x2="340" y2="1172"
+  stroke="#888070" stroke-width="1.5" marker-end="url(#arr)"/>
+
+<!-- ════════════════════════════════
+     RECT 9 — Livrare client
+════════════════════════════════ -->
+<rect x="240" y="1174" width="200" height="52" rx="4"
+  fill="#131110" stroke="#3a3530" stroke-width="1"/>
+<text x="340" y="1195" text-anchor="middle"
+  font-family="'DM Mono',monospace" font-size="12" font-weight="500" fill="#e0d8c8">Livrare client</text>
+<text x="340" y="1214" text-anchor="middle"
+  font-family="'DM Mono',monospace" font-size="10" fill="#5a5550">48h · documentație completă</text>
+
+<!-- ↓ -->
+<line x1="340" y1="1226" x2="340" y2="1248"
+  stroke="#888070" stroke-width="1.5" marker-end="url(#arr)"/>
+
+<!-- ════════════════════════════════
+     END — PILL
+════════════════════════════════ -->
+<rect x="255" y="1250" width="170" height="30" rx="15" fill="#c8a84b"/>
+<text x="340" y="1270" text-anchor="middle"
+  font-family="'DM Mono',monospace" font-size="11" font-weight="500"
+  fill="#0a0908" letter-spacing="2">PRODUS LIVRAT</text>
+
+<!-- ════════════════════════════════
+     STAGE BANDS — faint left side labels
+════════════════════════════════ -->
+<!-- thin vertical lines marking phases -->
+<line x1="22" y1="28" x2="22" y2="352" stroke="#1e1c18" stroke-width="2"/>
+<text x="14" y="200" text-anchor="middle" font-family="'DM Mono',monospace" font-size="8" fill="#2a2820" letter-spacing="2" transform="rotate(-90,14,200)">EXTRACȚIE &amp; SORTARE</text>
+
+<line x1="22" y1="354" x2="22" y2="660" stroke="#1e1c18" stroke-width="2"/>
+<text x="14" y="510" text-anchor="middle" font-family="'DM Mono',monospace" font-size="8" fill="#2a2820" letter-spacing="2" transform="rotate(-90,14,510)">PROCESARE</text>
+
+<line x1="22" y1="662" x2="22" y2="930" stroke="#1e1c18" stroke-width="2"/>
+<text x="14" y="796" text-anchor="middle" font-family="'DM Mono',monospace" font-size="8" fill="#2a2820" letter-spacing="2" transform="rotate(-90,14,796)">FORMULARE &amp; QC</text>
+
+<line x1="22" y1="932" x2="22" y2="1295" stroke="#1e1c18" stroke-width="2"/>
+<text x="14" y="1110" text-anchor="middle" font-family="'DM Mono',monospace" font-size="8" fill="#2a2820" letter-spacing="2" transform="rotate(-90,14,1110)">AMBALARE &amp; LIVRARE</text>
+
+<!-- ════════════════════════════════
+     KEY ANNOTATIONS
+════════════════════════════════ -->
+<!-- "THE CONSTRAINT" annotation at Formulare step -->
+<rect x="60" y="686" width="170" height="52" rx="4"
+  fill="rgba(200,168,75,0.05)" stroke="#3a3020" stroke-width="1" stroke-dasharray="3 2"/>
+<text x="145" y="704" text-anchor="middle"
+  font-family="'DM Mono',monospace" font-size="8" fill="#c8a84b" letter-spacing="1.5">BOTTLENECK ACTUAL</text>
+<text x="145" y="720" text-anchor="middle"
+  font-family="'DM Mono',monospace" font-size="8" fill="#7a6030">Formula validată</text>
+<text x="145" y="733" text-anchor="middle"
+  font-family="'DM Mono',monospace" font-size="8" fill="#7a6030">+ Moara lipsesc acum</text>
+<!-- connector from annotation to rect5 -->
+<line x1="230" y1="712" x2="240" y2="712"
+  stroke="#3a3020" stroke-width="1" stroke-dasharray="2 2" marker-end="url(#arr)"/>
+
+</svg>
+</div>
+
+<div class="note">
+  <strong>Notație Ryan Deiss · Get Scalable:</strong>
+  <span style="color:#c8a84b">Pill</span> = start/end procesului ·
+  <span style="color:#8a8070">Rectangle</span> = activitate sau pas ·
+  <span style="color:#c8a84b">Diamond</span> = decizie (DA/NU) ·
+  <span style="color:#4a7ab5">Parallelogram</span> = date input sau output ·
+  <span style="color:#888070">Linie</span> = flux ·
+  <span style="color:#3a9050">Verde</span> = calea DA ·
+  <span style="color:#a03030">Roșu punctat</span> = calea NU (eroare / loop-back)
+</div>
+
+</div>
+</body>
+</html>

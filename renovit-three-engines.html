@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RENOVIT — The Three Engines · Get Scalable</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --black:#090806;
+  --off:#121008;
+  --ink:#1e1c18;
+  --mid:#5a5550;
+  --muted:#8a8580;
+  --border:#282420;
+  --border2:#3a3530;
+  --stone:#ede8de;
+  --gold:#c8a84b;
+  --gold2:#e0c060;
+  --gold3:#7a5c1e;
+  --gold-dim:#3a2e10;
+  /* Growth engine */
+  --ge:#1a3a5c;
+  --ge2:#2a5080;
+  --ge3:#4a90d0;
+  --ge-bg:#080f18;
+  --ge-dim:#0c1a28;
+  /* Value engine */
+  --ve:#4a1e00;
+  --ve2:#884020;
+  --ve3:#d08040;
+  --ve-bg:#100a04;
+  --ve-dim:#1a1008;
+  /* Fulfillment engine */
+  --fe:#0e2e18;
+  --fe2:#1a5030;
+  --fe3:#40a060;
+  --fe-bg:#060e08;
+  --fe-dim:#0c1a10;
+}
+html{scroll-behavior:smooth}
+body{
+  background:var(--black);
+  color:var(--stone);
+  font-family:'DM Mono',monospace;
+  font-size:13px;
+  line-height:1.6;
+  overflow-x:hidden;
+}
+
+/* GRID BG */
+body::before{
+  content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:radial-gradient(circle at 20% 20%, rgba(200,168,75,.04) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(26,58,92,.06) 0%, transparent 50%),
+    linear-gradient(rgba(200,168,75,.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(200,168,75,.015) 1px, transparent 1px);
+  background-size:100% 100%, 100% 100%, 48px 48px, 48px 48px;
+}
+
+/* STICKY NAV */
+nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(9,8,6,.95);
+  border-bottom:1px solid var(--border);
+  backdrop-filter:blur(8px);
+}
+.nav-inner{
+  max-width:1140px;margin:0 auto;padding:0 28px;
+  display:flex;align-items:center;justify-content:space-between;height:48px;
+}
+.nav-brand{
+  font-family:'Playfair Display',serif;
+  font-size:14px;color:var(--gold);letter-spacing:1px;
+}
+.nav-tabs{display:flex;gap:2px}
+.nav-tab{
+  background:none;border:none;cursor:pointer;
+  padding:6px 14px;font-family:'DM Mono',monospace;
+  font-size:9px;letter-spacing:2px;text-transform:uppercase;
+  color:var(--muted);border-bottom:2px solid transparent;
+  transition:color .15s,border-color .15s;
+}
+.nav-tab:hover{color:var(--stone)}
+.nav-tab.ge-active{color:var(--ge3);border-bottom-color:var(--ge3)}
+.nav-tab.ve-active{color:var(--ve3);border-bottom-color:var(--ve3)}
+.nav-tab.fe-active{color:var(--fe3);border-bottom-color:var(--fe3)}
+
+/* HERO */
+.hero{
+  position:relative;z-index:1;
+  max-width:1140px;margin:0 auto;
+  padding:52px 28px 44px;
+  border-bottom:1px solid var(--border);
+}
+.hero-eyebrow{
+  font-size:9px;letter-spacing:4px;text-transform:uppercase;
+  color:var(--gold);opacity:.7;margin-bottom:14px;
+}
+.hero-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(36px,5vw,58px);
+  font-weight:900;line-height:1.0;letter-spacing:-1px;
+  margin-bottom:10px;
+}
+.hero-title em{color:var(--gold);font-style:italic}
+.hero-sub{
+  font-size:12px;color:var(--muted);letter-spacing:2px;
+  text-transform:uppercase;margin-bottom:28px;
+}
+.hero-formula{
+  display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+}
+.engine-pill{
+  padding:8px 16px;border:1px solid;
+  font-size:10px;letter-spacing:2px;text-transform:uppercase;
+  font-family:'Playfair Display',serif;font-weight:700;
+}
+.pill-ge{border-color:var(--ge2);color:var(--ge3);background:var(--ge-dim)}
+.pill-ve{border-color:var(--ve2);color:var(--ve3);background:var(--ve-dim)}
+.pill-fe{border-color:var(--fe2);color:var(--fe3);background:var(--fe-dim)}
+.pill-op{
+  font-family:'DM Mono',monospace;
+  font-size:16px;color:var(--gold);
+}
+.hero-result{
+  padding:8px 16px;border:1px solid var(--gold-dim);
+  background:rgba(200,168,75,.06);
+  font-size:11px;color:var(--gold2);
+  font-family:'Playfair Display',serif;font-style:italic;
+}
+
+/* MAIN */
+main{
+  position:relative;z-index:1;
+  max-width:1140px;margin:0 auto;
+  padding:0 28px 80px;
+}
+
+/* ENGINE BLOCK */
+.engine-block{
+  padding:48px 0 0;
+  scroll-margin-top:60px;
+}
+.engine-block + .engine-block{
+  border-top:1px solid var(--border);
+  margin-top:8px;
+}
+
+.engine-header{
+  display:flex;align-items:flex-start;
+  justify-content:space-between;gap:20px;
+  margin-bottom:32px;flex-wrap:wrap;
+}
+.eh-left{}
+.engine-number{
+  font-size:10px;letter-spacing:4px;text-transform:uppercase;
+  color:var(--muted);margin-bottom:8px;
+}
+.engine-name{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(28px,4vw,42px);
+  font-weight:900;line-height:1.0;
+  letter-spacing:-1px;margin-bottom:8px;
+}
+.engine-tagline{
+  font-size:12px;color:var(--muted);
+  font-style:italic;font-family:'Playfair Display',serif;
+  max-width:500px;line-height:1.5;
+}
+.eh-right{display:flex;gap:8px;flex-wrap:wrap;padding-top:4px}
+.etag{
+  font-size:9px;letter-spacing:1.5px;text-transform:uppercase;
+  padding:4px 10px;border:1px solid;
+}
+
+/* GROWTH ENGINE colors */
+.ge-name{color:var(--ge3)}
+.ge-etag{border-color:var(--ge2);color:var(--ge3)}
+.ve-name{color:var(--ve3)}
+.ve-etag{border-color:var(--ve2);color:var(--ve3)}
+.fe-name{color:var(--fe3)}
+.fe-etag{border-color:var(--fe2);color:var(--fe3)}
+
+/* STAGE ROW */
+.stage-row{
+  display:grid;gap:1px;
+  background:var(--border);
+  border:1px solid var(--border);
+  margin-bottom:20px;
+}
+.stage-row.cols-3{grid-template-columns:repeat(3,1fr)}
+.stage-row.cols-4{grid-template-columns:repeat(4,1fr)}
+.stage-row.cols-5{grid-template-columns:repeat(5,1fr)}
+
+.stage-cell{
+  padding:22px 18px;
+  position:relative;transition:background .2s;
+}
+.stage-cell:hover{background:#111 !important}
+.sc-phase{
+  font-size:8px;letter-spacing:2.5px;text-transform:uppercase;
+  margin-bottom:8px;
+}
+.sc-title{
+  font-family:'Playfair Display',serif;
+  font-size:16px;font-weight:700;
+  line-height:1.2;margin-bottom:10px;
+}
+.sc-items{display:grid;gap:4px}
+.sc-item{
+  font-size:11px;color:var(--muted);
+  padding-left:12px;position:relative;
+  line-height:1.4;
+}
+.sc-item::before{content:'·';position:absolute;left:1px;color:var(--border2)}
+.sc-item.key{color:var(--stone)}
+.sc-item.key::before{color:var(--gold)}
+.sc-metric{
+  margin-top:12px;padding-top:10px;
+  border-top:1px solid var(--border2);
+  font-size:10px;color:var(--muted);
+}
+.sc-metric strong{
+  display:block;font-size:18px;
+  font-family:'Playfair Display',serif;
+  font-weight:700;line-height:1;margin-bottom:2px;
+}
+
+/* funnel arrows */
+.stage-cell::after{
+  content:'›';
+  position:absolute;right:-10px;top:50%;
+  transform:translateY(-50%);
+  font-size:18px;z-index:2;
+}
+.stage-cell:last-child::after{display:none}
+.ge-arrow{color:var(--ge3)}
+.ve-arrow{color:var(--ve3)}
+.fe-arrow{color:var(--fe3)}
+
+/* CONNECTOR / FLOW LINE */
+.flow-line{
+  display:flex;align-items:center;gap:0;
+  margin-bottom:20px;overflow-x:auto;
+  padding-bottom:4px;
+}
+.fl-node{
+  flex-shrink:0;padding:10px 14px;
+  border:1px solid;font-size:10px;
+  text-align:center;min-width:90px;
+}
+.fl-arrow{
+  flex-shrink:0;font-size:16px;
+  padding:0 6px;color:var(--muted);
+}
+.fl-ge{border-color:var(--ge2);background:var(--ge-bg);color:var(--ge3)}
+.fl-ve{border-color:var(--ve2);background:var(--ve-bg);color:var(--ve3)}
+.fl-fe{border-color:var(--fe2);background:var(--fe-bg);color:var(--fe3)}
+
+/* DETAIL GRID */
+.detail-grid{
+  display:grid;gap:1px;background:var(--border);
+  border:1px solid var(--border);margin-bottom:20px;
+}
+.detail-grid.cols-2{grid-template-columns:1fr 1fr}
+.detail-grid.cols-3{grid-template-columns:repeat(3,1fr)}
+.detail-grid.cols-4{grid-template-columns:repeat(4,1fr)}
+.detail-cell{
+  padding:18px 16px;background:var(--off);
+  transition:background .2s;
+}
+.detail-cell:hover{background:#111}
+.dc-label{
+  font-size:8px;letter-spacing:2px;text-transform:uppercase;
+  margin-bottom:8px;
+}
+.dc-title{
+  font-size:13px;font-weight:500;color:var(--stone);
+  margin-bottom:6px;line-height:1.3;
+}
+.dc-text{font-size:11px;color:var(--muted);line-height:1.55}
+.dc-kpi{
+  margin-top:10px;padding-top:8px;border-top:1px solid var(--border);
+  font-size:10px;color:var(--muted);
+}
+.dc-kpi strong{color:var(--stone);margin-right:4px}
+
+/* FLYWHEEL */
+.flywheel{
+  border:1px solid var(--border);padding:28px;
+  background:var(--off);margin-bottom:20px;
+  display:flex;gap:24px;align-items:flex-start;flex-wrap:wrap;
+}
+.fw-diagram{
+  flex-shrink:0;width:200px;height:200px;
+  position:relative;
+}
+.fw-ring{
+  position:absolute;border-radius:50%;
+  border:1px solid;display:flex;
+  align-items:center;justify-content:center;
+  text-align:center;
+}
+.fw-content{flex:1;min-width:260px}
+.fw-title{
+  font-family:'Playfair Display',serif;
+  font-size:18px;font-weight:700;margin-bottom:12px;
+}
+.fw-items{display:grid;gap:8px}
+.fw-item{
+  display:flex;gap:10px;align-items:flex-start;
+  padding:10px 12px;border:1px solid var(--border);
+}
+.fw-num{
+  font-size:10px;color:var(--gold);
+  font-family:'DM Mono',monospace;flex-shrink:0;
+  width:18px;padding-top:1px;
+}
+.fw-text{font-size:12px;color:var(--muted);line-height:1.4}
+.fw-text strong{color:var(--stone)}
+
+/* KPI ROW */
+.kpi-row{
+  display:grid;gap:1px;background:var(--border);
+  border:1px solid var(--border);
+  grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+  margin-bottom:20px;
+}
+.kpi-cell{
+  padding:16px 14px;background:var(--off);
+}
+.kpi-label{
+  font-size:8px;letter-spacing:2px;text-transform:uppercase;
+  color:var(--muted);margin-bottom:6px;
+}
+.kpi-val{
+  font-family:'Playfair Display',serif;
+  font-size:22px;font-weight:700;line-height:1;margin-bottom:4px;
+}
+.kpi-note{font-size:10px;color:var(--muted);line-height:1.4}
+
+/* THREE ENGINES CONNECTION */
+.connection-block{
+  margin-top:56px;
+  border:1px solid var(--gold-dim);
+  padding:32px;background:rgba(200,168,75,.03);
+  position:relative;
+}
+.connection-block::before{
+  content:'THE SCALABLE BUSINESS SYSTEM';
+  position:absolute;top:-9px;left:20px;
+  background:var(--black);padding:0 10px;
+  font-size:8px;letter-spacing:3px;
+  color:var(--gold);opacity:.7;
+}
+.conn-grid{
+  display:grid;grid-template-columns:1fr 32px 1fr 32px 1fr;
+  gap:0;align-items:stretch;
+}
+.conn-engine{
+  padding:20px 16px;border:1px solid var(--border);
+}
+.conn-arrow{
+  display:flex;align-items:center;justify-content:center;
+  font-size:20px;color:var(--gold);opacity:.5;
+}
+.conn-label{
+  font-size:8px;letter-spacing:3px;text-transform:uppercase;
+  margin-bottom:8px;
+}
+.conn-name{
+  font-family:'Playfair Display',serif;
+  font-size:17px;font-weight:700;margin-bottom:8px;
+}
+.conn-desc{font-size:11px;color:var(--muted);line-height:1.5}
+.conn-output{
+  margin-top:12px;padding-top:10px;
+  border-top:1px solid var(--border);
+  font-size:10px;color:var(--muted);
+}
+.conn-output strong{display:block;margin-bottom:2px}
+
+/* QUOTE */
+.deiss-quote{
+  margin-top:48px;padding:24px 28px;
+  border-left:2px solid var(--gold);
+  background:rgba(200,168,75,.04);
+}
+.dq-text{
+  font-family:'Playfair Display',serif;
+  font-size:17px;font-style:italic;
+  line-height:1.7;color:#d0c8b0;margin-bottom:12px;
+}
+.dq-attr{
+  font-size:9px;letter-spacing:3px;text-transform:uppercase;
+  color:var(--gold);opacity:.6;
+}
+
+/* FOOTER */
+footer{
+  position:relative;z-index:1;
+  max-width:1140px;margin:0 auto;
+  padding:20px 28px 36px;
+  border-top:1px solid var(--border);
+  display:flex;justify-content:space-between;
+  align-items:center;flex-wrap:wrap;gap:10px;
+}
+.footer-brand{
+  font-family:'Playfair Display',serif;
+  font-size:14px;color:var(--gold);
+}
+.footer-meta{font-size:9px;color:var(--muted);letter-spacing:1px}
+
+/* RESPONSIVE */
+@media(max-width:700px){
+  .hero,main,footer{padding-left:16px;padding-right:16px}
+  .stage-row.cols-3,.stage-row.cols-4,.stage-row.cols-5{grid-template-columns:1fr}
+  .detail-grid.cols-2,.detail-grid.cols-3,.detail-grid.cols-4{grid-template-columns:1fr}
+  .conn-grid{grid-template-columns:1fr}
+  .conn-arrow{display:none}
+  .stage-cell::after{display:none}
+  .hero-formula{gap:6px}
+  .nav-tabs{display:none}
+  .flywheel{flex-direction:column}
+  .fw-diagram{width:100%;height:160px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-brand">RENOVIT · Glet Pure-White</div>
+    <div class="nav-tabs">
+      <button class="nav-tab ge-active" onclick="scroll('growth')">Growth Engine</button>
+      <button class="nav-tab ve-active" onclick="scroll('value')">Value Engine</button>
+      <button class="nav-tab fe-active" onclick="scroll('fulfillment')">Fulfillment Engine</button>
+    </div>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-eyebrow">Ryan Deiss · Get Scalable · The Three Engines</div>
+  <h1 class="hero-title">The Scalable<br><em>Business System</em></h1>
+  <p class="hero-sub">RENOVIT Glet Pure-White · Mina din Cupcini · Moldova → România</p>
+  <div class="hero-formula">
+    <div class="engine-pill pill-ge">Growth Engine</div>
+    <div class="pill-op">+</div>
+    <div class="engine-pill pill-ve">Value Engine</div>
+    <div class="pill-op">+</div>
+    <div class="engine-pill pill-fe">Fulfillment Engine</div>
+    <div class="pill-op">=</div>
+    <div class="hero-result">A Scalable Business</div>
+  </div>
+</div>
+
+<main>
+
+<!-- ════════════════════════════════════════════
+     ENGINE 1: GROWTH ENGINE
+════════════════════════════════════════════ -->
+<div class="engine-block" id="growth">
+  <div class="engine-header">
+    <div class="eh-left">
+      <div class="engine-number">Engine 01 · Get Scalable</div>
+      <div class="engine-name ge-name">Growth Engine</div>
+      <div class="engine-tagline">"Sistemul care atrage clienți potriviți în mod predictibil și repetabil — fără ca fondatorul să fie prezent la fiecare vânzare."</div>
+    </div>
+    <div class="eh-right">
+      <span class="etag ge-etag">Aware → Consider → Buy</span>
+      <span class="etag" style="border-color:var(--border2);color:var(--muted)">Moldova + Nord RO</span>
+    </div>
+  </div>
+
+  <!-- FUNNEL STAGES -->
+  <div class="stage-row cols-4">
+    <div class="stage-cell ge-arrow" style="background:var(--ge-bg)">
+      <div class="sc-phase" style="color:var(--ge3)">Etapa 1 · Top of Funnel</div>
+      <div class="sc-title" style="color:var(--ge3)">Attract<br>Conștientizare</div>
+      <div class="sc-items">
+        <div class="sc-item key">Demo pe șantier live</div>
+        <div class="sc-item key">Video "Înainte/După" perete</div>
+        <div class="sc-item">Reel aplicare la meșter</div>
+        <div class="sc-item">Prezență depozite nord MD</div>
+        <div class="sc-item">Sampling gratuit 5 saci</div>
+      </div>
+      <div class="sc-metric">
+        <strong style="color:var(--ge3)">500+</strong>
+        meșteri expuși / lună (target an 1)
+      </div>
+    </div>
+    <div class="stage-cell ge-arrow" style="background:#07101a">
+      <div class="sc-phase" style="color:var(--ge3)">Etapa 2 · Middle of Funnel</div>
+      <div class="sc-title" style="color:var(--ge3)">Engage<br>Considerare</div>
+      <div class="sc-items">
+        <div class="sc-item key">Fișă tehnică + comparativ Knauf</div>
+        <div class="sc-item key">Calculatorul de consum gratuit</div>
+        <div class="sc-item">Referințe meșteri mulțumiți</div>
+        <div class="sc-item">Certificat EN 998-1 vizibil</div>
+        <div class="sc-item">WhatsApp suport tehnic</div>
+      </div>
+      <div class="sc-metric">
+        <strong style="color:var(--ge3)">40%</strong>
+        rată conversie aware→interes
+      </div>
+    </div>
+    <div class="stage-cell ge-arrow" style="background:#06121e">
+      <div class="sc-phase" style="color:var(--ge3)">Etapa 3 · Bottom of Funnel</div>
+      <div class="sc-title" style="color:var(--ge3)">Convert<br>Prima comandă</div>
+      <div class="sc-items">
+        <div class="sc-item key">Ofertă palet (42 saci) cu preț fix</div>
+        <div class="sc-item key">Livrare în 48h în raza Edineț</div>
+        <div class="sc-item">Plată la livrare (reducere risc)</div>
+        <div class="sc-item">Garanție lot: reformulăm dacă nu-i place</div>
+        <div class="sc-item">Factură cu DoP atașat</div>
+      </div>
+      <div class="sc-metric">
+        <strong style="color:var(--ge3)">25%</strong>
+        rată conversie interes→comandă 1
+      </div>
+    </div>
+    <div class="stage-cell" style="background:#061410">
+      <div class="sc-phase" style="color:var(--fe3)">Etapa 4 · Post-Purchase</div>
+      <div class="sc-title" style="color:var(--fe3)">Ascend<br>Client recurent</div>
+      <div class="sc-items">
+        <div class="sc-item key">Follow-up la 30 zile (cum a mers?)</div>
+        <div class="sc-item key">Upsell Tencuiala Mineral Interior</div>
+        <div class="sc-item">Program loialitate depozite</div>
+        <div class="sc-item">Referral: recomandă un meșter</div>
+        <div class="sc-item">Newsletter tehnic lunar</div>
+      </div>
+      <div class="sc-metric">
+        <strong style="color:var(--fe3)">65%</strong>
+        rată recomandă 2+ comenzi (target)
+      </div>
+    </div>
+  </div>
+
+  <!-- CHANNELS -->
+  <div class="detail-grid cols-3">
+    <div class="detail-cell" style="background:var(--ge-bg)">
+      <div class="dc-label" style="color:var(--ge3)">Canal principal · Rapid</div>
+      <div class="dc-title">Meșteri constructori direcți</div>
+      <div class="dc-text">Cel mai rapid canal de feedback și cash. Meșterul vede rezultatul în 48h. Dacă recomandă a doua oară — Growth Engine funcționează. Țintă: 20 meșteri activi în primele 90 zile.</div>
+      <div class="dc-kpi"><strong>Metrică:</strong> nr. meșteri cu minim 2 comenzi / lună</div>
+    </div>
+    <div class="detail-cell" style="background:#07101a">
+      <div class="dc-label" style="color:var(--ge3)">Canal secundar · Volum</div>
+      <div class="dc-title">Depozite materiale de construcții</div>
+      <div class="dc-text">Fiecare depozit care listează RENOVIT e un "Growth Node" automat. El vinde pentru tine. Țintă: 5 depozite nord Moldova în primele 6 luni, cu comandă minimă 2 paleți/lună per punct.</div>
+      <div class="dc-kpi"><strong>Metrică:</strong> nr. depozite active + sell-through rate</div>
+    </div>
+    <div class="detail-cell" style="background:#06121e">
+      <div class="dc-label" style="color:var(--ge3)">Canal terțiar · Scalare</div>
+      <div class="dc-title">Developeri imobiliari B2B</div>
+      <div class="dc-text">Un singur contract de bloc = ~4.500 saci = o lună de producție. Acesta e canalul care transformă Growth Engine-ul din "vânzări" în "contracte cadru". Țintă: 2 contracte bloc în primele 12 luni.</div>
+      <div class="dc-kpi"><strong>Metrică:</strong> valoare contracte cadru active (€)</div>
+    </div>
+  </div>
+
+  <!-- KPI ROW -->
+  <div class="kpi-row">
+    <div class="kpi-cell" style="background:var(--ge-bg)">
+      <div class="kpi-label" style="color:var(--ge3)">Cost achiziție client</div>
+      <div class="kpi-val" style="color:var(--ge3)">€15–40</div>
+      <div class="kpi-note">per meșter nou (sampling + demo)</div>
+    </div>
+    <div class="kpi-cell" style="background:var(--ge-bg)">
+      <div class="kpi-label" style="color:var(--ge3)">LTV client meșter</div>
+      <div class="kpi-val" style="color:var(--ge3)">€800+</div>
+      <div class="kpi-note">pe 12 luni (estimat 8+ comenzi)</div>
+    </div>
+    <div class="kpi-cell" style="background:var(--ge-bg)">
+      <div class="kpi-label" style="color:var(--ge3)">LTV:CAC ratio</div>
+      <div class="kpi-val" style="color:var(--ge3)">20:1</div>
+      <div class="kpi-note">target sănătos (industrie: 3:1 min)</div>
+    </div>
+    <div class="kpi-cell" style="background:var(--ge-bg)">
+      <div class="kpi-label" style="color:var(--ge3)">Ciclu de vânzare</div>
+      <div class="kpi-val" style="color:var(--ge3)">3–7 zile</div>
+      <div class="kpi-note">de la primul contact la prima comandă</div>
+    </div>
+    <div class="kpi-cell" style="background:var(--ge-bg)">
+      <div class="kpi-label" style="color:var(--ge3)">Target luni 1–6</div>
+      <div class="kpi-val" style="color:var(--ge3)">30 t/lună</div>
+      <div class="kpi-note">volum minim pentru acoperire costuri fixe</div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     ENGINE 2: VALUE ENGINE
+════════════════════════════════════════════ -->
+<div class="engine-block" id="value">
+  <div class="engine-header">
+    <div class="eh-left">
+      <div class="engine-number">Engine 02 · Get Scalable</div>
+      <div class="engine-name ve-name">Value Engine</div>
+      <div class="engine-tagline">"Sistemul care transformă materia primă brută din cariera Volodeni în produse finite care livrează promisiunea companiei — în mod consistent, scalabil, fără fondator."</div>
+    </div>
+    <div class="eh-right">
+      <span class="etag ve-etag">Input → Process → Output</span>
+      <span class="etag" style="border-color:var(--border2);color:var(--muted)">Formula = IP intern</span>
+    </div>
+  </div>
+
+  <!-- TRANSFORMATION -->
+  <div style="display:grid;grid-template-columns:1fr 40px 1fr;gap:0;border:1px solid var(--border);margin-bottom:20px">
+    <div style="padding:22px 20px;background:var(--off)">
+      <div style="font-size:8px;letter-spacing:3px;color:var(--muted);text-transform:uppercase;margin-bottom:12px">Starea INPUT · Materie primă brută</div>
+      <div style="font-family:'Playfair Display',serif;font-size:18px;color:#555;margin-bottom:10px">Bloc de calcar alb.<br>Valoare: €12–18/tonă.</div>
+      <div style="display:grid;gap:5px">
+        <div class="sc-item">Calcar Volodeni — bloc brut</div>
+        <div class="sc-item">Granule 0–50mm neuniforme</div>
+        <div class="sc-item">Valoare comercială minimă</div>
+        <div class="sc-item">Imposibil de aplicat direct</div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;justify-content:center;background:#0d0b08;border-left:1px solid var(--border);border-right:1px solid var(--border)">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+        <path d="M5 12h14M13 6l6 6-6 6" stroke="#d08040" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div style="padding:22px 20px;background:#100a04">
+      <div style="font-size:8px;letter-spacing:3px;color:var(--ve3);text-transform:uppercase;margin-bottom:12px">Starea OUTPUT · Produs finit</div>
+      <div style="font-family:'Playfair Display',serif;font-size:18px;color:var(--ve3);margin-bottom:10px">Glet Pure-White 25kg.<br>Valoare: €100–130/tonă.</div>
+      <div style="display:grid;gap:5px">
+        <div class="sc-item key">Alb CIE ≥ 88 — fără imprimantă</div>
+        <div class="sc-item key">Aderență ≥ 0.5 N/mm² (EN 1015-12)</div>
+        <div class="sc-item key">Mineral 100% — bio-respirabil</div>
+        <div class="sc-item key">Gata de aplicat — ambalat 25kg</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VALUE CREATION STAGES -->
+  <div class="stage-row cols-5">
+    <div class="stage-cell ve-arrow" style="background:var(--ve-bg)">
+      <div class="sc-phase" style="color:var(--ve3)">V1 · Extracție</div>
+      <div class="sc-title" style="color:var(--ve3)">Sortare<br>la sursă</div>
+      <div class="sc-items">
+        <div class="sc-item key">Protocol alb/gri documentat</div>
+        <div class="sc-item">Lot marcat vizual (tag culoare)</div>
+        <div class="sc-item">Fișă lot operator</div>
+        <div class="sc-item">Alb CIE test rapid teren</div>
+      </div>
+    </div>
+    <div class="stage-cell ve-arrow" style="background:#120c06">
+      <div class="sc-phase" style="color:var(--ve3)">V2 · Procesare</div>
+      <div class="sc-title" style="color:var(--ve3)">Micronizare<br>&lt;15μm</div>
+      <div class="sc-items">
+        <div class="sc-item key">Moară cu bile / role verticale</div>
+        <div class="sc-item key">Clasificator aerian D50 constant</div>
+        <div class="sc-item">SOP parametri mașinii</div>
+        <div class="sc-item">Granulometrie laser per lot</div>
+      </div>
+    </div>
+    <div class="stage-cell ve-arrow" style="background:#140e08">
+      <div class="sc-phase" style="color:var(--ve3)">V3 · Formulare</div>
+      <div class="sc-title" style="color:var(--ve3)">Mixare<br>rețeta IP</div>
+      <div class="sc-items">
+        <div class="sc-item key">Dozare gravimetrică ±0.3%</div>
+        <div class="sc-item key">Var hidratat + polimer ≤5%</div>
+        <div class="sc-item">Malaxor forțat 4–6 min</div>
+        <div class="sc-item">Temperatura amestec monitorizată</div>
+      </div>
+    </div>
+    <div class="stage-cell ve-arrow" style="background:#0e0c06">
+      <div class="sc-phase" style="color:var(--ve3)">V4 · Calitate</div>
+      <div class="sc-title" style="color:var(--ve3)">QC<br>per lot</div>
+      <div class="sc-items">
+        <div class="sc-item key">Alb CIE spectrofotometru</div>
+        <div class="sc-item key">Granulometrie D50 D90</div>
+        <div class="sc-item key">Consistență flow (EN 1015-3)</div>
+        <div class="sc-item">Go/No-Go înainte ambalare</div>
+      </div>
+    </div>
+    <div class="stage-cell" style="background:#0a100c">
+      <div class="sc-phase" style="color:var(--fe3)">V5 · Output</div>
+      <div class="sc-title" style="color:var(--fe3)">Ambalare<br>25kg</div>
+      <div class="sc-items">
+        <div class="sc-item key">Sac PP laminat + PE interior</div>
+        <div class="sc-item key">QR trasabilitate lot</div>
+        <div class="sc-item">42 saci/palet · stretch</div>
+        <div class="sc-item">DoP + fișă tehnică atașate</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- IP & FORMULA -->
+  <div class="detail-grid cols-2">
+    <div class="detail-cell" style="background:var(--ve-bg);border-left:2px solid var(--ve3)">
+      <div class="dc-label" style="color:var(--ve3)">Proprietatea intelectuală · Inima motorului</div>
+      <div class="dc-title" style="font-family:'Playfair Display',serif;font-size:16px">Formula validată = activul central al Value Engine-ului</div>
+      <div class="dc-text">Conform Deiss, Value Engine-ul scalează atunci când procesul de creare a valorii este <strong style="color:var(--stone)">documentat, repetabil și independent de fondator.</strong> Formula RENOVIT Glet Pure-White — documentată în SOP, testată EN 998-1, stocată în sistem — este activul care face orice operator capabil să scoată același produs.</div>
+      <div class="dc-kpi">
+        <strong>Investiție unică:</strong> €3.000–6.000 (formulator + laborator)<br>
+        <strong>Returnare:</strong> fiecare tonă produsă la costuri constante
+      </div>
+    </div>
+    <div class="detail-cell" style="background:#120e08">
+      <div class="dc-label" style="color:var(--ve3)">Multiplicatorul de marjă · De ce Value Engine bate concurența</div>
+      <div class="dc-title" style="font-family:'Playfair Display',serif;font-size:16px">Integrare verticală = marjă structurală</div>
+      <div class="dc-text">Supraten, Knauf, Baumit plătesc prețul de piață pe fiecare ingredient. RENOVIT are 95% din masă din resursă proprie extrasă la cost variabil sub €15/tonă. Avantajul de cost nu vine din eficiență operațională, ci din <strong style="color:var(--stone)">structura activelor</strong>. Acesta este moatele (the moat) companiei.</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px">
+        <div style="padding:10px;background:rgba(208,128,64,.08);border:1px solid var(--ve2)">
+          <div style="font-size:9px;color:var(--ve3);letter-spacing:1px;margin-bottom:4px">COST PRODUCȚIE</div>
+          <div style="font-family:'Playfair Display',serif;font-size:20px;color:var(--ve3)">€45–65/t</div>
+        </div>
+        <div style="padding:10px;background:rgba(64,160,96,.08);border:1px solid var(--fe2)">
+          <div style="font-size:9px;color:var(--fe3);letter-spacing:1px;margin-bottom:4px">PREȚ VÂNZARE</div>
+          <div style="font-family:'Playfair Display',serif;font-size:20px;color:var(--fe3)">€120–150/t</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VALUE ENGINE KPIs -->
+  <div class="kpi-row">
+    <div class="kpi-cell" style="background:var(--ve-bg)">
+      <div class="kpi-label" style="color:var(--ve3)">Marjă brută</div>
+      <div class="kpi-val" style="color:var(--ve3)">50–60%</div>
+      <div class="kpi-note">vs 25–35% concurență import</div>
+    </div>
+    <div class="kpi-cell" style="background:var(--ve-bg)">
+      <div class="kpi-label" style="color:var(--ve3)">Ciclu producție</div>
+      <div class="kpi-val" style="color:var(--ve3)">4–6 ore</div>
+      <div class="kpi-note">de la materie primă la palet gata</div>
+    </div>
+    <div class="kpi-cell" style="background:var(--ve-bg)">
+      <div class="kpi-label" style="color:var(--ve3)">Capacitate MVP</div>
+      <div class="kpi-val" style="color:var(--ve3)">30–50 t/lună</div>
+      <div class="kpi-note">cu linie manuală inițială</div>
+    </div>
+    <div class="kpi-cell" style="background:var(--ve-bg)">
+      <div class="kpi-label" style="color:var(--ve3)">Capacitate scalată</div>
+      <div class="kpi-val" style="color:var(--ve3)">200+ t/lună</div>
+      <div class="kpi-note">cu linie automată 10–20 t/oră</div>
+    </div>
+    <div class="kpi-cell" style="background:var(--ve-bg)">
+      <div class="kpi-label" style="color:var(--ve3)">Alb CIE target</div>
+      <div class="kpi-val" style="color:var(--ve3)">≥ 88</div>
+      <div class="kpi-note">Volodeni premium — fără pigmenți</div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     ENGINE 3: FULFILLMENT ENGINE
+════════════════════════════════════════════ -->
+<div class="engine-block" id="fulfillment">
+  <div class="engine-header">
+    <div class="eh-left">
+      <div class="engine-number">Engine 03 · Get Scalable</div>
+      <div class="engine-name fe-name">Fulfillment Engine</div>
+      <div class="engine-tagline">"Sistemul care asigură că fiecare client primește exact ce a fost promis — la timp, la calitate, cu experiență consistentă — indiferent de cine execută."</div>
+    </div>
+    <div class="eh-right">
+      <span class="etag fe-etag">Promise → Deliver → Delight</span>
+      <span class="etag" style="border-color:var(--border2);color:var(--muted)">SOP · QA · Logistică</span>
+    </div>
+  </div>
+
+  <!-- PROMISE PILLARS -->
+  <div class="stage-row cols-3">
+    <div class="stage-cell fe-arrow" style="background:var(--fe-bg)">
+      <div class="sc-phase" style="color:var(--fe3)">Pilonul 1 · Produsul</div>
+      <div class="sc-title" style="color:var(--fe3)">Promisiunea<br>de calitate</div>
+      <div class="sc-items">
+        <div class="sc-item key">Alb constant lot după lot (CIE ±2)</div>
+        <div class="sc-item key">Aderență garantată ≥0.5 N/mm²</div>
+        <div class="sc-item key">Fișă tehnică cu valori reale per lot</div>
+        <div class="sc-item">Certificare EN 998-1 vizibilă</div>
+        <div class="sc-item">QR cod lot pe fiecare sac</div>
+      </div>
+      <div class="sc-metric">
+        <strong style="color:var(--fe3)">0</strong>
+        reclamații tehnice acceptate per 100 paleți
+      </div>
+    </div>
+    <div class="stage-cell fe-arrow" style="background:#060e08">
+      <div class="sc-phase" style="color:var(--fe3)">Pilonul 2 · Livrarea</div>
+      <div class="sc-title" style="color:var(--fe3)">Promisiunea<br>de timp</div>
+      <div class="sc-items">
+        <div class="sc-item key">Confirmare comandă în 2h</div>
+        <div class="sc-item key">Livrare 48h în raza 50km</div>
+        <div class="sc-item key">Tracking transport SMS/WhatsApp</div>
+        <div class="sc-item">Stoc tampon 2 săpt. în depozit</div>
+        <div class="sc-item">Plan B transport (2 furnizori 3PL)</div>
+      </div>
+      <div class="sc-metric">
+        <strong style="color:var(--fe3)">48h</strong>
+        livrare standard · 24h urgență
+      </div>
+    </div>
+    <div class="stage-cell" style="background:#06100a">
+      <div class="sc-phase" style="color:var(--fe3)">Pilonul 3 · Suportul</div>
+      <div class="sc-title" style="color:var(--fe3)">Promisiunea<br>de expertiză</div>
+      <div class="sc-items">
+        <div class="sc-item key">WhatsApp tehnic răspuns &lt;4h</div>
+        <div class="sc-item key">Video tutorial aplicare 5 min</div>
+        <div class="sc-item key">Calculator consum online</div>
+        <div class="sc-item">Vizită tehnică gratuită (comenzi &gt;10 paleți)</div>
+        <div class="sc-item">Garanție reformulare dacă lot slab</div>
+      </div>
+      <div class="sc-metric">
+        <strong style="color:var(--fe3)">NPS</strong>
+        target 50+ (industrie avg: 20)
+      </div>
+    </div>
+  </div>
+
+  <!-- SOP SYSTEM -->
+  <div class="flywheel">
+    <div class="fw-content">
+      <div class="fw-title" style="color:var(--fe3)">SOP System — Fulfillment independent de fondator</div>
+      <div class="fw-items">
+        <div class="fw-item">
+          <div class="fw-num">01</div>
+          <div class="fw-text"><strong>SOP Producție</strong> — Operatorul urmează rețeta documentată. Nicio decizie ad-hoc la mixer. Dacă parametrul iese din interval, oprește și semnalează.</div>
+        </div>
+        <div class="fw-item">
+          <div class="fw-num">02</div>
+          <div class="fw-text"><strong>SOP Control Calitate</strong> — Checklist per lot: 7 parametri, 15 minute test. Semnătura operatorului QC pe fișa de lot. Lot blocat = nu pleacă din fabrică, indiferent de presiunea de livrare.</div>
+        </div>
+        <div class="fw-item">
+          <div class="fw-num">03</div>
+          <div class="fw-text"><strong>SOP Logistică</strong> — Protocol comandă: confirmare 2h, pregătire palet, documentație (factură + DoP + fișă tehnică lot), expediere, confirmare livrare. Niciun pas omis.</div>
+        </div>
+        <div class="fw-item">
+          <div class="fw-num">04</div>
+          <div class="fw-text"><strong>SOP Reclamații</strong> — Orice reclamație deschide un ticket documentat. Investigație în 48h. Dacă e problema noastră: înlocuire lot + root cause analysis. Fără excepții.</div>
+        </div>
+        <div class="fw-item">
+          <div class="fw-num">05</div>
+          <div class="fw-text"><strong>SOP Trasabilitate</strong> — QR cod pe fiecare sac = link direct la fișa de lot digital. Orice client, oricând, poate verifica parametrii lotului. Transparență totală = încredere = retenție.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOGISTICS CHANNELS -->
+  <div class="detail-grid cols-3">
+    <div class="detail-cell" style="background:var(--fe-bg)">
+      <div class="dc-label" style="color:var(--fe3)">Canal 1 · Local · Rapid</div>
+      <div class="dc-title">Transport propriu / 3PL local</div>
+      <div class="dc-text">Comenzi 1–5 paleți pentru meșteri și depozite din raza 50km Edineț. Camionetă proprie sau 3PL local. Livrare 48h garantată. Cost transport inclus la comenzi &gt;2 paleți.</div>
+      <div class="dc-kpi"><strong>Cost/palet livrat:</strong> €8–15 · <strong>Frecvență:</strong> zilnic</div>
+    </div>
+    <div class="detail-cell" style="background:#060e08">
+      <div class="dc-label" style="color:var(--fe3)">Canal 2 · Regional · Volume medii</div>
+      <div class="dc-title">Transport rutier TIR</div>
+      <div class="dc-text">Comenzi 10–22 paleți pentru depozite Bălți, Chișinău, nord România. TIR standard 24 tone. Grupaj pentru comenzi sub 10 paleți. Frecvență săptămânală pe rutele fixe.</div>
+      <div class="dc-kpi"><strong>Cost/tonă livrat:</strong> €12–20 · <strong>Timp:</strong> 24–72h</div>
+    </div>
+    <div class="detail-cell" style="background:#060e0a">
+      <div class="dc-label" style="color:var(--fe3)">Canal 3 · Industrial · Scalare</div>
+      <div class="dc-title">Cale ferată Brătușeni</div>
+      <div class="dc-text">1.5km de carieră. Pentru volume &gt;100 tone/comandă (filler industrial, comenzi mari). Cost transport €3–5/tonă — avantaj structural față de orice competitor fără acces feroviar.</div>
+      <div class="dc-kpi"><strong>Cost/tonă:</strong> €3–5 · <strong>Volum:</strong> 100+ tone/transport</div>
+    </div>
+  </div>
+
+  <!-- FULFILLMENT KPIs -->
+  <div class="kpi-row">
+    <div class="kpi-cell" style="background:var(--fe-bg)">
+      <div class="kpi-label" style="color:var(--fe3)">On-time delivery</div>
+      <div class="kpi-val" style="color:var(--fe3)">≥ 95%</div>
+      <div class="kpi-note">comenzi livrate în termenul promis</div>
+    </div>
+    <div class="kpi-cell" style="background:var(--fe-bg)">
+      <div class="kpi-label" style="color:var(--fe3)">Reclamații calitate</div>
+      <div class="kpi-val" style="color:var(--fe3)">&lt; 1%</div>
+      <div class="kpi-note">loturi cu reclamație / total loturi</div>
+    </div>
+    <div class="kpi-cell" style="background:var(--fe-bg)">
+      <div class="kpi-label" style="color:var(--fe3)">NPS target</div>
+      <div class="kpi-val" style="color:var(--fe3)">50+</div>
+      <div class="kpi-note">net promoter score meșteri</div>
+    </div>
+    <div class="kpi-cell" style="background:var(--fe-bg)">
+      <div class="kpi-label" style="color:var(--fe3)">Stoc tampon</div>
+      <div class="kpi-val" style="color:var(--fe3)">2 săpt.</div>
+      <div class="kpi-note">produs finit în depozit în permanență</div>
+    </div>
+    <div class="kpi-cell" style="background:var(--fe-bg)">
+      <div class="kpi-label" style="color:var(--fe3)">Răspuns reclamație</div>
+      <div class="kpi-val" style="color:var(--fe3)">48h</div>
+      <div class="kpi-note">de la semnalare la soluție</div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     THE CONNECTION — ALL THREE ENGINES
+════════════════════════════════════════════ -->
+<div class="connection-block">
+  <div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--gold);margin-bottom:8px">Cum lucrează cele trei motoare împreună</div>
+  <p style="font-size:12px;color:var(--muted);max-width:700px;margin-bottom:28px;line-height:1.7">Conform Deiss, un business scalabil funcționează ca un sistem integrat de trei motoare care se alimentează reciproc. Lipsa oricăruia blochează scalarea.</p>
+
+  <div class="conn-grid">
+    <div class="conn-engine" style="background:var(--ge-bg);border-color:var(--ge2)">
+      <div class="conn-label" style="color:var(--ge3)">Growth Engine</div>
+      <div class="conn-name" style="color:var(--ge3)">Aduce clienți</div>
+      <div class="conn-desc">Atrage meșteri și developeri, îi convinge prin demo și fișă tehnică, îi convertește la prima comandă și îi menține prin program de loialitate.</div>
+      <div class="conn-output">
+        <strong style="color:var(--stone)">Output trimis la →</strong>
+        Comenzi confirmate și plătite anticipat. Revenue predictibil. Pipeline de contracte.
+      </div>
+    </div>
+    <div class="conn-arrow">→</div>
+    <div class="conn-engine" style="background:var(--ve-bg);border-color:var(--ve2)">
+      <div class="conn-label" style="color:var(--ve3)">Value Engine</div>
+      <div class="conn-name" style="color:var(--ve3)">Creează valoarea</div>
+      <div class="conn-desc">Transformă calcar brut din Volodeni în Glet Pure-White finit conform formulei documentate. Produce consistent, la cost controlat, indiferent de fondator.</div>
+      <div class="conn-output">
+        <strong style="color:var(--stone)">Output trimis la →</strong>
+        Paleți de produs finit certificat, cu fișă lot, gata pentru livrare.
+      </div>
+    </div>
+    <div class="conn-arrow">→</div>
+    <div class="conn-engine" style="background:var(--fe-bg);border-color:var(--fe2)">
+      <div class="conn-label" style="color:var(--fe3)">Fulfillment Engine</div>
+      <div class="conn-name" style="color:var(--fe3)">Livrează promisiunea</div>
+      <div class="conn-desc">Asigură că fiecare sac ajunge la client la timp, la calitate promisă, cu documentația corectă și cu suport tehnic disponibil — creând clienți care recomandă.</div>
+      <div class="conn-output">
+        <strong style="color:var(--stone)">Output trimis la →</strong>
+        Clienți satisfăcuți care recomandă → alimentează Growth Engine-ul organic.
+      </div>
+    </div>
+  </div>
+
+  <!-- FLYWHEEL EFFECT -->
+  <div style="margin-top:20px;padding:20px;background:rgba(200,168,75,.04);border:1px solid var(--gold-dim)">
+    <div style="font-size:9px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:10px">Efectul Flywheel — Cercul virtuos</div>
+    <div class="flow-line">
+      <div class="fl-node fl-ge">Meșter mulțumit</div>
+      <div class="fl-arrow">→</div>
+      <div class="fl-node fl-ge">Recomandă colegilor</div>
+      <div class="fl-arrow">→</div>
+      <div class="fl-node fl-ge">Volum crescut</div>
+      <div class="fl-arrow">→</div>
+      <div class="fl-node fl-ve">Cost/tonă scade</div>
+      <div class="fl-arrow">→</div>
+      <div class="fl-node fl-ve">Marjă crește</div>
+      <div class="fl-arrow">→</div>
+      <div class="fl-node fl-fe">Investiție în calitate</div>
+      <div class="fl-arrow">→</div>
+      <div class="fl-node fl-fe">Produs mai bun</div>
+      <div class="fl-arrow">→</div>
+      <div class="fl-node fl-ge" style="border-color:var(--gold);color:var(--gold)">Meșter mai mulțumit ↺</div>
+    </div>
+  </div>
+</div>
+
+<!-- DEISS QUOTE -->
+<div class="deiss-quote">
+  <div class="dq-text">"Un business scalabil nu este mai mare decât tine — este unul care funcționează sistematic, cu sau fără tine. Growth Engine-ul aduce clienți, Value Engine-ul creează produsul, Fulfillment Engine-ul livrează promisiunea. Când toate trei funcționează, ai construit ceva mai mare decât tine însuți."</div>
+  <div class="dq-attr">Ryan Deiss · Get Scalable · Aplicat la RENOVIT Glet Pure-White · Edineț, Moldova 2025</div>
+</div>
+
+</main>
+
+<footer>
+  <div class="footer-brand">RENOVIT · Glet Pure-White · Three Engines Map</div>
+  <div class="footer-meta">KlaryoFlow AI · Document strategic intern · Get Scalable Framework · v1.0 · 2025</div>
+</footer>
+
+<script>
+function scroll(id){
+  document.getElementById(id).scrollIntoView({behavior:'smooth'});
+}
+window.addEventListener('scroll',()=>{
+  document.querySelector('nav').style.boxShadow=
+    window.scrollY>20?'0 2px 20px rgba(0,0,0,.6)':'none';
+});
+</script>
+
+</body>
+</html>
